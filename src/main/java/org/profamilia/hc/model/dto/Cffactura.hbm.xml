@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping>
+        <!-- 
+    Created by the Middlegen Hibernate plugin 2.2
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+        <class name="org.profamilia.hc.model.dto.Cffactura" table="CFFACTURA" lazy="false" schema="CLINICO">
+                <id name="cfnconsfact" type="java.lang.Long" column="CFNCONSFACT">
+                        <generator class="assigned"/>
+                </id>
+                <version name="version" column="VERSION" type="java.lang.Long"/>
+                <property name="cfnclinica" column="CFNCLINICA" type="java.lang.Long" length="4" not-null="true"/>
+                <property name="cfcpaciente" column="CFCPACIENTE" type="java.lang.String" length="80"/>
+                <property name="cfcorden" column="CFCORDEN" type="java.lang.String" length="30"/>
+                <property name="cfceps" column="CFCEPS" type="java.lang.String" length="20"/>
+                <property name="cfcutilizacion" column="CFCUTILIZACION" type="java.lang.String" length="20"/>
+                <property name="cfnvalor_total" column="CFNVALOR_TOTAL" type="java.lang.Double" length="17" not-null="true"/>
+                <property name="cfndescuento" column="CFNDESCUENTO" type="java.lang.Double" length="17" />
+                <property name="cfncontrato" column="CFNCONTRATO" type="java.lang.Long" length="12" not-null="true"/>
+                <property name="cfcintext" column="CFCINTEXT" type="java.lang.String" length="20"/>
+                <property name="cfnturno" column="CFNTURNO" type="java.lang.Long" length="10"/>
+                <property name="cfcip" column="CFCIP" type="java.lang.String" length="20"/>
+                <property name="cfnestado" column="CFNESTADO" type="java.lang.String" length="2"/>
+                <property name="cfnnumpaci" column="CFNNUMPACI" type="java.lang.Long" length="12"/>
+                <property name="cfcusuareg" column="CFCUSUAREG" type="java.lang.String" length="20"/>
+                <property name="cfnadmision" column="CFNADMISION" type="java.lang.Long" length="12"/>
+                <property name="cfctipide" column="CFCTIPIDE" type="java.lang.String" length="2"/>
+                <property name="cfnnumide" column="CFNNUMIDE" type="java.lang.Long" length="17"/>
+                <property name="cfncuotacop" column="CFNCUOTACOP" type="java.lang.Double" length="17" />
+                <property name="cfnnumfact" column="CFNNUMFACT" type="java.lang.String" length="20"/>
+                <property name="cfdfechregi" column="CFDFECHREGI" type="java.util.Date" length="11"/>
+                <property name="cfcusuaregi" column="CFCUSUAREGI" type="java.lang.String" length="15"/>
+                <property name="cfctipoadmi" column="CFCTIPOADMI" type="java.lang.String" length="2"/>
+                <property name="cfdfechadmi" column="CFDFECHADMI" type="java.util.Date" length="11"/>
+                <property name="cfnnumesap" column="CFNNUMESAP" type="java.lang.Long" length="12"/>
+                <property name="cfcetapa" column="CFCETAPA" type="java.lang.String" length="2"/>
+                <property name="cfdfechanul" column="CFDFECHANUL" type="java.util.Date" length="11"/>
+                <!-- Associations -->
+                <!-- derived association(s) for compound key -->
+                <!-- end of derived association(s) -->
+        </class>
+</hibernate-mapping>

@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping>
+    <!-- 
+    Created by the Middlegen Hibernate plugin 2.2
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+    <class name="org.profamilia.hc.model.dto.Chescvalcai" table="CHESCVALCAI" schema="HISTORIA" lazy="false" >
+        <composite-id name="comp_id" class="org.profamilia.hc.model.dto.ChescvalcaiPK">
+            <key-property name="hevclconsulta" column="HEVCLCONSULTA" type="java.lang.Long" length="12"/>
+            <key-property name="hevcnconsecuti" column="HEVCNCONSECUTI" type="java.lang.Long" length="14"/>
+        </composite-id>
+        <version name="version" column="VERSION"/>
+        <property name="hevcdfecregistr" type="java.util.Date" column="HEVCDFECREGISTR" length="7"/>
+        <property name="hevccoperador" type="java.lang.String" column="HEVCCOPERADOR" length="14"/>
+        <property name="hevccaidprev" type="java.lang.String" column="HEVCCAIDPREV" length="1"/>
+        <property name="hevccmedicamen" type="java.lang.String" column="HEVCCMEDICAMEN" length="1"/>
+        <property name="hevccdefisens" type="java.lang.String" column="HEVCCDEFISENS" length="1"/>
+        <property name="hevccestament" type="java.lang.String" column="HEVCCESTAMENT" length="1"/>
+        <property name="hevccdeambula" type="java.lang.String" column="HEVCCDEAMBULA" length="1"/>
+        <property name="hevccpuntos" type="java.lang.Integer" column="HEVCCPUNTOS" length="22"/>
+        <property name="hevlusuario" type="java.lang.Long" column="HEVLUSUARIO" length="12"/>
+        <!-- Associations -->
+        <!-- derived association(s) for compound key -->
+        <!-- end of derived association(s) -->
+    </class>
+</hibernate-mapping>

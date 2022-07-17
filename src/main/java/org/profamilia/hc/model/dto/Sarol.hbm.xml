@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <!-- 
+        Auto-generated mapping file from
+        the hibernate.org cfg2hbm engine
+-->
+    <class name="org.profamilia.hc.model.dto.Sarol" table="SAROL" schema="ACTIVOS">
+        <composite-id name="id" class="org.profamilia.hc.model.dto.SarolId">
+            <key-property name="srocnombre" type="string">
+                <column name="SROCNOMBRE" length="14"/>
+            </key-property>
+            <key-property name="srocaplica" type="string">
+                <column name="SROCAPLICA" length="20"/>
+            </key-property>
+        </composite-id>
+        <version name="version" column="VERSION"/>
+        <property name="srodfeccre" type="date">
+            <column name="SRODFECCRE" length="7" not-null="true"/>
+        </property>
+        <property name="srocdescri" type="string">
+            <column name="SROCDESCRI" length="40" not-null="false"/>
+        </property>
+        <property name="srocusucre" type="string">
+            <column name="SROCUSUCRE" length="14" not-null="false"/>
+        </property>
+        <property name="srocetapa" type="string">
+            <column name="SROCETAPA" length="2" not-null="false"/>
+        </property>
+    </class>
+</hibernate-mapping>

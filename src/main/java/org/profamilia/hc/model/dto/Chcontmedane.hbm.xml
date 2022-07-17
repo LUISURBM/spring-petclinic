@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping>
+    <!-- 
+    Created by the Middlegen Hibernate plugin 2.2
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+    <class name="org.profamilia.hc.model.dto.Chcontmedane" table="CHCONTMEDANE" lazy="false" schema="HISTORIA">
+        <composite-id name="id" class="org.profamilia.hc.model.dto.ChcontmedanePK">
+            <key-property name="hmalconsulta" column="HMALCONSULTA" type="java.lang.Long" length="12"/>
+            <key-property name="hmanconsecut" column="HMANCONSECUT" type="java.lang.Integer" length="4"/>
+            <key-property name="hmactiposerv" column="HMACTIPOSERV" type="java.lang.String" length="1"/>
+        </composite-id>
+         <version name="version" column="VERSION"/>
+        <property name="hmancodigvadem" type="java.lang.Integer" column="HMANCODIGVADEM" not-null="true" length="9"/>
+        <property name="hmacmedicament" type="java.lang.String" column="HMACMEDICAMENT" length="20"/>
+        <property name="hmacunidades" type="java.lang.String" column="HMACUNIDADES" length="2"/>
+        <property name="hmadhoraadmini" type="java.util.Date" column="HMADHORAADMINI" length="7"/>
+        <property name="hmaninduccion" type="java.math.BigDecimal" column="HMANINDUCCION" length="5"/>
+        <property name="hmanmantenimie" type="java.math.BigDecimal" column="HMANMANTENIMIE" length="5"/>
+        <property name="hmacetapa" type="java.lang.String" column="HMACETAPA" length="2"/>
+        <property name="hmadfecregistr" type="java.util.Date" column="HMADFECREGISTR" length="7"/>
+        <property name="hmacoperador" type="java.lang.String" column="HMACOPERADOR" length="14"/>
+        <property name="hmacunidapeso" type="java.lang.String" column="HMACUNIDAPESO" length="2"/>
+        <property name="hmacviaadmini" type="java.lang.String" column="HMACVIAADMINI" length="2"/>
+        <property name="hmacformadmi" type="java.lang.String" column="HMACFORMADMI" length="2"/>
+        <property name="hmacformdosis" type="java.lang.Integer" column="HMACFORMDOSIS" length="2"/>
+        <property name="hmacviaadlocal" type="java.lang.String" column="HMACVIAADLOCAL" length="100"/>
+         <property name="hmacviaadotra" type="java.lang.String" column="HMACVIAADOTRA" length="100"/>
+         <property name="hmaccodsap" type="java.lang.String" column="HMACCODSAP" length="12"/>
+        
+            <!-- Associations -->
+        <!-- derived association(s) for compound key -->
+        <!-- end of derived association(s) -->
+    </class>
+</hibernate-mapping>

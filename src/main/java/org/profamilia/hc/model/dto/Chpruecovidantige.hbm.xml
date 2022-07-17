@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping>
+    <!-- 
+    Created by the Middlegen Hibernate plugin 2.2
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+    <class name="org.profamilia.hc.model.dto.Chpruecovidantige" table="CHPRUECOVIDANTIGE" schema="HISTORIA" lazy="false">
+        <id name="hpgnconsulta" type="java.lang.Long" column="HPGNCONSULTA">
+            <generator class="assigned"/>
+        </id>
+         <version name="version" column="VERSION"/>
+        <property name="hpgnnumepaci" type="java.lang.Long" column="HPGNNUMEPACI" length="12"/>
+        <property name="hpgusuareg" type="java.lang.String" column="HPGUSUAREG" length="14"/>
+        <property name="hpgdfechreg" type="java.util.Date" column="HPGDFECHREG" length="7"/>
+        <property name="hpgctrabsalud" type="java.lang.String" column="HPGCTRABSALUD" length="1"/>
+        <property name="hpgccontadias" type="java.lang.String" column="HPGCCONTADIAS" length="1"/>
+        <property name="hpgdfecsinto" type="java.util.Date" column="HPGDFECSINTO" length="7"/>
+        <property name="hpgnnumesinto" type="java.lang.Integer" column="HPGNNUMESINTO" length="2"/>
+        <property name="hpgclugatoma" type="java.lang.String" column="HPGCLUGATOMA" length="2"/>
+        <property name="hpgclugaproc" type="java.lang.String" column="HPGCLUGAPROC" length="2"/>
+        <property name="hpgntempambi" type="java.math.BigDecimal" column="HPGNTEMPAMBI" length="3"/>
+        <property name="hpgcmarca" type="java.lang.String" column="HPGCMARCA" length="80"/>
+        <property name="hpgclote" type="java.lang.String" column="HPGCLOTE" length="50"/>
+        <property name="hpgcreginvim" type="java.lang.String" column="HPGCREGINVIM" length="30"/>
+        <property name="hpgdfechfabr" type="java.util.Date" column="HPGDFECHFABR" length="7"/>
+        <property name="hpgdfechvenci" type="java.util.Date" column="HPGDFECHVENCI" length="7"/>
+        <property name="hpgcresultado" type="java.lang.String" column="HPGCRESULTADO" length="1"/>
+        <property name="hpgcobserv" type="java.lang.String" column="HPGCOBSERV" length="150"/>
+        <property name="hpgcsintopaci" type="java.lang.String" column="HPGCSINTOPACI" length="1"/>
+        <!-- Associations -->
+    </class>
+</hibernate-mapping>

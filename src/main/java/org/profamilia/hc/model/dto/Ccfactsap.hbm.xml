@@ -1,0 +1,90 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 16/04/2015 04:06:02 PM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="org.profamilia.hc.model.dto.Ccfactsap" table="CCFACTSAP" schema="CLINICO">
+        <id name="cfsanumide" type="java.math.BigDecimal">
+            <column name="CFSANUMIDE" />
+            <generator class="assigned" />
+        </id>
+        <property name="cfsnnumero" type="java.math.BigDecimal">
+            <column name="CFSNNUMERO" />
+        </property>
+        <property name="cfsnnumfac" type="java.math.BigDecimal">
+            <column name="CFSNNUMFAC" />
+        </property>
+        <property name="cfsnclinic" type="java.lang.Integer">
+            <column name="CFSNCLINIC" />
+        </property>
+        <property name="cfsdfecreg" type="java.util.Date">
+            <column name="CFSDFECREG" />
+        </property>
+        <property name="cfscusuari" type="java.lang.String">
+            <column name="CFSCUSUARI" />
+        </property>
+        <property name="cfsncontra" type="java.lang.Integer">
+            <column name="CFSNCONTRA" />
+        </property>
+        <property name="cfsnprogra" type="java.lang.Integer">
+            <column name="CFSNPROGRA" />
+        </property>
+        <property name="cfsasubtot" type="java.math.BigDecimal">
+            <column name="CFSASUBTOT" />
+        </property>
+        <property name="cfsaabono" type="java.math.BigDecimal">
+            <column name="CFSAABONO" />
+        </property>
+        <property name="cfscpacien" type="java.lang.String">
+            <column name="CFSCPACIEN" />
+        </property>
+        <property name="cfsaiva" type="java.math.BigDecimal">
+            <column name="CFSAIVA" />
+        </property>
+        <property name="cfsadescto" type="java.math.BigDecimal">
+            <column name="CFSADESCTO" />
+        </property>
+        <property name="cfsavalent" type="java.math.BigDecimal">
+            <column name="CFSAVALENT" />
+        </property>
+        <property name="cfsnestado" type="java.lang.Integer">
+            <column name="CFSNESTADO" />
+        </property>
+        <property name="cfsctipide" type="java.lang.String">
+            <column name="CFSCTIPIDE" />
+        </property>
+        <property name="cfsdfecrem" type="java.util.Date">
+            <column name="CFSDFECREM" />
+        </property>
+        <property name="cfscremite" type="java.lang.String">
+            <column name="CFSCREMITE" />
+        </property>
+        <property name="cfsndonant" type="java.math.BigDecimal">
+            <column name="CFSNDONANT" />
+        </property>
+        <property name="cfscgenero" type="java.lang.String">
+            <column name="CFSCGENERO" />
+        </property>
+        <property name="cfscnumrem" type="java.lang.String">
+            <column name="CFSCNUMREM" />
+        </property>
+        <property name="cfsavaldon" type="java.math.BigDecimal">
+            <column name="CFSAVALDON" />
+        </property>
+        <property name="cfslusuario" type="java.math.BigDecimal">
+            <column name="CFSLUSUARIO" />
+        </property>
+        <property name="version" type="java.lang.Integer">
+            <column name="VERSION" />
+        </property>
+        <property name="cfscclafac" type="java.lang.String">
+            <column name="CFSCCLAFAC" />
+        </property>
+        <property name="cfsdfecanu" type="java.util.Date">
+            <column name="CFSDFECANU" />
+        </property>
+        <property name="cfscnumanu" type="java.lang.String">
+            <column name="CFSCNUMANU" />
+        </property>
+    </class>
+</hibernate-mapping>

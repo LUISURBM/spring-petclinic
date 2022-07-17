@@ -1,0 +1,80 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping>
+    <!-- 
+    Created by the Middlegen Hibernate plugin 2.2
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+    <class name="org.profamilia.hc.model.dto.Chvphtoma" table="CHVPHTOMA" lazy="false" schema="HISTORIA" >
+        <id name="hvtnconsec" type="java.lang.Integer" column="HVTNCONSEC">
+            <generator class="assigned"/>
+        </id>
+         <version name="version" column="VERSION"/>
+        <property name="hvtnclinic" type="java.lang.Integer" column="HVTNCLINIC" not-null="true" length="4"/>
+        <property name="hvtnnumero" type="java.lang.Integer" column="HVTNNUMERO" not-null="true" length="9"/>
+        <property name="hvtdfectom" type="java.util.Date" column="HVTDFECTOM" not-null="true" length="7"/>
+        <property name="hvtctomada" type="java.lang.String" column="HVTCTOMADA" not-null="true" length="4"/>
+        <property name="hvtcnomtom" type="java.lang.String" column="HVTCNOMTOM" not-null="true" length="40"/>
+        <property name="hvtcesquem" type="java.lang.String" column="HVTCESQUEM" not-null="true" length="1"/>
+        <property name="hvtdultmen" type="java.util.Date" column="HVTDULTMEN" not-null="true" length="7"/>
+        <property name="hvtdultpar" type="java.util.Date" column="HVTDULTPAR" length="7"/>
+        <property name="hvtngestac" type="java.lang.Integer" column="HVTNGESTAC" not-null="true" length="5"/>
+        <property name="hvtnpartos" type="java.lang.Integer" column="HVTNPARTOS" not-null="true" length="5"/>
+        <property name="hvtnaborto" type="java.lang.Integer" column="HVTNABORTO" not-null="true" length="5"/>
+        <property name="hvtcembara" type="java.lang.String" column="HVTCEMBARA" not-null="true" length="1"/>
+        <property name="hvtnedarel" type="java.lang.Integer" column="HVTNEDAREL" not-null="true" length="5"/>
+        <property name="hvtcmetpla" type="java.lang.String" column="HVTCMETPLA" not-null="true" length="3"/>
+        <property name="hvtdultcit" type="java.util.Date" column="HVTDULTCIT" length="7"/>
+        <property name="hvtcultres" type="java.lang.String" column="HVTCULTRES" length="4"/>
+        <property name="hvtcpningu" type="java.lang.String" column="HVTCPNINGU" length="1"/>
+        <property name="hvtcpcaute" type="java.lang.String" column="HVTCPCAUTE" length="1"/>
+        <property name="hvtdpcaute" type="java.util.Date" column="HVTDPCAUTE" length="7"/>
+        <property name="hvtcphiste" type="java.lang.String" column="HVTCPHISTE" length="1"/>
+        <property name="hvtdphiste" type="java.util.Date" column="HVTDPHISTE" length="7"/>
+        <property name="hvtcpconiz" type="java.lang.String" column="HVTCPCONIZ" length="1"/>
+        <property name="hvtdpconiz" type="java.util.Date" column="HVTDPCONIZ" length="7"/>
+        <property name="hvtcpradio" type="java.lang.String" column="HVTCPRADIO" length="1"/>
+        <property name="hvtdpradio" type="java.util.Date" column="HVTDPRADIO" length="7"/>
+        <property name="hvtcpbiops" type="java.lang.String" column="HVTCPBIOPS" length="1"/>
+        <property name="hvtdpbiops" type="java.util.Date" column="HVTDPBIOPS" length="7"/>
+        <property name="hvtcpcriot" type="java.lang.String" column="HVTCPCRIOT" length="1"/>
+        <property name="hvtdpcriot" type="java.util.Date" column="HVTDPCRIOT" length="7"/>
+        <property name="hvtcpata" type="java.lang.String" column="HVTCPATA" length="1"/>
+        <property name="hvtdpata" type="java.util.Date" column="HVTDPATA" length="7"/>
+        <property name="hvtcpotro" type="java.lang.String" column="HVTCPOTRO" length="1"/>
+        <property name="hvtdpotro" type="java.util.Date" column="HVTDPOTRO" length="7"/>
+        <property name="hvtcpdotro" type="java.lang.String" column="HVTCPDOTRO" length="20"/>
+        <property name="hvtcaspcue" type="java.lang.String" column="HVTCASPCUE" not-null="true" length="30"/>
+        <property name="hvtcusureg" type="java.lang.String" column="HVTCUSUREG" not-null="true" length="12"/>
+        <property name="hvtdfecreg" type="java.util.Date" column="HVTDFECREG" not-null="true" length="7"/>
+        <property name="hvtcvph" type="java.lang.String" column="HVTCVPH" length="1"/>
+        <property name="hvtnvph" type="java.lang.Integer" column="HVTNVPH" length="1"/>
+        <property name="hvtdvph" type="java.util.Date" column="HVTDVPH" length="7"/>
+        <property name="hvtcobstom" type="java.lang.String" column="HVTCOBSTOM" length="600"/>
+        <property name="hvtcotrmet" type="java.lang.String" column="HVTCOTRMET" length="60"/>
+        <property name="hvtcotrhal" type="java.lang.String" column="HVTCOTRHAL" length="100"/>
+        <property name="hvtcpvapor" type="java.lang.String" column="HVTCPVAPOR" length="1"/>
+        <property name="hvtdpvapor" type="java.util.Date" column="HVTDPVAPOR" length="7"/>
+        <property name="hvtcphormo" type="java.lang.String" column="HVTCPHORMO" length="1"/>
+        <property name="hvtdphormo" type="java.util.Date" column="HVTDPHORMO" length="7"/>
+        <property name="hvtccomvph" type="java.lang.String" column="HVTCCOMVPH" length="1"/>
+        <property name="hvtntiemet" type="java.math.BigDecimal" column="HVTNTIEMET" length="3"/>
+        <property name="hvtclactan" type="java.lang.String" column="HVTCLACTAN" length="1"/>
+        <property name="hvtctipusu" type="java.lang.String" column="HVTCTIPUSU" length="2"/>
+        <property name="hvtcnumrem" type="java.lang.String" column="HVTCNUMREM" length="20"/>
+        <property name="hvtcplaemb" type="java.lang.String" column="HVTCPLAEMB" length="1"/>
+        <property name="hvtcvphresul" type="java.lang.String" column="HVTCVPHRESUL" length="1"/>
+        <property name="hvtcccuconv" type="java.lang.String" column="HVTCCCUCONV" length="1"/>
+        <property name="hvtcccubl" type="java.lang.String" column="HVTCCCUBL" length="1"/>
+        <property name="hvtctipifi" type="java.lang.String" column="HVTCTIPIFI" length="1"/>
+        <property name="hvtdtipifi" type="java.util.Date" column="HVTDTIPIFI" length="7"/>
+        <property name="hvtcpcolpo" type="java.lang.String" column="HVTCPCOLPO" length="1"/>
+        <property name="hvtdpcolpo" type="java.util.Date" column="HVTDPCOLPO" length="7"/>
+        <property name="hvtcotroesq" type="java.lang.String" column="HVTCOTROESQ" length="30"/>
+          <!-- Associations -->
+    </class>
+</hibernate-mapping>

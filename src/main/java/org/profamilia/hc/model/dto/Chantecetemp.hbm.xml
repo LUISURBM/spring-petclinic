@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping>
+    <!-- 
+    Created by the Middlegen Hibernate plugin 2.2
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+    <class name="org.profamilia.hc.model.dto.Chantecetemp" table="CHANTECETEMP"  schema="HISTORIA"
+           lazy="false">
+        <composite-id name="id"
+                      class="org.profamilia.hc.model.dto.ChantecetempPK">
+            <key-property name="hatlconsulta" column="HATLCONSULTA"
+                          type="java.lang.Long" length="12"/>
+            <key-property name="hatnconsecuti" column="HATNCONSECUTI"
+                          type="java.lang.Integer" length="4"/>
+            <key-property name="hatctiposervi" column="HATCTIPOSERVI"
+                          type="java.lang.String" length="1"/>
+        </composite-id>
+        <version name="version" column="VERSION"/> 
+        <property name="hatnpregunta" type="java.lang.Integer"
+                  column="HATNPREGUNTA" length="4"/>
+        <property name="haterespuest" type="java.lang.String"
+                  column="HATERESPUEST" length="1"/>
+        <property name="hatdfecregistr" type="java.util.Date"
+                  column="HATDFECREGISTR" length="7"/>
+        <property name="hatcoperador" type="java.lang.String"
+                  column="HATCOPERADOR" length="14"/>
+        <!-- Associations -->
+        <!-- derived association(s) for compound key -->
+        <!-- bi-directional many-to-one association to Chconsulta -->
+     
+    </class>
+</hibernate-mapping>

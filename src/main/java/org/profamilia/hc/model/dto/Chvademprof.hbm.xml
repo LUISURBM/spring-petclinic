@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping>
+    <!-- 
+    Created by the Middlegen Hibernate plugin 2.2
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+    <class name="org.profamilia.hc.model.dto.Chvademprof" lazy="false" schema="HISTORIA">
+        <id name="hvpnconsecutiv" type="java.lang.Integer" column="HVPNCONSECUTIV">
+            <generator class="assigned"/>
+        </id>
+           <version name="version" column="VERSION"/> 
+        <property name="hvpccodigatc" type="java.lang.String" column="HVPCCODIGATC" length="12"/>
+        <property name="hvpccodisap" type="java.lang.String" column="HVPCCODISAP" length="12"/>
+        <property name="hvpccodicum" type="java.lang.String" column="HVPCCODICUM" length="12"/>
+        <property name="hvpcclastera" type="java.lang.String" column="HVPCCLASTERA" length="60"/>
+        <property name="hvpcprincactiv" type="java.lang.String" column="HVPCPRINCACTIV" not-null="true" length="100"/>
+        <property name="hvpcmarca" type="java.lang.String" column="HVPCMARCA" length="30"/>
+        <property name="hvpcconcentrac" type="java.lang.String" column="HVPCCONCENTRAC" not-null="true" length="50"/>
+        <property name="hvpcunidmedi" type="java.lang.String" column="HVPCUNIDMEDI" not-null="true" length="6"/>
+        <property name="hvpcformafarma" type="java.lang.String" column="HVPCFORMAFARMA" not-null="true" length="4"/>
+        <property name="hvpcprescome" type="java.lang.String" column="HVPCPRESCOME" length="60"/>
+        <property name="hvpcregisani" type="java.lang.String" column="HVPCREGISANI" length="30"/>
+        <property name="hvpcfabrican" type="java.lang.String" column="HVPCFABRICAN" length="30"/>
+        <property name="hvpcviaadmo" type="java.lang.String" column="HVPCVIAADMO" length="4"/>
+        <property name="hvpctipovent" type="java.lang.String" column="HVPCTIPOVENT" length="4"/>
+        <property name="hvpcindicacion" type="java.lang.String" column="HVPCINDICACION" length="4000"/>
+        <property name="hvpccontrindic" type="java.lang.String" column="HVPCCONTRINDIC" length="4000"/>
+        <property name="hvpcaclaracion" type="java.lang.String" column="HVPCACLARACION" length="500"/>
+        <property name="hvpcmedicpos" type="java.lang.String" column="HVPCMEDICPOS" length="1"/>
+        <property name="hvpccomercial" type="java.lang.String" column="HVPCCOMERCIAL" length="60"/>
+        <property name="hvpccodigcomer" type="java.lang.String" column="HVPCCODIGCOMER" length="7"/>
+        <property name="hvpcanestesia" type="java.lang.String" column="HVPCANESTESIA" length="1"/>
+        <property name="hvpcinicianest" type="java.lang.String" column="HVPCINICIANEST" length="1"/>
+        <property name="hvpcoperador" type="java.lang.String" column="HVPCOPERADOR" not-null="true" length="14"/>
+        <property name="hvpdfecharegis" type="java.util.Date" column="HVPDFECHAREGIS" not-null="true" length="7"/>
+        <property name="hvpcoperamodif" type="java.lang.String" column="HVPCOPERAMODIF" length="14"/>
+        <property name="hvpdfechamodif" type="java.util.Date" column="HVPDFECHAMODIF" length="7"/>
+        <property name="hvpcdialforma" type="java.lang.String" column="HVPCDIALFORMA" length="20"/> 
+        <property name="hvpcalerta" type="java.lang.String" column="HVPCALERTA" length="800"/> 
+        <property name="hvpcformadmi" type="java.lang.String" column="HVPCFORMADMI" length="2"/> 
+        
+        <!-- Associations -->
+    </class>
+</hibernate-mapping>

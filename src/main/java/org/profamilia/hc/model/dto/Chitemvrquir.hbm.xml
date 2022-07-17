@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping>
+    <!-- 
+    Created by the Middlegen Hibernate plugin 2.2
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+    <class name="org.profamilia.hc.model.dto.Chitemvrquir" table="CHITEMVRQUIR" lazy="false" schema="HISTORIA">
+        <composite-id name="id" class="org.profamilia.hc.model.dto.ChitemvrquirPK">
+            <key-property name="hiqlcirugia" column="HIQLCIRUGIA" type="java.lang.Long" length="12"/>
+            <key-property name="hiqcliteral" column="HIQCLITERAL" type="java.lang.String" length="2"/>
+            <key-property name="hiqnnumeral" column="HIQNNUMERAL" type="java.lang.Integer" length="2"/>
+        </composite-id>
+        <version name="version" column="VERSION"/> 
+        <property name="hiqcdescri" type="java.lang.String" column="HIQCDESCRI" length="400"/>
+        <property name="hiqcrespuesta" type="java.lang.String" column="HIQCRESPUESTA" length="1"/>
+        <property name="hiqcnoaplica" type="java.lang.String" column="HIQCNOAPLICA" length="1"/>
+        <property name="hiqcetapa" type="java.lang.String" column="HIQCETAPA" length="2"/>
+        <property name="hiqdfecreg" type="java.util.Date" column="HIQDFECREG" length="7"/>
+        <property name="hiqcgrabad" type="java.lang.String" column="HIQCGRABAD" length="14"/>
+        <!-- Associations -->
+        <!-- derived association(s) for compound key -->
+        <!-- end of derived association(s) -->
+    </class>
+</hibernate-mapping>

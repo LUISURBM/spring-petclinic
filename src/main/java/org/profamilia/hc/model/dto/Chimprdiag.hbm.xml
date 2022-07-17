@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping>
+    <!-- 
+    Created by the Middlegen Hibernate plugin 2.2
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+    <class name="org.profamilia.hc.model.dto.Chimprdiag" table="CHIMPRDIAG" schema="HISTORIA" lazy="false">
+        <composite-id name="id" class="org.profamilia.hc.model.dto.ChimprdiagPK">
+            <key-property name="hidlconsulta" column="HIDLCONSULTA" type="java.lang.Long" length="12"/>
+            <key-property name="hidctiposervi" column="HIDCTIPOSERVI" type="java.lang.String" length="1"/>
+            <key-property name="hidnconsecutiv" column="HIDNCONSECUTIV" type="java.lang.Integer" length="4"/>
+        </composite-id>
+        <version name="version" column="VERSION"/>
+        <property name="hidcdiagprin" type="java.lang.String" column="HIDCDIAGPRIN" length="4"/>
+        <property name="hidcdiagrela1" type="java.lang.String" column="HIDCDIAGRELA1" length="4"/>
+        <property name="hidcdiagrela2" type="java.lang.String" column="HIDCDIAGRELA2" length="4"/>
+        <property name="hidcdiagrela3" type="java.lang.String" column="HIDCDIAGRELA3" length="4"/>
+        <property name="hidntipodiagn" type="java.lang.Integer" column="HIDNTIPODIAGN" length="1"/>
+        <property name="hidereferen" type="java.lang.String" column="HIDEREFEREN" length="1"/>
+        <property name="hidtrecomen" type="java.lang.String" column="HIDTRECOMEN" length="4000"/>
+        <property name="hiddfecregistr" type="java.util.Date" column="HIDDFECREGISTR" length="7"/>
+        <property name="hidcoperador" type="java.lang.String" column="HIDCOPERADOR" length="14"/>
+        <property name="hidngradoasa" type="java.lang.Integer" column="HIDNGRADOASA" length="1"/>
+        <property name="hidnsemanembar" type="java.lang.Double" column="HIDNSEMANEMBAR" length="3"/>
+         <property name="hidnsemanameno" type="java.lang.Double" column="HIDNSEMANAMENO" length="3"/>
+         <property name="hidcconfiseman" type="java.lang.String" column="HIDCCONFISEMAN" length="1"/>
+        <property name="hidcurgencia" type="java.lang.String" column="HIDCURGENCIA" length="1"/>
+        <property name="hidcmotivconfi" type="java.lang.String" column="HIDCMOTIVCONFI" length="4"/>
+        
+        
+        <property name="hidcimprenorma" type="java.lang.String" column="HIDCIMPRENORMA" length="1"/>
+        <property name="hidcimpreinfla" type="java.lang.String" column="HIDCIMPREINFLA" length="1"/>
+        <property name="hidcimpreatrof" type="java.lang.String" column="HIDCIMPREATROF" length="1"/>
+        <property name="hidcimprecarci" type="java.lang.String" column="HIDCIMPRECARCI" length="1"/>
+        <property name="hidcimpresuges" type="java.lang.String" column="HIDCIMPRESUGES" length="1"/>
+        <property name="hidcimpreleyba" type="java.lang.String" column="HIDCIMPRELEYBA" length="1"/>
+        <property name="hidcimpreleyal" type="java.lang.String" column="HIDCIMPRELEYAL" length="1"/>
+        <property name="hidcimpreotro" type="java.lang.String" column="HIDCIMPREOTRO" length="1"/>
+        <property name="hidcimprecual" type="java.lang.String" column="HIDCIMPRECUAL" length="100"/>
+        
+     </class>
+</hibernate-mapping>

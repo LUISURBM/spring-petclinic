@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping>
+    <!-- 
+    Created by the Middlegen Hibernate plugin 2.2
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+    <class name="org.profamilia.hc.model.dto.Chdatosadvacuna" table="CHDATOSADVACUNA"  lazy="false" schema="HISTORIA">
+        <id name="hdavnconsulta" type="java.lang.Long" column="HDAVNCONSULTA">
+            <meta attribute="field-description" inherit="false">Codigo consulta</meta>
+            <generator class="assigned"/>
+        </id>
+        <property name="hdavndepart" type="java.lang.Integer" column="HDAVNDEPART" not-null="true" length="4"/>
+        <property name="hdavnmuni" type="java.lang.Integer" column="HDAVNMUNI" not-null="true" length="4"/>
+        <property name="hdavnumcom" type="java.lang.Integer" column="HDAVNUMCOM" length="2"/>
+        <property name="hdavccondesplaz" type="java.lang.String" column="HDAVCCONDESPLAZ" not-null="true" length="1"/>
+        <property name="hdavcvicconflic" type="java.lang.String" column="HDAVCVICCONFLIC" not-null="true" length="1"/>
+        <property name="hdavcestuact" type="java.lang.String" column="HDAVCESTUACT" not-null="true" length="1"/>
+        <property name="hdavcinstitucion" type="java.lang.String" column="HDAVCINSTITUCION" length="20"/>
+        <property name="hdavdfur" type="java.util.Date" column="HDAVDFUR" length="7"/>
+        <property name="hdavccondusua" type="java.lang.String" column="HDAVCCONDUSUA" length="2"/>
+        <property name="hdavcembact" type="java.lang.Integer" column="HDAVCEMBACT" length="2"/>
+        <property name="hdavdfecpart" type="java.util.Date" column="HDAVDFECPART" length="7"/>
+        <property name="hdavdfecreg" type="java.sql.Timestamp" column="HDAVDFECREG" not-null="true" length="7"/>
+        <property name="hdavcusuareg" type="java.lang.String" column="HDAVCUSUAREG" not-null="true" length="14"/>
+        <property name="version"  column="VERSION"/>
+        <property name="hdavnusuario" type="java.lang.Long" column="HDAVNUSUARIO" not-null="true" length="12"/>
+        <property name="hdacdiscapadid" type="java.lang.String" column="HDACDISCAPADID" length="2"/>
+        <property name="hdacdiscaselec" type="java.lang.String" column="HDACDISCASELEC" length="30"/>
+        <!-- Associations -->
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping>
+    <!-- 
+    Created by the Middlegen Hibernate plugin 2.2
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+    <class name="org.profamilia.hc.model.dto.Chautoriserv" table="CHAUTORISERV" schema="HISTORIA" lazy="false">
+        <id name="haulconsulta" type="java.lang.Long">
+            <column name="HAULCONSULTA" precision="12" scale="0"/>
+            <generator class="assigned"/>
+        </id>
+        <version name="version" column="VERSION"/>
+        <property name="hauctipsersoli" type="java.lang.String" column="HAUCTIPSERSOLI" length="4000"/>
+        <property name="haucprioriaten" type="java.lang.String" column="HAUCPRIORIATEN" length="10"/>
+        <property name="haucmansegugui" type="java.lang.String" column="HAUCMANSEGUGUI" length="4000"/>
+        <property name="haucjustifclin" type="java.lang.String" column="HAUCJUSTIFCLIN" length="4000"/>
+        <property name="haudfecharegis" type="java.util.Date" column="HAUDFECHAREGIS" length="7"/>
+        <property name="haucoperador" type="java.lang.String" column="HAUCOPERADOR" length="14"/>
+        <property name="haucorigeatenc" type="java.lang.String" column="HAUCORIGEATENC" length="20"/>
+        <property name="hauctipoconsul" type="java.lang.String" column="HAUCTIPOCONSUL" length="20"/>
+        <property name="haucdiagnprinc" type="java.lang.String" column="HAUCDIAGNPRINC" length="10"/>
+        <property name="haucdescrprinc" type="java.lang.String" column="HAUCDESCRPRINC" length="100"/>
+        <property name="haucdiagrelac1" type="java.lang.String" column="HAUCDIAGRELAC1" length="10"/>
+        <property name="haucdescrelac1" type="java.lang.String" column="HAUCDESCRELAC1" length="100"/>
+        <property name="haucdiagrelac2" type="java.lang.String" column="HAUCDIAGRELAC2" length="10"/>
+        <property name="haucdescrelac2" type="java.lang.String" column="HAUCDESCRELAC2" length="100"/>
+        <property name="hauctiposervi" column="HAUCTIPOSERVI" type="java.lang.String" length="1"/>
+        <property name="haunconsecutiv" column="HAUNCONSECUTIV" type="java.lang.Integer" length="22"/>
+        <property name="haucnombrservi" column="HAUCNOMBRSERVI" type="java.lang.String" length="30"/>
+        <property name="haunclinica" column="HAUNCLINICA" type="java.lang.Integer" length="3"/>
+        <property name="haucentidad" column="HAUCENTIDAD" type="java.lang.String" length="6"/>
+        <property name="hauecobersalud" column="HAUECOBERSALUD" type="java.lang.String" length="1"/>
+        <property name="haueubicapacie" column="HAUEUBICAPACIE" type="java.lang.String" length="1"/>
+        <property name="haucservhospi" column="HAUCSERVHOSPI" type="java.lang.String" length="30"/>
+        <property name="hauncamahospi" column="HAUNCAMAHOSPI" type="java.lang.Integer" length="6"/>
+        <property name="hauctelinform" column="HAUCTELINFORM" type="java.lang.String" length="15"/>
+        <property name="haucextinform" column="HAUCEXTINFORM" type="java.lang.String" length="6"/>
+        <property name="hauccelinform" column="HAUCCELINFORM" type="java.lang.String" length="15"/>
+        <property name="haunorigenate" column="HAUNORIGENATE" type="java.lang.Integer" length="2"/>
+    </class>
+</hibernate-mapping>
+

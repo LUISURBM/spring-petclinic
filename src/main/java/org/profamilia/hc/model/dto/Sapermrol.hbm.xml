@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <!-- 
+        Auto-generated mapping file from
+        the hibernate.org cfg2hbm engine
+-->
+    <class name="org.profamilia.hc.model.dto.Sapermrol" table="SAPERMROL" schema="ACTIVOS" lazy="false">
+        <composite-id name="id" class="org.profamilia.hc.model.dto.SapermrolId">
+            <key-property name="sprcrol" type="string">
+                <column name="SPRCROL" length="14"/>
+            </key-property>
+            <key-property name="sprcaplica" type="string">
+                <column name="SPRCAPLICA" length="20"/>
+            </key-property>
+            <key-property name="sprcprogra" type="string">
+                <column name="SPRCPROGRA" length="20"/>
+            </key-property>
+        </composite-id>
+        <version name="version" column="VERSION"/>
+        <property name="sprdfecdef" type="date">
+            <column name="SPRDFECDEF" length="7" not-null="true"/>
+        </property>
+        <property name="sprdfecfin" type="date">
+            <column name="SPRDFECFIN" length="7"/>
+        </property>
+        <property name="sprcetapa" type="string">
+            <column name="SPRCETAPA" length="2" not-null="false"/>
+        </property>
+          <many-to-one name="saprograma" class="org.profamilia.hc.model.dto.Saprograma" update="false" insert="false">
+            <column name="SPRCPROGRA"/>
+        </many-to-one>         
+    </class>
+</hibernate-mapping>

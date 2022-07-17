@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping>
+    <!-- 
+    Created by the Middlegen Hibernate plugin 2.2
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+    <class name="org.profamilia.hc.model.dto.Chserxtipo" table="CHSERXTIPO" schema="HISTORIA"
+           lazy="false">
+        <composite-id name="comp_id"
+                      class="org.profamilia.hc.model.dto.ChserxtipoPK">
+            <key-property name="hstncoditipo" column="HSTNCODITIPO"
+                          type="java.lang.Integer" length="9"/>
+            <key-property name="hstccodiserv" column="HSTCCODISERV"
+                          type="java.lang.String" length="12"/>
+        </composite-id>
+         <version name="version" column="VERSION"/> 
+        <property name="hstcestado" type="java.lang.String" column="HSTCESTADO"
+                  not-null="true" length="2"/>
+        <property name="hstcoperador" type="java.lang.String"
+                  column="HSTCOPERADOR" not-null="true" length="14"/>
+        <property name="hstdfechregi" type="java.util.Date"
+                  column="HSTDFECHREGI" not-null="true" length="7"/>
+
+        <!-- Associations -->
+        <!-- derived association(s) for compound key -->
+        <!-- end of derived association(s) -->
+    </class>
+</hibernate-mapping>

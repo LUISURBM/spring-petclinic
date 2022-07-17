@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping>
+    <!-- 
+    Created by the Middlegen Hibernate plugin 2.2
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+    <class name="org.profamilia.hc.model.dto.Chantecemama" table="CHANTECEMAMA"  schema="HISTORIA"
+           lazy="false">
+        <composite-id name="id"
+                      class="org.profamilia.hc.model.dto.ChantecemamaPK">
+            <key-property name="hamlconsulta" column="HAMLCONSULTA"
+                          type="java.lang.Long" length="12"/>
+            <key-property name="hamctiposervi" column="HAMCTIPOSERVI"
+                          type="java.lang.String" length="1"/>
+        </composite-id>
+          <version name="version" column="VERSION"/> 
+        <property name="hamevalorant" type="java.lang.String"
+                  column="HAMEVALORANT" length="1"/>
+        <property name="hamdfecvalant" type="java.util.Date"
+                  column="HAMDFECVALANT" length="7"/>
+        <property name="hamcresultado" type="java.lang.String"
+                  column="HAMCRESULTADO" length="4000"/>
+        <property name="hamnlactacum" type="java.lang.Integer"
+                  column="HAMNLACTACUM" length="2"/>
+        <property name="hamcoperador" type="java.lang.String"
+                  column="HAMCOPERADOR" length="14"/>
+        <property name="hamdfecregistr" type="java.util.Date"
+                  column="HAMDFECREGISTR" length="7"/>
+        <property name="hamcotrometod" type="java.lang.String"
+                  column="HAMCOTROMETOD" length="400"/>
+        <property name="hamcmetodo" type="java.lang.String" 
+                  column="HAMCMETODO" length="12"/>
+    </class>
+</hibernate-mapping>

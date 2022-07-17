@@ -1,0 +1,56 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+<!-- 
+        Auto-generated mapping file from
+        the hibernate.org cfg2hbm engine
+-->
+    <class name="org.profamilia.hc.model.dto.Ccdetfacve" table="CCDETFACVE" schema="CLINICO">
+        <composite-id name="id" class="org.profamilia.hc.model.dto.CcdetfacveId">
+            <key-property name="cdvnconsec" type="integer">
+                <column name="CDVNCONSEC" precision="10" scale="0" />
+            </key-property>
+            <key-property name="cdvncondet" type="integer">
+                <column name="CDVNCONDET" precision="4" scale="0" />
+            </key-property>
+        </composite-id>
+        <version name="version" column="VERSION"/>
+        <property name="cdvcservic" type="string">
+            <column name="CDVCSERVIC" length="12" not-null="true" />
+        </property>
+        <property name="cdvavalser" type="big_decimal">
+            <column name="CDVAVALSER" precision="15" not-null="true" />
+        </property>
+        <property name="cdvaivaser" type="big_decimal">
+            <column name="CDVAIVASER" precision="15" not-null="true" />
+        </property>
+        <property name="cdvadescto" type="big_decimal">
+            <column name="CDVADESCTO" precision="15" not-null="true" />
+        </property>
+        <property name="cdvncantid" type="integer">
+            <column name="CDVNCANTID" precision="9" scale="0" not-null="true" />
+        </property>
+        <property name="cdvavalent" type="big_decimal">
+            <column name="CDVAVALENT" precision="15" not-null="true" />
+        </property>
+        <property name="cdvavaltot" type="big_decimal">
+            <column name="CDVAVALTOT" precision="15" not-null="true" />
+        </property>
+        <property name="cdvccodcup" type="string">
+            <column name="CDVCCODCUP" length="9" />
+        </property>
+        <property name="cdvcpaquet" type="string">
+            <column name="CDVCPAQUET" length="12" not-null="true" />
+        </property>
+        <property name="cdvcswpaqu" type="string">
+            <column name="CDVCSWPAQU" length="1" not-null="true" />
+        </property>
+        <property name="cdvavaldon" type="big_decimal">
+            <column name="CDVAVALDON" precision="15" not-null="true" />
+        </property>
+        <property name="cdvcnumlot" type="string">
+            <column name="CDVCNUMLOT" length="15" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

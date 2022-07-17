@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+    
+<hibernate-mapping>
+<!-- 
+    Created by the Middlegen Hibernate plugin 2.2
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+
+<class name="org.profamilia.hc.model.dto.Chregicomp" table="CHREGICOMP" lazy="false" schema="HISTORIA">
+    <id name="hrclnumero" type="java.lang.Long" column="HRCLNUMERO" >
+        <generator class="sequence">
+            <param name="sequence">HISTORIA.CHREGICOMP_SEQ</param>
+        </generator>
+        <!--
+        <meta attribute="field-description" inherit="false">
+           CHUSUARIO -> HUSLNUMERO
+        </meta>
+        <generator class="assigned" />
+        -->
+    </id>
+    <property name="hrclnumusu" type="java.lang.Long" column="HRCLNUMUSU" not-null="true" length="12" />
+    <property name="hrccregistro" type="java.lang.String" column="HRCCREGISTRO"  length="4000" />
+    <property name="hrccusureg" type="java.lang.String" column="HRCCUSUREG" not-null="true" length="14" />
+    <property name="hrcdfecreg" type="java.util.Date" column="HRCDFECREG" not-null="true" length="7" />
+    <property name="hrccusumod" type="java.lang.String" column="HRCCUSUMOD" not-null="true" length="14" />
+    <property name="hrcdfecmod" type="java.util.Date" column="HRCDFECMOD" not-null="true" length="7" />
+    <property name="hrcnclinic" type="java.lang.Integer" column="HRCNCLINIC" length="4" />
+    <property name="version" type="java.lang.Long" column="VERSION" length="22" />
+    <!-- Associations -->
+
+</class>
+</hibernate-mapping>

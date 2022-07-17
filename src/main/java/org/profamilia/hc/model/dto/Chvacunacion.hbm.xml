@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping>
+    <!-- 
+    Created by the Middlegen Hibernate plugin 2.2
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+    <class name="org.profamilia.hc.model.dto.Chvacunacion" table="CHVACUNACION" lazy="false" schema="HISTORIA">
+        <composite-id name="id" class="org.profamilia.hc.model.dto.ChvacunacionPK">
+            <key-property name="hvalconsulta" column="HVALCONSULTA" type="java.lang.Long" length="12"/>
+            <key-property name="hvactiposervi" column="HVACTIPOSERVI" type="java.lang.String" length="1"/>
+        </composite-id>
+        <version name="version" column="VERSION"/> 
+        <property name="hvacnumervacun" type="java.lang.Integer" column="HVACNUMERVACUN" not-null="true" length="1"/>
+        <property name="hvaccodigservi" type="java.lang.String" column="HVACCODIGSERVI" not-null="true" length="12"/>
+        <property name="hvacnumerlote" type="java.lang.String" column="HVACNUMERLOTE" length="30"/>
+        <property name="hvacviaadmin" type="java.lang.String" column="HVACVIAADMIN" length="2"/>
+        <property name="hvacpresereacc" type="java.lang.String" column="HVACPRESEREACC" length="1"/>
+        <property name="hvaccualreacc" type="java.lang.String" column="HVACCUALREACC" length="600"/>
+        <property name="hvacobservacio" type="java.lang.String" column="HVACOBSERVACIO" length="2000"/>
+        <property name="hvacpresecompl" type="java.lang.String" column="HVACPRESECOMPL" length="1"/>
+        <property name="hvaccualcompl" type="java.lang.String" column="HVACCUALCOMPL" length="600"/>
+        <property name="hvacsitioaplic" type="java.lang.String" column="HVACSITIOAPLIC" length="2"/>
+        <property name="hvadfechavenci" type="java.util.Date" column="HVADFECHAVENCI" not-null="true" length="7"/>
+        <property name="hvadfecregistr" type="java.util.Date" column="HVADFECREGISTR" not-null="true" length="7"/>
+        <property name="hvacoperador" type="java.lang.String" column="HVACOPERADOR" not-null="true" length="14"/>
+        <property name="hvacobservac" type="java.lang.String" column="HVACOBSERVAC" length="2000"/>
+        
+        <!-- Associations -->
+        <!-- derived association(s) for compound key -->
+        <!-- end of derived association(s) -->
+    </class>
+</hibernate-mapping>

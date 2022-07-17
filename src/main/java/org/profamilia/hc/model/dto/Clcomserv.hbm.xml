@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping>
+    <!-- 
+    Created by the Middlegen Hibernate plugin 2.2
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+    <class name="org.profamilia.hc.model.dto.Clcomserv" table="CLCOMSERV" lazy="false" schema="CLINICO">
+        <id name="numero" type="java.lang.Integer" column="NUMERO" >
+             <generator class="assigned"/>
+        </id>
+         <version name="version" column="VERSION"/>
+        <property name="codigoexis" type="java.lang.String" column="CODIGOEXIS" length="20"/>
+        <property name="codigonuevo" type="java.lang.String" column="CODIGONUEVO" length="20"/>
+        <property name="subcateg" type="java.lang.Integer" column="SUBCATEG" length="4"/>
+        
+        
+        
+    
+        <!-- Associations -->
+    </class>
+</hibernate-mapping>

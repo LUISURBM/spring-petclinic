@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+<!-- 
+        Auto-generated mapping file from
+        the hibernate.org cfg2hbm engine
+-->
+    <class name="org.profamilia.hc.model.dto.Cpsalaespe" table="CPSALAESPE" schema="CLINICO">
+        <composite-id name="id" class="org.profamilia.hc.model.dto.CpsalaespeId">
+            <key-property name="cslnclinic" type="integer">
+                <column name="CSLNCLINIC" precision="4" scale="0" />
+            </key-property>
+            <key-property name="cslnnumero" type="integer">
+                <column name="CSLNNUMERO" precision="4" scale="0" />
+            </key-property>
+        </composite-id>
+        <version name="version" column="VERSION"/>
+        <property name="cslcdescri" type="string">
+            <column name="CSLCDESCRI" length="30" not-null="true" />
+        </property>
+        <property name="cslcusuar" type="string">
+            <column name="CSLCUSUAR" length="14" not-null="true" />
+        </property>
+        <property name="csldfecreg" type="date">
+            <column name="CSLDFECREG" length="7" not-null="true" />
+        </property>
+        <property name="cslnprogra" type="integer">
+            <column name="CSLNPROGRA" precision="4" scale="0" not-null="true" />
+        </property>
+        <property name="cslcgenero" type="string">
+            <column name="CSLCGENERO" length="1" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

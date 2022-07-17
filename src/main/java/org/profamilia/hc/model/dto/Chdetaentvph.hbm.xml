@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping>
+    <!-- 
+    Created by the Middlegen Hibernate plugin 2.2
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+    <class name="org.profamilia.hc.model.dto.Chdetaentvph" table="CHDETAENTVPH" schema="HISTORIA" lazy="false">
+        <composite-id name="comp_id" class="org.profamilia.hc.model.dto.ChdetaentvphPK">
+            <key-property name="hdenvph" column="HDENVPH" type="java.lang.Long" length="22"/>
+            <key-property name="hdelidentregavph" column="HDELIDENTREGAVPH" type="java.lang.Long" length="12"/>
+        </composite-id>
+        <property name="hdedfechaentreg" type="java.util.Date" column="HDEDFECHAENTREG" length="7"/>
+        <property name="hdedfechamod" type="java.util.Date" column="HDEDFECHAMOD" not-null="true" length="7"/>
+        <property name="hdenclinica" type="java.lang.Integer" column="HDENCLINICA" not-null="true" length="4"/>
+        <property name="hdecoperador" type="java.lang.String" column="HDECOPERADOR" not-null="true" length="14"/>
+        <property name="hdecresultado" type="java.lang.String" column="HDECRESULTADO" length="2"/>
+        <property name="hdecetapa" type="java.lang.String" column="HDECETAPA" not-null="true" length="3"/>
+        <!-- Associations -->
+        <!-- derived association(s) for compound key -->
+        <!-- bi-directional many-to-one association to Chentregavph -->
+        <many-to-one name="chentregavph" class="org.profamilia.hc.model.dto.Chentregavph" update="false" insert="false">
+            <column name="HDELIDENTREGAVPH"/>
+        </many-to-one>
+        <!-- end of derived association(s) -->
+    </class>
+</hibernate-mapping>

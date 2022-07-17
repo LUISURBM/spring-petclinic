@@ -1,0 +1,63 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping>
+    <!-- 
+    Created by the Middlegen Hibernate plugin 2.2
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+    <class name="org.profamilia.hc.model.dto.Chviolencia" table="CHVIOLENCIA" schema="HISTORIA" lazy="false">
+        <composite-id name="id" class="org.profamilia.hc.model.dto.ChviolenciaPK">
+            <key-property name="hvilconsulta" column="HVILCONSULTA" type="java.lang.Long" length="12"/>
+            <key-property name="hvictiposervi" column="HVICTIPOSERVI" type="java.lang.String" length="1"/>
+        </composite-id>
+        <version name="version" column="VERSION"/>
+        <property name="hviesufreviol" type="java.lang.String" column="HVIESUFREVIOL" length="1" not-null="true"/>
+        <property name="hvieviofisica" type="java.lang.String" column="HVIEVIOFISICA" length="1"/>
+        <property name="hvicfisiquien" type="java.lang.String" column="HVICFISIQUIEN" length="20"/>
+        <property name="hvievioeconom" type="java.lang.String" column="HVIEVIOECONOM" length="1"/>
+        <property name="hviceconquien" type="java.lang.String" column="HVICECONQUIEN" length="20"/>
+        <property name="hvieviocoerci" type="java.lang.String" column="HVIEVIOCOERCI" length="1"/>
+        <property name="hviccoerquien" type="java.lang.String" column="HVICCOERQUIEN" length="20"/>
+        <property name="hvieviopsicol" type="java.lang.String" column="HVIEVIOPSICOL" length="1"/>
+        <property name="hvicpsicquien" type="java.lang.String" column="HVICPSICQUIEN" length="20"/>
+        <property name="hvieviosexual" type="java.lang.String" column="HVIEVIOSEXUAL" length="1"/>
+        <property name="hvicsexuquien" type="java.lang.String" column="HVICSEXUQUIEN" length="20"/>        
+        <property name="hvieriesgo" type="java.lang.String" column="HVIERIESGO" length="1"/>
+        <property name="hvicrsgxquien" type="java.lang.String" column="HVICRSGXQUIEN" length="30"/>
+        <property name="hviedeseaseso" type="java.lang.String" column="HVIEDESEASESO" length="1"/>
+        <property name="hvicremitidoa" type="java.lang.String" column="HVICREMITIDOA" length="40"/> 
+        <property name="hviehabla" type="java.lang.String" column="HVIEHABLA" length="1"/>
+        <property name="hvitobserva" type="java.lang.String" column="HVITOBSERVA" length="4000"/>        
+        <property name="hvicoperador" type="java.lang.String" column="HVICOPERADOR" length="14"/>
+        <property name="hvidfecregistr" type="java.util.Date" column="HVIDFECREGISTR" length="7"/>
+        <property name="hvilcualremisi" type="java.lang.String" column="HVILCUALREMISI" length="100"/>
+        
+        <property name="hvintiemecon" type="java.lang.Integer" column="HVINTIEMECON"  length="2"/>
+        <property name="hvintiemsexu" type="java.lang.Integer" column="HVINTIEMSEXU"  length="2"/>
+        <property name="hvintiempsic" type="java.lang.Integer" column="HVINTIEMPSIC"  length="2"/>
+        <property name="hvintiemfisi" type="java.lang.Integer" column="HVINTIEMFISI"  length="2"/>
+        <property name="hvintiemcoer" type="java.lang.Integer" column="HVINTIEMCOER"  length="2"/>
+        
+        
+        <property name="hvicamenpare" type="java.lang.String" column="HVICAMENPARE" length="1"/>
+        <property name="hvicintedano" type="java.lang.String" column="HVICINTEDANO" length="1"/>
+        <property name="hvicagrefami" type="java.lang.String" column="HVICAGREFAMI" length="1"/>
+        <property name="hvicagrecasa" type="java.lang.String" column="HVICAGRECASA" length="1"/>
+        <property name="hvicfamicono" type="java.lang.String" column="HVICFAMICONO" length="1"/>
+        
+         <property name="hvicremiinte" type="java.lang.String" column="HVICREMIINTE" length="2"/>
+         <property name="hvicremiexte" type="java.lang.String" column="HVICREMIEXTE" length="2"/>
+         <property name="hvictienrein" type="java.lang.String" column="HVICTIENREIN" length="1"/>
+         <property name="hvictienreex" type="java.lang.String" column="HVICTIENREEX" length="1"/>
+         
+         <property name="hvichumeinam" type="java.lang.String" column="HVICHUMEINAM" length="1"/>
+         <property name="hvicgobopalaul" type="java.lang.String" column="HVICGOBOPALAUL" length="1"/>
+         <property name="hvicgobopalage" type="java.lang.String" column="HVICGOBOPALAGE" length="1"/>
+         <property name="hvicforrelsex" type="java.lang.String" column="HVICFORRELSEX" length="1"/>
+        
+    </class>
+</hibernate-mapping>

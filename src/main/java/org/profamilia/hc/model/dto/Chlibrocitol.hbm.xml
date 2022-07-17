@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping>
+    <!-- 
+    Created by the Middlegen Hibernate plugin 2.2
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+    <class name="org.profamilia.hc.model.dto.Chlibrocitol" table="CHLIBROCITOL" schema="HISTORIA"
+           lazy="false">
+        <id name="hlcnconsec" type="java.lang.Integer" column="HLCNCONSEC">
+            <generator class="assigned"/>
+        </id>
+         <version name="version" column="VERSION"/>
+        <property name="hlccprimernomb" type="java.lang.String" column="HLCCPRIMERNOMB" not-null="true" length="20"/>
+        <property name="hlccsegundnomb" type="java.lang.String" column="HLCCSEGUNDNOMB" length="20"/>
+        <property name="hlccprimerapel" type="java.lang.String" column="HLCCPRIMERAPEL" not-null="true" length="20"/>
+        <property name="hlccsegundapel" type="java.lang.String" column="HLCCSEGUNDAPEL" length="20"/>
+        <property name="hlcetipoiden" type="java.lang.String" column="HLCETIPOIDEN" not-null="true" length="2"/>
+        <property name="hlcanumeiden" type="java.lang.Long" column="HLCANUMEIDEN" not-null="true" length="17"/>
+        <property name="hlccnombrerecl" type="java.lang.String" column="HLCCNOMBRERECL" length="60"/>
+        <property name="hlccoperador" type="java.lang.String" column="HLCCOPERADOR" length="14"/>
+        <property name="hlcdfecregistr" type="java.util.Date"  column="HLCDFECREGISTR" length="7"/>
+        <property name="hlccparentesco" type="java.lang.String" column="HLCCPARENTESCO" length="20"/>
+        <property name="hlccconducta" type="java.lang.String" column="HLCCCONDUCTA" length="4"/>
+        
+        <!-- Associations -->
+    </class>
+</hibernate-mapping>

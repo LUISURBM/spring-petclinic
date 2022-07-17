@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping>
+    <!-- 
+    Created by the Middlegen Hibernate plugin 2.2
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+    <class name="org.profamilia.hc.model.dto.Chpamecindic" table="CHPAMECINDIC"  schema="HISTORIA"  lazy="false">
+        <composite-id name="id" class="org.profamilia.hc.model.dto.ChpamecindicPK">
+            <key-property name="hpincodigo" column="HPINCODIGO" type="java.lang.Integer" length="4"/>
+            <key-property name="hpincodigtema" column="HPINCODIGTEMA" type="java.lang.Integer" length="4"/>
+        </composite-id>
+         <version name="version" column="VERSION"/>
+        <property name="hpicdescripcio" type="java.lang.String" column="HPICDESCRIPCIO" not-null="true" length="200"/>
+        <property name="hpicestado" type="java.lang.String" column="HPICESTADO" length="2"/>
+        <property name="hpidfecregistr" type="java.util.Date" column="HPIDFECREGISTR" length="7"/>
+        <property name="hpicoperador" type="java.lang.String" column="HPICOPERADOR" length="14"/>
+       </class>
+</hibernate-mapping>

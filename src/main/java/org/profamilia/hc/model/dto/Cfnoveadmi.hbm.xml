@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping>
+    <!-- 
+    Created by the Middlegen Hibernate plugin 2.2
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+    <class name="org.profamilia.hc.model.dto.Cfnoveadmi" table="CFNOVEADMI" lazy="false" schema="CLINICO">
+        <id name="cnnconsec" type="java.lang.Long" column="CNNCONSEC">
+            <generator class="sequence">
+                <param name="sequence">CLINICO.CFNOVEADMI_SEQ</param>
+            </generator>
+        </id>
+         <version name="version" column="VERSION" type="java.lang.Long"/>
+        <property name="cnnclinic" type="java.lang.Long" column="CNNCLINIC" not-null="true" length="4"/>
+        <property name="cndfecreg" type="java.util.Date" column="CNDFECREG" not-null="true" length="11"/>
+        <property name="cncusuari" type="java.lang.String" column="CNCUSUARI" not-null="true" length="14"/>
+        <property name="cnnsubtot" type="java.lang.Double" column="CNNSUBTOT" not-null="true" length="17"/>
+        <property name="cnniva" type="java.lang.Double" column="CNNIVA" length="17"/>
+        <property name="cnntotal" type="java.lang.Double" column="CNNTOTAL" not-null="true" length="17"/>
+        <property name="cnndescto" type="java.lang.Double" column="CNNDESCTO" length="17"/>
+        <property name="cnnestado" type="java.lang.String" column="CNNESTADO" not-null="true" length="2"/>
+        <property name="cnnrecaudo" type="java.lang.Double" column="CNNRECAUDO" length="22"/>
+        <property name="cncplaca" type="java.lang.String" column="CNCPLACA" length="15"/>
+        <property name="cnncambio" type="java.lang.Double" column="CNNCAMBIO" length="17"/>
+        <property name="cncnturno" type="java.lang.Double" column="CNCNTURNO" length="22"/>
+        <property name="cnnvalent" type="java.lang.Double" column="CNNVALENT" not-null="true" length="17"/>
+        <property name="cnnvalrec" type="java.lang.Double" column="CNNVALREC" not-null="true" length="17"/>
+        <property name="cncexecopago" type="java.lang.String" column="CNCEXECOPAGO" length="1"/>
+        <property name="cnnadmision" type="java.lang.Long" column="CNNADMISION" not-null="true" length="10"/>
+        <property name="cnnvalprevio" type="java.lang.Double" column="CNNVALPREVIO" not-null="true" length="17"/>
+        <!-- Associations -->
+    </class>
+</hibernate-mapping>

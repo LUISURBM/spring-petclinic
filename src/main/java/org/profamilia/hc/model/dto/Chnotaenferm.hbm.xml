@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping>
+    <!-- 
+    Created by the Middlegen Hibernate plugin 2.2
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+    <class name="org.profamilia.hc.model.dto.Chnotaenferm" table="CHNOTAENFERM" schema="HISTORIA" lazy="false">
+        <composite-id name="id" class="org.profamilia.hc.model.dto.ChnotaenfermPK">
+            <key-property name="hnelnumero" column="HNELNUMERO" type="java.lang.Long" length="12"/>
+            <key-property name="hnelconsecutiv" column="HNELCONSECUTIV" type="java.lang.Integer" length="12"/>
+            <key-property name="hnectiposervi" column="HNECTIPOSERVI" type="java.lang.String" length="1"/>
+        </composite-id>
+        <version name="version" column="VERSION"/>
+        <property name="hnelusuario" type="java.lang.Long" column="HNELUSUARIO" length="12"/>
+        <property name="hnecnotaenferm" type="java.lang.String" column="HNECNOTAENFERM" length="6000"/>
+        <property name="hnenclinica" type="java.lang.Integer" column="HNENCLINICA" length="4"/>
+        <property name="hnecestado" type="java.lang.String" column="HNECESTADO" length="2"/>
+        <property name="hnecetapa" type="java.lang.String" column="HNECETAPA" length="2"/>
+        <property name="hnedfecregistr" type="java.util.Date" column="HNEDFECREGISTR" length="7"/>
+        <property name="hnecoperador" type="java.lang.String" column="HNECOPERADOR" length="14"/>
+        <property name="hnencama" type="java.lang.Integer" column="HNENCAMA" length="4"/>
+        <property name="hnedfechanotac" type="java.util.Date" column="HNEDFECHANOTAC" length="7"/>
+        <property name="hnectomasigno" type="java.lang.String" column="HNECTOMASIGNO" length="1"/>
+        <property name="hnecestadocon" type="java.lang.String" column="HNECESTADOCON" length="1"/>
+        <property name="hnecaldrobrom" type="java.lang.String" column="HNECALDROBROM" length="1"/>
+        <property name="hnecrefiedolor" type="java.lang.String" column="HNECREFIEDOLOR" length="1"/>
+        <property name="hnenescaladolo" type="java.lang.Integer" column="HNENESCALADOLO" length="4"/>
+        <property name="hnecdudointen" type="java.lang.String" column="HNECDUDOINTEN" length="2"/>
+        <property name="hnenduradolor" type="java.lang.Integer" column="HNENDURADOLOR" length="4"/>
+    </class>
+</hibernate-mapping>

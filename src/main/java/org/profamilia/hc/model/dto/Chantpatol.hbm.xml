@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping>
+    <!-- 
+    Created by the Middlegen Hibernate plugin 2.2
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+    <class name="org.profamilia.hc.model.dto.Chantpatol" table="CHANTPATOL"  schema="HISTORIA" lazy="false">
+        <id name="hagnconsulta" type="java.lang.Long" column="HAGNCONSULTA">
+            <meta attribute="field-description" inherit="false">Consulta asociada</meta>
+            <generator class="assigned"/>
+        </id>
+        <property name="hagcrefiere" type="java.lang.String" column="HAGCREFIERE" not-null="true" length="1"/>
+        <property name="hagcdescri" type="java.lang.String" column="HAGCDESCRI" length="4000"/>
+        <property name="hagdfecreg" type="java.util.Date" column="HAGDFECREG" not-null="true" length="7"/>
+        <property name="hagcusuareg" type="java.lang.String" column="HAGCUSUAREG" not-null="true" length="14"/>
+        <property name="version" type="java.math.BigDecimal" column="VERSION" length="22"/>
+        <!-- Associations -->
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping>
+    <!-- 
+    Created by the Middlegen Hibernate plugin 2.2
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+    <class name="org.profamilia.hc.model.dto.Chvademecum" table="CHVADEMECUM" lazy="false" schema="HISTORIA">
+        <id name="hvdnconsecutiv" type="java.lang.Integer" column="HVDNCONSECUTIV">
+            <generator class="assigned"/>
+        </id>
+         <version name="version" column="VERSION"/> 
+        <property name="hvdccodigatc" type="java.lang.String" column="HVDCCODIGATC" not-null="true" length="12"/>
+        <property name="hvdcprincactiv" type="java.lang.String" column="HVDCPRINCACTIV" not-null="true" length="100"/>
+        <property name="hvdcconcentrac" type="java.lang.String" column="HVDCCONCENTRAC" not-null="true" length="50"/>
+        <property name="hvdcformafarma" type="java.lang.String" column="HVDCFORMAFARMA" not-null="true" length="100"/>
+        <property name="hvdcaclaracion" type="java.lang.String" column="HVDCACLARACION" length="500"/>
+        <property name="hvdcmedicpos" type="java.lang.String" column="HVDCMEDICPOS" length="1"/>
+        <property name="hvdccomercial" type="java.lang.String" column="HVDCCOMERCIAL" length="60"/>
+        <property name="hvdccodigcomer" type="java.lang.String" column="HVDCCODIGCOMER" length="7"/>
+        <property name="hvdcindicacion" type="java.lang.String" column="HVDCINDICACION" length="4000"/>
+        <property name="hvdccontrindic" type="java.lang.String" column="HVDCCONTRINDIC" length="4000"/>
+        <property name="hvdcunidad" type="java.lang.String" column="HVDCUNIDAD" length="4"/>
+        <property name="hvdcanestesia" type="java.lang.String" column="HVDCANESTESIA" length="1"/>
+        <property name="hvdcoperador" type="java.lang.String" column="HVDCOPERADOR" not-null="true" length="14"/>
+        <property name="hvddfecharegis" type="java.util.Date" column="HVDDFECHAREGIS" not-null="true" length="7"/>
+        <property name="hvdcoperamodif" type="java.lang.String" column="HVDCOPERAMODIF" length="14"/>
+        <property name="hvddfechamodif" type="java.util.Date" column="HVDDFECHAMODIF" length="7"/>
+        <property name="hvdcviaaerea" type="java.lang.String" column="HVDCVIAAEREA" length="2"/>
+        <property name="hvdcinicianest" type="java.lang.String" column="HVDCINICIANEST" length="1"/>
+        
+         <property name="hvdcviaadmini" type="java.lang.String" column="HVDCVIAADMINI" length="2"/>
+         <property name="hvdcformadmi" type="java.lang.String" column="HVDCFORMADMI" length="2"/>
+        <!-- Associations -->
+    </class>
+</hibernate-mapping>

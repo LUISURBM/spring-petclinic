@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping>
+    <!-- 
+    Created by the Middlegen Hibernate plugin 2.2
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+    <class name="org.profamilia.hc.model.dto.Chregisabort" table="CHREGISABORT" schema="HISTORIA" lazy="false">
+        <id name="hralnumero" type="java.lang.Long" column="HRALNUMERO">
+              <generator class="sequence">
+                <param name="sequence">HISTORIA.CHREGISABORT_SEQ</param>
+            </generator>
+        </id>
+        <property name="hralregiusua" type="long" column="HRALREGIUSUA" not-null="true" length="12"/>
+        <property name="hradfechregi" type="java.util.Date" column="HRADFECHREGI" not-null="true" length="7"/>
+        <property name="hracusuaregi" type="java.lang.String" column="HRACUSUAREGI" not-null="true" length="20"/>
+        <property name="hracobservac" type="java.lang.String" column="HRACOBSERVAC" length="4000"/>
+        <property name="hranclinica" type="java.lang.Integer" column="HRANCLINICA" length="4"/>
+        <property name="hracetapa" type="java.lang.String" column="HRACETAPA" length="2"/>
+        <property name="hraceps" type="java.lang.String" column="HRACEPS" length="6"/>
+        <property name="hradultmen" type="java.util.Date" column="HRADULTMEN" length="7"/>
+        <property name="hransememb" type="java.lang.Double" column="HRANSEMEMB" length="5"/>
+        <property name="hraccontprog" type="java.lang.String" column="HRACCONTPROG" not-null="true" length="1"/>
+        <property name="hracregistro" type="java.lang.String" column="HRACREGISTRO" not-null="true" length="1"/>
+        <property name="hraconsumed" type="java.lang.String" column="HRACONSUMED" not-null="true" length="1"/>
+        <property name="hracpsicolo" type="java.lang.String" column="HRACPSICOLO" not-null="true" length="1"/>
+        <property name="hracseguim" type="java.lang.String" column="HRACSEGUIM" not-null="true" length="1"/>
+        <property name="hracproced" type="java.lang.String" column="HRACPROCED" not-null="true" length="1"/>
+        <property name="hracadmin" type="java.lang.String" column="HRACADMIN" not-null="true" length="1"/>
+        <property name="hracfarma" type="java.lang.String" column="HRACFARMA" length="50"/>
+        <property name="hraccodcups" type="java.lang.String" column="HRACCODCUPS" length="20"/>
+        <property name="hracmedcons" type="java.lang.String" column="HRACMEDCONS" length="50"/>
+        <property name="hradfecdismed" type="java.util.Date" column="HRADFECDISMED" length="7"/>
+        <property name="hradfecusumed" type="java.util.Date" column="HRADFECUSUMED" length="7"/>
+        <property name="hradfectommed" type="java.util.Date" column="HRADFECTOMMED" length="7"/>
+        <property name="hraccontrol" type="java.lang.String" column="HRACCONTROL"  length="1"/>
+        <!-- Associations -->
+    </class>
+</hibernate-mapping>

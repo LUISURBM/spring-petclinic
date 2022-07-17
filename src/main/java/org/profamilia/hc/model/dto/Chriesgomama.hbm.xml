@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping>
+    <!-- 
+    Created by the Middlegen Hibernate plugin 2.2
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+    <class name="org.profamilia.hc.model.dto.Chriesgomama" table="CHRIESGOMAMA"  schema="HISTORIA"
+           lazy="false">
+        <composite-id name="id"
+                      class="org.profamilia.hc.model.dto.ChriesgomamaPK">
+            <key-property name="hrmlconsulta" column="HRMLCONSULTA"
+                          type="java.lang.Long" length="12"/>
+            <key-property name="hrmctiposervi" column="HRMCTIPOSERVI"
+                          type="java.lang.String" length="1"/>
+        </composite-id>
+          <version name="version" column="VERSION"/> 
+        <property name="hrmemenarantes" type="java.lang.String"
+                  column="HRMEMENARANTES" length="1"/>
+        <property name="hrmemenopadesp" type="java.lang.String"
+                  column="HRMEMENOPADESP" length="1"/>
+        <property name="hrmeembaradesp" type="java.lang.String"
+                  column="HRMEEMBARADESP" length="1"/>
+        <property name="hrmeterahormon" type="java.lang.String"
+                  column="HRMETERAHORMON" length="1"/>
+        <property name="hrmeantecancer" type="java.lang.String"
+                  column="HRMEANTECANCER" length="1"/>
+        <property name="hrmelactancia" type="java.lang.String"
+                  column="HRMELACTANCIA" length="1"/>
+        <property name="hrmnantebiopma" type="java.lang.Integer"
+                  column="HRMNANTEBIOPMA" length="2"/>
+        <property name="hrmefamicancer" type="java.lang.String"
+                  column="HRMEFAMICANCER" length="1"/>
+        <property name="hrmcoperador" type="java.lang.String"
+                  column="HRMCOPERADOR" length="14"/>
+        <property name="hrmdfecregistr" type="java.util.Date"
+                  column="HRMDFECREGISTR" length="7"/>
+        <property name="hrmnanosterap" type="java.lang.Integer"
+                  column="HRMNANOSTERAP" length="3"/>
+        <property name="hrmccancerpers" type="java.lang.String"
+                  column="HRMCCANCERPERS" length="4000"/>
+        <property name="hrmccancerfami" type="java.lang.String"
+                  column="HRMCCANCERFAMI" length="4000"/>
+        <property name="hrmnlactacum" type="java.lang.Integer"
+                  column="HRMNLACTACUM" length="2"/>
+    </class>
+</hibernate-mapping>

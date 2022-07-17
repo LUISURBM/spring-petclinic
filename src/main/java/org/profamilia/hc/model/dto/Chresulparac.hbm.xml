@@ -1,0 +1,62 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping>
+    <!-- 
+    Created by the Middlegen Hibernate plugin 2.2
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+    <class name="org.profamilia.hc.model.dto.Chresulparac" table="CHRESULPARAC"  schema="HISTORIA"
+           lazy="false">
+        <composite-id name="id"
+                      class="org.profamilia.hc.model.dto.ChresulparacPK">
+            <key-property name="hrplconsulta" column="HRPLCONSULTA"
+                          type="java.lang.Long" length="12"/>
+            <key-property name="hrpctiposervi" column="HRPCTIPOSERVI"
+                          type="java.lang.String" length="1"/>
+        </composite-id>
+         <version name="version" column="VERSION"/> 
+        <property name="hrpnhemoglobin" type="java.math.BigDecimal"
+                  column="HRPNHEMOGLOBIN" length="3"/>
+        <property name="hrpnhematocrit" type="java.math.BigDecimal"
+                  column="HRPNHEMATOCRIT" length="3"/>
+        <property name="hrpnleucocitos" type="java.lang.Integer"
+                  column="HRPNLEUCOCITOS" length="5"/>
+        <property name="hrpnpt" type="java.math.BigDecimal" column="HRPNPT"
+                  length="3"/>
+        <property name="hrpninr" type="java.math.BigDecimal" column="HRPNINR"
+                  length="2"/>
+        <property name="hrpnptt" type="java.math.BigDecimal" column="HRPNPTT"
+                  length="3"/>
+        <property name="hrpnplaquetas" type="java.lang.Integer"
+                  column="HRPNPLAQUETAS" length="6"/>
+        <property name="hrpcparciorina" type="java.lang.String"
+                  column="HRPCPARCIORINA" length="200"/>
+        <property name="hrpnglicemipre" type="java.math.BigDecimal"
+                  column="HRPNGLICEMIPRE" length="4"/>
+        <property name="hrpnglicemipos" type="java.math.BigDecimal"
+                  column="HRPNGLICEMIPOS" length="4"/>
+        <property name="hrpnnitroureic" type="java.math.BigDecimal"
+                  column="HRPNNITROUREIC" length="3"/>
+        <property name="hrpnncreatinin" type="java.math.BigDecimal"
+                  column="HRPNNCREATININ" length="3"/>
+        <property name="hrpcelectrocar" type="java.lang.String"
+                  column="HRPCELECTROCAR" length="500"/>
+        <property name="hrpcrayosxtora" type="java.lang.String"
+                  column="HRPCRAYOSXTORA" length="200"/>
+        <property name="hrpcecografias" type="java.lang.String"
+                  column="HRPCECOGRAFIAS" length="500"/>
+        <property name="hrpcotrosresul" type="java.lang.String"
+                  column="HRPCOTROSRESUL" length="1000"/>
+        <property name="hrpcoperador" type="java.lang.String"
+                  column="HRPCOPERADOR" length="14"/>
+        <property name="hrpdfecregistr" type="java.util.Date"
+                  column="HRPDFECREGISTR" length="7"/>
+        <!-- Associations -->
+        <!-- derived association(s) for compound key -->
+        <!-- end of derived association(s) -->
+    </class>
+</hibernate-mapping>

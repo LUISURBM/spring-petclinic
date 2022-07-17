@@ -1,0 +1,70 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping>
+    <!-- 
+    Created by the Middlegen Hibernate plugin 2.2
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+    <class name="org.profamilia.hc.model.dto.Chrevissiste" table="CHREVISSISTE" lazy="false" schema="HISTORIA">
+        <composite-id name="id" class="org.profamilia.hc.model.dto.ChrevissistePK">
+            <key-property name="hrslconsulta" column="HRSLCONSULTA" type="java.lang.Long" length="12"/>
+            <key-property name="hrsctiposervi" column="HRSCTIPOSERVI" type="java.lang.String" length="1"/>
+        </composite-id>
+         <version name="version" column="VERSION"/>
+        <property name="hrserefiecabez" type="java.lang.String" column="HRSEREFIECABEZ" length="1"/>
+        <property name="hrscrefiecabez" type="java.lang.String" column="HRSCREFIECABEZ" length="4000"/>
+        <property name="hrserefieojos" type="java.lang.String" column="HRSEREFIEOJOS" length="1"/>
+        <property name="hrscrefieojos" type="java.lang.String" column="HRSCREFIEOJOS" length="4000"/>
+        <property name="hrserefieoidos" type="java.lang.String" column="HRSEREFIEOIDOS" length="1"/>
+        <property name="hrscrefieoidos" type="java.lang.String" column="HRSCREFIEOIDOS" length="4000"/>
+        <property name="hrserefienariz" type="java.lang.String" column="HRSEREFIENARIZ" length="1"/>
+        <property name="hrscrefienariz" type="java.lang.String" column="HRSCREFIENARIZ" length="4000"/>
+        <property name="hrserefieboca" type="java.lang.String" column="HRSEREFIEBOCA" length="1"/>
+        <property name="hrscrefieboca" type="java.lang.String" column="HRSCREFIEBOCA" length="4000"/>
+        <property name="hrserefiegarga" type="java.lang.String" column="HRSEREFIEGARGA" length="1"/>
+        <property name="hrscrefiegarga" type="java.lang.String" column="HRSCREFIEGARGA" length="4000"/>
+        <property name="hrserefiecuell" type="java.lang.String" column="HRSEREFIECUELL" length="1"/>
+        <property name="hrscrefiecuell" type="java.lang.String" column="HRSCREFIECUELL" length="4000"/>
+        <property name="hrserefiecardi" type="java.lang.String" column="HRSEREFIECARDI" length="1"/>
+        <property name="hrscrefiecardi" type="java.lang.String" column="HRSCREFIECARDI" length="4000"/>
+        <property name="hrserefiemamas" type="java.lang.String" column="HRSEREFIEMAMAS" length="1"/>
+        <property name="hrscrefiemamas" type="java.lang.String" column="HRSCREFIEMAMAS" length="4000"/>
+        <property name="hrserefiegastr" type="java.lang.String" column="HRSEREFIEGASTR" length="1"/>
+        <property name="hrscrefiegastr" type="java.lang.String" column="HRSCREFIEGASTR" length="4000"/>
+        <property name="hrserefiegenit" type="java.lang.String" column="HRSEREFIEGENIT" length="1"/>
+        <property name="hrscrefiegenit" type="java.lang.String" column="HRSCREFIEGENIT" length="4000"/>
+        <property name="hrserefievener" type="java.lang.String" column="HRSEREFIEVENER" length="1"/>
+        <property name="hrscrefievener" type="java.lang.String" column="HRSCREFIEVENER" length="4000"/>
+        <property name="hrserefieendoc" type="java.lang.String" column="HRSEREFIEENDOC" length="1"/>
+        <property name="hrscrefieendoc" type="java.lang.String" column="HRSCREFIEENDOC" length="4000"/>
+        <property name="hrserefielocom" type="java.lang.String" column="HRSEREFIELOCOM" length="1"/>
+        <property name="hrscrefielocom" type="java.lang.String" column="HRSCREFIELOCOM" length="4000"/>
+        <property name="hrserefieneuro" type="java.lang.String" column="HRSEREFIENEURO" length="1"/>
+        <property name="hrscrefieneuro" type="java.lang.String" column="HRSCREFIENEURO" length="4000"/>
+        <property name="hrserefiepiel" type="java.lang.String" column="HRSEREFIEPIEL" length="1"/>
+        <property name="hrscrefiepiel" type="java.lang.String" column="HRSCREFIEPIEL" length="4000"/>
+        <property name="hrsdfecregistr" type="java.util.Date" column="HRSDFECREGISTR" length="7"/>
+        <property name="hrscoperador" type="java.lang.String" column="HRSCOPERADOR" length="14"/>
+        <property name="hrserefieneups" type="java.lang.String" column="HRSEREFIENEUPS" length="1"/>
+        <property name="hrscrefieneups" type="java.lang.String" column="HRSCREFIENEUPS" length="4000"/>
+        <property name="hrserefieneumu" type="java.lang.String" column="HRSEREFIENEUMU" length="1"/>
+        <property name="hrscrefieneumu" type="java.lang.String" column="HRSCREFIENEUMU" length="4000"/>
+        <property name="hrserefietuber" type="java.lang.String" column="HRSEREFIETUBER" length="1"/>
+        <property name="hrscrefietuber" type="java.lang.String" column="HRSCREFIETUBER" length="4000"/>
+        <property name="hrserefielepra" type="java.lang.String" column="HRSEREFIELEPRA" length="1"/>
+        <property name="hrscrefielepra" type="java.lang.String" column="HRSCREFIELEPRA" length="4000"/>
+        <property name="hrserefiedismeno" type="java.lang.String" column="HRSEREFIEDISMENO" length="1"/>
+        <property name="hrserefiedispar" type="java.lang.String" column="HRSEREFIEDISPAR" length="1"/>
+         <property name="hrscrefiedismeno" type="java.lang.String" column="HRSCREFIEDISMENO" length="4000"/>
+        <property name="hrscrefiedispar" type="java.lang.String" column="HRSCREFIEDISPAR" length="4000"/>
+        
+
+         <!-- Associations -->
+        <!-- derived association(s) for compound key -->
+        <!-- end of derived association(s) -->
+    </class>
+</hibernate-mapping>

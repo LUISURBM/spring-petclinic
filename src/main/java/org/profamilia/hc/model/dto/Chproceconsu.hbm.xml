@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping>
+    <!-- 
+    Created by the Middlegen Hibernate plugin 2.2
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+    <class name="org.profamilia.hc.model.dto.Chproceconsu" table="CHPROCECONSU" schema="HISTORIA" lazy="false">
+        <composite-id name="id" class="org.profamilia.hc.model.dto.ChproceconsuPK">
+            <key-property name="hpclconsulta" column="HPCLCONSULTA" type="java.lang.Long" length="12"/>
+            <key-property name="hpcctiposervi" column="HPCCTIPOSERVI" type="java.lang.String" length="1"/>
+        </composite-id>
+        <version name="version" column="VERSION"/>
+        <property name="hpccdiagprinci" type="java.lang.String" column="HPCCDIAGPRINCI" length="4"/>
+        <property name="hpccdiagposter" type="java.lang.String" column="HPCCDIAGPOSTER" length="4"/>
+        <property name="hpcnambitproce" type="java.lang.Integer" column="HPCNAMBITPROCE" length="1"/>
+        <property name="hpcnrealizacio" type="java.lang.Integer" column="HPCNREALIZACIO" length="4"/>
+        <property name="hpcnfinalidad" type="java.lang.Integer" column="HPCNFINALIDAD" length="4"/>
+        <property name="hpccdescrproce" type="java.lang.String" column="HPCCDESCRPROCE" length="4000"/>
+        <property name="hpccdiagcompli" type="java.lang.String" column="HPCCDIAGCOMPLI" length="4"/>
+        <property name="hpccdescrcompl" type="java.lang.String" column="HPCCDESCRCOMPL" length="4000"/>
+        <property name="hpcdfecregistr" type="java.util.Date" column="HPCDFECREGISTR" length="7"/>
+        <property name="hpccoperador" type="java.lang.String" column="HPCCOPERADOR" length="14"/>
+        <property name="hpccrefierdolor" type="java.lang.String" column="HPCCREFIERDOLOR" length="2"/>
+        <property name="hpcnescaladolor" type="java.lang.Integer" column="HPCNESCALADOLOR" length="2"/>
+        <property name="hpcnduracidolor" type="java.lang.Integer" column="HPCNDURACIDOLOR" length="2"/>
+        <property name="hpccdudointen" type="java.lang.String" column="HPCCDUDOINTEN" length="2"/>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping>
+    <!-- 
+    Created by the Middlegen Hibernate plugin 2.2
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+    <class name="org.profamilia.hc.model.dto.Chprioxmedi" table="CHPRIOXMEDI" lazy="false"   schema="HISTORIA">
+        <composite-id name="id" class="org.profamilia.hc.model.dto.ChprioxmediPK">
+            <key-property name="hpmncodigprofe" column="HPMNCODIGPROFE" type="big_decimal" length="10"/>
+            <key-property name="hpmncodigclini" column="HPMNCODIGCLINI" type="java.lang.Integer" length="4"/>
+         </composite-id>
+           <version name="version" column="VERSION"/>
+        <property name="hpmcoperador" type="java.lang.String" column="HPMCOPERADOR" not-null="true" length="14"/>
+        <property name="hpmcnombre" type="java.lang.String" column="HPMCNOMBRE" not-null="false" length="14"/>
+         <property name="hpmacedula" type="java.lang.Long" column="HPMACEDULA" not-null="true" length="17"/>
+        <property name="hpmdfecharegis" type="java.util.Date" column="HPMDFECHAREGIS" not-null="true" length="7"/>
+        <!-- Associations -->
+        <!-- derived association(s) for compound key -->
+        <!-- end of derived association(s) -->
+    </class>
+</hibernate-mapping>

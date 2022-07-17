@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping>
+    <!-- 
+    Created by the Middlegen Hibernate plugin 2.2
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+    <class name="org.profamilia.hc.model.dto.Sausuario" table="SAUSUARIO" schema="ACTIVOS" lazy="false">
+        <id name="susclogin" type="java.lang.String" column="SUSCLOGIN">
+            <generator class="assigned"/>
+        </id>
+        <property name="suscnombre" type="java.lang.String" column="SUSCNOMBRE" not-null="true" length="30"/>
+        <property name="suscdescri" type="java.lang.String" column="SUSCDESCRI" length="50"/>
+        <property name="susdfecing" type="java.sql.Date" column="SUSDFECING" not-null="true" length="7"/>
+        <property name="suscgrulog" type="java.lang.String" column="SUSCGRULOG" not-null="true" length="14"/>
+        <property name="suscprnout" type="java.lang.String" column="SUSCPRNOUT" not-null="true" length="20"/>
+        <property name="suscetapa" type="java.lang.String" column="SUSCETAPA" not-null="true" length="2"/>
+        <property name="susdfecfin" type="java.sql.Date" column="SUSDFECFIN" length="7"/>
+        <property name="suscpath1" type="java.lang.String" column="SUSCPATH1" length="100"/>
+        <property name="suscpath2" type="java.lang.String" column="SUSCPATH2" length="100"/>
+        <property name="suscpath3" type="java.lang.String" column="SUSCPATH3" length="100"/>
+        <property name="version" type="java.math.BigDecimal" column="VERSION" length="20"/>
+        <property name="susndiexp" type="java.lang.Integer" column="SUSNDIEXP" length="6"/>
+        <!-- Associations -->
+    </class>
+</hibernate-mapping>

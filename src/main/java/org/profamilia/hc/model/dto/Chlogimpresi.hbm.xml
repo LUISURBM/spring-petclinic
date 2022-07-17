@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping>
+    <!-- 
+    Created by the Middlegen Hibernate plugin 2.2
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+    <class name="org.profamilia.hc.model.dto.Chlogimpresi" table="CHLOGIMPRESI" lazy="false" schema="HISTORIA">
+        <id name="hlilnumero" type="java.lang.Long" column="HLILNUMERO">
+              <generator class="sequence">
+                <param name="sequence">HISTORIA.SEC_CHLOGIMPRESI</param>
+            </generator>         
+        </id>
+        <version name="version" column="VERSION"/>
+        <property name="hlilusuario" type="long" column="HLILUSUARIO" not-null="true" length="12"/>
+        <property name="hlidfecharegis" type="java.util.Date" column="HLIDFECHAREGIS" not-null="true" length="7"/>
+        <property name="hlicoperador" type="java.lang.String" column="HLICOPERADOR" not-null="true" length="14"/>
+        <property name="hlinclinica" type="java.lang.Integer" column="HLINCLINICA"  not-null="true" length="4"/>
+        <property name="hlicimpreconsu" type="java.lang.String" column="HLICIMPRECONSU" not-null="true" length="1"/>
+        <property name="hlicmotiimpr" type="java.lang.String" column="HLICMOTIIMPR" not-null="false" length="3"/>
+        <property name="hlicmotivoeps" type="java.lang.String" column="HLICMOTIVOEPS" not-null="false" length="4000"/>
+        <property name="hlicmotivootro" type="java.lang.String" column="HLICMOTIVOOTRO" not-null="false" length="4000"/>
+        <property name="hlilconsulta" type="long" column="HLILCONSULTA" not-null="false" length="12"/>
+        
+        
+        <!-- Associations -->
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping>
+    <!-- 
+    Created by the Middlegen Hibernate plugin 2.2
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+    <class name="org.profamilia.hc.model.dto.Chtipoinas" table="CHTIPOINAS" lazy="false" schema="HISTORIA">
+        <id name="htinnumero" type="java.lang.Integer" column="HTINNUMERO">
+            <meta attribute="field-description" inherit="false">Codigo del tipo de intervencion</meta>
+            <generator class="assigned"/>
+        </id>
+         <version name="version" column="VERSION"/>
+        <property name="hticdescri" type="java.lang.String" column="HTICDESCRI" not-null="true" length="80"/>
+        <property name="htidfecreg" type="java.util.Date" column="HTIDFECREG" not-null="true" length="7"/>
+        <property name="hticusuar" type="java.lang.String" column="HTICUSUAR" not-null="true" length="14"/>
+        <property name="hticestado" type="java.lang.String" column="HTICESTADO" not-null="true" length="2"/>
+        <property name="htindepen" type="java.lang.Integer" column="HTINDEPEN" length="4"/>
+         <!-- Associations -->
+    </class>
+</hibernate-mapping>

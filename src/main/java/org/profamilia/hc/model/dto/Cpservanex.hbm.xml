@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping>
+    <!-- 
+    Created by the Middlegen Hibernate plugin 2.2
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+    <class name="org.profamilia.hc.model.dto.Cpservanex" table="CPSERVANEX" lazy="false" schema="CLINICO">
+        <composite-id name="id" class="org.profamilia.hc.model.dto.CpservanexPK">
+            <key-property name="csacservic" column="CSACSERVIC" type="java.lang.String" length="12"/>
+            <key-property name="csacserane" column="CSACSERANE" type="java.lang.String" length="12"/>
+        </composite-id>
+          <version name="version" column="VERSION"/>
+        <property name="csandiaate" type="java.lang.Integer" column="CSANDIAATE" not-null="true" length="4"/>
+        <property name="csandiafle" type="java.lang.Integer" column="CSANDIAFLE" not-null="true" length="4"/>
+        <property name="csacautoma" type="java.lang.String" column="CSACAUTOMA" not-null="true" length="1"/>
+        <property name="csacestado" type="java.lang.String" column="CSACESTADO" not-null="true" length="2"/>
+        <property name="csadfecreg" type="java.util.Date" column="CSADFECREG" not-null="true" length="11"/>
+        <property name="csacusureg" type="java.lang.String" column="CSACUSUREG" not-null="true" length="14"/>
+        <property name="csadfecmod" type="java.util.Date" column="CSADFECMOD" length="11"/>
+        <property name="csacusumod" type="java.lang.String" column="CSACUSUMOD" length="14"/>
+        <property name="csancntmax" type="java.lang.Integer" column="CSANCNTMAX" not-null="true" length="4"/>
+        <property name="csaavalor" type="java.math.BigDecimal" column="CSAAVALOR" not-null="true" length="17"/>
+        <!-- Associations -->
+        <!-- derived association(s) for compound key -->
+        <!-- end of derived association(s) -->
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping>
+    <!-- 
+    Created by the Middlegen Hibernate plugin 2.2
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+    <class name="org.profamilia.hc.model.dto.Clcateippf" table="CLCATEIPPF" lazy="false" schema="CLINICO">
+        <id name="ccincodigo" type="java.lang.Integer" column="CCINCODIGO">
+            <meta attribute="field-description" inherit="false">Id</meta>
+            <generator class="assigned"/>
+        </id>
+        <property name="ccicdescri" type="java.lang.String" column="CCICDESCRI" length="50"/>
+        <property name="ccicusuari" type="java.lang.String" column="CCICUSUARI" length="14"/>
+        <property name="ccidfeccre" type="java.util.Date" column="CCIDFECCRE" />
+        <!-- Associations -->
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,76 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+<!-- 
+        Auto-generated mapping file from
+        the hibernate.org cfg2hbm engine
+-->
+    <class name="org.profamilia.hc.model.dto.Cpclinica" table="CPCLINICA" schema="CLINICO">
+        <id name="cclncodigo" type="integer">
+            <column name="CCLNCODIGO" precision="4" scale="0" />
+            <generator class="assigned" />
+        </id>
+       <version name="version" column="VERSION"/>
+        <property name="cclcnombre" type="string">
+            <column name="CCLCNOMBRE" length="30" not-null="true" />
+        </property>
+        <property name="cclcdirect" type="string">
+            <column name="CCLCDIRECT" length="30" />
+        </property>
+        <property name="cclcdirecc" type="string">
+            <column name="CCLCDIRECC" length="30" />
+        </property>
+        <property name="cclctelefo" type="string">
+            <column name="CCLCTELEFO" length="20" />
+        </property>
+        <property name="ccldfecreg" type="date">
+            <column name="CCLDFECREG" length="7" not-null="true" />
+        </property>
+        <property name="cclcusuar" type="string">
+            <column name="CCLCUSUAR" length="14" not-null="true" />
+        </property>
+        <property name="cclcciudad" type="string">
+            <column name="CCLCCIUDAD" length="30" />
+        </property>
+        <property name="cclccodsgs" type="string">
+            <column name="CCLCCODSGS" length="12" />
+        </property>
+        <property name="cclcestado" type="string">
+            <column name="CCLCESTADO" length="2" not-null="true" />
+        </property>
+        <property name="cclcimputa" type="string">
+            <column name="CCLCIMPUTA" length="1" not-null="true" />
+        </property>
+        <property name="cclcfarmac" type="string">
+            <column name="CCLCFARMAC" length="1" not-null="true" />
+        </property>
+        <property name="cclccorreg" type="string">
+            <column name="CCLCCORREG" length="60" />
+        </property>
+          <property name="cclccorreo" type="string">
+            <column name="CCLCCORREO" length="60" />
+        </property>
+        <property name="cclcfax" type="string">
+            <column name="CCLCFAX" length="20" />
+        </property>
+        <property name="cclccoradm" type="string">
+            <column name="CCLCCORADM" length="50" />
+        </property>
+        <property name="cclnregion" type="integer">
+            <column name="CCLNREGION" precision="2" scale="0" not-null="true" />
+        </property>
+         <property name="cclccodippf" type="string">
+            <column name="CCLCCODIPPF" precision="20" scale="0" />
+        </property>
+        <property name="cclcippfmov" type="string">
+            <column name="CCLCIPPFMOV" precision="20" scale="0" />
+        </property>
+        <property name="cclncoddane" type="string">
+            <column name="CCLNCODDANE" precision="10" scale="0" />
+        </property>
+        
+        
+        
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping>
+    <!-- 
+    Created by the Middlegen Hibernate plugin 2.2
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+    <class name="org.profamilia.hc.model.dto.Chautornota" table="CHAUTORNOTA" schema="HISTORIA" lazy="false">
+        <id name="hanlnumero" type="java.lang.Long" column="HANLNUMERO">
+            <generator class="sequence">
+                <param name="sequence">HISTORIA.CHAUTORNOTA_SEQ</param>
+            </generator>
+        </id>
+        <version name="version" column="VERSION"/>
+        <property name="hannnumerconsu" type="java.lang.Long" column="HANNNUMERCONSU" not-null="true" length="12"/>
+        <property name="hancmotivsolic" type="java.lang.String" column="HANCMOTIVSOLIC" not-null="true" length="4000"/>
+        <property name="hancaceptsolic" type="java.lang.String" column="HANCACEPTSOLIC" length="1"/>
+        <property name="hancmotivrecha" type="java.lang.String" column="HANCMOTIVRECHA" length="4000"/>
+        <property name="handfechainici" type="java.util.Date" column="HANDFECHAINICI" length="7"/>
+        <property name="handfechafinal" type="java.util.Date" column="HANDFECHAFINAL" length="7"/>
+        <property name="hannclinica" type="java.lang.Integer" column="HANNCLINICA" length="4"/>
+        <property name="handfechasolic" type="java.util.Date" column="HANDFECHASOLIC" length="7"/>
+        <property name="hancoperasolic" type="java.lang.String" column="HANCOPERASOLIC" length="14"/>
+        <property name="handfecharespu" type="java.util.Date" column="HANDFECHARESPU" length="7"/>
+        <property name="hadcoperarespu" type="java.lang.String" column="HADCOPERARESPU" length="14"/>
+        <property name="hancservicio" type="java.lang.String" column="HANCSERVICIO" length="14"/>
+        <property name="hancnombserv" type="java.lang.String" column="HANCNOMBSERV" length="200"/>
+        <property name="hancnombpaci" type="java.lang.String" column="HANCNOMBPACI" length="200"/>
+        <property name="hannnumeiden" type="java.lang.Long" column="HANNNUMEIDEN" length="17"/>
+        <property name="hanctipoiden" type="java.lang.String" column="HANCTIPOIDEN" length="2"/>
+        <property name="handfechaconsu" type="java.util.Date" column="HANDFECHACONSU" length="7"/>
+        
+        
+        <!-- Associations -->
+    </class>
+</hibernate-mapping>

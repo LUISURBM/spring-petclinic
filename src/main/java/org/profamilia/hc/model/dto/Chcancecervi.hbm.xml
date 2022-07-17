@@ -1,0 +1,54 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping>
+    <!-- 
+    Created by the Middlegen Hibernate plugin 2.2
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+    <class name="org.profamilia.hc.model.dto.Chcancecervi" table="CHCANCECERVI" lazy="false" schema="HISTORIA">
+        <composite-id name="id" class="org.profamilia.hc.model.dto.ChcancecerviPK">
+            <key-property name="hcclconsulta" column="HCCLCONSULTA" type="java.lang.Long" length="12"/>
+            <key-property name="hccctiposerv" column="HCCCTIPOSERV" type="java.lang.String" length="1"/>
+        </composite-id>
+          <version name="version" column="VERSION"/> 
+        <property name="hcccasesocance" type="java.lang.String" column="HCCCASESOCANCE"  length="1"/>
+        <property name="hcccrecompreve" type="java.lang.String" column="HCCCRECOMPREVE"  length="1"/>
+        <property name="hcccvphcomppre" type="java.lang.String" column="HCCCVPHCOMPPRE"  length="1"/>
+        <property name="hcccotrostipos" type="java.lang.String" column="HCCCOTROSTIPOS"  length="1"/>
+        <property name="hccccienvirus" type="java.lang.String" column="HCCCCIENVIRUS" not-null="true" length="1"/>
+        <property name="hcccdosvacucol" type="java.lang.String" column="HCCCDOSVACUCOL" not-null="true" length="1"/>
+        <property name="hcccvphcausant" type="java.lang.String" column="HCCCVPHCAUSANT" not-null="true" length="1"/>
+        <property name="hcccvphcervari" type="java.lang.String" column="HCCCVPHCERVARI" not-null="true" length="1"/>
+        <property name="hccctresdosis" type="java.lang.String" column="HCCCTRESDOSIS" not-null="true" length="1"/>
+        <property name="hcccinfocerva" type="java.lang.String" column="HCCCINFOCERVA" not-null="true" length="1"/>
+        <property name="hcccanormcitol" type="java.lang.String" column="HCCCANORMCITOL"  length="1"/>
+        <property name="hcccantecalerg" type="java.lang.String" column="HCCCANTECALERG" not-null="true" length="1"/>
+        <property name="hcccreacivacun" type="java.lang.String" column="HCCCREACIVACUN" not-null="true" length="1"/>
+        <property name="hcccenfergripa" type="java.lang.String" column="HCCCENFERGRIPA" not-null="true" length="1"/>
+        <property name="hcccestaembar" type="java.lang.String" column="HCCCESTAEMBAR"  length="1"/>
+        <property name="hcccmestrnorma" type="java.lang.String" column="HCCCMESTRNORMA"  length="1"/>
+        <property name="hccctieneparto" type="java.lang.String" column="HCCCTIENEPARTO"  length="1"/>
+        <property name="hcccmetodplani" type="java.lang.String" column="HCCCMETODPLANI" not-null="true" length="1"/>
+        <property name="hcccpiensembar" type="java.lang.String" column="HCCCPIENSEMBAR"  length="1"/>
+        <property name="hcccmediahora" type="java.lang.String" column="HCCCMEDIAHORA" not-null="true" length="1"/>
+        <property name="hcccinforconse" type="java.lang.String" column="HCCCINFORCONSE" not-null="true" length="1"/>
+        <property name="hcccconsuprofa" type="java.lang.String" column="HCCCCONSUPROFA" not-null="true" length="1"/>
+        <property name="hccccualresul" type="java.lang.String" column="HCCCCUALRESUL" length="500"/>
+        <property name="hcccobserinter" type="java.lang.String" column="HCCCOBSERINTER" length="500"/>
+        <property name="hcccamamantand" type="java.lang.String" column="HCCCAMAMANTAND" length="1"/>
+        <property name="hccdfecharegla" type="java.util.Date" column="HCCDFECHAREGLA" length="7"/>
+        <property name="hccdfechaparto" type="java.util.Date" column="HCCDFECHAPARTO" length="7"/>
+        <property name="hccctipoparabo" type="java.lang.String" column="HCCCTIPOPARABO" length="1"/>
+        <property name="hcccoperador" type="java.lang.String" column="HCCCOPERADOR" length="14"/>
+        <property name="hccdfecreg" type="java.util.Date" column="HCCDFECREG" length="7"/>
+        <property name="hcccinforgarda" type="java.lang.String" column="HCCCINFORGARDA"  length="1"/>
+        
+        <!-- Associations -->
+        <!-- derived association(s) for compound key -->
+        <!-- end of derived association(s) -->
+    </class>
+</hibernate-mapping>

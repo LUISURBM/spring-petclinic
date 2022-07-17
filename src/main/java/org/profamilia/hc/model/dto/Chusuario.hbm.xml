@@ -1,0 +1,95 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping>
+    <!-- 
+    Created by the Middlegen Hibernate plugin 2.2
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+    <class name="org.profamilia.hc.model.dto.Chusuario" table="CHUSUARIO" schema="HISTORIA" lazy="true">
+        <id name="huslnumero" type="java.lang.Long" column="HUSLNUMERO">
+            <generator class="sequence">
+                <param name="sequence">HISTORIA.CHUSUARIO_SEQ</param>
+            </generator>
+        </id>
+        <version name="version" column="VERSION"/>
+        <property name="husetipoiden" type="java.lang.String" column="HUSETIPOIDEN" not-null="true" length="2"/>
+        <property name="husanumeiden" type="java.lang.Long" column="HUSANUMEIDEN" not-null="true" length="17"/>
+        <property name="huscprimernomb" type="java.lang.String" column="HUSCPRIMERNOMB" not-null="true" length="20"/>
+        <property name="huscsegundnomb" type="java.lang.String" column="HUSCSEGUNDNOMB" length="20"/>
+        <property name="huscprimerapel" type="java.lang.String" column="HUSCPRIMERAPEL" not-null="true" length="20"/>
+        <property name="huscsegundapel" type="java.lang.String" column="HUSCSEGUNDAPEL" length="20"/>
+        <property name="huseestadcivil" type="java.lang.String" column="HUSEESTADCIVIL" length="1"/>
+        <property name="husesexo" type="java.lang.String" column="HUSESEXO" length="1"/>
+        <property name="huscdireccion" type="java.lang.String" column="HUSCDIRECCION" length="40"/>
+        <property name="huscbarrio" type="java.lang.String" column="HUSCBARRIO" length="20"/>
+        <property name="husctelefono" type="java.lang.String" column="HUSCTELEFONO" length="20"/>
+        <property name="husdfechanacim" type="java.util.Date" column="HUSDFECHANACIM" length="7"/>
+        <property name="husezonareside" type="java.lang.String" column="HUSEZONARESIDE" length="1"/>
+        <property name="husndepartamen" type="java.lang.Integer" column="HUSNDEPARTAMEN" length="4" not-null="true"/>
+        <property name="husnciudad" type="java.lang.Integer" column="HUSNCIUDAD" length="4" not-null="true"/>
+        <property name="husetipoafilia" type="java.lang.String" column="HUSETIPOAFILIA" length="1"/>
+        <property name="huscentidadadm" type="java.lang.String" column="HUSCENTIDADADM" length="6"/>
+        <property name="husnocupacion" type="java.lang.Integer" column="HUSNOCUPACION" length="4"/>
+        <property name="huscnomacompana" type="java.lang.String" column="HUSCNOMACOMPANA" length="40"/>
+        <property name="husctelacompana" type="java.lang.String" column="HUSCTELACOMPANA" length="20"/>
+        <property name="huscnomresponsa" type="java.lang.String" column="HUSCNOMRESPONSA" length="40"/>
+        <property name="husctelresponsa" type="java.lang.String" column="HUSCTELRESPONSA" length="20"/>
+        <property name="huscparresponsa" type="java.lang.String" column="HUSCPARRESPONSA" length="15"/>
+        <property name="husccorreoelec" type="java.lang.String" column="HUSCCORREOELEC" length="30"/>
+        <property name="husnfolioactua" type="java.lang.Integer" column="HUSNFOLIOACTUA" length="4"/>
+        <property name="husdfecregistr" type="java.util.Date" column="HUSDFECREGISTR" length="7"/>
+        <property name="huscoperador" type="java.lang.String" column="HUSCOPERADOR" length="14"/>
+        <property name="husehistoria" type="java.lang.String" column="HUSEHISTORIA" length="1"/>
+        <property name="husdultimacons" type="java.util.Date" column="HUSDULTIMACONS" length="7"/>
+        <property name="husnestrato" type="java.lang.Integer" column="HUSNESTRATO" length="4"/>
+        <property name="husnniveledu" type="java.lang.Integer" column="HUSNNIVELEDU" length="2"/>
+        <property name="huseestado" type="java.lang.String" column="HUSEESTADO" length="2"/>
+        <property name="huseautorcont" type="java.lang.String" column="HUSEAUTORCONT" length="1"/>
+        <property name="huscteloficina" type="java.lang.String" column="HUSCTELOFICINA" length="20"/>
+        <property name="huseautoficina" type="java.lang.String" column="HUSEAUTOFICINA" length="1"/>
+        <property name="huseautcasa" type="java.lang.String" column="HUSEAUTCASA" length="1"/>
+        <property name="husccelular" type="java.lang.String" column="HUSCCELULAR" length="20"/>
+        <property name="huseautcelular" type="java.lang.String" column="HUSEAUTCELULAR" length="1"/>
+        <property name="huseautmensaj" type="java.lang.String" column="HUSEAUTMENSAJ" length="1"/>
+        <property name="huscidengene" type="java.lang.String" column="HUSCIDENGENE" length="2"/>
+        <property name="huscoriesexu" type="java.lang.String" column="HUSCORIESEXU" length="2"/>
+        <property name="huscvivesolo" type="java.lang.String" column="HUSCVIVESOLO" length="1"/>
+        <property name="huseautcorreoe" type="java.lang.String" column="HUSEAUTCORREOE" length="1"/>
+        <property name="huscpaisresi" type="java.lang.String" column="HUSCPAISRESI" length="3"/>
+        <property name="husnconoprofam" type="integer">
+            <column name="HUSNCONOPROFAM" length="2"/>
+        </property>
+        <property name="huscetnia" type="java.lang.String">
+            <column name="HUSCETNIA" length="2"/>
+        </property>
+        <property name="husetipcliente" type="java.lang.String">
+            <column name="HUSETIPCLIENTE" length="1"/>
+        </property>
+        <property name="huscnumafiliac" type="java.lang.String">
+            <column name="HUSCNUMAFILIAC" length="10"/>
+        </property>
+        <property name="husetipvincula" type="java.lang.String">
+            <column name="HUSETIPVINCULA" length="1"/>
+        </property>
+        <property name="husnnumecontr" type="java.lang.Integer">
+            <column name="HUSNNUMECONTR" length="9"/>
+        </property>
+        <property name="husedicapadad" type="java.lang.String">
+            <column name="HUSEDISCAPADAD" length="2"/>
+        </property>
+        <property name="husediscaselec" type="java.lang.String">
+            <column name="HUSEDISCASELEC" length="30"/>
+        </property>
+        <property name="huscnombralter" type="java.lang.String">
+            <column name="HUSCNOMBRALTER" length="80"/>
+        </property>
+        <property name="husccodsap" type="java.lang.String" column="HUSCCODSAP" length="15"/>
+        
+        <property name="husnaceppolprv" type="java.lang.Long" column="HUSNACEPPOLPRV" length="17"/>
+        <!-- Associations -->
+    </class>
+</hibernate-mapping>

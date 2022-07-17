@@ -1,0 +1,53 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <!-- 
+        Auto-generated mapping file from
+        the hibernate.org cfg2hbm engine
+-->
+    <class name="org.profamilia.hc.model.dto.Cptarxprof" table="CPTARXPROF" schema="CLINICO">
+        <composite-id name="id" class="org.profamilia.hc.model.dto.CptarxprofId">
+            <key-property name="ctanclinic" type="integer">
+                <column name="CTANCLINIC" precision="4" scale="0"/>
+            </key-property>
+            <key-property name="ctanprofes" type="big_decimal">
+                <column name="CTANPROFES" precision="10" scale="0"/>
+            </key-property>
+            <key-property name="ctacservic" type="string">
+                <column name="CTACSERVIC" length="12"/>
+            </key-property>
+        </composite-id>
+        <version name="version" column="VERSION"/>
+        <property name="ctaatarpar" type="big_decimal">
+            <column name="CTAATARPAR" precision="15" not-null="true"/>
+        </property>
+        <property name="ctaatarcre" type="big_decimal">
+            <column name="CTAATARCRE" precision="15" not-null="true"/>
+        </property>
+        <property name="ctacusuari" type="string">
+            <column name="CTACUSUARI" length="14" not-null="true"/>
+        </property>
+        <property name="ctadfecreg" type="date">
+            <column name="CTADFECREG" length="7" not-null="true"/>
+        </property>
+        <property name="ctadfecmod" type="date">
+            <column name="CTADFECMOD" length="7" not-null="true"/>
+        </property>
+        <property name="ctaaporadm" type="big_decimal">
+            <column name="CTAAPORADM" precision="9" not-null="true"/>
+        </property>
+        <property name="ctacinclhr" type="string">
+            <column name="CTACINCLHR" length="1" not-null="true"/>
+        </property>
+        <property name="ctacestado" type="string">
+            <column name="CTACESTADO" length="2" not-null="true"/>
+        </property>
+        <property name="ctacusumod" type="string">
+            <column name="CTACUSUMOD" length="14"/>
+        </property>
+        <property name="ctacpriori" type="string">
+            <column name="CTACPRIORI" length="1"/>
+        </property>
+    </class>
+</hibernate-mapping>

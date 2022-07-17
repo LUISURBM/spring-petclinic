@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping>
+    <!-- 
+    Created by the Middlegen Hibernate plugin 2.2
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+    <class name="org.profamilia.hc.model.dto.Chautordescr" table="CHAUTORDESCR" lazy="false"  schema="HISTORIA" >
+        <id name="hadlnumero" type="java.lang.Long" column="HADLNUMERO">
+            <generator class="assigned"/>
+        </id>
+           <version name="version" column="VERSION"/>
+        <property name="hadlnumerdescr" type="java.lang.Long" column="HADLNUMERDESCR" not-null="true" length="12"/>
+        <property name="hadnconsedescr" type="java.lang.Integer" column="HADNCONSEDESCR" not-null="true" length="4"/>
+        <property name="hadcaceptsolic" type="java.lang.String" column="HADCACEPTSOLIC" length="1"/>
+        <property name="hadcmotivsolic" type="java.lang.String" column="HADCMOTIVSOLIC" length="100"/>
+        <property name="hadcmotivrecha" type="java.lang.String" column="HADCMOTIVRECHA" length="100"/>
+        <property name="hadnclinica" type="java.lang.Integer" column="HADNCLINICA" not-null="true" length="4"/>
+        <property name="haddfechasolic" type="java.util.Date" column="HADDFECHASOLIC" length="7"/>
+        <property name="hadcoperasolic" type="java.lang.String" column="HADCOPERASOLIC" length="14"/>
+        <property name="haddfecharespu" type="java.util.Date" column="HADDFECHARESPU" length="7"/>
+        <property name="hadcoperarespu" type="java.lang.String" column="HADCOPERARESPU" length="14"/>
+        <!-- Associations -->
+    </class>
+</hibernate-mapping>

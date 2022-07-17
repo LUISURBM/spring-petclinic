@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping>
+    <!-- 
+    Created by the Middlegen Hibernate plugin 2.2
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+    <class name="org.profamilia.hc.model.dto.Chcierreanest" table="CHCIERREANEST" lazy="false" schema="HISTORIA">
+        <id name="hcilnumero" type="java.lang.Long" column="HCILNUMERO">
+            <generator class="assigned"/>
+        </id>
+        <version name="version" column="VERSION"/>
+        <property name="hcicestadsalir" type="java.lang.String" column="HCICESTADSALIR" length="4000"/>
+        <property name="hciccomplicaci" type="java.lang.String" column="HCICCOMPLICACI" length="2"/>
+        <property name="hcicobsercompl" type="java.lang.String" column="HCICOBSERCOMPL" length="4000"/>
+        <property name="hcicobservacio" type="java.lang.String" column="HCICOBSERVACIO" length="4000"/>
+        <property name="hcicoperador" type="java.lang.String" column="HCICOPERADOR" length="100"/>
+        <property name="hcidfecregistr" type="java.util.Date" column="HCIDFECREGISTR" length="7"/>
+
+  
+                  
+                  
+        <!-- Associations -->
+    </class>
+</hibernate-mapping>

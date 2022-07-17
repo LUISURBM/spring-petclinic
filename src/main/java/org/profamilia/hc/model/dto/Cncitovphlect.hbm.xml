@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping>
+    <!-- 
+    Created by the Middlegen Hibernate plugin 2.2
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+    <class name="org.profamilia.hc.model.dto.Cncitovphlect" table="CNCITOVPHLECT" schema="CLINICO" lazy="false">
+        <id name="ccvnconsec" type="java.lang.Integer" column="CCVNCONSEC">
+            <meta attribute="field-description" inherit="false">Consecutivo Datos citologia</meta>
+            <generator class="assigned"/>
+        </id>
+        <version name="version" column="VERSION"/>
+        <property name="ccvnclinic" type="java.lang.Integer" column="CCVNCLINIC" not-null="true" length="4"/>
+        <property name="ccvnnumero" type="java.lang.Integer" column="CCVNNUMERO" not-null="true" length="9"/>
+        <property name="ccvdfeclec" type="java.util.Date" column="CCVDFECLEC" not-null="true" length="7"/>
+        <property name="ccvclectur" type="java.lang.String" column="CCVCLECTUR" not-null="true" length="4"/>
+        <property name="ccvcnomlec" type="java.lang.String" column="CCVCNOMLEC" not-null="true" length="30"/>
+        <property name="ccvcobserv" type="java.lang.String" column="CCVCOBSERV" length="80"/>
+        <property name="ccvcusureg" type="java.lang.String" column="CCVCUSUREG" not-null="true" length="12"/>
+        <property name="ccvdfecreg" type="java.util.Date" column="CCVDFECREG" length="7"/>
+        <property name="ccvcnumtar" type="java.lang.String" column="CCVCNUMTAR" length="30"/>
+        <property name="ccvcgenoneg" type="java.lang.String" column="CCVCGENONEG" length="1"/>
+        <property name="ccvcgenotip" type="java.lang.String" column="CCVCGENOTIP" length="80"/>
+        <property name="ccvcgt16" type="java.lang.String" column="CCVCGT16" length="1"/>
+        <property name="ccvcgt18" type="java.lang.String" column="CCVCGT18" length="1"/>
+        <property name="ccvcgt31" type="java.lang.String" column="CCVCGT31" length="1"/>
+        <property name="ccvcgt45" type="java.lang.String" column="CCVCGT45" length="1"/>
+        <property name="ccvcgt51" type="java.lang.String" column="CCVCGT51" length="1"/>
+        <property name="ccvcgt52" type="java.lang.String" column="CCVCGT52" length="1"/>
+        <property name="ccvcgt3858" type="java.lang.String" column="CCVCGT3858" length="1"/>
+        <property name="ccvcgt353968" type="java.lang.String" column="CCVCGT353968" length="1"/>
+        <property name="ccvcgt565966" type="java.lang.String" column="CCVCGT565966" length="1"/>
+        <property name="ccvcconduc" type="java.lang.String" column="CCVCCONDUC" length="6"/>
+        <property name="ccvcinterpre" type="java.lang.String" column="CCVCINTERPRE" length="250"/>
+        <property name="ccvdfecrecep" type="java.util.Date" column="CCVDFECRECEP" length="7"/>
+        <!-- Associations -->
+    </class>
+</hibernate-mapping>

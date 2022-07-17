@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping>
+    <!-- 
+    Created by the Middlegen Hibernate plugin 2.2
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+    <class name="org.profamilia.hc.model.dto.Chasesohuman" table="CHASESOHUMAN" lazy="false" schema="HISTORIA">
+        <id name="hahlnumero" type="java.lang.Long" column="HAHLNUMERO">
+            <generator class="sequence">
+                <param name="sequence">HISTORIA.SEC_CHASESOHUMAN</param>
+            </generator>
+        </id>
+        <version name="version" column="VERSION"/>
+        <property name="hahetipoiden" type="java.lang.String" column="HAHETIPOIDEN" not-null="true" length="2"/>
+        <property name="hahanumeiden" type="java.lang.Long" column="HAHANUMEIDEN" not-null="true" length="17"/>
+        <property name="hahlnumusu" type="java.lang.Long" column="HAHLNUMUSU" not-null="true" length="12"/>
+        <property name="hahcprimernomb" type="java.lang.String" column="HAHCPRIMERNOMB" not-null="true" length="20"/>
+        <property name="hahcsegundnomb" type="java.lang.String" column="HAHCSEGUNDNOMB" length="20"/>
+        <property name="hahcprimerapel" type="java.lang.String" column="HAHCPRIMERAPEL" not-null="true" length="20"/>
+        <property name="hahcsegundapel" type="java.lang.String" column="HAHCSEGUNDAPEL" length="20"/>
+        <property name="hahesexo" type="java.lang.String" column="HAHESEXO" length="1"/>
+        <property name="hahdfechanacim" type="java.util.Date" column="HAHDFECHANACIM" length="7"/>
+        <property name="hahdfecregistr" type="java.util.Date" column="HAHDFECREGISTR" not-null="true" length="7"/>
+        <property name="hahcoperador" type="java.lang.String" column="HAHCOPERADOR" not-null="true" length="14"/>
+        <property name="haheestado" type="java.lang.String" column="HAHEESTADO" not-null="true" length="2"/>
+        <property name="hahnfinanciado" type="java.lang.Integer" column="HAHNFINANCIADO" length="4"/>
+        <property name="hahnclinica" type="java.lang.Integer" column="HAHNCLINICA" length="4"/>
+        <property name="hahetipoaseso" type="java.lang.String" column="HAHETIPOASESO" not-null="true" length="80"/>
+        <property name="hahdfechaaseso" type="java.util.Date" column="HAHDFECHAASESO" not-null="true" length="7"/>
+        <property name="hahnedad" type="java.lang.Integer" column="HAHNEDAD" length="4"/>
+        <!-- Associations -->
+    </class>
+</hibernate-mapping>

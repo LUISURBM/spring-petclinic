@@ -1,0 +1,108 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+    
+<hibernate-mapping>
+<!-- 
+    Created by the Middlegen Hibernate plugin 2.2
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+
+<class 
+    name="org.profamilia.hc.model.dto.Cpservxcont" 
+    table="CPSERVXCONT"
+    lazy="false"
+>
+
+    <composite-id name="comp_id" class="org.profamilia.hc.model.dto.CpservxcontPK">
+        <key-property 
+            name="cscnnumecont" 
+            column="CSCNNUMECONT" 
+            type="java.lang.Long"
+            length="22"
+        />
+        <key-property 
+            name="cscccodiserv" 
+            column="CSCCCODISERV" 
+            type="java.lang.String"
+            length="20"
+        />
+        <key-property 
+            name="cscnclinica" 
+            column="CSCNCLINICA" 
+            type="java.lang.Long"
+            length="22"
+        />
+        <key-property 
+            name="csccintrextr" 
+            column="CSCCINTREXTR" 
+            type="java.lang.String"
+            length="20"
+        />
+    </composite-id>    
+
+    <property
+        name="cscctipocobr"
+        type="java.lang.String"
+        column="CSCCTIPOCOBR"
+        not-null="true"
+        length="2"
+    />
+    <property
+        name="cscdfechregi"
+        type="java.util.Date"
+        column="CSCDFECHREGI"
+        not-null="true"
+        length="7"
+    />
+    <property
+        name="csccusuaregi"
+        type="java.lang.String"
+        column="CSCCUSUAREGI"
+        not-null="true"
+        length="20"
+    />
+    <property
+        name="csccestado"
+        type="java.lang.String"
+        column="CSCCESTADO"
+        not-null="true"
+        length="2"
+    />
+    <property
+        name="version"
+        type="java.lang.Long"
+        column="VERSION"
+        length="22"
+    />
+    <property
+        name="csccrequauto"
+        type="java.lang.String"
+        column="CSCCREQUAUTO"
+        not-null="true"
+        length="1"
+    />
+    <property
+        name="cscnvalser"
+        type="java.lang.Double"
+        column="CSCNVALSER"
+        not-null="true"
+        length="15"
+    />
+    <property
+        name="csccnombserv"
+        type="java.lang.String"
+        column="CSCCNOMBSERV"
+        length="100"
+    />
+
+    <!-- Associations -->
+    <!-- derived association(s) for compound key -->
+    <!-- end of derived association(s) -->
+  
+
+</class>
+</hibernate-mapping>

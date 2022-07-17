@@ -1,0 +1,68 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping>
+    <!-- 
+    Created by the Middlegen Hibernate plugin 2.2
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+    <class name="org.profamilia.hc.model.dto.Chcontroliqu" table="CHCONTROLIQU" lazy="false" schema="HISTORIA">
+        <composite-id name="id" class="org.profamilia.hc.model.dto.ChcontroliquPK">
+            <key-property name="hcllnumero" column="HCLLNUMERO" type="java.lang.Long" length="12"/>
+            <key-property name="hclnconsecutiv" column="HCLNCONSECUTIV" type="java.lang.Integer" length="4"/>
+            <key-property name="hclctiposervi" column="HCLCTIPOSERVI" type="java.lang.String" length="1"/>
+        </composite-id>
+        <version name="version" column="VERSION"/>
+        <property name="hclctipoliquid" type="java.lang.String" column="HCLCTIPOLIQUID" length="2"/>
+        <property name="hclcotroliqpar" type="java.lang.String" column="HCLCOTROLIQPAR" length="80"/>
+        <property name="hclcvialiquido" type="java.lang.String" column="HCLCVIALIQUIDO" length="2"/>
+        <property name="hclncantidad" type="java.lang.Integer" column="HCLNCANTIDAD" length="4"/>
+        <property name="hcldfechactivi" type="java.util.Date" column="HCLDFECHACTIVI" length="7"/>
+        <property name="hcldfecregistr" type="java.util.Date" column="HCLDFECREGISTR" length="7"/>
+        <property name="hclcoperador" type="java.lang.String" column="HCLCOPERADOR" length="14"/>
+        <property name="hclnclinica" type="java.lang.Integer" column="HCLNCLINICA" length="4"/>
+        <property name="hclcetapa" type="java.lang.String" column="HCLCETAPA" length="2"/>
+        <property name="hclctipoliqadm" type="java.lang.String" column="HCLCTIPOLIQADM" length="4000"/>
+        <property name="hclctipoliqpar" type="java.lang.String" column="HCLCTIPOLIQPAR" length="2"/>
+        <property name="hclncantisumin" type="java.lang.Integer" column="HCLNCANTISUMIN" length="4"/>
+        <property name="hcldfechactfin" type="java.util.Date" column="HCLDFECHACTFIN" length="7"/>
+        <property name="hclcoperadmodif" type="java.lang.String" column="HCLCOPERADMODIF" length="14"/>
+        <property name="hclndiuresis" type="java.lang.Integer" column="HCLNDIURESIS" length="4"/>
+        <property name="hclndeposicion" type="java.lang.Integer" column="HCLNDEPOSICION" length="4"/>
+        <property name="hclndrenaje" type="java.lang.Integer" column="HCLNDRENAJE" length="4"/>
+        <property name="hclcdrenaje" type="java.lang.String" column="HCLCDRENAJE" length="1"/>
+        <property name="hclcdiuresis" type="java.lang.String" column="HCLCDIURESIS" length="1"/>
+        <property name="hclctipodiure" type="java.lang.String" column="HCLCTIPODIURE" length="1"/>
+        <property name="hclcdeposicion" type="java.lang.String" column="HCLCDEPOSICION" length="1"/>
+        <property name="hclccuantdiure" type="java.lang.String" column="HCLCCUANTDIURE" length="1"/>
+        <property name="hclccuantdepos" type="java.lang.String" column="HCLCCUANTDEPOS" length="1"/>
+        <property name="hclccuantdrena" type="java.lang.String" column="HCLCCUANTDRENA" length="1"/>
+        <property name="hclctipodrena" type="java.lang.String" column="HCLCTIPODRENA" length="20"/>
+        <property name="hclctiposangre" type="java.lang.String" column="HCLCTIPOSANGRE" length="2"/>
+        <property name="hclcgrupsangre" type="java.lang.String" column="HCLCGRUPSANGRE" length="2"/>
+        <property name="hclcfactosangre" type="java.lang.String" column="HCLCFACTOSANGRE" length="1"/>
+        <property name="hclnunidasangr" type="java.lang.Integer" column="HCLNUNIDASANGR" length="8"/>
+        <property name="hclnsellocalid" type="java.lang.Integer" column="HCLNSELLOCALID" length="8"/>
+        <property name="hcldsangrvenci" type="java.util.Date" column="HCLDSANGRVENCI" length="7"/>
+        <property name="hclcobsliqelim" type="java.lang.String" column="HCLCOBSLIQELIM" length="4000"/>
+        <property name="hclcemesis" type="java.lang.String" column="HCLCEMESIS" length="1"/>
+        <property name="hclcemecua" type="java.lang.String" column="HCLCEMECUA" length="1"/>
+        <property name="hclnemecan" type="java.lang.Integer" column="HCLNEMECAN" length="1"/>
+        <property name="hclnvelocidadm" type="java.lang.Integer" column="HCLNVELOCIDADM" length="4"/>
+        <property name="hclcformadmins" type="java.lang.String" column="HCLCFORMADMINS" length="1"/>
+        <property name="hcllusuario" type="java.lang.Long" column="HCLLUSUARIO" not-null="true" length="12"/>
+        <property name="hclcestado" type="java.lang.String" column="HCLCESTADO" length="2"/>
+        <property name="hclctiposoluci" type="java.lang.String" column="HCLCTIPOSOLUCI" length="2"/>
+        <property name="hclcotroliquid" type="java.lang.String" column="HCLCOTROLIQUID" length="80"/>
+        <property name="hclcetapcontro" type="java.lang.String" column="HCLCETAPCONTRO" length="2"/>
+        <property name="hclcotroliqvo" type="java.lang.String" column="HCLCOTROLIQVO" length="20"/>
+        <property name="hclcoobsliqvo" type="java.lang.String" column="HCLCOOBSLIQVO" length="1000"/>
+      
+        <!-- Associations -->
+        <!-- derived association(s) for compound key -->
+        <!-- end of derived association(s) -->
+    </class>
+</hibernate-mapping>

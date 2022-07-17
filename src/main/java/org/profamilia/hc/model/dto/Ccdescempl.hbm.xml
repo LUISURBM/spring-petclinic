@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping>
+    <!-- 
+    Created by the Middlegen Hibernate plugin 2.2
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+    <class name="org.profamilia.hc.model.dto.Ccdescempl" table="CCDESCEMPL" lazy="false" schema="CLINICO">
+        <composite-id name="id" class="org.profamilia.hc.model.dto.CcdescemplId">
+            <key-property name="cdenanno" column="CDENANNO" type="java.lang.Integer" length="4"/>
+            <key-property name="cdectipide" column="CDECTIPIDE" type="java.lang.String" length="2"/>
+            <key-property name="cdeanumide" column="CDEANUMIDE" type="java.math.BigDecimal" length="15"/>
+            <key-property name="cdengrupo" column="CDENGRUPO" type="java.lang.Integer" length="2"/>
+            <key-property name="cdensubgru" column="CDENSUBGRU" type="java.lang.Integer" length="2"/>
+            <key-property name="cdecservic" column="CDECSERVIC" type="java.lang.String" length="12"/>
+        </composite-id>
+        <version name="version" column="VERSION"/>
+        <property name="cdencantid" type="java.lang.Integer" column="CDENCANTID" not-null="true" length="9"/>
+        <property name="cdeapordsc" type="java.math.BigDecimal" column="CDEAPORDSC" not-null="true" length="15"/>
+        <property name="cdecusumod" type="java.lang.String" column="CDECUSUMOD" not-null="true" length="12"/>
+        <property name="cdedfecmod" type="java.util.Date" column="CDEDFECMOD" not-null="true" length="7"/>
+        <property name="cdecusureg" type="java.lang.String" column="CDECUSUREG" length="12"/>
+        <property name="cdedfecreg" type="java.util.Date" column="CDEDFECREG" length="7"/>
+        <property name="cdengrpcmp" type="java.lang.Integer" column="CDENGRPCMP" not-null="true" length="4"/>
+        <!-- Associations -->
+        <!-- derived association(s) for compound key -->
+        <!-- end of derived association(s) -->
+    </class>
+</hibernate-mapping>

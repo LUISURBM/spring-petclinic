@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping>
+    <!-- 
+    Created by the Middlegen Hibernate plugin 2.2
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+    <class name="org.profamilia.hc.model.dto.Chcirdetnota" table="CHCIRDETNOTA" lazy="false"  schema="HISTORIA">
+        <composite-id name="id" class="org.profamilia.hc.model.dto.ChcirdetnotaPK">
+            <key-property name="hcnlnumero" column="HCNLNUMERO" type="java.lang.Long" length="12"/>
+            <key-property name="hcnnconsec" column="HCNNCONSEC" type="java.lang.Integer" length="4"/>
+            <key-property name="hcncintervenci" column="HCNCINTERVENCI" type="java.lang.String" length="12"/>
+        </composite-id>
+        <!-- Associations -->
+        <!-- derived association(s) for compound key -->
+        <!-- end of derived association(s) -->
+    </class>
+</hibernate-mapping>

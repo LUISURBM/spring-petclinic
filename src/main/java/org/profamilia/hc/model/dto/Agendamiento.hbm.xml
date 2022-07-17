@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd
+<hibernate-mapping>
+    <!-- 
+    Created by the Middlegen Hibernate plugin 2.2
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+    <class name="org.profamilia.hc.model.dto.Agendamiento" table="AGENDAMIENTO" schema="AGENDA" lazy="false">
+        <id name="id" type="java.math.BigDecimal" column="ID">
+            <generator class="assigned"/>
+        </id>
+        <version name="version" column="VERSION"/>
+        <property name="id_profesional" type="java.math.BigDecimal" column="ID_PROFESIONAL" length="38"/>
+        <property name="id_sede" type="java.math.BigDecimal" column="ID_SEDE" length="38"/>
+        <property name="tipo_convenio" type="java.math.BigDecimal" column="TIPO_CONVENIO" length="38"/>
+        <property name="id_convenio" type="java.lang.String" column="ID_CONVENIO" length="20"/>
+        <property name="tipo_cita" type="java.math.BigDecimal" column="TIPO_CITA" length="38"/>
+        <property name="fecha_deseada" type="java.util.Date" column="FECHA_DESEADA" length="7"/>
+        <property name="fecha_agenda" type="java.util.Date" column="FECHA_AGENDA" length="7"/>
+        <property name="hora_agenda" type="java.lang.String" column="HORA_AGENDA" length="5"/>
+        <property name="subagenda" type="java.math.BigDecimal" column="SUBAGENDA" length="38"/>
+        <property name="estado" type="java.math.BigDecimal" column="ESTADO" length="7"/>
+        <property name="usuario_mod" type="java.lang.String" column="USUARIO_MOD" length="20"/>
+        <property name="fecha_mod" type="java.util.Date" column="FECHA_MOD" length="7"/>
+        <property name="estado_agenda" type="java.lang.Integer" column="ESTADO_AGENDA" length="7"/>
+        <property name="motivo_cancelacion" type="java.lang.Integer" column="MOTIVO_CANCELACION" length="7"/>
+        <property name="desc_cancelacion" type="java.lang.String" column="DESC_CANCELACION" length="255"/>
+        <property name="hora_agenda_fin" type="java.lang.String" column="HORA_AGENDA_FIN" length="5"/>
+        <property name="hora_fin" type="java.lang.String" column="HORA_FIN" length="5"/>
+        <property name="desc_cita" type="java.lang.String" column="DESC_CITA" length="255"/>
+        <property name="fecha_atencion" type="java.util.Date" column="FECHA_ATENCION" length="6"/>
+        <property name="consulta_cln" type="java.lang.Long" column="CONSULTA_CLN" length="12"/>
+        
+        <!-- Associations -->
+        <many-to-one name="especialidad" class="org.profamilia.hc.model.dto.Cpservicio" not-null="true">
+            <column name="ESPECIALIDAD"/>
+        </many-to-one>
+        <many-to-one name="id_paciente" class="org.profamilia.hc.model.dto.Chusuario" not-null="true">
+            <column name="ID_PACIENTE"/>
+        </many-to-one>
+        <!-- derived association(s) for compound key -->
+        <!-- end of derived association(s) -->
+    </class>
+</hibernate-mapping>

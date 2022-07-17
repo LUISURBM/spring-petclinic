@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+<!-- 
+        Auto-generated mapping file from
+        the hibernate.org cfg2hbm engine
+-->
+    <class name="org.profamilia.hc.model.dto.Cractoquir" table="CRACTOQUIR" schema="CLINICO">
+        <id name="caqncodigo" type="integer">
+            <column name="CAQNCODIGO" precision="4" scale="0" />
+            <generator class="assigned" />
+        </id>
+        <version name="version" column="VERSION"/>
+        <property name="caqcdescri" type="string">
+            <column name="CAQCDESCRI" length="80" not-null="true" />
+        </property>
+        <property name="caqdfecreg" type="date">
+            <column name="CAQDFECREG" length="7" not-null="true" />
+        </property>
+        <property name="caqcusuari" type="string">
+            <column name="CAQCUSUARI" length="14" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<jboss-web>
+<context-root>/historiasroot</context-root>
+     <resource-ref>
+          <res-ref-name>jboss/historiaDS</res-ref-name>
+          <jndi-name>java:jboss/historiaDS</jndi-name>
+     </resource-ref>
+</jboss-web>

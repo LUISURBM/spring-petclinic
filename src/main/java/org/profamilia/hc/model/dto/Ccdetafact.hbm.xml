@@ -1,0 +1,59 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <!-- 
+        Auto-generated mapping file from
+        the hibernate.org cfg2hbm engine
+-->
+    <class name="org.profamilia.hc.model.dto.Ccdetafact" table="CCDETAFACT" schema="CLINICO">
+        <composite-id name="id" class="org.profamilia.hc.model.dto.CcdetafactId">
+            <key-property name="cdfnnumero" type="integer">
+                <column name="CDFNNUMERO" precision="10" scale="0"/>
+            </key-property>
+            <key-property name="cdfnconsec" type="integer">
+                <column name="CDFNCONSEC" precision="4" scale="0"/>
+            </key-property>
+        </composite-id>
+        <version name="version" column="VERSION"/>
+        <property name="cdfcservic" type="string">
+            <column name="CDFCSERVIC" length="12" not-null="true"/>
+        </property>
+        <property name="cdfccodent" type="string">
+            <column name="CDFCCODENT" length="9"/>
+        </property>
+        <property name="cdfavalser" type="big_decimal">
+            <column name="CDFAVALSER" precision="15" not-null="true"/>
+        </property>
+        <property name="cdfaivaser" type="big_decimal">
+            <column name="CDFAIVASER" precision="15" not-null="true"/>
+        </property>
+        <property name="cdfadescto" type="big_decimal">
+            <column name="CDFADESCTO" precision="15" not-null="true"/>
+        </property>
+        <property name="cdfncantid" type="integer">
+            <column name="CDFNCANTID" precision="9" scale="0" not-null="true"/>
+        </property>
+        <property name="cdfavalent" type="big_decimal">
+            <column name="CDFAVALENT" precision="15" not-null="true"/>
+        </property>
+        <property name="cdfavaltot" type="big_decimal">
+            <column name="CDFAVALTOT" precision="15" not-null="true"/>
+        </property>
+        <property name="cdfnnumite" type="integer">
+            <column name="CDFNNUMITE" precision="9" scale="0" not-null="true"/>
+        </property>
+        <property name="cdfcpaquet" type="string">
+            <column name="CDFCPAQUET" length="12" not-null="true"/>
+        </property>
+        <property name="cdfcswpaqu" type="string">
+            <column name="CDFCSWPAQU" length="1" not-null="true"/>
+        </property>
+        <property name="cdfavaldon" type="big_decimal">
+            <column name="CDFAVALDON" precision="15" not-null="true"/>
+        </property>
+        <property name="cdfcnumlot" type="string">
+            <column name="CDFCNUMLOT" length="15" not-null="true"/>
+        </property>
+    </class>
+</hibernate-mapping>

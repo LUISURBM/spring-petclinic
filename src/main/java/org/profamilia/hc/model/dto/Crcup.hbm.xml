@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping>
+    <!-- 
+    Created by the Middlegen Hibernate plugin 2.2
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+    <class name="org.profamilia.hc.model.dto.Crcup" table="CRCUPS" lazy="false" schema="CLINICO">
+        <id name="crcuvcodigo" type="java.lang.String" column="CRCUVCODIGO">
+            <meta attribute="field-description" inherit="false">PRIMARIA CODIGO CUP</meta>
+            <generator class="assigned"/>
+        </id>
+        <property name="crcuvdescrip" type="java.lang.String" column="CRCUVDESCRIP" length="255"/>
+        <property name="crcuvusureg" type="java.lang.String" column="CRCUVUSUREG" length="14"/>
+        <property name="crcutfecreg" type="java.sql.Timestamp" column="CRCUTFECREG" length="11"/>
+        <property name="crcuvestado" type="java.lang.String" column="CRCUVESTADO" length="2"/>
+        <property name="version" type="java.math.BigDecimal" column="VERSION" length="22"/>
+        <property name="crcuccapitu" type="java.lang.String" column="CRCUCCAPITU" length="2"/>
+        <property name="crcucexsecc" type="java.lang.String" column="CRCUCEXSECC" length="2"/>
+        <!-- Associations -->
+    </class>
+</hibernate-mapping>

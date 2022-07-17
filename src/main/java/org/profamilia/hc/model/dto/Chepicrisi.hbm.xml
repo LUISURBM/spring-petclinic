@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping>
+    <!-- 
+    Created by the Middlegen Hibernate plugin 2.2
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+    <class name="org.profamilia.hc.model.dto.Chepicrisi" table="CHEPICRISIS" schema="HISTORIA" lazy="false">
+        <composite-id name="id" class="org.profamilia.hc.model.dto.ChepicrisiPK">
+            <key-property name="heplnumero" column="HEPLNUMERO" type="java.lang.Long" length="12"/>
+            <key-property name="hepnconsec" column="HEPNCONSEC" type="java.lang.Integer" length="1"/>
+        </composite-id>
+        <version name="version" column="VERSION"/>
+        <property name="heplusuario" type="java.lang.Long" column="HEPLUSUARIO" length="12"/>
+        <property name="hepcmotivocons" type="java.lang.String" column="HEPCMOTIVOCONS" length="4000"/>
+        <property name="hepcestaingres" type="java.lang.String" column="HEPCESTAINGRES" length="4000"/>
+        <property name="hepcenfeactual" type="java.lang.String" column="HEPCENFEACTUAL" length="4000"/>
+        <property name="hepcantecedent" type="java.lang.String" column="HEPCANTECEDENT" length="4000"/>
+        <property name="hepcrevisistem" type="java.lang.String" column="HEPCREVISISTEM" length="4000"/>
+        <property name="hepchallaexafi" type="java.lang.String" column="HEPCHALLAEXAFI" length="4000"/>
+        <property name="hepcconducta" type="java.lang.String" column="HEPCCONDUCTA" length="4000"/>
+        <property name="hepcevolucion" type="java.lang.String" column="HEPCEVOLUCION" length="4000"/>
+        <property name="hepcexamapoyo" type="java.lang.String" column="HEPCEXAMAPOYO" length="4000"/>
+        <property name="hepccondegres" type="java.lang.String" column="HEPCCONDEGRES" length="4000"/>
+        <property name="hepnclinica" type="java.lang.Integer" column="HEPNCLINICA" length="4"/>
+        <property name="hepcestado" type="java.lang.String" column="HEPCESTADO" length="2"/>
+        <property name="hepdfecregistr" type="java.util.Date" column="HEPDFECREGISTR" length="7"/>
+        <property name="hepcoperador" type="java.lang.String" column="HEPCOPERADOR" length="14"/>
+        <property name="hepcdiagingnpresu" type="java.lang.String" column="HEPCDIAGINGNPRESU" length="4"/>
+        <property name="hepcdiagnconfi" type="java.lang.String" column="HEPCDIAGNCONFI" length="4"/>
+        <property name="hepctipousuari" type="java.lang.String" column="HEPCTIPOUSUARI" length="1"/>
+        <property name="hepdfechaingre" type="java.util.Date" column="HEPDFECHAINGRE" length="7"/>
+        <property name="hepdfechaegres" type="java.util.Date" column="HEPDFECHAEGRES" length="7"/>
+        <property name="hepcserviingre" type="java.lang.String" column="HEPCSERVIINGRE" length="200"/>
+        <property name="hepcserviegres" type="java.lang.String" column="HEPCSERVIEGRES" length="200"/>
+        <property name="hepcdiagingnrelacu" type="java.lang.String" column="HEPCDIAGINGNRELACU" length="4"/>
+        <property name="hepcdiagingrelacd" type="java.lang.String" column="HEPCDIAGINGRELACD" length="4"/>
+        <property name="hepcdiagingrelact" type="java.lang.String" column="HEPCDIAGINGRELACT" length="4"/>
+        <property name="hepcdiagegrrelacu" type="java.lang.String" column="HEPCDIAGEGRRELACU" length="4"/>
+        <property name="hepcdiagegrrelacd" type="java.lang.String" column="HEPCDIAGEGRRELACD" length="4"/>
+        <property name="hepcdiagegrrelact" type="java.lang.String" column="HEPCDIAGEGRRELACT" length="4"/>
+        <property name="hepcdiagegrpresu" type="java.lang.String" column="HEPCDIAGEGRPRESU" length="4"/>
+        <property name="hepcintres" type="java.lang.String" column="HEPCINTRES" length="500"/>
+        <property name="hepcindterap" type="java.lang.String" column="HEPCINDTERAP" length="500"/>
+        <property name="hepcplaman" type="java.lang.String" column="HEPCPLAMAN" length="500"/>
+    </class>
+</hibernate-mapping>

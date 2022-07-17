@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping>
+    <!-- 
+    Created by the Middlegen Hibernate plugin 2.2
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+    <class name="org.profamilia.hc.model.dto.Chformulaesp" table="CHFORMULAESP" schema="HISTORIA"
+           lazy="false">
+        <composite-id name="id"
+                      class="org.profamilia.hc.model.dto.ChformulaespPK">
+            <key-property name="hfelconsulta" column="HFELCONSULTA"
+                          type="java.lang.Long" length="12"/>
+            <key-property name="hfenconsecut" column="HFENCONSECUT"
+                          type="java.lang.Integer" length="4"/>
+            <key-property name="hfectiposerv" column="HFECTIPOSERV"
+                          type="java.lang.String" length="1"/>
+            <key-property name="hfenllave" column="HFENLLAVE"
+                          type="java.lang.Integer" length="4"/>
+        </composite-id>
+        <version name="version" column="VERSION"/>
+        <property name="hfecmedicament" type="java.lang.String"
+                  column="HFECMEDICAMENT" length="4000"/>
+        <property name="hfectratramien" type="java.lang.String"
+                  column="HFECTRATRAMIEN" length="4000"/>
+        <property name="hfeccontraindi" type="java.lang.String"
+                  column="HFECCONTRAINDI" length="4000"/>
+        <property name="hfecviadministr" type="java.lang.String"
+                  column="HFECVIADMINISTR" length="2"/>
+        <property name="hfecviadminotr" type="java.lang.String"
+                  column="HFECVIADMINOTR" length="600"/>
+        <property name="hfecadosis" type="java.lang.Integer"
+                  column="HFECADOSIS" length="17"/>
+        <property name="hfedfecregistr" type="java.util.Date"
+                  column="HFEDFECREGISTR" length="7"/>
+        <property name="hfecoperador" type="java.lang.String"
+                  column="HFECOPERADOR" length="14"/>
+    
+
+        <!-- Associations -->
+        <!-- derived association(s) for compound key -->
+        <!-- end of derived association(s) -->
+    </class>
+</hibernate-mapping>

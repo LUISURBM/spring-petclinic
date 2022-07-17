@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping>
+    <!-- 
+    Created by the Middlegen Hibernate plugin 2.2
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+    <class name="org.profamilia.hc.model.dto.Chrefepaci" table="CHREFEPACI" schema="HISTORIA" lazy="false">     
+        <composite-id name="id" class="org.profamilia.hc.model.dto.ChrefepaciPK">
+            <key-property name="hrplconsulta" column="HRPLCONSULTA" type="java.lang.Long" length="12"/>
+            <key-property name="hrpnconsecuti" column="HRPNCONSECUTI" type="java.lang.Integer" length="4"/>
+        </composite-id>
+        <version name="version" column="VERSION"/>
+        <property name="hrpcrefepaci" type="java.lang.String" column="HRPCREFEPACI" length="1"/>
+        <property name="hrpcinstrece" type="java.lang.String" column="HRPCINSTRECE" length="4000"/>
+        <property name="hrpchoraconf" type="java.lang.String" column="HRPCHORACONF" length="2"/>
+        <property name="hrpcminuconf" type="java.lang.String" column="HRPCMINUCONF" length="2"/>
+        <property name="hrpcpresambu" type="java.lang.String" column="HRPCPRESAMBU" length="4000"/>
+        <property name="hrpctipoambu" type="java.lang.String" column="HRPCTIPOAMBU" length="2"/>
+        <property name="hrpchorallega" type="java.lang.String" column="HRPCHORALLEGA" length="2"/>
+        <property name="hrpcminullega" type="java.lang.String" column="HRPCMINULLEGA" length="2"/>
+        <property name="hrpctripurecib" type="java.lang.String" column="HRPCTRIPURECIB" length="4000"/>
+        <property name="hrpchorasali" type="java.lang.String" column="HRPCHORASALI" length="2"/>
+        <property name="hrpcminusali" type="java.lang.String" column="HRPCMINUSALI" length="2"/>
+        <property name="hrpchoraingr" type="java.lang.String" column="HRPCHORAINGR" length="2"/>
+        <property name="hrpcminuingr" type="java.lang.String" column="HRPCMINUINGR" length="2"/>
+        <property name="hrpcnomfunges" type="java.lang.String" column="HRPCNOMFUNGES" length="80"/>
+        <property name="hrpdfecreg" type="java.util.Date" column="HRPDFECREG" length="7"/>
+        <property name="hrpcusureg" type="java.lang.String" column="HRPCUSUREG" length="12"/>
+    
+    </class>
+</hibernate-mapping>

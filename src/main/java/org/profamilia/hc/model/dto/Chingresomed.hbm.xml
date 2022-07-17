@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping>
+    <!-- 
+    Created by the Middlegen Hibernate plugin 2.2
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+    <class name="org.profamilia.hc.model.dto.Chingresomed" table="CHINGRESOMED" schema="HISTORIA" lazy="false">
+        <composite-id name="id" class="org.profamilia.hc.model.dto.ChingresomedPK">
+            <key-property name="himlnumero" column="HIMLNUMERO" type="java.lang.Long" length="12"/>
+            <key-property name="himctiposervi" column="HIMCTIPOSERVI" type="java.lang.String" length="1"/>
+        </composite-id>
+        <version name="version" column="VERSION"/>
+        <property name="himlusuario" type="java.lang.Long" column="HIMLUSUARIO" length="12"/>
+        <property name="himcintervenci" type="java.lang.String" column="HIMCINTERVENCI" length="80"/>
+        <property name="himcobservacio" type="java.lang.String" column="HIMCOBSERVACIO" length="4000"/>
+        <property name="himcalergias" type="java.lang.String" column="HIMCALERGIAS" length="4000"/>
+        <property name="himdfecregistr" type="java.util.Date" column="HIMDFECREGISTR" length="7"/>
+        <property name="himcoperador" type="java.lang.String" column="HIMCOPERADOR" length="14"/>
+        <property name="himcestado" type="java.lang.String" column="HIMCESTADO" length="2"/>
+        <!-- Associations -->
+        <!-- derived association(s) for compound key -->
+        <!-- end of derived association(s) -->
+    </class>
+</hibernate-mapping>

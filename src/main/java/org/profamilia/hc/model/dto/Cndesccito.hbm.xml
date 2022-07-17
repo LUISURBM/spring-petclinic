@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping>
+    <!-- 
+    Created by the Middlegen Hibernate plugin 2.2
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+    <class name="org.profamilia.hc.model.dto.Cndesccito" table="CNDESCCITO"  schema="CLINICO"
+           lazy="false">
+        <composite-id name="id"
+                      class="org.profamilia.hc.model.dto.CndesccitoPK">
+            <key-property name="cdictabla" column="CDICTABLA"
+                          type="java.lang.String" length="12"/>
+            <key-property name="cdiccampo" column="CDICCAMPO"
+                          type="java.lang.String" length="12"/>
+            <key-property name="cdinconsec" column="CDINCONSEC"
+                          type="java.lang.Integer" length="4"/>
+        </composite-id>
+        <version name="version" column="VERSION"/>
+        <property name="cdicdescri" type="java.lang.String" column="CDICDESCRI"
+                  not-null="true" length="120"/>
+        <property name="cdicvalor" type="java.lang.String" column="CDICVALOR"
+                  not-null="true" length="6"/>
+        <property name="cdicestado" type="java.lang.String" column="CDICESTADO"
+                  not-null="true" length="2"/>
+
+        <!-- Associations -->
+        <!-- derived association(s) for compound key -->
+        <!-- end of derived association(s) -->
+    </class>
+</hibernate-mapping>

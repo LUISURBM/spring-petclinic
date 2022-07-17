@@ -1,0 +1,115 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <!-- 
+        Auto-generated mapping file from
+        the hibernate.org cfg2hbm engine
+-->
+    <class name="org.profamilia.hc.model.dto.Cpprofesio" table="CPPROFESIO" schema="CLINICO">
+        <composite-id name="id" class="org.profamilia.hc.model.dto.CpprofesioId">
+            <key-property name="cpfncodigo" type="big_decimal">
+                <column name="CPFNCODIGO" precision="10" scale="0"/>
+            </key-property>
+            <key-property name="cpfnclinic" type="integer">
+                <column name="CPFNCLINIC" precision="4" scale="0"/>
+            </key-property>
+        </composite-id>
+        <version name="version" column="VERSION"/>
+        <property name="cpfcnombre" type="string">
+            <column name="CPFCNOMBRE" length="60" not-null="true"/>
+        </property>
+        <property name="cpfacedula" type="big_decimal">
+            <column name="CPFACEDULA" precision="15" not-null="true"/>
+        </property>
+        <property name="cpfcdirecc" type="string">
+            <column name="CPFCDIRECC" length="30" not-null="true"/>
+        </property>
+        <property name="cpfctelefo" type="string">
+            <column name="CPFCTELEFO" length="10" not-null="true"/>
+        </property>
+        <property name="cpfntipcon" type="integer">
+            <column name="CPFNTIPCON" precision="4" scale="0" not-null="true"/>
+        </property>
+        <property name="cpfncuomes" type="integer">
+            <column name="CPFNCUOMES" precision="4" scale="0" not-null="true"/>
+        </property>
+        <property name="cpfncuosem" type="integer">
+            <column name="CPFNCUOSEM" precision="4" scale="0" not-null="true"/>
+        </property>
+        <property name="cpfncuodia" type="integer">
+            <column name="CPFNCUODIA" precision="4" scale="0" not-null="true"/>
+        </property>
+        <property name="cpfncuolun" type="integer">
+            <column name="CPFNCUOLUN" precision="4" scale="0" not-null="true"/>
+        </property>
+        <property name="cpfncuomar" type="integer">
+            <column name="CPFNCUOMAR" precision="4" scale="0" not-null="true"/>
+        </property>
+        <property name="cpfncuomie" type="integer">
+            <column name="CPFNCUOMIE" precision="4" scale="0" not-null="true"/>
+        </property>
+        <property name="cpfncuojue" type="integer">
+            <column name="CPFNCUOJUE" precision="4" scale="0" not-null="true"/>
+        </property>
+        <property name="cpfncuovie" type="integer">
+            <column name="CPFNCUOVIE" precision="4" scale="0" not-null="true"/>
+        </property>
+        <property name="cpfncuosab" type="integer">
+            <column name="CPFNCUOSAB" precision="4" scale="0" not-null="true"/>
+        </property>
+        <property name="cpfcobliga" type="string">
+            <column name="CPFCOBLIGA" length="1" not-null="true"/>
+        </property>
+        <property name="cpfntippro" type="integer">
+            <column name="CPFNTIPPRO" precision="4" scale="0" not-null="true"/>
+        </property>
+              <property name="cpfntipoespe" type="integer">
+            <column name="CPFNTIPOESPE" precision="4" scale="0" not-null="true"/>
+        </property>
+        <property name="cpfdfecreg" type="date">
+            <column name="CPFDFECREG" length="7" not-null="true"/>
+        </property>
+        <property name="cpfthorreg" type="timestamp">
+            <column name="CPFTHORREG" length="7" not-null="true"/>
+        </property>
+        <property name="cpfcusuar" type="string">
+            <column name="CPFCUSUAR" length="14" not-null="true"/>
+        </property>
+        <property name="cpfcestado" type="string">
+            <column name="CPFCESTADO" length="2" not-null="true"/>
+        </property>
+        <property name="cpfctipper" type="string">
+            <column name="CPFCTIPPER" length="1" not-null="true"/>
+        </property>
+        <property name="cpfaporfte" type="big_decimal">
+            <column name="CPFAPORFTE" precision="9" not-null="true"/>
+        </property>
+        <property name="cpfaporica" type="big_decimal">
+            <column name="CPFAPORICA" precision="9" not-null="true"/>
+        </property>
+        <property name="cpfaportim" type="big_decimal">
+            <column name="CPFAPORTIM" precision="9" not-null="true"/>
+        </property>
+        <property name="cpfnauxcnt" type="integer">
+            <column name="CPFNAUXCNT" precision="4" scale="0" not-null="true"/>
+        </property>
+        <property name="cpfncodimp" type="integer">
+            <column name="CPFNCODIMP" precision="4" scale="0" not-null="true"/>
+        </property>
+        <property name="cpfacotarp" type="big_decimal">
+            <column name="CPFACOTARP" precision="15" not-null="true"/>
+        </property>
+        <property name="cpfapagtim" type="big_decimal">
+            <column name="CPFAPAGTIM" precision="15" not-null="true"/>
+        </property>
+        <property name="cpffporarp" type="big_decimal">
+            <column name="CPFFPORARP" precision="126" scale="0" not-null="true"/>
+        </property>
+        <property name="cpfcregmedic" type="java.lang.String" column="CPFCREGMEDIC" length="12"/>
+        <property name="cpfctipide" type="string">
+            <column name="CPFCTIPIDE" length="1" not-null="true"/>
+        </property>
+
+    </class>
+</hibernate-mapping>

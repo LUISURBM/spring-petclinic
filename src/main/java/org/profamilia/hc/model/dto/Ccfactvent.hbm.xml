@@ -1,0 +1,106 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+<!-- 
+        Auto-generated mapping file from
+        the hibernate.org cfg2hbm engine
+-->
+    <class name="org.profamilia.hc.model.dto.Ccfactvent" table="CCFACTVENT" schema="CLINICO">
+        <id name="cfvnconsec" type="integer">
+            <column name="CFVNCONSEC" precision="10" scale="0" />
+            <generator class="assigned" />
+        </id>
+        <version name="version" column="VERSION"/>        
+        <property name="cfvnclinic" type="integer">
+            <column name="CFVNCLINIC" precision="4" scale="0" not-null="true" />
+        </property>
+        <property name="cfvntipdoc" type="integer">
+            <column name="CFVNTIPDOC" precision="4" scale="0" not-null="true" />
+        </property>
+        <property name="cfvnnumero" type="integer">
+            <column name="CFVNNUMERO" precision="9" scale="0" not-null="true" />
+        </property>
+        <property name="cfvnclifac" type="integer">
+            <column name="CFVNCLIFAC" precision="4" scale="0" not-null="true" />
+        </property>
+        <property name="cfvdfecreg" type="date">
+            <column name="CFVDFECREG" length="7" not-null="true" />
+        </property>
+        <property name="cfvthorreg" type="timestamp">
+            <column name="CFVTHORREG" length="7" not-null="true" />
+        </property>
+        <property name="cfvcusuari" type="string">
+            <column name="CFVCUSUARI" length="14" not-null="true" />
+        </property>
+        <property name="cfvnprogra" type="integer">
+            <column name="CFVNPROGRA" precision="4" scale="0" not-null="true" />
+        </property>
+        <property name="cfvndonant" type="integer">
+            <column name="CFVNDONANT" precision="4" scale="0" not-null="true" />
+        </property>
+        <property name="cfvntipusu" type="integer">
+            <column name="CFVNTIPUSU" precision="6" scale="0" not-null="true" />
+        </property>
+        <property name="cfvasubtot" type="big_decimal">
+            <column name="CFVASUBTOT" precision="15" not-null="true" />
+        </property>
+        <property name="cfvaabono" type="big_decimal">
+            <column name="CFVAABONO" precision="15" not-null="true" />
+        </property>
+        <property name="cfvnbodega" type="integer">
+            <column name="CFVNBODEGA" precision="9" scale="0" not-null="true" />
+        </property>
+        <property name="cfvaiva" type="big_decimal">
+            <column name="CFVAIVA" precision="15" not-null="true" />
+        </property>
+        <property name="cfvadescto" type="big_decimal">
+            <column name="CFVADESCTO" precision="15" not-null="true" />
+        </property>
+        <property name="cfvavalent" type="big_decimal">
+            <column name="CFVAVALENT" precision="15" not-null="true" />
+        </property>
+        <property name="cfvnestado" type="integer">
+            <column name="CFVNESTADO" precision="4" scale="0" not-null="true" />
+        </property>
+        <property name="cfvctermin" type="string">
+            <column name="CFVCTERMIN" length="20" not-null="true" />
+        </property>
+        <property name="cfvctipide" type="string">
+            <column name="CFVCTIPIDE" length="3" not-null="true" />
+        </property>
+        <property name="cfvanumide" type="big_decimal">
+            <column name="CFVANUMIDE" precision="15" not-null="true" />
+        </property>
+        <property name="cfvcprinom" type="string">
+            <column name="CFVCPRINOM" length="20" not-null="true" />
+        </property>
+        <property name="cfvcsegnom" type="string">
+            <column name="CFVCSEGNOM" length="20" />
+        </property>
+        <property name="cfvcpriape" type="string">
+            <column name="CFVCPRIAPE" length="20" not-null="true" />
+        </property>
+        <property name="cfvcsegape" type="string">
+            <column name="CFVCSEGAPE" length="20" />
+        </property>
+        <property name="cfvcusureg" type="string">
+            <column name="CFVCUSUREG" length="14" not-null="true" />
+        </property>
+        <property name="cfvdfecfac" type="date">
+            <column name="CFVDFECFAC" length="7" not-null="true" />
+        </property>
+        <property name="cfvthorfac" type="timestamp">
+            <column name="CFVTHORFAC" length="7" not-null="true" />
+        </property>
+        <property name="cfvcgenero" type="string">
+            <column name="CFVCGENERO" length="1" not-null="true" />
+        </property>
+        <property name="cfvavaldon" type="big_decimal">
+            <column name="CFVAVALDON" precision="15" not-null="true" />
+        </property>
+        <property name="cfvlusuario" type="long">
+            <column name="CFVLUSUARIO" precision="12" scale="0" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

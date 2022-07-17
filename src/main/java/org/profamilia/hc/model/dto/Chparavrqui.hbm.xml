@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping>
+    <!-- 
+    Created by the Middlegen Hibernate plugin 2.2
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+    <class name="org.profamilia.hc.model.dto.Chparavrqui" table="CHPARAVRQUI"  schema="HISTORIA"
+           lazy="false">
+        <id name="hpqnconsec" type="java.lang.Integer" column="HPQNCONSEC">
+            <generator class="assigned"/>
+        </id>
+        <version name="version" column="VERSION"/> 
+        <property name="hpqcliteral" type="java.lang.String"
+                  column="HPQCLITERAL" length="2" not-null="true" />
+        <property name="hpqnnumeral" type="java.lang.Integer" 
+                  column="HPQNNUMERAL" length="2"/>
+        <property name="hpqcdescri" type="java.lang.String"
+                  column="HPQCDESCRI" length="400"/>
+        <property name="hpqcreganeste" type="java.lang.String"
+                  column="HPQCREGANESTE" length="1"/>
+        <property name="hpqcnoaplica" type="java.lang.String"
+                  column="HPQCNOAPLICA" length="1"/>
+        <property name="hpqcanesgen" type="java.lang.String"
+                  column="HPQCANESGEN" length="1"/>
+        <property name="hpqcanesreg" type="java.lang.String"
+                  column="HPQCANESREG" length="1"/>
+        <property name="hpqcanesloc" type="java.lang.String"
+                  column="HPQCANESLOC" length="1"/>
+        <property name="hpqdfecreg" type="java.util.Date"
+                  column="HPQDFECREG" length="7"/>
+        <property name="hpqcusureg" type="java.lang.String"
+                  column="HPQCUSUREG" length="12"/>
+        <property name="hpqdfecmod" type="java.util.Date"
+                  column="HPQDFECMOD" length="7"/>
+        <property name="hpqcusumod" type="java.lang.String"
+                  column="HPQCUSUMOD" length="12"/>
+        <property name="hpqcestado" type="java.lang.String"
+                  column="HPQCESTADO" length="2" not-null="true" />
+        <property name="hpqcetapa" type="java.lang.String"
+                  column="HPQCETAPA" length="2" not-null="true" />
+    </class>
+</hibernate-mapping>

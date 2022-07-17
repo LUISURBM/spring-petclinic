@@ -1,0 +1,62 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping>
+    <!-- 
+    Created by the Middlegen Hibernate plugin 2.2
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+    <class name="org.profamilia.hc.model.dto.Cncitologi" table="CNCITOLOGI"  schema="CLINICO"
+           lazy="false">
+        <id name="ccinconsec" type="java.lang.Integer" column="CCINCONSEC">
+            <generator class="sequence">
+                <param name="sequence">CLINICO.CNCITOLOGI_SEC</param>
+            </generator> 
+        </id>
+         <version name="version" column="VERSION"/>
+        <property name="ccinnumero" type="java.lang.Integer" column="CCINNUMERO" not-null="true" length="9"/>
+        <property name="ccinclinic" type="java.lang.Integer" column="CCINCLINIC" not-null="true" length="4"/>
+        <property name="ccictipide" type="java.lang.String" column="CCICTIPIDE" not-null="true" length="2"/>
+        <property name="ccianumide" type="java.lang.Long" column="CCIANUMIDE" not-null="true" length="17"/>
+        <property name="ccicprinom" type="java.lang.String" column="CCICPRINOM" not-null="true" length="20"/>
+        <property name="ccicsegnom" type="java.lang.String" column="CCICSEGNOM" length="20"/>
+        <property name="ccicpriape" type="java.lang.String" column="CCICPRIAPE" not-null="true" length="20"/>
+        <property name="ccicsegape" type="java.lang.String" column="CCICSEGAPE" length="20"/>
+        <property name="ccicdirecc" type="java.lang.String" column="CCICDIRECC" length="30"/>
+        <property name="ccictelefo" type="java.lang.String" column="CCICTELEFO" length="15"/>
+        <property name="ccindepart" type="java.lang.Integer" column="CCINDEPART" not-null="true" length="4"/>
+        <property name="ccinmunici" type="java.lang.Integer" column="CCINMUNICI" not-null="true" length="4"/>
+        <property name="ccicotrdir" type="java.lang.String" column="CCICOTRDIR" length="30"/>
+        <property name="ccicotrtel" type="java.lang.String" column="CCICOTRTEL" length="15"/>
+        <property name="ccinotrdep" type="java.lang.Integer" column="CCINOTRDEP" length="4"/>
+        <property name="ccinotrmun" type="java.lang.Integer" column="CCINOTRMUN" length="4"/>
+        <property name="ccinedad" type="java.lang.Integer" column="CCINEDAD" not-null="true" length="4"/>
+        <property name="ccictipafi" type="java.lang.String" column="CCICTIPAFI" not-null="true" length="1"/>
+        <property name="ccicasegur" type="java.lang.String" column="CCICASEGUR" length="6"/>
+        <property name="ccicusureg" type="java.lang.String" column="CCICUSUREG" not-null="true" length="12"/>
+        <property name="ccidfecreg" type="java.util.Date" column="CCIDFECREG" not-null="true" length="7"/>
+        <property name="ccintipdoc" type="java.lang.Integer" column="CCINTIPDOC" not-null="true" length="4"/>
+        <property name="ccinnumdoc" type="java.math.BigDecimal" column="CCINNUMDOC" not-null="true" length="10"/>
+        <property name="ccithorreg" type="java.util.Date" column="CCITHORREG" not-null="true" length="7"/>
+        <property name="ccidfeccit" type="java.util.Date" column="CCIDFECCIT" length="7"/>
+        <property name="ccicentreg" type="java.lang.String" column="CCICENTREG" not-null="true" length="1"/>
+        <property name="ccidfecent" type="java.util.Date" column="CCIDFECENT" length="7"/>
+        <property name="ccinestado" type="java.lang.Integer" column="CCINESTADO" not-null="true" length="1"/>
+        <property name="ccintiphis" type="java.lang.Integer" column="CCINTIPHIS" length="4"/>
+        <property name="ccilconcli" type="java.lang.Long" column="CCILCONCLI" length="12" not-null = "true"/>
+        <property name="ccicidengen" type="java.lang.String" column="CCICIDENGEN"  length="1"/>
+        <property name="ccicvulnera" type="java.lang.String" column="CCICVULNERA"  length="30"/>
+        <property name="ccicreaconinf" type="java.lang.String" column="CCICREACONINF" length="1"/>
+        <property name="cciccuacondil" type="java.lang.String" column="CCICCUACONDIL" length="100"/>
+        <property name="ccicautusodat" type="java.lang.String" column="CCICAUTUSODAT" length="1"/>
+        <!-- Associations -->
+         <many-to-one name="ccilusuario"  
+                     class="org.profamilia.hc.model.dto.Chusuario"
+                     not-null="true">
+            <column name="CCILUSUARIO"/>
+        </many-to-one>  
+    </class>
+</hibernate-mapping>

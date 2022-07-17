@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping>
+    <!-- 
+    Created by the Middlegen Hibernate plugin 2.2
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+    <class name="org.profamilia.hc.model.dto.Cwsaludtotal" table="CWSALUDTOTAL" lazy="false" schema="CLINICO">
+        <id name="cstnconsec" type="java.lang.Long" column="CSTNCONSEC">
+            <generator class="sequence">
+                <param name="sequence">CLINICO.CWSALUDTOTAL_SEQ</param>
+            </generator>
+        </id>
+        <property name="cstlnumcon" type="java.lang.Long" column="CSTLNUMCON" length="22"/>
+        <property name="cstcerror" type="java.lang.String" column="CSTCERROR" length="5"/>
+        <property name="cstcdescrip" type="java.lang.String" column="CSTCDESCRIP" length="255"/>
+        <property name="cstcresutlc" type="java.lang.String" column="CSTCRESUTLC" length="255"/>
+        <property name="cstdfechregi" type="java.util.Date" column="CSTDFECHREGI" length="7"/>
+        <property name="cstcusuareg" type="java.lang.String" column="CSTCUSUAREG" length="14"/>
+        <property name="cstcxml" type="java.lang.String" column="CSTCXML" length="4000"/>
+        <!-- Associations -->
+    </class>
+</hibernate-mapping>

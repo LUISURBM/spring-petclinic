@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <!-- 
+        Auto-generated mapping file from
+        the hibernate.org cfg2hbm engine
+-->
+    <class name="org.profamilia.hc.model.dto.Cpocupacio" table="CPOCUPACIO" schema="CLINICO">
+        <id name="cocncodigo" type="integer">
+            <column name="COCNCODIGO" precision="4" scale="0"/>
+            <generator class="assigned"/>
+        </id>
+        <version name="version" column="VERSION"/>
+        <property name="coccdescri" type="string">
+            <column name="COCCDESCRI" length="60" not-null="true"/>
+        </property>
+        <property name="coccusuari" type="string">
+            <column name="COCCUSUARI" length="14" not-null="true"/>
+        </property>
+        <property name="cocdfecreg" type="date">
+            <column name="COCDFECREG" length="7" not-null="true"/>
+        </property>
+        <property name="coccestado" type="string">
+            <column name="COCCESTADO" length="2" not-null="true"/>
+        </property>
+    </class>
+</hibernate-mapping>

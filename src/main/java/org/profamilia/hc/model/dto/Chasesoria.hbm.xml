@@ -1,0 +1,78 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping>
+    <!-- 
+    Created by the Middlegen Hibernate plugin 2.2
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+    <class name="org.profamilia.hc.model.dto.Chasesoria" table="CHASESORIA" lazy="false" schema="HISTORIA">
+        <id name="haslnumero" type="java.lang.Long" column="HASLNUMERO">
+             <generator class="sequence">
+                <param name="sequence">HISTORIA.CHASESORIA_SEQ</param>
+            </generator>
+        </id>
+        <version name="version" column="VERSION"/>
+        <property name="hasetipoiden" type="java.lang.String" column="HASETIPOIDEN" not-null="true" length="2"/>
+        <property name="hasanumeiden" type="java.lang.Long" column="HASANUMEIDEN" not-null="true" length="17"/>
+        <property name="haslnumusu" type="java.lang.Long" column="HASLNUMUSU" not-null="true" length="12"/>
+        <property name="hasnfinanciado" type="big_decimal" column="HASNFINANCIADO" length="4"/>
+        <property name="hascprimernomb" type="java.lang.String" column="HASCPRIMERNOMB" not-null="true" length="80"/>
+        <property name="hascsegundnomb" type="java.lang.String" column="HASCSEGUNDNOMB" length="20"/>
+        <property name="hascprimerapel" type="java.lang.String" column="HASCPRIMERAPEL" length="20"/>
+        <property name="hascsegundapel" type="java.lang.String" column="HASCSEGUNDAPEL" length="20"/>
+        <property name="hasesexo" type="java.lang.String" column="HASESEXO" length="1"/>
+        <property name="hasdfechanacim" type="java.util.Date" column="HASDFECHANACIM" length="7"/>
+        <property name="hasetipoafilia" type="java.lang.String" column="HASETIPOAFILIA" length="1"/>
+        <property name="hasccorreoelec" type="java.lang.String" column="HASCCORREOELEC" length="100"/>
+        <property name="haseplanitempo" type="java.lang.String" column="HASEPLANITEMPO" length="1"/>
+        <property name="haseplanidefin" type="java.lang.String" column="HASEPLANIDEFIN" length="1"/>
+        <property name="haseilve" type="java.lang.String" column="HASEILVE" length="1"/>
+        <property name="haseits" type="java.lang.String" column="HASEITS" length="1"/>
+        <property name="hasediversexua" type="java.lang.String" column="HASEDIVERSEXUA" length="1"/>
+        <property name="hasesexuaejerc" type="java.lang.String" column="HASESEXUAEJERC" length="1"/>
+        <property name="hasevih" type="java.lang.String" column="HASEVIH" length="1"/>
+        <property name="haseviolencia" type="java.lang.String" column="HASEVIOLENCIA" length="1"/>
+        <property name="hasevacunacion" type="java.lang.String" column="HASEVACUNACION" length="1"/>
+        <property name="hasepruebembar" type="java.lang.String" column="HASEPRUEBEMBAR" length="1"/>
+        <property name="haseresulembar" type="java.lang.String" column="HASERESULEMBAR" length="1"/>
+        <property name="haseotro" type="java.lang.String" column="HASEOTRO" length="1"/>
+        <property name="hasccualotro" type="java.lang.String" column="HASCCUALOTRO" length="30"/>
+        <property name="hascobservacio" type="java.lang.String" column="HASCOBSERVACIO" length="4000"/>
+        <property name="haseestado" type="java.lang.String" column="HASEESTADO" length="2"/>
+        <property name="hasdfecregistr" type="java.util.Date" column="HASDFECREGISTR" length="7"/>
+        <property name="hascoperador" type="java.lang.String" column="HASCOPERADOR" length="14"/>
+        <property name="hasnclinic" type="java.lang.Integer" column="HASNCLINIC" length="4"/>
+        <property name="hascviolefisic" type="java.lang.String" column="HASCVIOLEFISIC" length="1"/>
+        <property name="hascviolepsico" type="java.lang.String" column="HASCVIOLEPSICO" length="1"/>
+        <property name="hascviolesexua" type="java.lang.String" column="HASCVIOLESEXUA" length="1"/>
+        <property name="hasnedad" type="java.lang.Integer" column="HASNEDAD" length="4"/>
+        <property name="hascenvplntem" type="java.lang.String" column="HASCENVPLNTEM" length="1"/>
+        <property name="hascenvplndef" type="java.lang.String" column="HASCENVPLNDEF" length="1"/>
+        <property name="hascenvmedgen" type="java.lang.String" column="HASCENVMEDGEN" length="1"/>
+        <property name="hascenvmedesp" type="java.lang.String" column="HASCENVMEDESP" length="1"/>
+        <property name="hascenvlabcli" type="java.lang.String" column="HASCENVLABCLI" length="1"/>
+        <property name="hascenvproduc" type="java.lang.String" column="HASCENVPRODUC" length="1"/>
+        
+        <property name="hascenvpsicolo" type="java.lang.String" column="HASCENVPSICOLO" length="1"/>
+        <property name="hascdiscaselec" type="java.lang.String" column="HASCDISCASELEC" length="30"/>
+        <property name="hascdicapadad" type="java.lang.String" column="HASCDICAPADAD" length="2"/>
+        
+        <property name="hascviolencia" type="java.lang.String" column="HASCVIOLENCIA" length="1"/>
+        <property name="hascconspadr" type="java.lang.String" column="HASCCONSPADR" length="1"/>
+        <property name="hascconsexpl" type="java.lang.String" column="HASCCONSEXPL" length="1"/>
+        <property name="hascvihpre" type="java.lang.String" column="HASCVIHPRE" length="1"/>
+        <property name="hascvihpos" type="java.lang.String" column="HASCVIHPOS" length="1"/>
+        <property name="hascenvantic" type="java.lang.String" column="HASCENVANTIC" length="1"/>
+        <property name="hascenvabort" type="java.lang.String" column="HASCENVABORT" length="1"/>
+        <property name="hascenvunifer" type="java.lang.String" column="HASCENVUNIFER" length="1"/>
+        <property name="hascenvotro" type="java.lang.String" column="HASCENVOTRO" length="1" />
+        <property name="hascenvotrcond" type="java.lang.String" column="HASCENVOTRCOND" length="4000"/>
+        <property name="hascintcris" type="java.lang.String" column="HASCINTCRIS" length="1"/>
+        <property name="hascintcrisdet" type="java.lang.String" column="HASCINTCRISDET" length="4000"/>
+        <!-- Associations -->
+    </class>
+</hibernate-mapping>

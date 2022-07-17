@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+<!-- 
+        Auto-generated mapping file from
+        the hibernate.org cfg2hbm engine
+-->
+    <class name="org.profamilia.hc.model.dto.Cptipconcl" table="CPTIPCONCL" schema="CLINICO">
+        <id name="ctlncodigo" type="integer">
+            <column name="CTLNCODIGO" precision="4" scale="0" />
+            <generator class="assigned" />
+        </id>
+        <version name="version" column="VERSION"/>
+        <property name="ctlcdescri" type="string">
+            <column name="CTLCDESCRI" length="30" not-null="true" />
+        </property>
+        <property name="ctlnnumpro" type="integer">
+            <column name="CTLNNUMPRO" precision="4" scale="0" not-null="true" />
+        </property>
+        <property name="ctlcvalora" type="string">
+            <column name="CTLCVALORA" length="1" not-null="true" />
+        </property>
+        <property name="ctlcsumcuo" type="string">
+            <column name="CTLCSUMCUO" length="1" not-null="true" />
+        </property>
+        <property name="ctlcestadi" type="string">
+            <column name="CTLCESTADI" length="1" not-null="true" />
+        </property>
+        <property name="ctlchistor" type="string">
+            <column name="CTLCHISTOR" length="1" not-null="true" />
+        </property>
+        <property name="ctlcusuar" type="string">
+            <column name="CTLCUSUAR" length="14" not-null="true" />
+        </property>
+        <property name="ctldfecreg" type="date">
+            <column name="CTLDFECREG" length="7" not-null="true" />
+        </property>
+        <property name="ctlaporadm" type="big_decimal">
+            <column name="CTLAPORADM" precision="9" not-null="true" />
+        </property>
+        <property name="ctlaporemp" type="big_decimal">
+            <column name="CTLAPOREMP" precision="9" not-null="true" />
+        </property>
+        <property name="ctlcinclhr" type="string">
+            <column name="CTLCINCLHR" length="1" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

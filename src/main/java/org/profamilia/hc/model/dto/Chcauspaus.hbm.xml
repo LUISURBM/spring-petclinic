@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping>
+    <!-- 
+    Created by the Middlegen Hibernate plugin 2.2
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+    <class name="org.profamilia.hc.model.dto.Chcauspaus" table="CHCAUSPAUS" schema="HISTORIA" lazy="false">
+        <id name="ccpnconsec" type="java.lang.Integer" column="CCPNCONSEC">
+            <meta attribute="field-description" inherit="false">Consecutivo</meta>
+            <generator class="assigned"/>
+        </id>
+        <version name="version" column="VERSION"/>
+        <property name="ccpcdescrip" type="java.lang.String" column="CCPCDESCRIP" not-null="true" length="120"/>
+        <property name="ccpcestado" type="java.lang.String" column="CCPCESTADO" not-null="true" length="2"/>
+        <!-- Associations -->
+    </class>
+</hibernate-mapping>

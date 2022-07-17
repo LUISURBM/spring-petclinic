@@ -1,0 +1,62 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+<!-- 
+        Auto-generated mapping file from
+        the hibernate.org cfg2hbm engine
+-->
+    <class name="org.profamilia.hc.model.dto.Crripxclin" table="CRRIPXCLIN" schema="CLINICO">
+        <composite-id name="id" class="org.profamilia.hc.model.dto.CrripxclinId">
+            <key-property name="crinclinic" type="integer">
+                <column name="CRINCLINIC" precision="4" scale="0" />
+            </key-property>
+            <key-property name="cringrupo" type="integer">
+                <column name="CRINGRUPO" precision="4" scale="0" />
+            </key-property>
+            <key-property name="crinsubgru" type="integer">
+                <column name="CRINSUBGRU" precision="4" scale="0" />
+            </key-property>
+            <key-property name="cricservic" type="string">
+                <column name="CRICSERVIC" length="12" />
+            </key-property>
+        </composite-id>
+        <version name="version" column="VERSION"/>
+        <property name="cricconpro" type="string">
+           <column name="CRICCONPRO" length="1" not-null="true" />
+        </property>
+        <property name="crinconcep" type="integer">
+            <column name="CRINCONCEP" precision="4" scale="0" not-null="true" />
+        </property>
+        <property name="crinfinali" type="integer">
+            <column name="CRINFINALI" precision="4" scale="0" not-null="true" />
+        </property>
+        <property name="crinambito" type="integer">
+            <column name="CRINAMBITO" precision="4" scale="0" not-null="true" />
+        </property>
+        <property name="crincauext" type="integer">
+            <column name="CRINCAUEXT" precision="4" scale="0" not-null="true" />
+        </property>
+        <property name="cricperate" type="string">
+           <column name="CRICPERATE" length="1" />
+        </property>
+        <property name="cricdiagpr" type="string">
+           <column name="CRICDIAGPR" length="4" />
+        </property>
+        <property name="cricdiagre" type="string">
+           <column name="CRICDIAGRE" length="4" />
+        </property>
+        <property name="crintipdia" type="integer">
+            <column name="CRINTIPDIA" precision="4" scale="0" not-null="true" />
+        </property>
+        <property name="crinrealiz" type="integer">
+            <column name="CRINREALIZ" precision="4" scale="0" not-null="true" />
+        </property>
+        <property name="cridfecreg" type="date">
+            <column name="CRIDFECREG" length="7" not-null="true" />
+        </property>
+        <property name="cricusuari" type="string">
+            <column name="CRICUSUARI" length="14" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

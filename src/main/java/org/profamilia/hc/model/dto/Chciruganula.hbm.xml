@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping>
+    <!-- 
+    Created by the Middlegen Hibernate plugin 2.2
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+    <class name="org.profamilia.hc.model.dto.Chciruganula" table="CHCIRUGANULA"
+           schema="HISTORIA" lazy="false">
+           
+           <composite-id name="id" class="org.profamilia.hc.model.dto.ChciruganulaPK">
+            <key-property name="hcalnumero" column="HCALNUMERO" type="java.lang.Long" length="12"/>
+            <key-property name="hcanconsec" column="HCANCONSEC" type="java.lang.Integer" length="4"/>
+            </composite-id>
+        
+        <version name="version" column="VERSION"/>
+        
+        <property name="hcacoperanula" type="java.lang.String"
+                  column="HCACOPERANULA" length="14"/>                  
+        <property name="hcacobseranula" type="java.lang.String"
+                  column="HCACOBSERANULA" length="200"/>                  
+        <property name="hcacmotivanula" type="java.lang.String"
+                  column="HCACMOTIVANULA" length="2"/>                  
+        <property name="hcadfechaciran" type="java.util.Date"
+                  column="HCADFECHACIRAN" length="7"/>                  
+        <property name="hcadfechaanula" type="java.util.Date"
+                  column="HCADFECHAANULA" length="7"/>
+      
+                
+    </class>
+</hibernate-mapping>

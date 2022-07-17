@@ -1,0 +1,189 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+ <!-- 
+		Auto-generated mapping file from
+		the hibernate.org cfg2hbm engine
+	-->
+ <class name="org.profamilia.hc.model.dto.Cnespermog" table="CNESPERMOG" schema="CLINICO">
+  <composite-id name="id" class="org.profamilia.hc.model.dto.CnespermogId">
+      <key-property name="cesnclinic" type="integer">
+         <column name="CESNCLINIC" precision="4" scale="0"/>
+      </key-property>
+      <key-property name="cesnnumero" type="integer">
+         <column name="CESNNUMERO" precision="9" scale="0"/>
+      </key-property>
+  </composite-id>
+  <version name="version" column="VERSION"/>
+  <property name="cesnconcli" type="java.lang.Long">
+   <column name="CESNCONCLI" precision="12" scale="0"/>
+  </property>
+  <property name="cesctipide" type="string">
+   <column name="CESCTIPIDE" length="3" not-null="true"/>
+  </property>
+  <property name="cesanumide" type="big_decimal">
+   <column name="CESANUMIDE" precision="17" />
+  </property>
+  <property name="cescpacien" type="string">
+   <column name="CESCPACIEN" length="40" not-null="true"/>
+  </property>
+  <property name="cesnedapac" type="integer">
+   <column name="CESNEDAPAC" precision="4" scale="0"/>
+  </property>
+  <property name="cescremite" type="string">
+   <column name="CESCREMITE" length="30"/>
+  </property>
+  <property name="cesdfecesp" type="java.util.Date">
+   <column name="CESDFECESP" length="7" not-null="true"/>
+  </property>
+  <property name="cesndiaabs" type="integer">
+   <column name="CESNDIAABS" precision="4" scale="0"/>
+  </property>
+  <property name="cescparoti" type="string">
+   <column name="CESCPAROTI" length="1" not-null="true"/>
+  </property>
+  <property name="cescorquit" type="string">
+   <column name="CESCORQUIT" length="1" not-null="true"/>
+  </property>
+  <property name="cesnhijos" type="integer">
+   <column name="CESNHIJOS" precision="4" scale="0"/>
+  </property>
+  <property name="cescfumar" type="string">
+   <column name="CESCFUMAR" length="1" not-null="true"/>
+  </property>
+  <property name="cescets" type="string">
+   <column name="CESCETS" length="1" not-null="true"/>
+  </property>
+  <property name="cescmedact" type="string">
+   <column name="CESCMEDACT" length="15"/>
+  </property>
+  <property name="cesccirugi" type="string">
+   <column name="CESCCIRUGI" length="30"/>
+  </property>
+  <property name="cescurolog" type="string">
+   <column name="CESCUROLOG" length="30"/>
+  </property>
+  <property name="cescinfert" type="string">
+   <column name="CESCINFERT" length="10"/>
+  </property>
+  <property name="cescotros" type="string">
+   <column name="CESCOTROS" length="100"/>
+  </property>
+  <property name="cescviscos" type="string">
+   <column name="CESCVISCOS" length="10"/>
+  </property>
+  <property name="cesccolor" type="string">
+   <column name="CESCCOLOR" length="15"/>
+  </property>
+  <property name="cesncantid" type="integer">
+   <column name="CESNCANTID" precision="4" scale="0"/>
+  </property>
+  <property name="cesnprorap" type="integer">
+   <column name="CESNPRORAP" precision="4" scale="0"/>
+  </property>
+  <property name="cesnprolen" type="integer">
+   <column name="CESNPROLEN" precision="4" scale="0"/>
+  </property>
+  <property name="cesnpendul" type="integer">
+   <column name="CESNPENDUL" precision="4" scale="0"/>
+  </property>
+  <property name="cesninmovi" type="integer">
+   <column name="CESNINMOVI" precision="4" scale="0"/>
+  </property>
+  <property name="cesnvivos" type="integer">
+   <column name="CESNVIVOS" precision="4" scale="0"/>
+  </property>
+  <property name="cesnmuerto" type="integer">
+   <column name="CESNMUERTO" precision="4" scale="0"/>
+  </property>
+  <property name="cescleucoc" type="string">
+   <column name="CESCLEUCOC" length="10"/>
+  </property>
+  <property name="cescpiocit" type="string">
+   <column name="CESCPIOCIT" length="15"/>
+  </property>
+  <property name="ceschemati" type="string">
+   <column name="CESCHEMATI" length="15"/>
+  </property>
+  <property name="cesnligelo" type="integer">
+   <column name="CESNLIGELO" precision="4" scale="0"/>
+  </property>
+  <property name="cesnmarelo" type="integer">
+   <column name="CESNMARELO" precision="4" scale="0"/>
+  </property>
+  <property name="cesnanoacr" type="integer">
+   <column name="CESNANOACR" precision="4" scale="0"/>
+  </property>
+  <property name="cesnmacroc" type="integer">
+   <column name="CESNMACROC" precision="4" scale="0"/>
+  </property>
+  <property name="cesnmicroc" type="integer">
+   <column name="CESNMICROC" precision="4" scale="0"/>
+  </property>
+  <property name="cesndobcab" type="integer">
+   <column name="CESNDOBCAB" precision="4" scale="0"/>
+  </property>
+  <property name="cesnangula" type="integer">
+   <column name="CESNANGULA" precision="4" scale="0"/>
+  </property>
+  <property name="cesnflaenr" type="integer">
+   <column name="CESNFLAENR" precision="4" scale="0"/>
+  </property>
+  <property name="cesndobfla" type="integer">
+   <column name="CESNDOBFLA" precision="4" scale="0"/>
+  </property>
+  <property name="cesnnormal" type="integer">
+   <column name="CESNNORMAL" precision="4" scale="0"/>
+  </property>
+  <property name="cesnanomul" type="integer">
+   <column name="CESNANOMUL" precision="4" scale="0"/>
+  </property>
+  <property name="cesxobserv" type="string">
+   <column name="CESXOBSERV" length="4000"/>
+  </property>
+  <property name="cescusureg" type="string">
+   <column name="CESCUSUREG" length="14" not-null="true"/>
+  </property>
+  <property name="cesdfecreg" type="java.util.Date">
+   <column name="CESDFECREG" length="7" not-null="true"/>
+  </property>
+  <property name="cesntipesp" type="integer">
+   <column name="CESNTIPESP" precision="4" scale="0"/>
+  </property>
+  <property name="cesavolume" type="big_decimal">
+   <column name="CESAVOLUME" precision="9" />
+  </property>
+  <property name="cesatotal" type="big_decimal">
+   <column name="CESATOTAL" precision="9" />
+  </property>
+  <property name="cesnprogre" type="integer">
+   <column name="CESNPROGRE" precision="4" scale="0"/>
+  </property>
+  <property name="cesnanorma" type="integer">
+   <column name="CESNANORMA" precision="4" scale="0"/>
+  </property>
+  <property name="cesnanocab" type="integer">
+   <column name="CESNANOCAB" precision="4" scale="0"/>
+  </property>
+  <property name="cesnanopie" type="integer">
+   <column name="CESNANOPIE" precision="4" scale="0"/>
+  </property>
+  <property name="cesnanofla" type="integer">
+   <column name="CESNANOFLA" precision="4" scale="0"/>
+  </property>
+  <property name="cescoligoz" type="string">
+   <column name="CESCOLIGOZ" length="1"/>
+  </property>
+  <property name="cescasteno" type="string">
+   <column name="CESCASTENO" length="1"/>
+  </property>
+  <property name="cescterato" type="string">
+   <column name="CESCTERATO" length="1"/>
+  </property>
+  <property name="cescnormoz" type="string">
+   <column name="CESCNORMOZ" length="1"/>
+  </property>
+
+ </class>
+</hibernate-mapping>

@@ -1,0 +1,645 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping>
+    <!-- 
+    Created by the Middlegen Hibernate plugin 2.2
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+    <class name="org.profamilia.hc.model.dto.Chconsulta" table="CHCONSULTA" schema="HISTORIA" lazy="false">
+        <id name="hcolnumero" type="long" column="HCOLNUMERO">
+            <generator class="assigned"/>
+        </id>
+        <version name="version" column="VERSION"/>
+        <property name="hcoctiposervi" type="java.lang.String" column="HCOCTIPOSERVI" length="1" not-null="true"/>
+        <property name="hcocentidadadm" type="java.lang.String" column="HCOCENTIDADADM" length="6"/>
+        <property name="hconfolio" type="java.lang.Integer" column="HCONFOLIO" length="4"/>
+        <property name="hcontipoconsu" type="java.lang.Integer" column="HCONTIPOCONSU" length="4"/>
+        <property name="hcodfeccierre" type="java.util.Date" column="HCODFECCIERRE" length="11"/>
+        <property name="hcodfecinicio" type="java.util.Date" column="HCODFECINICIO" length="11"/>
+        <property name="hcoeetapa" type="java.lang.String" column="HCOEETAPA" length="2"/>
+        <property name="hcocnombacompa" type="java.lang.String" column="HCOCNOMBACOMPA" length="40"/>
+        <property name="hcocteleacompa" type="java.lang.String" column="HCOCTELEACOMPA" length="20"/>
+        <property name="hcocnombrespo" type="java.lang.String" column="HCOCNOMBRESPO" length="40"/>
+        <property name="hcoctelerespo" type="java.lang.String" column="HCOCTELERESPO" length="20"/>
+        <property name="hcocoperador" type="java.lang.String" column="HCOCOPERADOR" length="14"/>
+        <property name="hcodfecregistr" type="java.util.Date" column="HCODFECREGISTR" length="7"/>
+        <property name="hconclinica" type="java.lang.Integer" column="HCONCLINICA" length="4"/>
+        <property name="hcolconsuclini" type="java.lang.Long" column="HCOLCONSUCLINI" length="12"/>
+        <property name="hconcodagen" type="java.lang.Long" column="HCONCODAGEN" length="38"/>
+        <property name="hcoccieringr" type="java.lang.String" column="HCOCCIERINGR" length="1"/>
+        <property name="hconprocasoc" type="java.lang.Long" column="HCONPROCASOC" length="12"/>
+        <property name="hconproasoret" type="java.lang.Long" column="HCONPROASORET" length="12"/>
+        <property name="hcocreaconinf" type="java.lang.String" column="HCOCREACONINF" length="1"/>
+        <property name="hcoccuacondil" type="java.lang.String" column="HCOCCUACONDIL" length="1000"/>
+        <property name="hcocautusodat" type="java.lang.String" column="HCOCAUTUSODAT" length="1"/>
+        <property name="hcocurlsurvey" type="java.lang.String" column="HCOCURLSURVEY" length="2000"/>
+        <property name="hconnumdoc" type="big_decimal" column="HCONNUMDOC" precision="10" scale="0" />
+        
+        
+       
+        <!-- Associations -->
+        <many-to-one name="hcocservicio" class="org.profamilia.hc.model.dto.Cpservicio" not-null="true">
+            <column name="HCOCSERVICIO"/>
+        </many-to-one>
+        
+          <many-to-one name="hcolusuario" class="org.profamilia.hc.model.dto.Chusuario" not-null="true">
+            <column name="HCOLUSUARIO"/>
+        </many-to-one>
+        
+          <many-to-one name="hcontipdoc" class="org.profamilia.hc.model.dto.Cptipodocu">
+            <column name="HCONTIPDOC"/>
+        </many-to-one>
+        
+        
+        <set name="chimprdiags" inverse="true">
+            <key>
+                <column name="HIDLCONSULTA" not-null="true"/>
+             </key>
+            <one-to-many class="org.profamilia.hc.model.dto.Chimprdiag"/>
+        </set>
+        <set name="chriesgomamas" inverse="true">
+            <key>
+                <column name="HRMLCONSULTA" not-null="true"/>
+           </key>
+            <one-to-many class="org.profamilia.hc.model.dto.Chriesgomama"/>
+        </set>
+        <set name="chmotivocons" inverse="true">
+            <key>
+                <column name="HMCLCONSULTA" not-null="true"/>
+             </key>
+            <one-to-many class="org.profamilia.hc.model.dto.Chmotivocon"/>
+        </set>
+             <set name="chrevissiste" inverse="true">
+            <key>
+                <column name="HRSLCONSULTA" not-null="true"/>
+             </key>
+            <one-to-many class="org.profamilia.hc.model.dto.Chrevissiste"/>
+        </set>
+        
+        <set name="chconductas" inverse="true">
+            <key>
+                <column name="HCNLCONSULTA" not-null="true"/>
+              </key>
+            <one-to-many class="org.profamilia.hc.model.dto.Chconducta"/>
+        </set>
+        <set name="chreferencias" inverse="true">
+            <key>
+                <column name="HRELCONSULTA" not-null="true"/>
+            </key>
+            <one-to-many class="org.profamilia.hc.model.dto.Chreferencia"/>
+        </set>
+        <set name="chexafismamas" inverse="true">
+            <key>
+                <column name="HEMLCONSULTA" not-null="true"/>
+             </key>
+            <one-to-many class="org.profamilia.hc.model.dto.Chexafismama"/>
+        </set>
+        <set name="chexamfisicos" inverse="true">
+            <key>
+                <column name="HEFLCONSULTA" not-null="true"/>
+             </key>
+            <one-to-many class="org.profamilia.hc.model.dto.Chexamfisico"/>
+        </set>
+        <set name="chanatopatols" inverse="true">
+            <key>
+                <column name="HAPLCONSULTA" not-null="true"/>
+             </key>
+            <one-to-many class="org.profamilia.hc.model.dto.Chanatopatol"/>
+        </set>
+        <set name="chanteginecos" inverse="true">
+            <key>
+                <column name="HAGLCONSULTA" not-null="true"/>
+            </key>
+            <one-to-many class="org.profamilia.hc.model.dto.Chantegineco"/>
+        </set>
+        <set name="chordecirugis" inverse="true">
+            <key>
+                <column name="HOCLCONSULTA" not-null="true"/>
+            </key>
+            <one-to-many class="org.profamilia.hc.model.dto.Chordecirugi"/>
+        </set>
+        <set name="chcuestplanis" inverse="true">
+            <key>
+                <column name="HCPLCONSULTA" not-null="true"/>
+             </key>
+            <one-to-many class="org.profamilia.hc.model.dto.Chcuestplani"/>
+        </set>
+        <set name="chantecemamas" inverse="true">
+            <key>
+                <column name="HAMLCONSULTA" not-null="true"/>
+             </key>
+            <one-to-many class="org.profamilia.hc.model.dto.Chantecemama"/>
+        </set>
+        <set name="chincapacidas" inverse="true">
+            <key>
+                <column name="HINLCONSULTA" not-null="true"/>
+            </key>
+            <one-to-many class="org.profamilia.hc.model.dto.Chincapacida"/>
+        </set>
+        <set name="chidentiriesgo" inverse="true">
+            <key>
+                <column name="HIDELCONSULTA" not-null="true"/>
+             </key>
+            <one-to-many class="org.profamilia.hc.model.dto.Chidentiriesgo"/>
+        </set>
+        <set name="chviolencias" inverse="true">
+            <key>
+                <column name="HVILCONSULTA" not-null="true"/>
+             </key>
+            <one-to-many class="org.profamilia.hc.model.dto.Chviolencia"/>
+        </set>
+        <set name="chexamediagns" inverse="true">
+            <key>
+                <column name="HEDLCONSULTA" not-null="true"/>
+            </key>
+            <one-to-many class="org.profamilia.hc.model.dto.Chexamediagn"/>
+        </set>
+        <set name="chpediexamens" inverse="true">
+            <key>
+                <column name="HPELCONSULTA" not-null="true"/>
+            </key>
+            <one-to-many class="org.profamilia.hc.model.dto.Chpediexamen"/>
+        </set>
+     
+      
+     
+    
+       
+        <set name="chexameimages" lazy="true" inverse="true" cascade="all">
+            <key>
+                <column name="HEILCONSULTA"/>
+             </key>
+            <one-to-many class="org.profamilia.hc.model.dto.Chexameimage"/>
+        </set>
+        <set name="chformulameds" lazy="true" inverse="true" cascade="all">
+            <key>
+                <column name="HFOLCONSULTA"/>
+             </key>
+            <one-to-many class="org.profamilia.hc.model.dto.Chformulamed"/>
+        </set>
+        <set name="chexameparacs" lazy="true" inverse="true" cascade="all">
+            <key>
+                <column name="HEPLCONSULTA"/>
+            </key>
+            <one-to-many class="org.profamilia.hc.model.dto.Chexameparac"/>
+        </set>
+        <set name="chnotamedicas" lazy="true" inverse="true" cascade="all">
+            <key>
+                <column name="HNMLCONSULTA"/>
+            </key>
+            <one-to-many class="org.profamilia.hc.model.dto.Chnotamedica"/>
+        </set>
+          <!-- bi-directional one-to-many association to Chantecegene -->
+        <set name="chantecegenes" lazy="true" inverse="true" cascade="all">
+            <key>
+                <column name="HANLCONSULTA"/>
+            </key>
+            <one-to-many class="org.profamilia.hc.model.dto.Chantecegene"/>
+        </set>
+        <!-- bi-directional one-to-many association to Chcertmedico -->
+        <set name="chcertmedicos" lazy="true" inverse="true" cascade="all">
+            <key>
+                <column name="HCMLCONSULTA"/>
+             </key>
+            <one-to-many class="org.profamilia.hc.model.dto.Chcertmedico"/>
+        </set>
+        <!-- bi-directional one-to-many association to Chexamelabor -->
+        <set name="chexamelabors" lazy="true" inverse="true" cascade="all">
+            <key>
+                <column name="HELLCONSULTA"/>
+            </key>
+            <one-to-many class="org.profamilia.hc.model.dto.Chexamelabor"/>
+        </set>
+      
+        <!-- bi-directional one-to-many association to Chantecetemp -->
+        <set name="chantecetemps" lazy="true" inverse="true" cascade="all">
+            <key>
+                <column name="HATLCONSULTA"/>
+            </key>
+            <one-to-many class="org.profamilia.hc.model.dto.Chantecetemp"/>
+        </set>
+        <!-- bi-directional one-to-many association to Chexameelect -->
+        <set name="chexameelects" lazy="true" inverse="true" cascade="all">
+            <key>
+                <column name="HEELCONSULTA"/>
+             </key>
+            <one-to-many class="org.profamilia.hc.model.dto.Chexameelect"/>
+        </set>
+        <!-- bi-directional one-to-many association to Chinfomamogr -->
+        <set name="chinfomamogrs" lazy="true" inverse="true" cascade="all">
+            <key>
+                <column name="HIMLCONSULTA"/>
+            </key>
+            <one-to-many class="org.profamilia.hc.model.dto.Chinfomamogr"/>
+        </set>
+        <!-- bi-directional one-to-many association to Chinfomamogr -->
+        <set name="chingresoenf" lazy="true" inverse="true" cascade="all">
+            <key>
+                <column name="HIELNUMERO"/>
+           </key>
+            <one-to-many class="org.profamilia.hc.model.dto.Chingresoenf"/>
+        </set>
+      
+      
+      
+        <set name="chremihospits" lazy="true" inverse="true" cascade="all">
+            <key>
+                <column name="HRHLCONSULTA"/>
+            </key>
+            <one-to-many class="org.profamilia.hc.model.dto.Chremihospit"/>
+        </set>
+        <set name="chresersangrs" lazy="true" inverse="true" cascade="all">
+            <key>
+                <column name="HRSLCONSULTA"/>
+            </key>
+            <one-to-many class="org.profamilia.hc.model.dto.Chresersangr"/>
+        </set>
+        <set name="chantecpsico" lazy="true" inverse="true" cascade="all">
+            <key>
+                <column name="HAPLCONSULTA"/>
+             </key>
+            <one-to-many class="org.profamilia.hc.model.dto.Chantecpsico"/>
+        </set>
+        <set name="chevalugener" lazy="true" inverse="true" cascade="all">
+            <key>
+                <column name="HEGLCONSULTA"/>
+             </key>
+            <one-to-many class="org.profamilia.hc.model.dto.Chevalugener"/>
+        </set>
+        <set name="chpladetrat" lazy="true" inverse="true" cascade="all">
+            <key>
+                <column name="HPTLCONSULTA"/>
+             </key>
+            <one-to-many class="org.profamilia.hc.model.dto.Chpladetrat"/>
+        </set>
+        <set name="chcervaaplic" lazy="true" inverse="true" cascade="all">
+            <key>
+                <column name="HCALCONSULTA"/>
+            </key>
+            <one-to-many class="org.profamilia.hc.model.dto.Chcervaaplic"/>
+        </set>
+        <set name="chcuestester" lazy="true" inverse="true" cascade="all">
+            <key>
+                <column name="HCELCONSULTA"/>
+             </key>
+            <one-to-many class="org.profamilia.hc.model.dto.Chcuestester"/>
+        </set>
+        <set name="chestermascu" lazy="true" inverse="true" cascade="all">
+            <key>
+                <column name="HEMLCONSULTA"/>
+             </key>
+            <one-to-many class="org.profamilia.hc.model.dto.Chestermascu"/>
+        </set>
+        
+          <set name="chcontrolcon" lazy="true" inverse="true" cascade="all">
+            <key>
+                <column name="HCCLCONSULTA"/>
+             </key>
+            <one-to-many class="org.profamilia.hc.model.dto.Chcontrolcon"/>
+        </set>
+        
+        
+             <set name="chproceconsu" lazy="true" inverse="true" cascade="all">
+            <key>
+                <column name="HPCLCONSULTA"/>
+             </key>
+            <one-to-many class="org.profamilia.hc.model.dto.Chproceconsu"/>
+        </set>
+        
+     <set name="chestadpsico" lazy="true" inverse="true" cascade="all">
+            <key>
+                <column name="HEPLCONSULTA"/>
+             </key>
+            <one-to-many class="org.profamilia.hc.model.dto.Chestadpsico"/>
+        </set>
+        
+          <set name="chremisilve" lazy="true" inverse="true" cascade="all">
+            <key>
+                <column name="HRILCONSULTA"/>
+            </key>
+            <one-to-many class="org.profamilia.hc.model.dto.Chremisilve"/>
+        </set>
+        
+        <set name="chdispoaplic" lazy="true" inverse="true" cascade="all">
+            <key>
+                <column name="HDALCONSULTA"/>
+            </key>
+            <one-to-many class="org.profamilia.hc.model.dto.Chdispoaplic"/>
+        </set>
+        
+         <set name="chantecprena" lazy="true" inverse="true" cascade="all">
+            <key>
+                <column name="HAPLCONSULTA"/>
+            </key>
+            <one-to-many class="org.profamilia.hc.model.dto.Chantecprena"/>
+        </set>
+        
+        
+        <set name="chanteceobst" lazy="true" inverse="true" cascade="all">
+            <key>
+                <column name="HAOLCONSULTA"/>
+            </key>
+            <one-to-many class="org.profamilia.hc.model.dto.Chanteceobst"/>
+        </set>
+        
+        
+         <set name="chgestacion" lazy="true" inverse="true" cascade="all">
+            <key>
+                <column name="HGELCONSULTA"/>
+            </key>
+            <one-to-many class="org.profamilia.hc.model.dto.Chgestacion"/>
+        </set>
+        
+        
+        <set name="chcontrolpre" lazy="true" inverse="true" cascade="all">
+            <key>
+                <column name="HCPLCONSULTA"/>
+            </key>
+            <one-to-many class="org.profamilia.hc.model.dto.Chcontrolpre"/>
+        </set>
+        
+        
+      <set name="chtamizalapr" lazy="true" inverse="true" cascade="all">
+            <key>
+                <column name="HTLLCONSULTA"/>
+             </key>
+            <one-to-many class="org.profamilia.hc.model.dto.Chtamizalapr"/>
+        </set>
+        
+           <set name="chcancecervi" lazy="true" inverse="true" cascade="all">
+            <key>
+                <column name="HCCLCONSULTA"/>
+             </key>
+            <one-to-many class="org.profamilia.hc.model.dto.Chcancecervi"/>
+        </set>
+
+         <set name="chremisions" lazy="true" inverse="true" cascade="all">
+            <key>
+                <column name="HRELCONSULTA"/>
+             </key>
+            <one-to-many class="org.profamilia.hc.model.dto.Chremision"/>
+        </set>
+       
+       <set name="chvalorprean" lazy="true" inverse="true" cascade="all">
+            <key>
+                <column name="HVPLCONSULTA"/>
+             </key>
+            <one-to-many class="org.profamilia.hc.model.dto.Chvalorprean"/>
+        </set>
+        
+        
+          <set name="chcuestanest" lazy="true" inverse="true" cascade="all" order-by="HCANPREGUNTA">
+            <key>
+                <column name="HCALCONSULTA"/>
+             </key>
+            <one-to-many class="org.profamilia.hc.model.dto.Chcuestanest"/>
+        </set>
+        
+          <set name="chexafisane" lazy="true" inverse="true" cascade="all">
+            <key>
+                <column name="HEALCONSULTA"/>
+             </key>
+            <one-to-many class="org.profamilia.hc.model.dto.Chexafisane"/>
+        </set>
+        
+          <set name="chresulparac" lazy="true" inverse="true" cascade="all">
+            <key>
+                <column name="HRPLCONSULTA"/>
+             </key>
+            <one-to-many class="org.profamilia.hc.model.dto.Chresulparac"/>
+        </set>
+        
+        
+        <set name="chregisexame" lazy="true" inverse="true" cascade="all">
+            <key>
+                <column name="HRELCONSULTA"/>
+             </key>
+            <one-to-many class="org.profamilia.hc.model.dto.Chregisexame"/>
+        </set>
+         
+         
+         <set name="chmedicament" lazy="true" inverse="true" cascade="all">
+            <key>
+                <column name="HMELCONSULTA"/>
+            </key>
+            <one-to-many class="org.profamilia.hc.model.dto.Chmedicament"/>
+        </set>
+        
+          <set name="chvacunacion" lazy="true" inverse="true" cascade="all">
+            <key>
+                <column name="HVALCONSULTA"/>
+            </key>
+            <one-to-many class="org.profamilia.hc.model.dto.Chvacunacion"/>
+        </set>
+       <set name="chevoluconsu" lazy="true" inverse="true" cascade="all">
+            <key>
+                <column name="HECLCONSULTA"/>
+            </key>
+            <one-to-many class="org.profamilia.hc.model.dto.Chevoluconsu"/>
+        </set>
+
+       <set name="chcontrvasec" lazy="true" inverse="true" cascade="all">
+            <key>
+                <column name="HCVLCONSULTA"/>
+            </key>
+            <one-to-many class="org.profamilia.hc.model.dto.Chcontrvasec"/>
+        </set>
+        
+        
+           <set name="chantecvasec" lazy="true" inverse="true" cascade="all">
+            <key>
+                <column name="HAVLCONSULTA"/>
+            </key>
+            <one-to-many class="org.profamilia.hc.model.dto.Chantecvasec"/>
+        </set>
+
+       <set name="chespervasec" lazy="true" inverse="true" cascade="all">
+            <key>
+                <column name="HEVLCONSULTA"/>
+            </key>
+            <one-to-many class="org.profamilia.hc.model.dto.Chespervasec"/>
+        </set>
+        
+        <set name="chantecolpo" lazy="true" inverse="true" cascade="all">
+            <key>
+                <column name="HACLCONSULTA"/>
+            </key>
+            <one-to-many class="org.profamilia.hc.model.dto.Chantecolpo"/>
+        </set>
+        <set name="chcolposcopia" lazy="true" inverse="true" cascade="all">
+            <key>
+                <column name="HCLLCONSULTA"/>
+            </key>
+            <one-to-many class="org.profamilia.hc.model.dto.Chcolposcopia"/>
+        </set>
+        
+        <set name="chvalorabiopsi" lazy="true" inverse="true" cascade="all">
+            <key>
+                <column name="HVBNCONSULTA"/>
+            </key>
+            <one-to-many class="org.profamilia.hc.model.dto.Chvalorabiopsi"/>
+        </set>
+        
+        <set name="chasesoriaive" lazy="true" inverse="true" cascade="all">
+            <key>
+                <column name="HAILCONSULTA"/>
+            </key>
+            <one-to-many class="org.profamilia.hc.model.dto.Chasesoriaive"/>
+        </set>
+        
+        <set name="chantecdetal" lazy="true" inverse="true" cascade="all">
+            <key>
+                <column name="HADLCONSULTA"/>
+            </key>
+            <one-to-many class="org.profamilia.hc.model.dto.Chantecdetal"/>
+        </set>
+          <set name="chpsicoantec" lazy="true" inverse="true" cascade="all">
+            <key>
+                <column name="HPALCONSULTA"/>
+            </key>
+            <one-to-many class="org.profamilia.hc.model.dto.Chpsicoantec"/>
+        </set>
+        
+        <set name="chregcomenf" lazy="true" inverse="true" cascade="all">
+            <key>
+                <column name="HRCELCONSULTA"/>
+            </key>
+            <one-to-many class="org.profamilia.hc.model.dto.Chregcomenf"/>
+        </set>
+        
+        <set name="chinfopsico" lazy="true" inverse="true" cascade="all">
+            <key>
+                <column name="HIPLCONSULTA"/>
+            </key>
+            <one-to-many class="org.profamilia.hc.model.dto.Chinfopsico"/>
+        </set>
+        
+        <set name="chescvalcai" lazy="true" inverse="true" cascade="all">
+            <key>
+                <column name="HEVCLCONSULTA"/>
+            </key>
+            <one-to-many class="org.profamilia.hc.model.dto.Chescvalcai"/>
+        </set>
+        
+          <set name="chfertecog" lazy="true" inverse="true" cascade="all">
+            <key>
+                <column name="HFELCONSULTA"/>
+            </key>
+            <one-to-many class="org.profamilia.hc.model.dto.Chfertecog"/>
+        </set>
+        
+          <set name="chfertdato" lazy="true" inverse="true" cascade="all">
+            <key>
+                <column name="HFDLCONSULTA"/>
+            </key>
+            <one-to-many class="org.profamilia.hc.model.dto.Chfertdato"/>
+        </set>
+        
+        <set name="chrefepaci" lazy="true" inverse="true" cascade="all">
+            <key>
+                <column name="HRPLCONSULTA"/>
+            </key>
+            <one-to-many class="org.profamilia.hc.model.dto.Chrefepaci"/>
+        </set>
+        
+        <set name="Chpapsicologico" lazy="true" inverse="true" cascade="all">
+            <key>
+                <column name="HPPNCONSULTA"/>
+            </key>
+            <one-to-many class="org.profamilia.hc.model.dto.Chpapsicologico"/>
+        </set>
+        
+         <set name="Chpruecovidanticu" lazy="true" inverse="true" cascade="all">
+            <key>
+                <column name="HPANCONSULTA"/>
+            </key>
+            <one-to-many class="org.profamilia.hc.model.dto.Chpruecovidanticu"/>
+        </set>
+        
+          <set name="Chpruecovidantige" lazy="true" inverse="true" cascade="all">
+            <key>
+                <column name="HPGNCONSULTA"/>
+            </key>
+            <one-to-many class="org.profamilia.hc.model.dto.Chpruecovidantige"/>
+        </set>
+        
+          <set name="Chconinfxcon" lazy="true" inverse="true" cascade="all">
+            <key>
+                <column name="HCICNCONSULTA"/>
+            </key>
+            <one-to-many class="org.profamilia.hc.model.dto.Chconinfxcon"/>
+        </set>
+        
+         <set name="Chantox" lazy="true" inverse="true" cascade="all">
+            <key>
+                <column name="HANTNCONSULTA"/>
+            </key>
+            <one-to-many class="org.profamilia.hc.model.dto.Chantox"/>
+        </set>
+        
+         <set name="Chantfami" lazy="true" inverse="true" cascade="all">
+            <key>
+                <column name="HANFNCONSULTA"/>
+            </key>
+            <one-to-many class="org.profamilia.hc.model.dto.Chantfami"/>
+        </set>
+        
+         <set name="Chanttrans" lazy="true" inverse="true" cascade="all">
+            <key>
+                <column name="HANTNCONSULTA"/>
+            </key>
+            <one-to-many class="org.profamilia.hc.model.dto.Chanttrans"/>
+        </set>
+        
+         <set name="Chantalerg" lazy="true" inverse="true" cascade="all">
+            <key>
+                <column name="HANANCONSULTA"/>
+            </key>
+            <one-to-many class="org.profamilia.hc.model.dto.Chantalerg"/>
+        </set>
+        
+         <set name="Chanttrauma" lazy="true" inverse="true" cascade="all">
+            <key>
+                <column name="HANTNCONSULTA"/>
+            </key>
+            <one-to-many class="org.profamilia.hc.model.dto.Chanttrauma"/>
+        </set>
+        
+         <set name="Chantfarma" lazy="true" inverse="true" cascade="all">
+            <key>
+                <column name="HANFNCONSULTA"/>
+            </key>
+            <one-to-many class="org.profamilia.hc.model.dto.Chantfarma"/>
+        </set>
+        
+         <set name="Chantit" lazy="true" inverse="true" cascade="all">
+            <key>
+                <column name="HANINCONSULTA"/>
+            </key>
+            <one-to-many class="org.profamilia.hc.model.dto.Chantit"/>
+        </set>
+        
+         <set name="Chantpatol" lazy="true" inverse="true" cascade="all">
+            <key>
+                <column name="HAGNCONSULTA"/>
+            </key>
+            <one-to-many class="org.profamilia.hc.model.dto.Chantpatol"/>
+        </set>
+        
+         <set name="Chantquir" lazy="true" inverse="true" cascade="all">
+            <key>
+                <column name="HANQNCONSULTA"/>
+            </key>
+            <one-to-many class="org.profamilia.hc.model.dto.Chantquir"/>
+        </set>
+        
+      
+        
+        
+        
+    </class>
+</hibernate-mapping>

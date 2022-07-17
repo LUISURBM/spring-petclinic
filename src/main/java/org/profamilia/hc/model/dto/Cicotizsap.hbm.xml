@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+<!-- 
+        Auto-generated mapping file from
+        the hibernate.org cfg2hbm engine
+-->
+    <class name="org.profamilia.hc.model.dto.Cicotizsap" table="CICOTIZSAP" schema="CLINICO">
+        <id name="ccslnumero" type="java.lang.Long" column="CCSLNUMERO">
+            <generator class="sequence">
+                <param name="sequence">CLINICO.SEC_CICOTIZSAP</param>
+            </generator> 
+            
+        </id>
+        <version name="version" column="VERSION"/>
+        <property name="ccsctipoident" type="java.lang.String" column="CCSCTIPOIDENT" not-null="true" length="2"/>
+        <property name="ccsanumerident" type="java.lang.Long"  column="CCSANUMERIDENT"  not-null="true" length="17"/>
+        <property name="ccscservicio" type="java.lang.String" column="CCSCSERVICIO" not-null="true" length="12"/>
+        <property name="ccslusuario" type="java.lang.Long" column="CCSLUSUARIO" not-null="true" length="12"/>
+        <property name="ccsdfechacotiz" type="java.util.Date" column="CCSDFECHACOTIZ" not-null="true" length="7"/>
+        <property name="ccsdhoracotiz" type="java.util.Date" column="CCSDHORACOTIZ" not-null="true" length="7"/>
+        <property name="ccsnclinica" type="java.lang.Integer" column="CCSNCLINICA" not-null="true" length="4"/>
+        <property name="ccsncantidad" type="java.lang.Integer" column="CCSNCANTIDAD" not-null="true" length="4"/>
+        <property name="ccsclugarservi" type="java.lang.String" column="CCSCLUGARSERVI" not-null="true" length="1"/>
+        <property name="ccsctipoventa" type="java.lang.String" column="CCSCTIPOVENTA" not-null="true" length="4"/>
+        
+       </class>
+</hibernate-mapping>

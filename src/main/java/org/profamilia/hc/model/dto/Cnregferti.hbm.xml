@@ -1,0 +1,131 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+<!-- 
+        Auto-generated mapping file from
+        the hibernate.org cfg2hbm engine
+-->
+    <class name="org.profamilia.hc.model.dto.Cnregferti" table="CNREGFERTI" schema="CLINICO">
+        <composite-id name="id" class="org.profamilia.hc.model.dto.CnregfertiPK">
+            <key-property name="crfnclinic" type="integer">
+                <column name="CRFNCLINIC" precision="4" scale="0"/>
+            </key-property>
+            <key-property name="crfctipide" type="string">
+                <column name="CRFCTIPIDE" length="2" />
+            </key-property>
+            <key-property name="crfanumide" type="big_decimal">
+                <column name="CRFANUMIDE" precision="15" />
+            </key-property>
+        </composite-id>
+        <version name="version" column="VERSION"/>
+        <property name="crfctihomb" type="string">
+            <column name="CRFCTIHOMB" length="2" />
+        </property>
+        <property name="crfanihomb" type="big_decimal">
+            <column name="CRFANIHOMB" precision="15" not-null="true" />
+        </property>
+        <property name="crfcnomhom" type="string">
+            <column name="CRFCNOMHOM" length="50" />
+        </property>
+        <property name="crfdfecfer" type="date">
+            <column name="CRFDFECFER" length="7" not-null="true" />
+        </property>
+        <property name="crfxmotivo" type="string">
+            <column name="CRFXMOTIVO" length="60" />
+        </property>
+        <property name="crfnmenarq" type="integer">
+            <column name="CRFNMENARQ" precision="4" scale="0" not-null="true" />
+        </property>
+        <property name="crfnciclos" type="string">
+            <column name="CRFNCICLOS" length="60" not-null="true" />
+        </property>
+        <property name="crfdfecfum" type="date">
+            <column name="CRFDFECFUM" length="7" />
+        </property>
+        <property name="crfdfecfpm" type="date">
+            <column name="CRFDFECFPM" length="7" />
+        </property>
+        <property name="crfdfecapm" type="date">
+            <column name="CRFDFECAPM" length="7" />
+        </property>
+        <property name="crfngestac" type="integer">
+            <column name="CRFNGESTAC" precision="4" scale="0" not-null="true" />
+        </property>
+        <property name="crfnpartos" type="integer">
+            <column name="CRFNPARTOS" precision="4" scale="0" not-null="true" />
+        </property>
+        <property name="crfnaborto" type="integer">
+            <column name="CRFNABORTO" precision="4" scale="0" not-null="true" />
+        </property>
+        <property name="crfncesare" type="integer">
+            <column name="CRFNCESARE" precision="4" scale="0" not-null="true" />
+        </property>
+        <property name="crfnvivos" type="integer">
+            <column name="CRFNVIVOS" precision="4" scale="0" not-null="true" />
+        </property>
+        <property name="crfnectopi" type="integer">
+            <column name="CRFNECTOPI" precision="4" scale="0" not-null="true" />
+        </property>
+        <property name="crfnmortin" type="integer">
+            <column name="CRFNMORTIN" precision="4" scale="0" not-null="true" />
+        </property>
+        <property name="crfnmuerto" type="integer">
+            <column name="CRFNMUERTO" precision="4" scale="0" not-null="true" />
+        </property>
+        <property name="crfndiacic" type="integer">
+            <column name="CRFNDIACIC" precision="4" scale="0" not-null="true" />
+        </property>
+        <property name="crfdfulpar" type="date">
+            <column name="CRFDFULPAR" length="7" />
+        </property>
+        <property name="crfcultccv" type="string">
+            <column name="CRFCULTCCV" length="80" />
+        </property>
+        <property name="crfcaborto" type="string">
+            <column name="CRFCABORTO" length="80" />
+        </property>
+        <property name="crfcplanif" type="string">
+            <column name="CRFCPLANIF" length="80" />
+        </property>
+        <property name="crfcdismen" type="string">
+            <column name="CRFCDISMEN" length="80" />
+        </property>
+        <property name="crfcdispar" type="string">
+            <column name="CRFCDISPAR" length="80" />
+        </property>
+        <property name="crfcrelsem" type="string">
+            <column name="CRFCRELSEM" length="10" not-null="true"/>
+        </property>
+        <property name="crfdfecreg" type="date">
+            <column name="CRFDFECREG" length="7" not-null="true"/>
+        </property>
+        <property name="crfcusuari" type="string">
+            <column name="CRFCUSUARI" length="14" not-null="true"/>
+        </property>
+        <property name="crfcocumuj" type="string">
+            <column name="CRFCOCUMUJ" length="10" />
+        </property>
+        <property name="crfcocuhom" type="string">
+            <column name="CRFCOCUHOM" length="100" />
+        </property>
+        <property name="crfdnachom" type="date">
+            <column name="CRFDNACHOM" length="7" />
+        </property>
+        <property name="crfnanoinf" type="integer">
+            <column name="CRFNANOINF" precision="4" scale="0" not-null="true" />
+        </property>
+        <property name="crflusuario" type="java.lang.Long"> 
+            <column name="CRFLUSUARIO" length="12"/>
+        </property>
+        <property name="crfcestdon" type="string">
+            <column name="CRFCESTDON" length="1" not-null="true"/>
+        </property>
+        <property name="crfccoddon" type="string">
+            <column name="CRFCCODDON" length="6" />
+        </property>
+        <property name="crfcunimed" type="string">
+            <column name="CRFCUNIMED" length="1" />
+        </property>
+    </class>
+</hibernate-mapping>

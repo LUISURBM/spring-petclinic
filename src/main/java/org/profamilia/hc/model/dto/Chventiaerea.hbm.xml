@@ -1,0 +1,69 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping>
+    <!-- 
+    Created by the Middlegen Hibernate plugin 2.2
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+    <class name="org.profamilia.hc.model.dto.Chventiaerea" table="CHVENTIAEREA" schema="HISTORIA" lazy="false">
+        <composite-id name="id" class="org.profamilia.hc.model.dto.ChventiaereaPK">
+            <key-property name="hvalnumero" column="HVALNUMERO" type="java.lang.Long" length="12"/>
+            <key-property name="hvactiposervi" column="HVACTIPOSERVI" type="java.lang.String" length="1"/>
+        </composite-id>
+        <version name="version" column="VERSION"/>
+        <property name="hvaccircuoxige" type="java.lang.String" column="HVACCIRCUOXIGE" length="2"/>
+        <property name="hvactipooxigen" type="java.lang.String" column="HVACTIPOOXIGEN" length="2"/>
+        <property name="hvactipomascar" type="java.lang.String" column="HVACTIPOMASCAR" length="2"/>
+        <property name="hvacotrooxigen" type="java.lang.String" column="HVACOTROOXIGEN" length="50"/>
+        <property name="hvacmetodcontr" type="java.lang.String" column="HVACMETODCONTR" length="2"/>
+        <property name="hvacdispocontr" type="java.lang.String" column="HVACDISPOCONTR" length="2"/>
+        <property name="hvancanulfarin" type="java.lang.Integer" column="HVANCANULFARIN" length="2"/>
+        <property name="hvacmascaclasi" type="java.math.BigDecimal" column="HVACMASCACLASI" length="2"/>
+        <property name="hvacmascaprose" type="java.math.BigDecimal" column="HVACMASCAPROSE" length="2"/>
+        <property name="hvacmascafastr" type="java.math.BigDecimal" column="HVACMASCAFASTR" length="2"/>
+        <property name="hvacmascasupre" type="java.math.BigDecimal" column="HVACMASCASUPRE" length="2"/>
+        <property name="hvadhoracolmas" type="java.util.Date" column="HVADHORACOLMAS" length="7"/>
+        <property name="hvadhoraretmas" type="java.util.Date" column="HVADHORARETMAS" length="7"/>
+        <property name="hvacotrodispos" type="java.lang.String" column="HVACOTRODISPOS" length="50"/>
+        <property name="hvanintuborotr" type="java.math.BigDecimal" column="HVANINTUBOROTR" length="2"/>
+        <property name="hvanintubnasot" type="java.math.BigDecimal" column="HVANINTUBNASOT" length="2"/>
+        <property name="hvacvistalarin" type="java.lang.String" column="HVACVISTALARIN" length="3"/>
+        <property name="hvadhoraintuba" type="java.util.Date" column="HVADHORAINTUBA" length="7"/>
+        <property name="hvadhoraextuba" type="java.util.Date" column="HVADHORAEXTUBA" length="7"/>
+        <property name="hvacmetoconvia" type="java.lang.String" column="HVACMETOCONVIA" length="200"/>
+        <property name="hvacmodoventil" type="java.lang.String" column="HVACMODOVENTIL" length="1"/>
+        <property name="hvanmecanfrecu" type="java.lang.Integer" column="HVANMECANFRECU" length="2"/>
+        <property name="hvanmecanvolum" type="java.lang.Integer" column="HVANMECANVOLUM" length="4"/>
+        <property name="hvacmecanventi" type="java.lang.String" column="HVACMECANVENTI" length="50"/>
+        <property name="hvaccontviarea" type="java.lang.String" column="HVACCONTVIAREA" length="1"/>
+        <property name="hvacviadificil" type="java.lang.String" column="HVACVIADIFICIL" length="500"/>
+        <property name="hvacverifviare" type="java.lang.String" column="HVACVERIFVIARE" length="1"/>
+        <property name="hvacotraverifi" type="java.lang.String" column="HVACOTRAVERIFI" length="50"/>
+        <property name="hvacobserviare" type="java.lang.String" column="HVACOBSERVIARE" length="500"/>
+        <property name="hvanclinica" type="java.lang.Integer" column="HVANCLINICA" length="4"/>
+        <property name="hvadfecregistr" type="java.util.Date" column="HVADFECREGISTR" length="7"/>
+        <property name="hvacoperador" type="java.lang.String" column="HVACOPERADOR" length="14"/>
+        <property name="hvadhoracolotr" type="java.util.Date" column="HVADHORACOLOTR" length="7"/>
+        <property name="hvadhoraretotr" type="java.util.Date" column="HVADHORARETOTR" length="7"/>
+        <property name="hvacmascafacia" type="java.lang.String" column="HVACMASCAFACIA" length="1"/>
+        <property name="hvaccanuorofar" type="java.lang.String" column="HVACCANUOROFAR" length="1"/>
+        <property name="hvaccanunasfar" type="java.lang.String" column="HVACCANUNASFAR" length="1"/>
+        <property name="hvacotrodisglo" type="java.lang.String" column="HVACOTRODISGLO" length="1"/>
+        <property name="hvacintubacion" type="java.lang.String" column="HVACINTUBACION" length="1"/>
+        <property name="hvacotro" type="java.lang.String" column="HVACOTRO" length="1"/>
+        <property name="hvacmascalarin" type="java.lang.String" column="HVACMASCALARIN" length="1"/>
+        <property name="hvacverviarecap" type="java.lang.String" column="HVACVERVIARECAP" length="1"/>
+        <property name="hvacverviareaus" type="java.lang.String" column="HVACVERVIAREAUS" length="1"/>
+        <property name="hvacverviareotr" type="java.lang.String" column="HVACVERVIAREOTR" length="1"/>
+        <property name="hvacmasclarin" type="java.lang.String" column="HVACMASCLARIN" length="2"/>
+        <property name="hvancaliblarin" type="java.math.BigDecimal" column="HVANCALIBLARIN" length="3" />
+        
+        <!-- Associations -->
+        <!-- derived association(s) for compound key -->
+        <!-- end of derived association(s) -->
+    </class>
+</hibernate-mapping>

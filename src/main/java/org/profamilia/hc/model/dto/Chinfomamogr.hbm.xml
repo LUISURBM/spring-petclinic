@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping>
+    <!-- 
+    Created by the Middlegen Hibernate plugin 2.2
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+    <class name="org.profamilia.hc.model.dto.Chinfomamogr" table="CHINFOMAMOGR" schema="HISTORIA" lazy="false">
+        <composite-id name="id" class="org.profamilia.hc.model.dto.ChinfomamogrPK">
+            <key-property name="himlconsulta" column="HIMLCONSULTA" type="java.lang.Long" length="12"/>
+            <key-property name="himctipoinform" column="HIMCTIPOINFORM" type="java.lang.String" length="1"/>
+            <key-property name="himctiposervi" column="HIMCTIPOSERVI" type="java.lang.String" length="1"/>
+        </composite-id>
+        <version name="version" column="VERSION"/>
+        <property name="himnnumero" type="java.lang.Integer" column="HIMNNUMERO" not-null="true" length="9"/>
+        <property name="himcmedicoremi" type="java.lang.String" column="HIMCMEDICOREMI" length="80"/>
+        <property name="himcdatosclire" type="java.lang.String" column="HIMCDATOSCLIRE" length="4000"/>
+        <property name="himcinformamog" type="java.lang.String" column="HIMCINFORMAMOG" length="4000"/>
+        <property name="himctipobirads" type="java.lang.String" column="HIMCTIPOBIRADS" length="1"/>
+        <property name="himcrecomendac" type="java.lang.String" column="HIMCRECOMENDAC" length="4000"/>
+        <property name="himdfecregistr" type="java.util.Date" column="HIMDFECREGISTR" length="7"/>
+        <property name="himcoperador" type="java.lang.String" column="HIMCOPERADOR" length="14"/>
+        <property name="himndosisentra" type="java.lang.Integer" column="HIMNDOSISENTRA" length="1"/>
+        <property name="himcinformetal" type="java.lang.String" column="HIMCINFORMETAL" length="4000"/>
+        <property name="himcopinion" type="java.lang.String" column="HIMCOPINION" length="4000"/>
+        <property name="himcecografia" type="java.lang.String" column="HIMCECOGRAFIA" length="1"/>
+        <property name="himctipoestudi" type="java.lang.String" column="HIMCTIPOESTUDI" length="1"/>
+        <property name="himctransducto" type="java.lang.String" column="HIMCTRANSDUCTO" length="60"/>
+        <property name="himnnumgesta" type="java.lang.Integer" column="HIMNNUMGESTA" length="2"/>
+        <property name="himnnumparto" type="java.lang.Integer" column="HIMNNUMPARTO" length="2"/>
+        <property name="himnnumaborto" type="java.lang.Integer" column="HIMNNUMABORTO" length="2"/>
+        <property name="himnnumcesare" type="java.lang.Integer" column="HIMNNUMCESARE" length="2"/>
+        <property name="himnectopico" type="java.lang.Integer" column="HIMNECTOPICO" length="2"/>
+        <property name="himdfur" type="java.util.Date" column="HIMDFUR" length="7"/>
+        <property name="himnedadgesmes" type="java.math.BigDecimal" column="HIMNEDADGESMES" length="3"/>
+        <property name="himndiasgestac" type="java.lang.Integer" column="HIMNDIASGESTAC" length="2"/>
+        <property name="himcdescrinfor" type="java.lang.String" column="HIMCDESCRINFOR" length="80"/>
+        
+    </class>
+</hibernate-mapping>

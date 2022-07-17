@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping>
+    <!-- 
+    Created by the Middlegen Hibernate plugin 2.2
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+    <class name="org.profamilia.hc.model.dto.Chserviautor" table="CHSERVIAUTOR" schema="HISTORIA" lazy="false">
+        <composite-id name="id" class="org.profamilia.hc.model.dto.ChserviautorPK">
+            <key-property name="hselconsulta" column="HSELCONSULTA" type="java.lang.Long" length="12"/>
+                <key-property name="hsenconsecutiv" column="HSENCONSECUTIV" type="java.lang.Integer" length="4"/>
+        </composite-id>
+        <version name="version" column="VERSION"/>
+        <property name="hsencodigocups" type="java.lang.String" column="HSENCODIGOCUPS" length="20"/>
+        <property name="hsencantiservi" type="java.lang.Integer" column="HSENCANTISERVI" length="4"/>
+        <property name="hsecnombreserv" type="java.lang.String" column="HSECNOMBRESERV" length="100"/>
+        <property name="hsenconsecuaut" type="java.lang.Integer" column="HSENCONSECUAUT" length="4"/>
+        <property name="hsedfechregist" type="java.util.Date" column="HSEDFECHREGIST" length="8"/>
+        <property name="hsecoperador" type="java.lang.String" column="HSECOPERADOR" length="20"/>
+    </class>
+</hibernate-mapping>
+

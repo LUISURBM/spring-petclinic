@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="org.profamilia.hc.model.dto">
+ <class name="UsuarioDto" table="TTTARJCRED">
+  <id name="cedula" column="TTCNCODIGO"></id>
+  <property name="nombre" column="TTCCNOMBRE"/>
+  <property name="telefono" column="TTCCUSUARI"/>
+  <property name="cedula" column="VERSION"/>
+ </class>
+</hibernate-mapping>

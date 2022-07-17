@@ -1,0 +1,63 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping>
+    <!-- 
+    Created by the Middlegen Hibernate plugin 2.2
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+    <class name="org.profamilia.hc.model.dto.Chidentiriesgo" table="CHIDENTIRIESGO" schema="HISTORIA" lazy="false">
+        <id name="hidelconsulta" type="long" column="HIDELCONSULTA">
+            <generator class="assigned"/>
+        </id>
+        <property name="hidecdiscrasi" type="java.lang.String" column="HIDECDISCRASI" length="1"/>
+        <property name="hidecdisobser" type="java.lang.String" column="HIDECDISOBSER" length="4000"/>
+        <property name="hidecanticua" type="java.lang.String" column="HIDECANTICUA" length="1"/>
+        <property name="hidecantcuag" type="java.lang.String" column="HIDECANTCUAG" length="4000"/>
+        <property name="hidecpatolog" type="java.lang.String" column="HIDECPATOLOG" length="1"/>
+        <property name="hidecpatoobs" type="java.lang.String" column="HIDECPATOOBS" length="4000"/>
+        <property name="hidecacretis" type="java.lang.String" column="HIDECACRETIS" length="1"/>
+        <property name="hidecacreobs" type="java.lang.String" column="HIDECACREOBS" length="4000"/>
+        <property name="hidecsospech" type="java.lang.String" column="HIDECSOSPECH" length="1"/>
+        <property name="hidecsosobse" type="java.lang.String" column="HIDECSOSOBSE" length="4000"/>
+        <property name="hidecpacices" type="java.lang.String" column="HIDECPACICES" length="1"/>
+        <property name="hideccesaobs" type="java.lang.String" column="HIDECCESAOBS" length="4000"/>
+        <property name="hiceccesados" type="java.lang.String" column="HICECCESADOS" length="1"/>
+        <property name="hiceccedosob" type="java.lang.String" column="HICECCEDOSOB" length="4000"/>
+        <property name="hicecalterac" type="java.lang.String" column="HICECALTERAC" length="1"/>
+        <property name="hicecalteobs" type="java.lang.String" column="HICECALTEOBS" length="4000"/>
+        <property name="hicecmalfom" type="java.lang.String" column="HICECMALFOM" length="1"/>
+        <property name="hicecmalobse" type="java.lang.String" column="HICECMALOBSE" length="4000"/>
+        <property name="hicecplacent" type="java.lang.String" column="HICECPLACENT" length="1"/>
+        <property name="hicecplaobse" type="java.lang.String" column="HICECPLAOBSE" length="4000"/>
+        <property name="hicecanemia" type="java.lang.String" column="HICECANEMIA" length="1"/>
+        <property name="hicecaneobse" type="java.lang.String" column="HICECANEOBSE" length="4000"/>
+        <property name="hidecriehemo" type="java.lang.String" column="HIDECRIEHEMO" length="1"/>
+        <property name="hidecriheval" type="java.lang.String" column="HIDECRIHEVAL" length="20"/>
+        <property name="hidecriheobs" type="java.lang.String" column="HIDECRIHEOBS" length="4000"/>
+        <property name="hidecpatcron" type="java.lang.String" column="HIDECPATCRON" length="1"/>
+        <property name="hidecinfactu" type="java.lang.String" column="HIDECINFACTU" length="1"/>
+        <property name="hidecinacval" type="java.lang.String" column="HIDECINACVAL" length="20"/>
+        <property name="hidecinacobs" type="java.lang.String" column="HIDECINACOBS" length="4000"/>
+        <property name="hidecantmull" type="java.lang.String" column="HIDECANTMULL" length="1"/>
+        <property name="hidecanmuobs" type="java.lang.String" column="HIDECANMUOBS" length="4000"/>
+        <property name="hidecserovih" type="java.lang.String" column="HIDECSEROVIH" length="1"/>
+        <property name="hidecseviobs" type="java.lang.String" column="HIDECSEVIOBS" length="4000"/>
+        <property name="hidecsosanem" type="java.lang.String" column="HIDECSOSANEM" length="1"/>
+        <property name="hidecmaansure" type="java.lang.String" column="HIDECMAANSURE" length="1"/>
+        <property name="hidecantpatdes" type="java.lang.String" column="HIDECANTPATDES" length="1"/>
+        <property name="hidecacrplacon" type="java.lang.String" column="HIDECACRPLACON" length="1"/>
+        <property name="hidecsospcori" type="java.lang.String" column="HIDECSOSPCORI" length="1"/>
+        <property name="hidecunceananin" type="java.lang.String" column="HIDECUNCEANANIN" length="1"/>
+        <property name="hidecdosmasces" type="java.lang.String" column="HIDECDOSMASCES" length="1"/>
+        <property name="hidecalancoec" type="java.lang.String" column="HIDECALANCOEC" length="1"/>
+        <property name="hidecgemamucoec" type="java.lang.String" column="HIDECGEMAMUCOEC" length="1"/>
+        <property name="hidecplapremay" type="java.lang.String" column="HIDECPLAPREMAY" length="1"/>
+        <property name="hidecanemiagrave" type="java.lang.String" column="HIDECANEMIAGRAVE" length="1"/>
+        <property name="hidecvih" type="java.lang.String" column="HIDECVIH" length="1"/>
+        <property name="hidecvihobs" type="java.lang.String" column="HIDECVIHOBS" length="4000"/>
+    </class>
+</hibernate-mapping>

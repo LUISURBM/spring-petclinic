@@ -1,0 +1,108 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+    
+<hibernate-mapping>
+<!-- 
+    Created by the Middlegen Hibernate plugin 2.2
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+
+<class 
+    name="org.profamilia.hc.model.dto.Cplistprec" 
+    table="CPLISTPREC"
+    lazy="false"
+>
+
+    <id
+        name="clpnnumero"
+        type="java.lang.Long"
+        column="CLPNNUMERO"
+    >
+    
+        <generator class="assigned" />
+    </id>
+
+    <property
+        name="clpcdescri"
+        type="java.lang.String"
+        column="CLPCDESCRI"
+        not-null="true"
+        length="100"
+    />
+    <property
+        name="clpcobserv"
+        type="java.lang.String"
+        column="CLPCOBSERV"
+        length="4000"
+    />
+    <property
+        name="clpdfecini"
+        type="java.util.Date"
+        column="CLPDFECINI"
+        not-null="true"
+        length="7"
+    />
+    <property
+        name="clpdfecfin"
+        type="java.util.Date"
+        column="CLPDFECFIN"
+        not-null="true"
+        length="7"
+    />
+    <property
+        name="clpadescto"
+        type="java.lang.String"
+        column="CLPADESCTO"
+        not-null="true"
+        length="6"
+    />
+    <property
+        name="clpnlistor"
+        type="java.lang.Long"
+        column="CLPNLISTOR"
+        length="10"
+    />
+    <property
+        name="clpdusumod"
+        type="java.lang.String"
+        column="CLPDUSUMOD"
+        not-null="true"
+        length="14"
+    />
+    <property
+        name="clpdfecmod"
+        type="java.util.Date"
+        column="CLPDFECMOD"
+        not-null="true"
+        length="7"
+    />
+    <property
+        name="version"
+        type="java.lang.Long"
+        column="VERSION"
+        length="22"
+    />
+    <property
+        name="clpcestado"
+        type="java.lang.String"
+        column="CLPCESTADO"
+        not-null="true"
+        length="2"
+    />
+    <property
+        name="clpaincrem"
+        type="java.lang.Long"
+        column="CLPAINCREM"
+        not-null="true"
+        length="5"
+    />
+
+    <!-- Associations -->
+  
+
+</class>
+</hibernate-mapping>

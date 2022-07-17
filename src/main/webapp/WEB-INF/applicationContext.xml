@@ -1,0 +1,513 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:util="http://www.springframework.org/schema/util" xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="   http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd   http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-2.0.xsd   http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-2.0.xsd">
+    <!--
+  - Application context definition
+  -->
+    <!-- ========================= RESOURCE DEFINITIONS ========================= -->
+    <!-- Configurer that replaces ${...} placeholders with values from a properties file -->
+    <!-- (in this case, JDBC-related settings for the dataSource definition below) -->
+    <bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+        <property name="location" value="classpath:/db.properties"/>
+    </bean>
+    <bean id="dataSourceTarget" class="org.springframework.jndi.JndiObjectFactoryBean">
+        <property name="jndiName">
+            <value>${jndi.dataSource}</value>
+        </property>
+    </bean>
+    <!-- Local DataSource that works in any environment -->
+    <!-- Note that DriverManagerDataSource does not pool; it is not intended for production -->
+    <!--
+    <bean id="dataSourceTarget"
+          class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+        <description>Datasource de la aplicacion.</description>
+        <property name="driverClassName" value="${jdbc.driverClassName}"/>
+        <property name="url" value="${jdbc.url}"/>
+        <property name="username" value="${jdbc.username}"/>
+        <property name="password" value="${jdbc.password}"/>
+    </bean>-->
+    <bean id="dataSource" class="org.profamilia.hc.jdbc.datasource.ProxyConnectionDataSource">
+        <property name="delegateDataSource" ref="dataSourceTarget"/>
+        <property name="authenticationSource" ref="authenticationSource"/>
+    </bean>
+    <!-- Hibernate SessionFactory Definition -->
+    <bean id="sessionFactory" class="org.springframework.orm.hibernate3.LocalSessionFactoryBean">
+        <property name="dataSource">
+            <ref bean="dataSource"/>
+        </property>
+        <property name="mappingResources">
+            <list>
+                <!-- Tablas Consulta Externa -->
+                <value>org/profamilia/hc/model/dto/Chparaclinic.hbm.xml</value>
+                <value>org/profamilia/hc/model/dto/Chantecegene.hbm.xml</value>
+                <value>org/profamilia/hc/model/dto/Chantegineco.hbm.xml</value>
+                <value>org/profamilia/hc/model/dto/Chantecetemp.hbm.xml</value>
+                <value>org/profamilia/hc/model/dto/Chconsulta.hbm.xml</value>
+                <value>org/profamilia/hc/model/dto/Chexamfisico.hbm.xml</value>
+                <value>org/profamilia/hc/model/dto/Chformulamed.hbm.xml</value>
+                <value>org/profamilia/hc/model/dto/Chimprdiag.hbm.xml</value>
+                <value>org/profamilia/hc/model/dto/Chincapacida.hbm.xml</value>
+                <value>org/profamilia/hc/model/dto/Chmotivocon.hbm.xml</value>
+                <value>org/profamilia/hc/model/dto/Chremision.hbm.xml</value>
+                <value>org/profamilia/hc/model/dto/Chusuario.hbm.xml</value>
+                <value>org/profamilia/hc/model/dto/Chviolencia.hbm.xml</value>
+                <value>org/profamilia/hc/model/dto/Chexamediagn.hbm.xml</value>
+                <value>org/profamilia/hc/model/dto/Chconducta.hbm.xml</value>
+                <value>org/profamilia/hc/model/dto/Chantecemama.hbm.xml</value>
+                <value>org/profamilia/hc/model/dto/Chmetodoplan.hbm.xml</value>
+                <value>org/profamilia/hc/model/dto/Chriesgomama.hbm.xml</value>
+                <value>org/profamilia/hc/model/dto/Chexafismama.hbm.xml</value>
+                <value>org/profamilia/hc/model/dto/Chexameparac.hbm.xml</value>
+                <value>org/profamilia/hc/model/dto/Chconsprogra.hbm.xml</value>
+                <value>org/profamilia/hc/model/dto/Chordecirugi.hbm.xml</value>
+                <value>org/profamilia/hc/model/dto/Chreferencia.hbm.xml</value>
+                <value>org/profamilia/hc/model/dto/Chanatopatol.hbm.xml</value>
+                <value>org/profamilia/hc/model/dto/Chtipoantece.hbm.xml</value>
+                <value>org/profamilia/hc/model/dto/Chnotamedica.hbm.xml</value>
+                <value>org/profamilia/hc/model/dto/Chplanantemp.hbm.xml</value>
+                <value>org/profamilia/hc/model/dto/Chcuestplani.hbm.xml</value>
+                <value>org/profamilia/hc/model/dto/Chantecprena.hbm.xml</value>
+                <value>org/profamilia/hc/model/dto/Chpediexamen.hbm.xml</value>
+                <value>org/profamilia/hc/model/dto/Chactividad.hbm.xml</value>
+                <value>org/profamilia/hc/model/dto/Chtipointerc.hbm.xml</value>
+                <value>org/profamilia/hc/model/dto/Chcontrolcon.hbm.xml</value>
+                <value>org/profamilia/hc/model/dto/Chgestacion.hbm.xml</value>
+                <value>org/profamilia/hc/model/dto/Chanteceobst.hbm.xml</value>
+                <value>org/profamilia/hc/model/dto/Chcontrolpre.hbm.xml</value>
+                <value>org/profamilia/hc/model/dto/Chexameelect.hbm.xml</value>
+                <value>org/profamilia/hc/model/dto/Chexamelabor.hbm.xml</value>
+                <value>org/profamilia/hc/model/dto/Chexameimage.hbm.xml</value>
+                <value>org/profamilia/hc/model/dto/Chproceconsu.hbm.xml</value>
+                <value>org/profamilia/hc/model/dto/Chtamizalapr.hbm.xml</value>
+                <value>org/profamilia/hc/model/dto/Chlibrocitol.hbm.xml</value>
+                <value>org/profamilia/hc/model/dto/Chcertmedico.hbm.xml</value>
+                <value>org/profamilia/hc/model/dto/Chantecolpo.hbm.xml</value>
+                <value>org/profamilia/hc/model/dto/Chresersangr.hbm.xml</value>
+                <value>org/profamilia/hc/model/dto/Chinfomamogr.hbm.xml</value>
+                <value>org/profamilia/hc/model/dto/Chtipohistor.hbm.xml</value>
+                <value>org/profamilia/hc/model/dto/Chviadminist.hbm.xml</value>
+                <value>org/profamilia/hc/model/dto/Chviolenremi.hbm.xml</value>
+                <value>org/profamilia/hc/model/dto/Chpreguanest.hbm.xml</value>
+                <value>org/profamilia/hc/model/dto/Chcuestanest.hbm.xml</value>
+                <value>org/profamilia/hc/model/dto/Chexafisane.hbm.xml</value>
+                <value>org/profamilia/hc/model/dto/Chresulparac.hbm.xml</value>
+                <value>org/profamilia/hc/model/dto/Chcuestester.hbm.xml</value>
+                <value>org/profamilia/hc/model/dto/Chpregucuest.hbm.xml</value>
+                <value>org/profamilia/hc/model/dto/Chdetaentcito.hbm.xml</value>
+                <value>org/profamilia/hc/model/dto/Chentregacitol.hbm.xml</value>
+                <value>org/profamilia/hc/model/dto/Chproflect.hbm.xml</value>
+                <value>org/profamilia/hc/model/dto/Chdispoaplic.hbm.xml</value>
+                <value>org/profamilia/hc/model/dto/Chplantilla.hbm.xml</value>
+                <value>org/profamilia/hc/model/dto/Chotraspatolog.hbm.xml</value>
+                <value>org/profamilia/hc/model/dto/Chentregapatol.hbm.xml</value>
+                <value>org/profamilia/hc/model/dto/Chdetaentpatol.hbm.xml</value>
+                <value>org/profamilia/hc/model/dto/Chprofpatol.hbm.xml</value>
+                <value>org/profamilia/hc/model/dto/Chprioxmedi.hbm.xml</value>
+                <value>org/profamilia/hc/model/dto/Chcancecervi.hbm.xml</value>
+                <value>org/profamilia/hc/model/dto/Chantecpsico.hbm.xml</value>
+                <value>org/profamilia/hc/model/dto/Chevalugener.hbm.xml</value>
+                <value>org/profamilia/hc/model/dto/Chseguipsico.hbm.xml</value>
+                <value>org/profamilia/hc/model/dto/Chcervaaplic.hbm.xml</value>
+                <value>org/profamilia/hc/model/dto/Chestermascu.hbm.xml</value>
+                <value>org/profamilia/hc/model/dto/Chlogimpresi.hbm.xml</value>
+                <value>org/profamilia/hc/model/dto/Chestadpsico.hbm.xml</value>
+                <value>org/profamilia/hc/model/dto/Chremisilve.hbm.xml</value>
+                <value>org/profamilia/hc/model/dto/Chcolposcopia.hbm.xml</value>
+                <value>org/profamilia/hc/model/dto/Chtipoinas.hbm.xml</value>
+                <value>org/profamilia/hc/model/dto/Chaseavise.hbm.xml</value>
+                <value>org/profamilia/hc/model/dto/Chseguavis.hbm.xml</value>
+                <value>org/profamilia/hc/model/dto/Chasesoria.hbm.xml</value>
+                <value>org/profamilia/hc/model/dto/Chhistoxclin.hbm.xml</value>
+                <value>org/profamilia/hc/model/dto/Chasesohuman.hbm.xml</value>
+                <value>org/profamilia/hc/model/dto/Chrevissiste.hbm.xml</value>
+                <value>org/profamilia/hc/model/dto/Chpamectema.hbm.xml</value>
+                <value>org/profamilia/hc/model/dto/Chpamecindic.hbm.xml</value>
+                <value>org/profamilia/hc/model/dto/Chpamecpregu.hbm.xml</value>
+                <value>org/profamilia/hc/model/dto/Chcuestpamec.hbm.xml</value>
+                <value>org/profamilia/hc/model/dto/Chpermitema.hbm.xml</value>
+                <value>org/profamilia/hc/model/dto/Chpladetrat.hbm.xml</value>
+                <value>org/profamilia/hc/model/dto/Chregisexame.hbm.xml</value>
+                <value>org/profamilia/hc/model/dto/Chcontrvasec.hbm.xml</value>
+                <value>org/profamilia/hc/model/dto/Chremihospit.hbm.xml</value>
+                <value>org/profamilia/hc/model/dto/Chvalorprean.hbm.xml</value>
+                <value>org/profamilia/hc/model/dto/Chvademecum.hbm.xml</value>
+                <value>org/profamilia/hc/model/dto/Chactiveduca.hbm.xml</value>
+                <value>org/profamilia/hc/model/dto/Ccfactsap.hbm.xml</value>
+                <value>org/profamilia/hc/model/dto/Ccdetasap.hbm.xml</value>
+                <value>org/profamilia/hc/model/dto/Chregicomp.hbm.xml</value>
+                <value>org/profamilia/hc/model/dto/Chregitelf.hbm.xml</value>
+                <value>org/profamilia/hc/model/dto/Chcontroladi.hbm.xml</value>
+                <value>org/profamilia/hc/model/dto/Chanteobstpr.hbm.xml</value>
+                
+                
+                <!-- Tablas Cirugia -->
+                <value>org/profamilia/hc/model/dto/Chautordescr.hbm.xml</value>
+                <value>org/profamilia/hc/model/dto/Chautorepicr.hbm.xml</value>
+                <value>org/profamilia/hc/model/dto/Chdetacirpro.hbm.xml</value>
+                <value>org/profamilia/hc/model/dto/Chdetaldescr.hbm.xml</value>
+                <value>org/profamilia/hc/model/dto/Chcirdetdesc.hbm.xml</value>
+                <value>org/profamilia/hc/model/dto/Chitemmater.hbm.xml</value>
+                <value>org/profamilia/hc/model/dto/Chmaterinstr.hbm.xml</value>
+                <value>org/profamilia/hc/model/dto/Chinstrument.hbm.xml</value>
+                <value>org/profamilia/hc/model/dto/Chitempaque.hbm.xml</value>
+                <value>org/profamilia/hc/model/dto/Chpaqueester.hbm.xml</value>
+                <value>org/profamilia/hc/model/dto/Chaldrete.hbm.xml</value>
+                <value>org/profamilia/hc/model/dto/Chcirugprogr.hbm.xml</value>
+                <value>org/profamilia/hc/model/dto/Chcontroliqu.hbm.xml</value>
+                <value>org/profamilia/hc/model/dto/Chingresoenf.hbm.xml</value>
+                <value>org/profamilia/hc/model/dto/Chnotaenferm.hbm.xml</value>
+                <value>org/profamilia/hc/model/dto/Chsignovital.hbm.xml</value>
+                <value>org/profamilia/hc/model/dto/Chcanalivena.hbm.xml</value>
+                <value>org/profamilia/hc/model/dto/Chevolucion.hbm.xml</value>
+                <value>org/profamilia/hc/model/dto/Chdescrquiru.hbm.xml</value>
+                <value>org/profamilia/hc/model/dto/Chepicrisi.hbm.xml</value>
+                <value>org/profamilia/hc/model/dto/Chformulaliq.hbm.xml</value>
+                <value>org/profamilia/hc/model/dto/Chmedidapoyo.hbm.xml</value>
+                <value>org/profamilia/hc/model/dto/Chformulahos.hbm.xml</value>
+                <value>org/profamilia/hc/model/dto/Chformulaesp.hbm.xml</value>
+                <value>org/profamilia/hc/model/dto/Chingresomed.hbm.xml</value>
+                <value>org/profamilia/hc/model/dto/Chanestesia.hbm.xml</value>
+                <value>org/profamilia/hc/model/dto/Chmonitoria.hbm.xml</value>
+                <value>org/profamilia/hc/model/dto/Chtecnianest.hbm.xml</value>
+                <value>org/profamilia/hc/model/dto/Chventiaerea.hbm.xml</value>
+                <value>org/profamilia/hc/model/dto/Chposicanest.hbm.xml</value>
+                <value>org/profamilia/hc/model/dto/Chcontmedane.hbm.xml</value>
+                <value>org/profamilia/hc/model/dto/Chconsultori.hbm.xml</value>
+                <value>org/profamilia/hc/model/dto/Chconsxcirug.hbm.xml</value>                
+                <value>org/profamilia/hc/model/dto/Chsolicanula.hbm.xml</value>
+                <value>org/profamilia/hc/model/dto/Chcontrmedic.hbm.xml</value>
+                <value>org/profamilia/hc/model/dto/Chciruganula.hbm.xml</value>
+                <value>org/profamilia/hc/model/dto/Chcontroorden.hbm.xml</value>
+                <value>org/profamilia/hc/model/dto/Chidentiriesgo.hbm.xml</value>
+                
+                
+                <!-- Tablas Otros Esquemas -->
+                <value>org/profamilia/hc/model/dto/Cnconsclin.hbm.xml</value>
+                <value>org/profamilia/hc/model/dto/Cnprofxcon.hbm.xml</value>
+                <value>org/profamilia/hc/model/dto/Cptipoiden.hbm.xml</value>
+                <value>org/profamilia/hc/model/dto/Cpclinica.hbm.xml</value>
+                <value>org/profamilia/hc/model/dto/Cpentidadadm.hbm.xml</value>
+                <value>org/profamilia/hc/model/dto/Cpdepadane.hbm.xml</value>
+                <value>org/profamilia/hc/model/dto/Cpmunidane.hbm.xml</value>
+                <value>org/profamilia/hc/model/dto/Cpocupacio.hbm.xml</value>
+                <value>org/profamilia/hc/model/dto/Cpprofesio.hbm.xml</value>
+                <value>org/profamilia/hc/model/dto/Cptipoespe.hbm.xml</value>
+                <value>org/profamilia/hc/model/dto/Cpsalaespe.hbm.xml</value>
+                <value>org/profamilia/hc/model/dto/Cpservicio.hbm.xml</value>
+                <value>org/profamilia/hc/model/dto/Cpservxsal.hbm.xml</value>
+                <value>org/profamilia/hc/model/dto/Cptipconcl.hbm.xml</value>
+                <value>org/profamilia/hc/model/dto/Crcausaext.hbm.xml</value>
+                <value>org/profamilia/hc/model/dto/Crdgncie10.hbm.xml</value>
+                <value>org/profamilia/hc/model/dto/Crentadmin.hbm.xml</value>
+                <value>org/profamilia/hc/model/dto/Crfinalcon.hbm.xml</value>
+                <value>org/profamilia/hc/model/dto/Sapermiso.hbm.xml</value>
+                <value>org/profamilia/hc/model/dto/Saprograma.hbm.xml</value>
+                <value>org/profamilia/hc/model/dto/Sausuario.hbm.xml</value>
+                <value>org/profamilia/hc/model/dto/Cptipodocu.hbm.xml</value>
+                <value>org/profamilia/hc/model/dto/Cpusuario.hbm.xml</value>
+                <value>org/profamilia/hc/model/dto/Cpconsec.hbm.xml</value>
+                <value>org/profamilia/hc/model/dto/Crarcconsu.hbm.xml</value>
+                <value>org/profamilia/hc/model/dto/Cncitologi.hbm.xml</value>
+                <value>org/profamilia/hc/model/dto/Cncitolect.hbm.xml</value>
+                <value>org/profamilia/hc/model/dto/Cndesccito.hbm.xml</value>
+                <value>org/profamilia/hc/model/dto/Cncitotoma.hbm.xml</value>
+                <value>org/profamilia/hc/model/dto/Ccfactvent.hbm.xml</value>
+                <value>org/profamilia/hc/model/dto/Ccfactserv.hbm.xml</value>
+                <value>org/profamilia/hc/model/dto/Ccdetafact.hbm.xml</value>
+                <value>org/profamilia/hc/model/dto/Cptipocont.hbm.xml</value>
+                <value>org/profamilia/hc/model/dto/Crarcproce.hbm.xml</value>
+                <value>org/profamilia/hc/model/dto/Crripxclin.hbm.xml</value>
+                <value>org/profamilia/hc/model/dto/Cractoquir.hbm.xml</value>
+                <value>org/profamilia/hc/model/dto/Crmedicame.hbm.xml</value>
+                <value>org/profamilia/hc/model/dto/Ccdetfacve.hbm.xml</value>
+                <value>org/profamilia/hc/model/dto/Cptarxprof.hbm.xml</value>
+                <value>org/profamilia/hc/model/dto/Cpusuxclin.hbm.xml</value>
+                <value>org/profamilia/hc/model/dto/Sarol.hbm.xml</value>
+                <value>org/profamilia/hc/model/dto/Sarolsusua.hbm.xml</value>
+                <value>org/profamilia/hc/model/dto/Sapermusua.hbm.xml</value>
+                <value>org/profamilia/hc/model/dto/Sapermrol.hbm.xml</value>
+                <value>org/profamilia/hc/model/dto/Cpcontrato.hbm.xml</value>
+                <value>org/profamilia/hc/model/dto/Cpusuxsala.hbm.xml</value>
+                <value>org/profamilia/hc/model/dto/Cpservanex.hbm.xml</value>
+                <value>org/profamilia/hc/model/dto/Cpdonante.hbm.xml</value>
+                <value>org/profamilia/hc/model/dto/Cptipoprof.hbm.xml</value>
+                <value>org/profamilia/hc/model/dto/Chsegutelefo.hbm.xml</value>
+                <value>org/profamilia/hc/model/dto/Cpprograma.hbm.xml</value>
+                <value>org/profamilia/hc/model/dto/Chregicirpro.hbm.xml</value>
+                <value>org/profamilia/hc/model/dto/Chparavrqui.hbm.xml</value>
+                <value>org/profamilia/hc/model/dto/Chverquirofa.hbm.xml</value>
+                <value>org/profamilia/hc/model/dto/Chitemvrquir.hbm.xml</value>
+                <value>org/profamilia/hc/model/dto/Cpempresa.hbm.xml</value>
+                <value>org/profamilia/hc/model/dto/Chautoriserv.hbm.xml</value>
+                <value>org/profamilia/hc/model/dto/Chserviautor.hbm.xml</value>
+                <value>org/profamilia/hc/model/dto/Chcierreanest.hbm.xml</value>
+                <value>org/profamilia/hc/model/dto/Chantecvasec.hbm.xml</value>
+                <value>org/profamilia/hc/model/dto/Clippfgene.hbm.xml</value>
+                <value>org/profamilia/hc/model/dto/Cvcontrato.hbm.xml</value>
+                <value>org/profamilia/hc/model/dto/Clcomserv.hbm.xml</value>
+                <value>org/profamilia/hc/model/dto/Cfadmision.hbm.xml</value>
+                <value>org/profamilia/hc/model/dto/Cfdetaadmision.hbm.xml</value>
+                <value>org/profamilia/hc/model/dto/Cfnoveadmi.hbm.xml</value>
+                <value>org/profamilia/hc/model/dto/Cfnovedeta.hbm.xml</value>
+                <value>org/profamilia/hc/model/dto/Cppais.hbm.xml</value>
+                   <!-- TABLA VADEMECUM-->
+                <value>org/profamilia/hc/model/dto/Chvademprof.hbm.xml</value>
+       
+                <!-- TABLAS INTEGRACION SAP-->
+                <value>org/profamilia/hc/model/dto/Cicotizsap.hbm.xml</value>
+                <value>org/profamilia/hc/model/dto/Ccdescempl.hbm.xml</value>
+                <value>org/profamilia/hc/model/dto/Cprestxcon.hbm.xml</value>
+                <value>org/profamilia/hc/model/dto/Chparameduca.hbm.xml</value>
+                <value>org/profamilia/hc/model/dto/Chserxtipo.hbm.xml</value>
+                <value>org/profamilia/hc/model/dto/Chtiposerv.hbm.xml</value>
+                <value>org/profamilia/hc/model/dto/Chmedicament.hbm.xml</value>
+                <value>org/profamilia/hc/model/dto/Chvacunacion.hbm.xml</value>
+                <value>org/profamilia/hc/model/dto/Chvsolsivig.hbm.xml</value>
+                <value>org/profamilia/hc/model/dto/Chespervasec.hbm.xml</value>
+                <value>org/profamilia/hc/model/dto/Chfertdato.hbm.xml</value>
+                <value>org/profamilia/hc/model/dto/Chfertecog.hbm.xml</value>
+                <value>org/profamilia/hc/model/dto/Chparacgener.hbm.xml</value>
+                <value>org/profamilia/hc/model/dto/Chsalaxprofe.hbm.xml</value>
+                <value>org/profamilia/hc/model/dto/Chevoluconsu.hbm.xml</value>
+                <value>org/profamilia/hc/model/dto/Chregiconpro.hbm.xml</value>
+                <value>org/profamilia/hc/model/dto/Cnregferti.hbm.xml</value>
+                <value>org/profamilia/hc/model/dto/Cnespermog.hbm.xml</value>
+                <value>org/profamilia/hc/model/dto/Cncapaespe.hbm.xml</value>
+                <value>org/profamilia/hc/model/dto/Agendamiento.hbm.xml</value>
+                <value>org/profamilia/hc/model/dto/Chconfiservi.hbm.xml</value>
+                <value>org/profamilia/hc/model/dto/Chreginsumo.hbm.xml</value>
+                <value>org/profamilia/hc/model/dto/Cpcanaserv.hbm.xml</value>
+                <value>org/profamilia/hc/model/dto/Chcauspaus.hbm.xml</value>
+                <value>org/profamilia/hc/model/dto/Chtiempaten.hbm.xml</value>
+                <value>org/profamilia/hc/model/dto/Chgeslabor.hbm.xml</value>
+                <value>org/profamilia/hc/model/dto/Chdatosvph.hbm.xml</value>
+                <value>org/profamilia/hc/model/dto/Chvphcitolect.hbm.xml</value>
+                <value>org/profamilia/hc/model/dto/Chvphtoma.hbm.xml</value>
+                <value>org/profamilia/hc/model/dto/Cfdetafactura.hbm.xml</value>
+                <value>org/profamilia/hc/model/dto/Chvphlect.hbm.xml</value>
+                <value>org/profamilia/hc/model/dto/Chdetaentvph.hbm.xml</value>
+                <value>org/profamilia/hc/model/dto/Chentregavph.hbm.xml</value>
+                <value>org/profamilia/hc/model/dto/Chlibrovph.hbm.xml</value>
+                <value>org/profamilia/hc/model/dto/Cpparametr.hbm.xml</value>
+                <value>org/profamilia/hc/model/dto/Cpparentes.hbm.xml</value>
+                <value>org/profamilia/hc/model/dto/Clcateippf.hbm.xml</value>
+                <value>org/profamilia/hc/model/dto/Cpestadciv.hbm.xml</value>
+                <value>org/profamilia/hc/model/dto/Cncitovphlect.hbm.xml</value>
+                <value>org/profamilia/hc/model/dto/Cffactura.hbm.xml</value>
+                <value>org/profamilia/hc/model/dto/Chproflabo.hbm.xml</value>
+                <value>org/profamilia/hc/model/dto/Chproflebl.hbm.xml</value>
+                <value>org/profamilia/hc/model/dto/Crripsserv.hbm.xml</value>
+                <value>org/profamilia/hc/model/dto/Chcertasiad.hbm.xml</value>
+                <value>org/profamilia/hc/model/dto/Chautornota.hbm.xml</value>
+                <value>org/profamilia/hc/model/dto/Chantecdetal.hbm.xml</value>
+                <value>org/profamilia/hc/model/dto/Chotraorden.hbm.xml</value>              
+                <value>org/profamilia/hc/model/dto/Chanteginecopre.hbm.xml</value>
+                <value>org/profamilia/hc/model/dto/Chantecfamil.hbm.xml</value>
+                <value>org/profamilia/hc/model/dto/Cppaquserv.hbm.xml</value>
+                <value>org/profamilia/hc/model/dto/Chvalorabiopsi.hbm.xml</value>
+                <value>org/profamilia/hc/model/dto/Chasesoriaive.hbm.xml</value>
+                <value>org/profamilia/hc/model/dto/Chpsicoantec.hbm.xml</value>
+                <value>org/profamilia/hc/model/dto/Chescvalcai.hbm.xml</value>
+                <value>org/profamilia/hc/model/dto/Chantecespec.hbm.xml</value>
+                <value>org/profamilia/hc/model/dto/Chantecpatol.hbm.xml</value>
+                <value>org/profamilia/hc/model/dto/Chantecfarma.hbm.xml</value>
+                <value>org/profamilia/hc/model/dto/Chlecttuber.hbm.xml</value>
+                <value>org/profamilia/hc/model/dto/Chregcomenf.hbm.xml</value>
+                <value>org/profamilia/hc/model/dto/Chautoinfopsic.hbm.xml</value>
+                <value>org/profamilia/hc/model/dto/Chinfopsico.hbm.xml</value>
+                 <value>org/profamilia/hc/model/dto/Cisaludtool.hbm.xml</value>  
+                <value>org/profamilia/hc/model/dto/Chhisteroscopia.hbm.xml</value>
+                <value>org/profamilia/hc/model/dto/Chhallahistero.hbm.xml</value>
+                <value>org/profamilia/hc/model/dto/Cfencuecovid.hbm.xml</value>
+                <value>org/profamilia/hc/model/dto/Chrefepaci.hbm.xml</value>
+                <value>org/profamilia/hc/model/dto/Chcontabor.hbm.xml</value>  
+                <value>org/profamilia/hc/model/dto/Chregisabort.hbm.xml</value>  
+                <value>org/profamilia/hc/model/dto/Chusuarioabor.hbm.xml</value>
+                <value>org/profamilia/hc/model/dto/Chnoticia.hbm.xml</value>  
+                <value>org/profamilia/hc/model/dto/Chpapsicologico.hbm.xml</value>
+                <value>org/profamilia/hc/model/dto/Chpruecovidanticu.hbm.xml</value> 
+                <value>org/profamilia/hc/model/dto/Chpruecovidantige.hbm.xml</value> 
+                <value>org/profamilia/hc/model/dto/Cwsaludtotal.hbm.xml</value>
+                <value>org/profamilia/hc/model/dto/Chpruerapi.hbm.xml</value>
+                <value>org/profamilia/hc/model/dto/Chsaludtotal.hbm.xml</value>
+                <value>org/profamilia/hc/model/dto/Chcorreo.hbm.xml</value>
+                <value>org/profamilia/hc/model/dto/Cfremiadmi.hbm.xml</value>
+                <value>org/profamilia/hc/model/dto/Chfragesperma.hbm.xml</value>
+                <value>org/profamilia/hc/model/dto/Chplanconsinfo.hbm.xml</value>
+                <value>org/profamilia/hc/model/dto/Chconinfxcon.hbm.xml</value>
+                <value>org/profamilia/hc/model/dto/Cpparamcitol.hbm.xml</value>
+                <value>org/profamilia/hc/model/dto/Chcorrelec.hbm.xml</value>
+                <value>org/profamilia/hc/model/dto/Chdatosadvacuna.hbm.xml</value>
+                <value>org/profamilia/hc/model/dto/Chantpatol.hbm.xml</value>
+                <value>org/profamilia/hc/model/dto/Chantquir.hbm.xml</value>
+                <value>org/profamilia/hc/model/dto/Chantox.hbm.xml</value>
+                <value>org/profamilia/hc/model/dto/Chantalerg.hbm.xml</value>
+                <value>org/profamilia/hc/model/dto/Chantfami.hbm.xml</value>
+                <value>org/profamilia/hc/model/dto/Chanttrans.hbm.xml</value>
+                <value>org/profamilia/hc/model/dto/Chantit.hbm.xml</value>
+                <value>org/profamilia/hc/model/dto/Chantfarma.hbm.xml</value>
+                <value>org/profamilia/hc/model/dto/Chanttrauma.hbm.xml</value>
+                <value>org/profamilia/hc/model/dto/Crcup.hbm.xml</value>
+                <value>org/profamilia/hc/model/dto/Chcupsxcon.hbm.xml</value>
+                <value>org/profamilia/hc/model/dto/Cpinsumate.hbm.xml</value>
+                <value>org/profamilia/hc/model/dto/Ctacumcosto.hbm.xml</value>
+                <value>org/profamilia/hc/model/dto/Ctwsdetsolent.hbm.xml</value>
+
+            </list>
+        </property>
+            
+        <property name="hibernateProperties">
+            <props>
+                <prop key="hibernate.dialect">org.hibernate.dialect.Oracle10gDialect</prop>
+                <prop key="hibernate.show_sql">false</prop>
+                <prop key="hibernate.query.factory_class">org.hibernate.hql.classic.ClassicQueryTranslatorFactory</prop>
+                <prop key="hibernate.connection.release_mode">after_transaction</prop>
+                <prop key="hibernate.transaction.factory_class">org.hibernate.transaction.JDBCTransactionFactory</prop>
+                <prop key="hibernate.connection.driver_class">oracle.jdbc.OracleDriver</prop>
+            </props>
+        </property>
+    </bean>
+    <!-- Hibernate Template Defintion -->
+    <bean id="hibernateTemplate" class="org.springframework.orm.hibernate3.HibernateTemplate">
+        <property name="sessionFactory">
+            <ref bean="sessionFactory"/>
+        </property>
+        <property name="jdbcExceptionTranslator">
+            <ref bean="jdbcExceptionTranslator"/>
+        </property>
+    </bean>
+    <!-- Spring Data Access Exception Translator Defintion -->
+    <bean id="jdbcExceptionTranslator" class="org.springframework.jdbc.support.SQLErrorCodeSQLExceptionTranslator">
+        <property name="dataSource">
+            <ref bean="dataSource"/>
+        </property>
+    </bean>
+    <!-- ========================= Start of DAO DEFINITIONS ========================= -->
+    <!-- Historias Clinicas Dao Definition: Hibernate implementation -->
+    <bean id="clinicoDAO" class="org.profamilia.hc.model.dao.Imp.ClinicoDaoImp">
+        <property name="hibernateTemplate">
+            <ref bean="hibernateTemplate"/>
+        </property>
+    </bean>
+    <bean id="cirugiaDAO" class="org.profamilia.hc.model.dao.Imp.CirugiaDaoImp">
+        <property name="hibernateTemplate">
+            <ref bean="hibernateTemplate"/>
+        </property>
+    </bean>
+     <bean id="ripsDAO" class="org.profamilia.hc.model.dao.Imp.RipsDaoImp">
+        <property name="hibernateTemplate">
+            <ref bean="hibernateTemplate"/>
+        </property>
+    </bean>   
+      <bean id="noticiaDAO" class="org.profamilia.hc.model.dao.Imp.NoticiaDaoImp">
+        <property name="hibernateTemplate">
+            <ref bean="hibernateTemplate"/>
+        </property>
+    </bean>
+     <bean id="reporteDAO" class="org.profamilia.hc.model.dao.Imp.ReporteDaoImp">
+        <property name="hibernateTemplate">
+            <ref bean="hibernateTemplate"/>
+        </property>
+    </bean>
+      <bean id="historiaDAO" class="org.profamilia.hc.model.dao.Imp.HistoriaDaoImp">
+        <property name="hibernateTemplate">
+            <ref bean="hibernateTemplate"/>
+        </property>
+    </bean>
+     <bean id="costosDAO" class="org.profamilia.hc.model.dao.Imp.CostosDaoImp">
+        <property name="hibernateTemplate">
+            <ref bean="hibernateTemplate"/>
+        </property>
+    </bean>
+    <bean id="transactionManager" class="org.springframework.orm.hibernate3.HibernateTransactionManager">
+        <property name="sessionFactory">
+            <ref local="sessionFactory"/>
+        </property>
+    </bean>
+    <!-- ========================= Start of SERVICE DEFINITIONS ========================= -->
+    <bean id="clinicoService" parent="hibernateBaseTransacionProxy">
+        <property name="target">
+            <ref local="clinicoServiceTarget"/>
+        </property>
+    </bean>
+    <bean id="clinicoServiceTarget" class="org.profamilia.hc.model.service.Imp.ClinicoServiceImp">
+        <property name="clinicoDAO">
+            <ref local="clinicoDAO"/>
+        </property>
+    </bean>
+    <bean id="cirugiaService" parent="hibernateBaseTransacionProxy">
+        <property name="target">
+            <ref local="cirugiaServiceTarget"/>
+        </property>
+    </bean>
+    <bean id="cirugiaServiceTarget" class="org.profamilia.hc.model.service.Imp.CirugiaServiceImp">
+        <property name="cirugiaDAO">
+            <ref local="cirugiaDAO"/>
+        </property>
+    </bean>
+     <bean id="ripsService" parent="hibernateBaseTransacionProxy">
+        <property name="target">
+            <ref local="ripsServiceTarget"/>
+        </property>
+    </bean>
+    <bean id="ripsServiceTarget" class="org.profamilia.hc.model.service.Imp.RipsServiceImp">
+        <property name="ripsDAO">
+            <ref local="ripsDAO"/>
+        </property>
+    </bean>
+       <bean id="noticiaService" parent="hibernateBaseTransacionProxy">
+        <property name="target">
+            <ref local="noticiaServiceTarget"/>
+        </property>
+    </bean>
+    <bean id="noticiaServiceTarget" class="org.profamilia.hc.model.service.Imp.NoticiaServiceImp">
+        <property name="noticiaDAO">
+            <ref local="noticiaDAO"/>
+        </property>
+    </bean>
+       <bean id="reporteService" parent="hibernateBaseTransacionProxy">
+        <property name="target">
+            <ref local="reporteServiceTarget"/>
+        </property>
+    </bean>
+     <bean id="reporteServiceTarget" class="org.profamilia.hc.model.service.Imp.ReporteServiceImp">
+        <property name="reporteDAO">
+            <ref local="reporteDAO"/>
+        </property>
+    </bean>
+     <bean id="historiaService" parent="hibernateBaseTransacionProxy">
+        <property name="target">
+            <ref local="historiaServiceTarget"/>
+        </property>
+    </bean>
+     <bean id="historiaServiceTarget" class="org.profamilia.hc.model.service.Imp.HistoriaServiceImp">
+        <property name="historiaDAO">
+            <ref local="historiaDAO"/>
+        </property>
+    </bean>
+      <bean id="costosService" parent="hibernateBaseTransacionProxy">
+        <property name="target">
+            <ref local="costosServiceTarget"/>
+        </property>
+    </bean>
+     <bean id="costosServiceTarget" class="org.profamilia.hc.model.service.Imp.CostosServiceImp">
+        <property name="costosDAO">
+            <ref local="costosDAO"/>
+        </property>
+    </bean>
+    <bean id="hibernateBaseTransacionProxy"
+          class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean" abstract="true">
+        <property name="transactionManager" ref="transactionManager"/>
+        <property name="transactionAttributes">
+            <props>
+                <prop key="get*">PROPAGATION_REQUIRED,readOnly</prop>
+                <prop key="find*">PROPAGATION_REQUIRED,readOnly</prop>
+                <prop key="save*">PROPAGATION_REQUIRED</prop>
+                <prop key="update*">PROPAGATION_REQUIRED</prop>
+                <prop key="delete*">PROPAGATION_REQUIRED</prop>
+            </props>
+        </property>
+    </bean>
+</beans>
+

@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping>
+    <!-- 
+    Created by the Middlegen Hibernate plugin 2.2
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+    <class name="org.profamilia.hc.model.dto.Chformulamed" table="CHFORMULAMED" schema="HISTORIA" lazy="false">
+        <composite-id name="id" class="org.profamilia.hc.model.dto.ChformulamedPK">
+            <key-property name="hfolconsulta" column="HFOLCONSULTA" type="java.lang.Long" length="12"/>
+            <key-property name="hfonconsecut" column="HFONCONSECUT" type="java.lang.Integer" length="4"/>
+        </composite-id>
+        <version name="version" column="VERSION"/>
+        <property name="hfocmedicament" type="java.lang.String" column="HFOCMEDICAMENT" length="4000"/>
+        <property name="hfoctratramien" type="java.lang.String" column="HFOCTRATRAMIEN" length="4000"/>
+        <property name="hfocviadministr" type="java.lang.String" column="HFOCVIADMINISTR" length="4"/>
+        <property name="hfocviadminotr" type="java.lang.String" column="HFOCVIADMINOTR" length="600"/>
+        <property name="hfocadosis" type="java.lang.Integer" column="HFOCADOSIS" length="17"/>
+         <property name="hfonllave" type="java.lang.Integer" column="HFONLLAVE" length="4"/>
+        <property name="hfodfecregistr" type="java.util.Date" column="HFODFECREGISTR" length="7"/>
+        <property name="hfocoperador" type="java.lang.String" column="HFOCOPERADOR" length="14"/>
+        <property name="hfoccontraindi" type="java.lang.String" column="HFOCCONTRAINDI" length="4000"/>
+        <property name="hfoctiposerv" type="java.lang.String" column="HFOCTIPOSERV" length="1"/>
+        <property name="hfocunidmedi" type="java.lang.String" column="HFOCUNIDMEDI" length="6"/>
+        <property name="hfocfrecuenc" type="java.lang.String" column="HFOCFRECUENC" length="2"/>
+        <property name="hfocduracion" type="java.lang.String" column="HFOCDURACION" length="2"/>
+        <property name="hfonfrecuenc" type="java.lang.Integer" column="HFONFRECUENC" length="4"/>
+        <property name="hfonduracion" type="java.lang.Integer" column="HFONDURACION" length="4"/>
+        <property name="hfocconcentr" type="java.lang.String" column="HFOCCONCENTR" length="100"/>
+        
+        <property name="hfocdescform" type="java.lang.String" column="HFOCDESCFORM" length="20"/>
+        <property name="hfoccodisap" type="java.lang.String" column="HFOCCODISAP" length="12"/>
+        <property name="hfoccodiatc" type="java.lang.String" column="HFOCCODIATC" length="12"/>
+        <property name="hfoccodicum" type="java.lang.String" column="HFOCCODICUM" length="12"/>
+        
+        <property name="hfocformafarma" type="java.lang.String" column="HFOCFORMAFARMA" length="6"/>
+        
+        <property name="hfocconcimedic" type="java.lang.String" column="HFOCCONCIMEDIC" length="1"/>
+        
+        
+    </class>
+</hibernate-mapping>
+
+
+

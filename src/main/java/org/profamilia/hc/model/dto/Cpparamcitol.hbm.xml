@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping>
+    <!-- 
+    Created by the Middlegen Hibernate plugin 2.2
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+    <class name="org.profamilia.hc.model.dto.Cpparamcitol" table="CPPARAMCITOL" lazy="false" schema="CLINICO">
+        <id name="cpcnconsec" type="java.lang.Long" column="CPCNCONSEC">
+            <generator class="sequence">
+                <param name="sequence">HISTORIA.CPPARAMCITOL_SEQ</param>
+            </generator>
+        </id>
+        <property name="cpcccodpaq" type="java.lang.String" column="CPCCCODPAQ" length="50"/>
+        <property name="cpcccodser" type="java.lang.String" column="CPCCCODSER" length="50"/>
+        <property name="cpcccodlab" type="java.lang.String" column="CPCCCODLAB" length="50"/>
+        <property name="cpcestado" type="java.lang.String" column="CPCESTADO" length="2"/>
+        <property name="cpccusuaregi" type="java.lang.String" column="CPCCUSUAREGI" length="20"/>
+        <property name="cpcdfechregi" type="java.util.Date" column="CPCDFECHREGI" length="7"/>
+         <property name="cpcncodclin" type="java.lang.Integer" column="CPCNCODCLIN" length="4"/>
+        <property name="version" type="java.lang.Integer" column="VERSION" length="22"/>
+        <!-- Associations -->
+    </class>
+</hibernate-mapping>

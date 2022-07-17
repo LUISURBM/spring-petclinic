@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping>
+    <!-- 
+    Created by the Middlegen Hibernate plugin 2.2
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+    <class name="org.profamilia.hc.model.dto.Chordecirugi" table="CHORDECIRUGI" schema="HISTORIA" lazy="false">
+        <composite-id name="id" class="org.profamilia.hc.model.dto.ChordecirugiPK">
+            <key-property name="hoclconsulta" column="HOCLCONSULTA" type="java.lang.Long" length="12"/>
+            <key-property name="hocctiposervi" column="HOCCTIPOSERVI" type="java.lang.String" length="1"/>
+            <key-property name="hocnconsecutiv" column="HOCNCONSECUTIV" type="java.lang.Integer" length="4"/>
+        </composite-id>
+        <version name="version" column="VERSION"/>
+        <property name="hocdfecprocir1" type="java.util.Date" column="HOCDFECPROCIR1" length="7"/>
+        <property name="hocdfecprocir2" type="java.util.Date" column="HOCDFECPROCIR2" length="7"/>
+        <property name="hoccintervenci" type="java.lang.String" column="HOCCINTERVENCI" length="4000"/>
+        <property name="hocntiempointe" type="java.lang.Integer" column="HOCNTIEMPOINTE" length="4"/>
+        <property name="hocctipoaneste" type="java.lang.String" column="HOCCTIPOANESTE" length="1"/>
+        <property name="hocctipoestanc" type="java.lang.String" column="HOCCTIPOESTANC" length="1"/>
+        <property name="hocndiasestanc" type="java.lang.Integer" column="HOCNDIASESTANC" length="4"/>
+        <property name="hoceayudantia" type="java.lang.String" column="HOCEAYUDANTIA" length="1"/>
+        <property name="hoceresesangre" type="java.lang.String" column="HOCERESESANGRE" length="1"/>
+        <property name="hocnunidadsang" type="java.lang.Integer" column="HOCNUNIDADSANG" length="4"/>
+        <property name="hocctipopatolo" type="java.lang.String" column="HOCCTIPOPATOLO" length="2"/>
+        <property name="hoccotrapatolo" type="java.lang.String" column="HOCCOTRAPATOLO" length="600"/>
+        <property name="hoccbiopsacong" type="java.lang.String" column="HOCCBIOPSACONG" length="600"/>
+        <property name="hoccprogramar" type="java.lang.String" column="HOCCPROGRAMAR" length="1"/>
+        <property name="hocdfecregistr" type="java.util.Date" column="HOCDFECREGISTR" length="7"/>
+        <property name="hoccoperador" type="java.lang.String" column="HOCCOPERADOR" length="14"/>
+        <property name="hoccobservacio" type="java.lang.String" column="HOCCOBSERVACIO" length="4000"/>
+        <property name="hoccpaciacepta" type="java.lang.String" column="HOCCPACIACEPTA" length="1"/>
+        <property name="hocclugarinter" type="java.lang.String" column="HOCCLUGARINTER" length="1"/>
+        <property name="hoccanestgener" type="java.lang.String" column="HOCCANESTGENER" length="1"/>
+        <property name="hoccanestregio" type="java.lang.String" column="HOCCANESTREGIO" length="1"/>
+        <property name="hoccanestlocal" type="java.lang.String" column="HOCCANESTLOCAL" length="1"/>
+        <property name="hoccrazoncirug" type="java.lang.String" column="HOCCRAZONCIRUG" length="4000"/>
+        <property name="hoccprogrcirug" type="java.lang.String" column="HOCCPROGRCIRUG" length="1"/>
+        <property name="hoccretirdiu" type="java.lang.String" column="HOCCRETIRDIU" length="1"/>
+        <property name="hoccviaacceso" type="java.lang.String" column="HOCCVIAACCESO" length="2"/>
+        <property name="hocchemocomp" type="java.lang.String" column="HOCCHEMOCOMP" length="2"/>
+    </class>
+</hibernate-mapping>

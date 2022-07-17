@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping>
+    <!-- 
+    Created by the Middlegen Hibernate plugin 2.2
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+    <class name="org.profamilia.hc.model.dto.Chconinfxcon" table="CHCONINFXCON" lazy="false" schema="HISTORIA">
+        <id name="hcicnconsec" type="java.lang.Long" column="HCICNCONSEC">
+            <generator class="sequence">
+                <param name="sequence">HISTORIA.CHCONINFXCON_SEQ</param>
+            </generator>
+        </id>
+        <property name="hcicnconsulta" type="java.lang.Long" column="HCICNCONSULTA" length="22"/>
+        <property name="hciccusuaregi" type="java.lang.String" column="HCICCUSUAREGI" length="12"/>
+        <property name="hcicdfechregi" type="java.util.Date" column="HCICDFECHREGI" length="7"/>
+        <property name="version" type="java.lang.Integer" column="VERSION" length="22"/>
+        <!-- Associations -->
+        
+        <many-to-one name="hcicnnucoin" class="org.profamilia.hc.model.dto.Chplanconsinfo" not-null="true">
+            <column name="HCICNNUCOIN"/>
+        </many-to-one>
+    </class>
+</hibernate-mapping>

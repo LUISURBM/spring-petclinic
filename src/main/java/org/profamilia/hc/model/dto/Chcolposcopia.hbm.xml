@@ -1,0 +1,90 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping>
+    <!-- 
+    Created by the Middlegen Hibernate plugin 2.2
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+    <class name="org.profamilia.hc.model.dto.Chcolposcopia" table="CHCOLPOSCOPIA" schema="HISTORIA" lazy="false">
+        <composite-id name="id" class="org.profamilia.hc.model.dto.ChcolposcopiaPK">
+            <key-property name="hcllconsulta" column="HCLLCONSULTA" type="java.lang.Long" length="12"/>
+            <key-property name="hclctiposervi" column="HCLCTIPOSERVI" type="java.lang.String" length="1"/>
+        </composite-id>
+        <version name="version" column="VERSION"/>
+    
+     <property name="hclcevalugener" type="java.lang.String" column="HCLCEVALUGENER" length="1"/>
+     <property name="hclcinadeinfla" type="java.lang.String" column="HCLCINADEINFLA" length="1"/>
+     <property name="hclcinadesangr" type="java.lang.String" column="HCLCINADESANGR" length="1"/>
+     <property name="hclcinadecicat" type="java.lang.String" column="HCLCINADECICAT" length="1"/>    
+     <property name="hclcinadeotro" type="java.lang.String" column="HCLCINADEOTRO" length="1"/>
+     <property name="hclcinadecual" type="java.lang.String" column="HCLCINADECUAL" length="100"/>
+     <property name="hclcvisioescam" type="java.lang.String" column="HCLCVISIOESCAM" length="2"/>
+     <property name="hclczonatrans" type="java.lang.String" column="HCLCZONATRANS" length="1"/>
+     <property name="hclchallamadur" type="java.lang.String" column="HCLCHALLAMADUR" length="1"/>
+     <property name="hclchallaquiste" type="java.lang.String" column="HCLCHALLAQUISTE" length="1"/>
+     <property name="hclchallaectop" type="java.lang.String" column="HCLCHALLAECTOP" length="1"/>
+     <property name="hclchallaatrof" type="java.lang.String" column="HCLCHALLAATROF" length="1"/>
+     <property name="hclchallagland" type="java.lang.String" column="HCLCHALLAGLAND" length="1"/>
+     <property name="hclchalladecid" type="java.lang.String" column="HCLCHALLADECID" length="1"/>    
+     <property name="hclchallazona" type="java.lang.String" column="HCLCHALLAZONA" length="1"/>
+     <property name="hclchallaleuco" type="java.lang.String" column="HCLCHALLALEUCO" length="1"/>
+     <property name="hclchallacondi" type="java.lang.String" column="HCLCHALLACONDI" length="1"/>
+     <property name="hclchallainfla" type="java.lang.String" column="HCLCHALLAINFLA" length="1"/>
+     <property name="hclchallaesten" type="java.lang.String" column="HCLCHALLAESTEN" length="1"/>
+     <property name="hclchallaconge" type="java.lang.String" column="HCLCHALLACONGE" length="1"/>
+     <property name="hclchallapost" type="java.lang.String" column="HCLCHALLAPOST" length="1"/>
+     <property name="hclchallapolip" type="java.lang.String" column="HCLCHALLAPOLIP" length="1"/>
+     <property name="hclchallaendom" type="java.lang.String" column="HCLCHALLAENDOM" length="1"/>
+     <property name="hclchallaotro" type="java.lang.String" column="HCLCHALLAOTRO" length="1"/>    
+     <property name="hclchallacual" type="java.lang.String" column="HCLCHALLACUAL" length="100"/>
+     <property name="hclcgradohalla" type="java.lang.String" column="HCLCGRADOHALLA" length="1"/>
+     <property name="hclcgrad1epite" type="java.lang.String" column="HCLCGRAD1EPITE" length="1"/>
+     <property name="hclcgrad1borde" type="java.lang.String" column="HCLCGRAD1BORDE" length="1"/>
+     <property name="hclcgrad1mosai" type="java.lang.String" column="HCLCGRAD1MOSAI" length="1"/>
+     <property name="hclcgrad1punte" type="java.lang.String" column="HCLCGRAD1PUNTE" length="1"/>
+     <property name="hclcgrad2mosai" type="java.lang.String" column="HCLCGRAD2MOSAI" length="1"/>
+     <property name="hclcgrad2signo" type="java.lang.String" column="HCLCGRAD2SIGNO" length="1"/>
+     <property name="hclcgrad2crest" type="java.lang.String" column="HCLCGRAD2CREST" length="1"/>
+     <property name="hclcgrad2puntil" type="java.lang.String" column="HCLCGRAD2PUNTIL" length="1"/>    
+     <property name="hclcgrad2borde" type="java.lang.String" column="HCLCGRAD2BORDE" length="1"/>
+     <property name="hclcgrad2aceta" type="java.lang.String" column="HCLCGRAD2ACETA" length="1"/>
+     <property name="hclcgrad2orifi" type="java.lang.String" column="HCLCGRAD2ORIFI" length="1"/>
+     <property name="hclcgrad3test" type="java.lang.String" column="HCLCGRAD3TEST" length="1"/>
+     <property name="hclcubicadentr" type="java.lang.Integer" column="HCLCUBICADENTR" length="2"/>
+     <property name="hclcubicadentr2" type="java.lang.Integer" column="HCLCUBICADENTR2" length="2"/>
+     <property name="hclcubicafuera" type="java.lang.Integer" column="HCLCUBICAFUERA" length="2"/>
+     <property name="hclcubicafuera2" type="java.lang.Integer" column="HCLCUBICAFUERA2" length="2"/>
+     <property name="hclcubicacuadr" type="java.lang.Integer" column="HCLCUBICACUADR" length="2"/>
+     <property name="hclcubicaporce" type="java.lang.Integer" column="HCLCUBICAPORCE" length="2"/>
+     <property name="hclcvasosatipi" type="java.lang.String" column="HCLCVASOSATIPI" length="1"/>
+     <property name="hclcvasosdelga" type="java.lang.String" column="HCLCVASOSDELGA" length="1"/>    
+     <property name="hclcsupirreg" type="java.lang.String" column="HCLCSUPIRREG" length="1"/>
+     <property name="hclclesioexofi" type="java.lang.String" column="HCLCLESIOEXOFI" length="1"/>
+     <property name="hclcnecrosis" type="java.lang.String" column="HCLCNECROSIS" length="1"/>
+     <property name="hclcnulcera" type="java.lang.String" column="HCLCNULCERA" length="1"/>
+     <property name="hclctumornudol" type="java.lang.String" column="HCLCTUMORNUDOL" length="1"/>
+     <property name="hclcsospeotro" type="java.lang.String" column="HCLCSOSPEOTRO" length="1"/>
+     <property name="hclcsospecual" type="java.lang.String" column="HCLCSOSPECUAL" length="4000"/>
+     <property name="hcldfecregistr" type="java.util.Date" column="HCLDFECREGISTR" length="7"/>
+     <property name="hclcoperador" type="java.lang.String" column="HCLCOPERADOR" length="14"/>
+     <property name="hclcobservacio" type="java.lang.String" column="HCLCOBSERVACIO" length="4000"/>
+     
+     
+     <property name="hclclimident" type="java.lang.String" column="HCLCLIMIDENT" length="1"/>
+     <property name="hclclimifuer" type="java.lang.String" column="HCLCLIMIFUER" length="1"/>
+     
+     <property name="hclcgrad3erosi" type="java.lang.String" column="HCLCGRAD3EROSI" length="1"/>
+     <property name="hclcgrad2epacde" type="java.lang.String" column="HCLCGRAD2EPACDE" length="1"/>
+     
+    <property name="hclctomobiop" type="java.lang.String" column="HCLCTOMOBIOP" length="1"/>
+    <property name="hclcobsebiop" type="java.lang.String" column="HCLCOBSEBIOP" length="1000"/>
+    <property name="hclctipohalla" type="java.lang.String" column="HCLCTIPOHALLA" length="1"/>
+    
+          
+     
+    </class>
+</hibernate-mapping>

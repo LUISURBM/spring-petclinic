@@ -1,0 +1,68 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping>
+    <!-- 
+    Created by the Middlegen Hibernate plugin 2.2
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+    <class name="org.profamilia.hc.model.dto.Chgestacion" table="CHGESTACION"  schema="HISTORIA"
+           lazy="false">
+        <composite-id name="id"
+                      class="org.profamilia.hc.model.dto.ChgestacionPK">
+            <key-property name="hgelconsulta" column="HGELCONSULTA"
+                          type="java.lang.Long" length="12"/>
+            <key-property name="hgectiposervi" column="HGECTIPOSERVI"
+                          type="java.lang.String" length="1"/>
+        </composite-id>
+          <version name="version" column="VERSION"/> 
+        <property name="hgeeprevantite" type="java.lang.String"
+                  column="HGEEPREVANTITE" length="1"/>
+        <property name="hgeeantidosis1" type="java.lang.String"
+                  column="HGEEANTIDOSIS1" length="1"/>
+        <property name="hgedfecantdos1" type="java.util.Date"
+                  column="HGEDFECANTDOS1" length="7"/>
+        <property name="hgeeantidosis2" type="java.lang.String"
+                  column="HGEEANTIDOSIS2" length="1"/>
+        <property name="hgedfecantdos2" type="java.util.Date"
+                  column="HGEDFECANTDOS2" length="7"/>
+        <property name="hgeepreantrube" type="java.lang.String"
+                  column="HGEEPREANTRUBE" length="1"/>
+        <property name="hgeeactantrube" type="java.lang.String"
+                  column="HGEEACTANTRUBE" length="1"/>
+        <property name="hgedfecantrube" type="java.util.Date"
+                  column="HGEDFECANTRUBE" length="7"/>
+        <property name="hgecrhpaciente" type="java.lang.String"
+                  column="HGECRHPACIENTE" length="1"/>
+        <property name="hgecgrupopacie" type="java.lang.String"
+                  column="HGECGRUPOPACIE" length="2"/>
+        <property name="hgecrhesposo" type="java.lang.String"
+                  column="HGECRHESPOSO" length="1"/>
+        <property name="hgecgrupoespos" type="java.lang.String"
+                  column="HGECGRUPOESPOS" length="2"/>
+        <property name="hgecsensibilid" type="java.lang.String"
+                  column="HGECSENSIBILID" length="1"/>
+        <property name="hgeesolicivih1" type="java.lang.String"
+                  column="HGEESOLICIVIH1" length="1"/>
+        <property name="hgeerealizvih1" type="java.lang.String"
+                  column="HGEEREALIZVIH1" length="1"/>
+        <property name="hgedfecregistr" type="java.util.Date"
+                  column="HGEDFECREGISTR" length="7"/>
+        <property name="hgecoperador" type="java.lang.String"
+                  column="HGECOPERADOR" length="14"/>
+        <property name="hgelconsulprin" type="java.lang.Long"
+                  column="HGELCONSULPRIN" length="12"/>
+                  
+         <property name="hgecedadgest" type="java.lang.String"
+                  column="HGECEDADGEST" length="60"/>
+          <property name="hgecconedages" type="java.lang.String"
+                  column="HGECCONEDAGES" length="2"/>
+          <property name="hgecsignosinto" type="java.lang.String"
+                  column="HGECSIGNOSINTO" length="4000"/>            
+          <property name="hgecmovimfetal" type="java.lang.String"
+                  column="HGECMOVIMFETAL" length="1"/>
+    </class>
+</hibernate-mapping>

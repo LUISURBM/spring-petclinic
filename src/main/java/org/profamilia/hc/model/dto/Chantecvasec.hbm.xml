@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping>
+    <!-- 
+    Created by the Middlegen Hibernate plugin 2.2
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+    <class name="org.profamilia.hc.model.dto.Chantecvasec" table="CHANTECVASEC" lazy="false" schema="HISTORIA">
+        <id name="havlconsulta" type="java.lang.Long" column="HAVLCONSULTA">
+            <generator class="assigned"/>
+        </id>
+        <version name="version" column="VERSION"/>
+        <property name="havcvaseante" type="java.lang.String" column="HAVCVASEANTE" length="1"/>
+        <property name="havnvaseprev" type="java.lang.Integer" column="HAVNVASEPREV" length="2"/>
+        <property name="havcrazoproc" type="java.lang.String" column="HAVCRAZOPROC" length="2"/>
+        <property name="havcrazocual" type="java.lang.String" column="HAVCRAZOCUAL" length="400"/>
+        <property name="havnbiolpaci" type="java.lang.Integer" column="HAVNBIOLPACI" length="2"/>
+        <property name="havnbiolpare" type="java.lang.Integer" column="HAVNBIOLPARE" length="2"/>
+        <property name="havnbioljunt" type="java.lang.Integer" column="HAVNBIOLJUNT" length="2"/>
+        <property name="havcmetoplan" type="java.lang.String" column="HAVCMETOPLAN" length="12"/>
+        <property name="havdfecregistr" type="java.util.Date" column="HAVDFECREGISTR" length="7"/>
+        <property name="havcoperador" type="java.lang.String" column="HAVCOPERADOR" length="14"/>
+        <property name="havcotrometo" type="java.lang.String" column="HAVCOTROMETO" length="40"/>
+        
+        <!-- Associations -->
+    </class>
+</hibernate-mapping>

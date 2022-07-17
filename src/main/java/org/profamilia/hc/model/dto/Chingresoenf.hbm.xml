@@ -1,0 +1,69 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping>
+    <!-- 
+    Created by the Middlegen Hibernate plugin 2.2
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+    <class name="org.profamilia.hc.model.dto.Chingresoenf" table="CHINGRESOENF" schema="HISTORIA" lazy="false">
+        <composite-id name="id" class="org.profamilia.hc.model.dto.ChingresoenfPK">
+            <key-property name="hielnumero" column="HIELNUMERO" type="java.lang.Long" length="12"/>
+            <key-property name="hiectiposervi" column="HIECTIPOSERVI" type="java.lang.String" length="1"/>
+        </composite-id>
+        <version name="version" column="VERSION"/>
+        <property name="hienayunoliqui" type="java.lang.Integer" column="HIENAYUNOLIQUI" length="4"/>
+        <property name="hienayunosolid" type="java.lang.Integer" column="HIENAYUNOSOLID" length="4"/>
+        <property name="hiecpremedicac" type="java.lang.String" column="HIECPREMEDICAC" length="1"/>
+        <property name="hieccualpremed" type="java.lang.String" column="HIECCUALPREMED" length="200"/>
+        <property name="hienhoraspreme" type="java.lang.Integer" column="HIENHORASPREME" length="4"/>
+        <property name="hiecpreparacio" type="java.lang.String" column="HIECPREPARACIO" length="1"/>
+        <property name="hiecdescinterv" type="java.lang.String" column="HIECDESCINTERV" length="4000"/>
+        <property name="hienclinica" type="java.lang.Integer" column="HIENCLINICA" length="4"/>
+        <property name="hiecintervenci" type="java.lang.String" column="HIECINTERVENCI" length="80"/>
+        <property name="hiecetapa" type="java.lang.String" column="HIECETAPA" length="2"/>
+        <property name="hiedfecregistr" type="java.util.Date" column="HIEDFECREGISTR" length="7"/>
+        <property name="hiecinterinici" type="java.lang.String" column="HIECINTERINICI" length="200"/>
+        <property name="hiecoperador" type="java.lang.String" column="HIECOPERADOR" length="14"/>
+        <property name="hiecmanilazul" type="java.lang.String" column="HIECMANILAZUL" length="1"/>
+        <property name="hiecmanilverde" type="java.lang.String" column="HIECMANILVERDE" length="1"/>
+        <property name="hiecmanilrojo" type="java.lang.String" column="HIECMANILROJO" length="1"/>
+        <property name="hiecalergrojo" type="java.lang.String" column="HIECALERGROJO" length="200"/>
+        <property name="hiecconficirug" type="java.lang.String" column="HIECCONFICIRUG" length="1"/>
+        <property name="hiecprotedental" type="java.lang.String" column="HIECPROTEDENTAL" length="1"/>
+        <property name="hiecentreprote" type="java.lang.String" column="HIECENTREPROTE" length="2"/>
+        <property name="hiecutililente" type="java.lang.String" column="HIECUTILILENTE" length="1"/>
+        <property name="hiecentrelente" type="java.lang.String" column="HIECENTRELENTE" length="2"/>
+        <property name="hiecobjetvalor" type="java.lang.String" column="HIECOBJETVALOR" length="1"/>
+        <property name="hiecentreobjec" type="java.lang.String" column="HIECENTREOBJEC" length="2"/>
+        <property name="hiecretirmaqui" type="java.lang.String" column="HIECRETIRMAQUI" length="1"/>
+        <property name="hiecarearasur" type="java.lang.String" column="HIECAREARASUR" length="300"/>
+        <property name="hiecprepaintes" type="java.lang.String" column="HIECPREPAINTES" length="300"/>
+        <property name="hieccomprelast" type="java.lang.String" column="HIECCOMPRELAST" length="1"/>
+        <property name="hiecdrenaurina" type="java.lang.String" column="HIECDRENAURINA" length="1"/>
+        <property name="hiecobseringre" type="java.lang.String" column="HIECOBSERINGRE" length="4000"/>
+        <property name="hiecconsinfor" type="java.lang.String" column="HIECCONSINFOR" length="1"/>
+        <property name="hiecayunopre" type="java.lang.String" column="HIECAYUNOPRE" length="1"/>
+        <property name="hiecantepatol" type="java.lang.String" column="HIECANTEPATOL" length="1"/>
+        <property name="hieccualpatol" type="java.lang.String" column="HIECCUALPATOL" length="200"/>
+        <property name="hiecantetoxic" type="java.lang.String" column="HIECANTETOXIC" length="1"/>
+        <property name="hieccualtoxic" type="java.lang.String" column="HIECCUALTOXIC" length="1"/>
+        <property name="hiecautocntel" type="java.lang.String" column="HIECAUTOCNTEL" length="1"/>
+        <property name="hiecverifayun" type="java.lang.String" column="HIECVERIFAYUN" length="1"/>
+        <property name="hiecobserayu" type="java.lang.String" column="HIECOBSERAYU" length="500"/>
+        <property name="hiedfechapremb" type="java.util.Date" column="HIEDFECHAPREMB" length="7"/>
+        <property name="hiecresulpruemb" type="java.lang.String" column="HIECRESULPRUEMB" length="1"/>
+        <property name="hiectienediu" type="java.lang.String" column="HIECTIENEDIU" length="1"/>
+        <property name="hiecconfiproce" type="java.lang.String" column="HIECCONFIPROCE" length="1"/>
+        <property name="hieccualconse" type="java.lang.String" column="HIECCUALCONSE" length="100"/>
+        <property name="hieccpacautdat" type="java.lang.String" column="HIECCPACAUTDAT" length="1"/>
+        
+        
+        <many-to-one name="hielusuario" class="org.profamilia.hc.model.dto.Chusuario" not-null="true">
+            <column name="HIELUSUARIO"/>
+        </many-to-one>
+    </class>
+</hibernate-mapping>

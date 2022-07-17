@@ -1,0 +1,54 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping>
+    <!-- 
+    Created by the Middlegen Hibernate plugin 2.2
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+    <class name="org.profamilia.hc.model.dto.Chmedicament" table="CHMEDICAMENT" lazy="false"  schema="HISTORIA">
+       <composite-id name="id"
+                      class="org.profamilia.hc.model.dto.ChmedicamentId">
+            <key-property name="hmelconsulta" column="HMELCONSULTA"
+                          type="java.lang.Long" length="12"/>
+            <key-property name="hmenconsecut" column="HMENCONSECUT"
+                          type="java.lang.Integer" length="4"/>
+                   
+              <key-property name="hmelconsuasoci" column="HMELCONSUASOCI"
+                          type="java.lang.Long" length="12"/>               
+                          
+        </composite-id>
+           <version name="version" column="VERSION"/> 
+            <property name="hmecmedicament" column="HMECMEDICAMENT" type="java.lang.String" length="600"/>
+            <property name="hmecpresentaci" column="HMECPRESENTACI" type="java.lang.String" length="4"/>
+            <property name="hmecviadministr" column="HMECVIADMINISTR" type="java.lang.String" length="4"/>
+            <property name="hmecviadminotr" column="HMECVIADMINOTR" type="java.lang.String" length="600"/>
+            <property name="hmeclotemedic" column="HMECLOTEMEDIC" type="java.lang.String" length="50"/>
+            <property name="hmecsitioaplic" column="HMECSITIOAPLIC" type="java.lang.String" length="2"/>
+            <property name="hmedfechavenci" column="HMEDFECHAVENCI" type="java.util.Date" length="7"/>
+            <property name="hmecadosis" column="HMECADOSIS" type="java.math.BigDecimal" length="17"/>
+            <property name="hmedfecregistr" column="HMEDFECREGISTR" type="java.util.Date" length="7"/>
+            <property name="hmecoperador" column="HMECOPERADOR" type="java.lang.String" length="14"/>
+            <property name="hmectiposerv" column="HMECTIPOSERV" type="java.lang.String" length="1"/>
+            <property name="hmecnomblabo" column="HMECNOMBLABO" type="java.lang.String" length="50"/>
+            <property name="hmecobservac" column="HMECOBSERVAC" type="java.lang.String" length="4000"/>
+            <property name="hmennumervacun" type="java.lang.Integer" column="HMENNUMERVACUN" length="1"/>
+            <property name="hmecunidmedi" column="HMECUNIDMEDI" type="java.lang.String" length="6"/>
+            <property name="hmentipohisto" type="java.lang.Integer" column="HMENTIPOHISTO" length="4"/>
+            <property name="hmecpresereacc" column="HMECPRESEREACC" type="java.lang.String" length="1"/>
+            <property name="hmeccualcompl" column="HMECCUALCOMPL" type="java.lang.String" length="600"/>
+            <property name="hmeccualreacc" column="HMECCUALREACC" type="java.lang.String" length="600"/>
+            <property name="hmecpresecompl" column="HMECPRESECOMPL" type="java.lang.String" length="1"/>
+            <property name="hmelcregiacti" column="HMELCREGIACTI" type="java.lang.String" length="1"/>
+            <property name="hmelcgrusangu" column="HMELCGRUSANGU" type="java.lang.String" length="2"/>
+            <property name="hmelcrh" column="HMELCRH" type="java.lang.String" length="1"/>
+        
+        <!-- Associations -->
+        <!-- derived association(s) for compound key -->
+        <!-- end of derived association(s) -->
+    </class>
+</hibernate-mapping>
+

@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+<!-- 
+        Auto-generated mapping file from
+        the hibernate.org cfg2hbm engine
+-->
+    <class name="org.profamilia.hc.model.dto.Cppaquserv" table="CPPAQUSERV" schema="CLINICO">
+       <composite-id name="id" class="org.profamilia.hc.model.dto.CppaquservId">
+            <key-property name="cpecpaquet" type="string">
+                <column name="CPECPAQUET" length="12" />
+            </key-property>
+            <key-property name="cpecservic" type="string">
+                <column name="CPECSERVIC" length="12" />
+            </key-property>
+            <key-property name="cpendiaate" type="integer">
+                <column name="CPENDIAATE" precision="4" />
+            </key-property>
+        </composite-id>
+        <version name="version" column="VERSION"/>
+        <property name="cpedfecreg" type="date">
+            <column name="CPEDFECREG" length="7" not-null="true" />
+        </property>
+        <property name="cpecusuari" type="string">
+            <column name="CPECUSUARI" length="12" not-null="true" />
+        </property>
+        <property name="cpeaporiva" type="big_decimal">
+            <column name="CPEAPORIVA" precision="9" not-null="true" />
+        </property>
+        <property name="cpendiafle" type="integer">
+            <column name="CPENDIAFLE" precision="4" not-null="true" />
+        </property>
+         <property name="cpecinsser" type="string">
+            <column name="CPECINSSER" precision="12" />
+        </property>
+       <property name="cpecserpri" type="string">
+            <column name="CPECSERPRI" precision="1" />
+        </property>
+       <property name="cpecestado" type="string">
+            <column name="CPECESTADO" precision="2" />
+        </property>
+        
+    </class>
+</hibernate-mapping>

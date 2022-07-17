@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping>
+    <!-- 
+    Created by the Middlegen Hibernate plugin 2.2
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+    <class name="org.profamilia.hc.model.dto.Chaldrete" table="CHALDRETE" lazy="false" schema="HISTORIA">
+        <composite-id name="id" class="org.profamilia.hc.model.dto.ChaldretePK">
+            <key-property name="hallconsulta" column="HALLCONSULTA" type="java.lang.Long" length="12"/>
+            <key-property name="hallconsecutiv" column="HALLCONSECUTIV" type="java.lang.Integer" length="4"/>
+        </composite-id>
+        <version name="version" column="VERSION"/>
+        <property name="hallusuario" type="java.lang.Long" column="HALLUSUARIO" length="12"/>
+        <property name="halnactividad" type="java.lang.Integer" column="HALNACTIVIDAD" length="2"/>
+        <property name="halnrespiracio" type="java.lang.Integer" column="HALNRESPIRACIO" length="2"/>
+        <property name="halncirculacio" type="java.lang.Integer" column="HALNCIRCULACIO" length="2"/>
+        <property name="halnestadconci" type="java.lang.Integer" column="HALNESTADCONCI" length="2"/>
+        <property name="halnsaturoxige" type="java.lang.Integer" column="HALNSATUROXIGE" length="2"/>
+        <property name="halcpacieambul" type="java.lang.String" column="HALCPACIEAMBUL" length="1"/>
+        <property name="halnambulacion" type="java.lang.Integer" column="HALNAMBULACION" length="2"/>
+        <property name="halndolor" type="java.lang.Integer" column="HALNDOLOR" length="2"/>
+        <property name="halnsangrposqu" type="java.lang.Integer" column="HALNSANGRPOSQU" length="2"/>
+        <property name="halntolerliqui" type="java.lang.Integer" column="HALNTOLERLIQUI" length="2"/>
+        <property name="halnelimiurina" type="java.lang.Integer" column="HALNELIMIURINA" length="2"/>
+        <property name="halnclinica" type="java.lang.Integer" column="HALNCLINICA" length="4"/>
+        <property name="halcestado" type="java.lang.String" column="HALCESTADO" length="2"/>
+        <property name="haldfecregistr" type="java.util.Date" column="HALDFECREGISTR" length="7"/>
+        <property name="haldfechaactiv" type="java.util.Date" column="HALDFECHAACTIV" length="7"/>
+        <property name="halcoperador" type="java.lang.String" column="HALCOPERADOR" length="14"/>
+        <property name="halnescalbroma" type="java.lang.Integer" column="HALNESCALBROMA" length="1"/>
+        <property name="halctipoescal" type="java.lang.String" column="HALCTIPOESCAL" length="1"/>
+        <!-- Associations -->
+        <!-- derived association(s) for compound key -->
+        <!-- end of derived association(s) -->
+    </class>
+</hibernate-mapping>

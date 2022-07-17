@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <!-- 
+        Auto-generated mapping file from
+        the hibernate.org cfg2hbm engine
+-->
+    <class name="org.profamilia.hc.model.dto.Cpusuxclin" table="CPUSUXCLIN" schema="CLINICO">
+        <composite-id name="id" class="org.profamilia.hc.model.dto.CpusuxclinId">
+            <key-property name="cucnclinic" type="integer">
+                <column name="CUCNCLINIC" precision="4" scale="0"/>
+            </key-property>
+            <key-property name="cuccusuari" type="string">
+                <column name="CUCCUSUARI" length="14"/>
+            </key-property>
+        </composite-id>
+        <version name="version" column="VERSION"/>
+        <property name="cucndefaul" type="integer">
+            <column name="CUCNDEFAUL" precision="4" scale="0" not-null="true"/>
+        </property>
+        <property name="cuccgrabad" type="string">
+            <column name="CUCCGRABAD" length="14" not-null="true"/>
+        </property>
+        <property name="cucdfecgra" type="date">
+            <column name="CUCDFECGRA" length="7" not-null="true"/>
+        </property>
+    </class>
+</hibernate-mapping>

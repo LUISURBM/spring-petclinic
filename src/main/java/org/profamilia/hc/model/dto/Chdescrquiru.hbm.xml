@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping>
+    <!-- 
+    Created by the Middlegen Hibernate plugin 2.2
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+    <class name="org.profamilia.hc.model.dto.Chdescrquiru" table="CHDESCRQUIRU" lazy="false" schema="HISTORIA">
+        <id name="hdqlnumero" type="java.lang.Long" column="HDQLNUMERO">
+            <generator class="assigned"/>
+        </id>
+        <version name="version" column="VERSION"/>
+        <property name="hdqnambito" type="java.lang.Integer" column="HDQNAMBITO" not-null="true" length="4"/>
+        <property name="hdqnformareali" type="java.lang.Integer" column="HDQNFORMAREALI" not-null="true" length="4"/>
+        <property name="hdqdfechaproce" type="java.util.Date" column="HDQDFECHAPROCE" not-null="true" length="7"/>
+        <property name="hdqnsalacirugi" type="java.lang.Integer" column="HDQNSALACIRUGI" length="4"/>
+        <property name="hdqnclinica" type="java.lang.Integer" column="HDQNCLINICA" length="4"/>
+        <property name="hdqcestado" type="java.lang.String" column="HDQCESTADO" length="2"/>
+        <property name="hdqdfecregistr" type="java.util.Date" column="HDQDFECREGISTR" length="7"/>
+        <property name="hdqcoperador" type="java.lang.String" column="HDQCOPERADOR" length="14"/>
+        <!-- Associations -->
+        <many-to-one name="hdqlusuario" class="org.profamilia.hc.model.dto.Chusuario" not-null="true">
+            <column name="HDQLUSUARIO"/>
+        </many-to-one>
+        <set name="chdetaldescrs" lazy="true" inverse="true" cascade="all">
+            <key>
+                <column name="HDDLNUMERO"/>
+            </key>
+            <one-to-many class="org.profamilia.hc.model.dto.Chdetaldescr"/>
+        </set>
+    </class>
+</hibernate-mapping>

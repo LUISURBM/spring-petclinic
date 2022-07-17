@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping>
+    <!-- 
+    Created by the Middlegen Hibernate plugin 2.2
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+    <class name="org.profamilia.hc.model.dto.Chtiempaten" table="CHTIEMPATEN" schema="HISTORIA" lazy="false">
+        <id name="ctanconsec" type="java.lang.Integer" column="CTANCONSEC">
+            <generator class="sequence">
+                <param name="sequence">HISTORIA.CHTIEMPATEN_SEQ</param>
+            </generator>
+        </id>
+        <version name="version" column="VERSION"/>
+        <property name="ctanconsulta" type="java.lang.Long" column="CTANCONSULTA" not-null="true" length="15"/>
+        <property name="ctadhora" type="java.util.Date" column="CTADHORA" not-null="true" length="11"/>
+        <property name="ctacetapa" type="java.lang.String" column="CTACETAPA" not-null="true" length="2"/>
+        <property name="ctancausa" type="java.lang.Integer" column="CTANCAUSA" length="22"/>
+        <property name="ctadfechregi" type="java.util.Date" column="CTADFECHREGI" not-null="true" length="7"/>
+        <property name="ctancodmed" type="java.lang.Integer" column="CTANCODMED" not-null="true" length="8"/>
+        <property name="ctacusuareg" type="java.lang.String" column="CTACUSUAREG" not-null="true" length="20"/>
+        <property name="ctacestado" type="java.lang.String" column="CTACESTADO" not-null="true" length="2"/>
+        
+        
+        <!-- Associations -->
+    </class>
+</hibernate-mapping>

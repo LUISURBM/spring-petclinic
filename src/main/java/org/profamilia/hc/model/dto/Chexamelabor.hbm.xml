@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping>
+    <!-- 
+    Created by the Middlegen Hibernate plugin 2.2
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+    <class name="org.profamilia.hc.model.dto.Chexamelabor" table="CHEXAMELABOR" schema="HISTORIA"
+           lazy="false">
+        <composite-id name="id"
+                      class="org.profamilia.hc.model.dto.ChexamelaborPK">
+            <key-property name="hellconsulta" column="HELLCONSULTA"
+                          type="java.lang.Long" length="12"/>
+            <key-property name="helnconsecuti" column="HELNCONSECUTI"
+                          type="java.lang.Integer" length="4"/>
+            <key-property name="helctiposervi" column="HELCTIPOSERVI"
+                          type="java.lang.String" length="1"/>
+            <key-property name="helnllave" column="HELNLLAVE"
+                          type="java.lang.Integer" length="4"/>
+        </composite-id>
+          <version name="version" column="VERSION"/> 
+        <property name="helcobservacio" type="java.lang.String"
+                  column="HELCOBSERVACIO" length="4000"/>
+        <property name="helcoperador" type="java.lang.String"
+                  column="HELCOPERADOR" length="14"/>
+        <property name="heldfecregistr" type="java.util.Date"
+                  column="HELDFECREGISTR" length="7"/>
+                          
+             <many-to-one name="cpservicio"  lazy = "false"
+                     class="org.profamilia.hc.model.dto.Cpservicio"
+                     not-null="true">
+            <column name="HELCSERVICIO"/>
+        </many-to-one>
+    </class>
+</hibernate-mapping>

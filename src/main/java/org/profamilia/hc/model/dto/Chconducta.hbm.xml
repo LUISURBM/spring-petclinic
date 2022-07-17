@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping>
+    <!-- 
+    Created by the Middlegen Hibernate plugin 2.2
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+    <class name="org.profamilia.hc.model.dto.Chconducta" table="CHCONDUCTA"  schema="HISTORIA"
+           lazy="false">
+        <composite-id name="id"
+                      class="org.profamilia.hc.model.dto.ChconductaPK">
+            <key-property name="hcnlconsulta" column="HCNLCONSULTA"
+                          type="java.lang.Long" length="12"/>
+            <key-property name="hcnctiposervi" column="HCNCTIPOSERVI"
+                          type="java.lang.String" length="1"/>
+              <key-property name="hcnnconsecutiv" column="HCNNCONSECUTIV"
+                          type="java.lang.Integer" length="4"/>
+        </composite-id>
+        <version name="version" column="VERSION"/>
+        <property name="hcncobservacio" type="java.lang.String"
+                  column="HCNCOBSERVACIO" length="4000"/>
+        <property name="hcndfecregistr" type="java.util.Date"
+                  column="HCNDFECREGISTR" length="7"/>
+        <property name="hcncoperador" type="java.lang.String"
+                  column="HCNCOPERADOR" length="14"/>
+        <property name="hcncplanmanejo" type="java.lang.String"
+                  column="HCNCPLANMANEJO" length="4000"/>
+        <property name="hcnccondentr" type="java.lang.String"
+                  column="HCNCCONDENTR" length="4"/>          
+                  
+    </class>
+</hibernate-mapping>

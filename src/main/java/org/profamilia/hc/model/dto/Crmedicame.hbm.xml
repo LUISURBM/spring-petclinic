@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<!-- 
+		Auto-generated mapping file from
+		the hibernate.org cfg2hbm engine
+	-->
+	<class name="org.profamilia.hc.model.dto.Crmedicame" table="CRMEDICAME"
+		schema="CLINICO">
+		<id name="cmeccodigo" type="string">
+			<column name="CMECCODIGO" length="12" />
+			<generator class="assigned" />
+		</id>
+		<version name="version" column="VERSION" />
+		<property name="cmeccodana" type="string">
+			<column name="CMECCODANA" length="4" not-null="true" />
+		</property>
+		<property name="cmecpriact" type="string">
+			<column name="CMECPRIACT" length="4" not-null="true" />
+		</property>
+		<property name="cmecforma" type="string">
+			<column name="CMECFORMA" length="2" not-null="true" />
+		</property>
+		<property name="cmecconcen" type="string">
+			<column name="CMECCONCEN" length="1" not-null="true" />
+		</property>
+		<property name="cmecdescri" type="string">
+			<column name="CMECDESCRI" length="100" not-null="true" />
+		</property>
+		<property name="cmecunimed" type="string">
+			<column name="CMECUNIMED" length="12" not-null="true" />
+		</property>
+		<property name="cmectipmed" type="string">
+			<column name="CMECTIPMED" length="1" not-null="true" />
+		</property>		
+	</class>
+</hibernate-mapping>

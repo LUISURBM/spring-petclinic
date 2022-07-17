@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping>
+    <!-- 
+    Created by the Middlegen Hibernate plugin 2.2
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+    <class name="org.profamilia.hc.model.dto.Chevoluconsu" table="CHEVOLUCONSU" lazy="false" schema="HISTORIA">
+        <composite-id name="id" class="org.profamilia.hc.model.dto.ChevoluconsuPK">
+            <key-property name="heclconsulta" column="HECLCONSULTA" type="java.lang.Long" length="12"/>
+            <key-property name="hecnconsecuti" column="HECNCONSECUTI" type="java.lang.Integer" length="4"/>
+            <key-property name="hecctiposervi" column="HECCTIPOSERVI" type="java.lang.String" length="1"/>
+        </composite-id>
+        <version name="version" column="VERSION"/>
+        <property name="heccdescripc" type="java.lang.String" column="HECCDESCRIPC" length="4000"/>
+        <property name="heccoperador" type="java.lang.String" column="HECCOPERADOR" length="14"/>
+        <property name="hecdfecregistr" type="java.util.Date" column="HECDFECREGISTR" length="7"/>
+        <property name="hecnactividad" type="java.lang.Integer" column="HECNACTIVIDAD" length="4"/>
+        <!-- Associations -->
+        <!-- derived association(s) for compound key -->
+        <!-- end of derived association(s) -->
+    </class>
+</hibernate-mapping>

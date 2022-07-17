@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping>
+    <!-- 
+    Created by the Middlegen Hibernate plugin 2.2
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+    <class name="org.profamilia.hc.model.dto.Chcuestanest" table="CHCUESTANEST" schema="HISTORIA" lazy="false">
+        <composite-id name="id" class="org.profamilia.hc.model.dto.ChcuestanestPK">
+            <key-property name="hcalconsulta" column="HCALCONSULTA" type="java.lang.Long" length="12"/>
+            <key-property name="hcactiposerv" column="HCACTIPOSERV" type="java.lang.String" length="1"/>
+            <key-property name="hcanconsecut" column="HCANCONSECUT" type="java.lang.Integer" length="4"/>
+        </composite-id>
+        <version name="version" column="VERSION"/>
+        <property name="hcanpregunta" type="java.lang.Integer" column="HCANPREGUNTA" length="2"/>
+        <property name="hcacrespuesta" type="java.lang.String" column="HCACRESPUESTA" length="1"/>
+        <property name="hcadfecregistr" type="java.util.Date" column="HCADFECREGISTR" length="7"/>
+        <property name="hcacoperador" type="java.lang.String" column="HCACOPERADOR" length="14"/>
+        <property name="hcacanotacion" type="java.lang.String" column="HCACANOTACION" length="2000"/>
+        <property name="hcacobservacio" type="java.lang.String" column="HCACOBSERVACIO" length="1000"/>
+        <!-- Associations -->
+        <!-- derived association(s) for compound key -->
+        <!-- end of derived association(s) -->
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,80 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+    
+<hibernate-mapping>
+<!-- 
+    Created by the Middlegen Hibernate plugin 2.2
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+
+<class 
+    name="org.profamilia.hc.model.dto.Chcontroladi" 
+    table="CHCONTROLADI"
+    lazy="false"
+	schema="HISTORIA"
+>
+
+    <composite-id name="comp_id" class="org.profamilia.hc.model.dto.ChcontroladiPK">
+        <key-property 
+            name="hcalnumero" 
+            column="HCALNUMERO" 
+            type="java.lang.Long"
+            length="12"
+        />
+        <key-property 
+            name="hcacservicio" 
+            column="HCACSERVICIO" 
+            type="java.lang.String"
+            length="12"
+        />
+    </composite-id>    
+
+    <property
+        name="hcanclinica"
+        type="java.lang.Integer"
+        column="HCANCLINICA"
+        length="4"
+    />
+    <property
+        name="hcactiposervi"
+        type="java.lang.String"
+        column="HCACTIPOSERVI"
+        not-null="true"
+        length="1"
+    />
+    <property
+        name="hcacobserv"
+        type="java.lang.String"
+        column="HCACOBSERV"
+        length="400"
+    />
+    <property
+        name="hcacoperador"
+        type="java.lang.String"
+        column="HCACOPERADOR"
+        length="14"
+    />
+    <property
+        name="hcadfecreg"
+        type="java.util.Date"
+        column="HCADFECREG"
+        length="7"
+    />
+    <property
+        name="version"
+        type="java.lang.Integer"
+        column="VERSION"
+        length="22"
+    />
+
+    <!-- Associations -->
+    <!-- derived association(s) for compound key -->
+    <!-- end of derived association(s) -->
+  
+
+</class>
+</hibernate-mapping>

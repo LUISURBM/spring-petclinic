@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping>
+    <!-- 
+    Created by the Middlegen Hibernate plugin 2.2
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+    -->
+    <class name="org.profamilia.hc.model.dto.Chentregapatol" table="CHENTREGAPATOL" schema="HISTORIA" lazy="false">
+        <id name="heplidentificador" type="java.lang.Long" column="HEPLIDENTIFICADOR">
+            <meta attribute="field-description" inherit="false">Identificador del listado de patologias que se entregan para su analisis.</meta>
+            <generator class="sequence">
+                <param name="sequence">HISTORIA.SEC_CHENTREGAPATOL</param>
+            </generator>
+        </id>
+        <property name="hepdfechaenvio" type="java.util.Date" column="HEPDFECHAENVIO" not-null="true" length="7"/>
+        <property name="hepnlablectura" type="java.lang.Integer" column="HEPNLABLECTURA" not-null="true" length="9"/>
+        <property name="hepnclinica" type="java.lang.Integer" column="HEPNCLINICA" not-null="true" length="4"/>
+        <property name="hepcoperador" type="java.lang.String" column="HEPCOPERADOR" not-null="true" length="14"/>
+        <property name="hepdfechamod" type="java.util.Date" column="HEPDFECHAMOD" not-null="true" length="7"/>
+        
+        <property name="hepdenvioorig" type="java.util.Date" column="HEPDENVIOORIG"  length="7"/>
+        <property name="hepcempenvio" type="java.lang.String" column="HEPCEMPENVIO"  length="14"/>
+        <property name="hepcnumguia" type="java.lang.String" column="HEPCNUMGUIA"  length="14"/>
+        <property name="hepcobservenvio" type="java.lang.String" column="HEPCOBSERVENVIO"  length="14"/>
+        
+        
+        <!-- Associations -->
+        <!-- bi-directional one-to-many association to Chdetaentpatol -->
+        <set name="chdetaentpatols" lazy="true" inverse="true" cascade="all">
+            <key>
+                <column name="HEPLIDENTREGAPATOL"/>
+            </key>
+            <one-to-many class="org.profamilia.hc.model.dto.Chdetaentpatol"/>
+        </set>
+    </class>
+</hibernate-mapping>

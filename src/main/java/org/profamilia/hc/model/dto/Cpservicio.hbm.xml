@@ -1,0 +1,114 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+<!-- 
+        Auto-generated mapping file from
+        the hibernate.org cfg2hbm engine
+-->
+    <class name="org.profamilia.hc.model.dto.Cpservicio" table="CPSERVICIO" schema="CLINICO"   lazy="true">
+        <id name="csvccodigo" type="string">
+            <column name="CSVCCODIGO" length="20" />
+            <generator class="assigned" />
+        </id>
+        <version name="version" column="VERSION"/>
+        <property name="csvngrupo" type="integer">
+            <column name="CSVNGRUPO" precision="4" scale="0" not-null="true" />
+        </property>
+        <property name="csvnsubgru" type="integer">
+            <column name="CSVNSUBGRU" precision="4" scale="0" not-null="true" />
+        </property>
+        <property name="csvcnombre" type="string">
+            <column name="CSVCNOMBRE" length="240" not-null="true" />
+        </property>
+        <property name="csvdfeccre" type="date">
+            <column name="CSVDFECCRE" length="7" not-null="true" />
+        </property>
+        <property name="csvdfecmod" type="date">
+            <column name="CSVDFECMOD" length="7" not-null="true" />
+        </property>
+        <property name="csvavalser" type="big_decimal">
+            <column name="CSVAVALSER" precision="15" not-null="true" />
+        </property>
+        <property name="csvamincon" type="big_decimal">
+            <column name="CSVAMINCON" precision="5" not-null="true" />
+        </property>
+        <property name="csvaporiva" type="big_decimal">
+            <column name="CSVAPORIVA" precision="5" not-null="true" />
+        </property>
+        <property name="csvcswvalo" type="string">
+            <column name="CSVCSWVALO" length="1" not-null="true" />
+        </property>
+        <property name="csvnswtipo" type="integer">
+            <column name="CSVNSWTIPO" precision="4" scale="0" not-null="true" />
+        </property>
+        <property name="csvcctadeb" type="string">
+            <column name="CSVCCTADEB" length="6" not-null="true" />
+        </property>
+        <property name="csvcctacre" type="string">
+            <column name="CSVCCTACRE" length="6" not-null="true" />
+        </property>
+        <property name="csvccencos" type="string">
+            <column name="CSVCCENCOS" length="4" not-null="true" />
+        </property>
+        <property name="csvcusuar" type="string">
+            <column name="CSVCUSUAR" length="14" not-null="true" />
+        </property>
+        <property name="csvcestado" type="string">
+            <column name="CSVCESTADO" length="2" not-null="true" />
+        </property>
+        <property name="csvncodinv" type="integer">
+            <column name="CSVNCODINV" precision="6" scale="0" not-null="true" />
+        </property>
+        <property name="csvntipcon" type="integer">
+            <column name="CSVNTIPCON" precision="4" scale="0" not-null="true" />
+        </property>
+        <property name="csvccups" type="string">
+            <column name="CSVCCUPS" length="1" not-null="true" />
+        </property>
+        <property name="csvcswpaqu" type="string">
+            <column name="CSVCSWPAQU" length="1" not-null="true" />
+        </property>
+        <property name="csvcsollot" type="string">
+            <column name="CSVCSOLLOT" length="1" not-null="true" />
+        </property>
+        <property name="csvnedamin" type="integer">
+            <column name="CSVNEDAMIN" precision="4" scale="0" not-null="true" />
+        </property>
+        <property name="csvnedamax" type="integer">
+            <column name="CSVNEDAMAX" precision="4" scale="0" not-null="true" />
+        </property>
+        <property name="csvcsexo" type="string">
+            <column name="CSVCSEXO" length="1" not-null="true" />
+        </property>
+        <property name="csvntiphis"  type="integer">
+            <column name="CSVNTIPHIS"  precision="2" scale="0" not-null="true" />
+        </property>
+         <property name="csvccodcups" type="string">
+            <column name="CSVCCODCUPS" length="6" not-null="true" />
+        </property>
+        <property name="csvntipage"  type="integer">
+            <column name="CSVNTIPAGE"  precision="4" scale="0" not-null="true" />
+        </property>
+         <property name="csvcteleorie" type="string">
+            <column name="CSVCTELEORIE" length="1" not-null="true" />
+        </property>
+        <property name="csvcaplicons" type="string">
+            <column name="CSVCAPLICONS" length="1" not-null="true" />
+        </property>
+         <property name="csvcpruerapi" type="integer">
+            <column name="CSVCPRUERAPI" precision="2" scale="0" />
+        </property>
+          <property name="csvcrelecost" type="string">
+            <column name="CSVCRELECOST" length="1" />
+        </property>
+         <property name="csvctipomat" type="string">
+            <column name="CSVCTIPOMAT" length="2" />
+        </property>
+         <property name="csvcareauso" type="string">
+            <column name="CSVCAREAUSO" length="2" />
+        </property>
+
+        
+    </class>
+</hibernate-mapping>

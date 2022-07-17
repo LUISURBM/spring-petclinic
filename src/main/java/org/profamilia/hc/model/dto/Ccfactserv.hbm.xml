@@ -1,0 +1,103 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+<!-- 
+        Auto-generated mapping file from
+        the hibernate.org cfg2hbm engine
+-->
+    <class name="org.profamilia.hc.model.dto.Ccfactserv" table="CCFACTSERV" schema="CLINICO">
+        <id name="cfsnnumero" type="integer">
+            <column name="CFSNNUMERO" precision="10" scale="0" />
+            <generator class="assigned" />
+        </id>
+        <version name="version" column="VERSION"/>       
+        <property name="cfsnnumfac" type="integer">
+            <column name="CFSNNUMFAC" precision="9" scale="0" not-null="true" unique="true" />
+        </property>
+        <property name="cfsnclinic" type="integer">
+            <column name="CFSNCLINIC" precision="4" scale="0" not-null="true" />
+        </property>
+        <property name="cfsnclifac" type="integer">
+            <column name="CFSNCLIFAC" precision="4" scale="0" not-null="true" />
+        </property>
+        <property name="cfsdfecreg" type="date">
+            <column name="CFSDFECREG" length="7" not-null="true" />
+        </property>
+        <property name="cfsthorreg" type="timestamp">
+            <column name="CFSTHORREG" length="7" not-null="true" />
+        </property>
+        <property name="cfscusuari" type="string">
+            <column name="CFSCUSUARI" length="14" not-null="true" />
+        </property>
+        <property name="cfsncontra" type="integer">
+            <column name="CFSNCONTRA" precision="6" scale="0" not-null="true" />
+        </property>
+        <property name="cfsnprogra" type="integer">
+            <column name="CFSNPROGRA" precision="4" scale="0" not-null="true" />
+        </property>
+        <property name="cfsasubtot" type="big_decimal">
+            <column name="CFSASUBTOT" precision="15" not-null="true" />
+        </property>
+        <property name="cfsaabono" type="big_decimal">
+            <column name="CFSAABONO" precision="15" not-null="true" />
+        </property>
+        <property name="cfscpacien" type="string">
+            <column name="CFSCPACIEN" length="40" />
+        </property>
+        <property name="cfsnbodega" type="integer">
+            <column name="CFSNBODEGA" precision="9" scale="0" not-null="true" />
+        </property>
+        <property name="cfsanumrp" type="big_decimal">
+            <column name="CFSANUMRP" precision="15" />
+        </property>
+        <property name="cfsaiva" type="big_decimal">
+            <column name="CFSAIVA" precision="15" />
+        </property>
+        <property name="cfsadescto" type="big_decimal">
+            <column name="CFSADESCTO" precision="15" />
+        </property>
+        <property name="cfsavalent" type="big_decimal">
+            <column name="CFSAVALENT" precision="15" />
+        </property>
+        <property name="cfsnestado" type="integer">
+            <column name="CFSNESTADO" precision="4" scale="0" not-null="true" />
+        </property>
+        <property name="cfsctermin" type="string">
+            <column name="CFSCTERMIN" length="20" not-null="true" />
+        </property>
+        <property name="cfsctipide" type="string">
+            <column name="CFSCTIPIDE" length="3" />
+        </property>
+        <property name="cfsanumide" type="big_decimal">
+            <column name="CFSANUMIDE" precision="15" not-null="true" />
+        </property>
+        <property name="cfsdfecrem" type="date">
+            <column name="CFSDFECREM" length="7" />
+        </property>
+        <property name="cfscremite" type="string">
+            <column name="CFSCREMITE" length="30" />
+        </property>
+        <property name="cfsnnumcue" type="integer">
+            <column name="CFSNNUMCUE" precision="10" scale="0" not-null="true" />
+        </property>
+        <property name="cfscimpres" type="string">
+            <column name="CFSCIMPRES" length="1" />
+        </property>
+        <property name="cfsndonant" type="integer">
+            <column name="CFSNDONANT" precision="4" scale="0" not-null="true" />
+        </property>
+        <property name="cfscgenero" type="string">
+            <column name="CFSCGENERO" length="1" not-null="true" />
+        </property>
+        <property name="cfscnumrem" type="string">
+            <column name="CFSCNUMREM" length="15" />
+        </property>
+        <property name="cfsavaldon" type="big_decimal">
+            <column name="CFSAVALDON" precision="15" not-null="true" />
+        </property>
+        <property name="cfslusuario" type="big_decimal">
+            <column name="CFSLUSUARIO" precision="12" scale="0" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

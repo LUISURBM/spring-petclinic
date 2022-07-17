@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping>
+    <!-- 
+    Created by the Middlegen Hibernate plugin 2.2
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+    <class name="org.profamilia.hc.model.dto.Chexameimage" table="CHEXAMEIMAGE"  schema="HISTORIA"
+           lazy="false">
+        <composite-id name="id"
+                      class="org.profamilia.hc.model.dto.ChexameimagePK">
+            <key-property name="heilconsulta" column="HEILCONSULTA"
+                          type="java.lang.Long" length="12"/>
+            <key-property name="heinconsecuti" column="HEINCONSECUTI"
+                          type="java.lang.Integer" length="4"/>
+            <key-property name="heictiposervi" column="HEICTIPOSERVI"
+                          type="java.lang.String" length="1"/>
+            <key-property name="heinllave" column="HEINLLAVE"
+                          type="java.lang.Integer" length="4"/>
+        </composite-id>
+         <version name="version" column="VERSION"/> 
+        <property name="heicobservacio" type="java.lang.String"
+                  column="HEICOBSERVACIO" length="4000"/>
+        <property name="heicoperador" type="java.lang.String"
+                  column="HEICOPERADOR" length="14"/>
+        <property name="heidfecregistr" type="java.util.Date"
+                  column="HEIDFECREGISTR" length="7"/>
+                  
+             <many-to-one name="cpservicio"  lazy = "false"
+                     class="org.profamilia.hc.model.dto.Cpservicio"
+                     not-null="true">
+            <column name="HEICSERVICIO"/>
+        </many-to-one>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping>
+    <!-- 
+    Created by the Middlegen Hibernate plugin 2.2
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+    <class name="org.profamilia.hc.model.dto.Chentregacitol" table="CHENTREGACITOL" schema="HISTORIA" lazy="false">
+        <id name="heclidentificador" type="java.lang.Long" column="HECLIDENTIFICADOR">
+            <meta attribute="field-description" inherit="false">Identificador del listado de citologias que se entregan para su analisis.</meta>
+            <generator class="sequence">
+                <param name="sequence">HISTORIA.SEC_CHENTREGACITOL</param>
+            </generator>            
+            
+        </id>
+        <property name="hecdfechaenvio" type="java.sql.Date" column="HECDFECHAENVIO" not-null="true" length="7"/>
+        <property name="hecdfechaenvio2" type="java.sql.Date" column="HECDFECHAENVIO2" length="7"/>       
+        <property name="hecnlablectura1" type="big_decimal" column="HECNLABLECTURA1" not-null="true" length="10"/>
+        <property name="hecnlablectura2" type="big_decimal" column="HECNLABLECTURA2" length="10"/>
+        <property name="hecnclinica" type="java.lang.Integer" column="HECNCLINICA" not-null="true" length="4"/>
+        <property name="heccoperador" type="java.lang.String" column="HECCOPERADOR" not-null="true" length="14"/>
+        <property name="hecdfechamod" type="java.sql.Date" column="HECDFECHAMOD" not-null="true" length="7"/>
+        <!-- Associations -->
+        <!-- bi-directional one-to-many association to Chdetaentcito -->
+        <set name="chdetaentcitos" lazy="true" inverse="true" cascade="all">
+            <key>
+                <column name="HDELIDENTREGACITOL"/>
+            </key>
+            <one-to-many class="org.profamilia.hc.model.dto.Chdetaentcito"/>
+        </set>
+    </class>
+</hibernate-mapping>

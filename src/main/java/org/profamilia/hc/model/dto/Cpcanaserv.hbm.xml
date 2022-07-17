@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping>
+    <!-- 
+    Created by the Middlegen Hibernate plugin 2.2
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+    <class name="org.profamilia.hc.model.dto.Cpcanaserv" table="CPCANASERV" schema="CLINICO" lazy="false">
+        <composite-id name="id" class="org.profamilia.hc.model.dto.CpcanaservPK">
+            <key-property name="ccsccanasta" column="CCSCCANASTA" type="java.lang.String" length="12"/>
+            <key-property name="ccscservic" column="CCSCSERVIC" type="java.lang.String" length="12"/>
+        </composite-id>
+        <version name="version" column="VERSION"/>
+        <property name="ccsdfecreg" type="java.util.Date" column="CCSDFECREG" not-null="true" length="7"/>
+        <property name="ccscusuari" type="java.lang.String" column="CCSCUSUARI" not-null="true" length="12"/>
+        <property name="ccsncantid" type="java.lang.Long" column="CCSNCANTID" not-null="true" length="15"/>
+        <property name="ccscestado" type="java.lang.String" column="CCSCESTADO" length="2"/>
+        <property name="ccsccontrola" type="java.lang.String" column="CCSCCONTROLA" not-null="true" length="1"/>
+        <!-- Associations -->
+        <!-- derived association(s) for compound key -->
+        <!-- end of derived association(s) -->
+    </class>
+</hibernate-mapping>

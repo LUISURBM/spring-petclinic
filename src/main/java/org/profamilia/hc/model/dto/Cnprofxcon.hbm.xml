@@ -1,0 +1,65 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+<!-- 
+        Auto-generated mapping file from
+        the hibernate.org cfg2hbm engine
+-->
+    <class name="org.profamilia.hc.model.dto.Cnprofxcon" table="CNPROFXCON" schema="CLINICO">
+        <composite-id name="id" class="org.profamilia.hc.model.dto.CnprofxconId">
+            <key-property name="cpnnprofes" type="big_decimal">
+                <column name="CPNNPROFES" precision="10" scale="0" />
+            </key-property>
+            <key-property name="cpnnconcli" type="integer">
+                <column name="CPNNCONCLI" precision="9" scale="0" />
+            </key-property>
+        </composite-id>
+        <version name="version" column="VERSION"/>
+        <property name="cpncregnod" type="string">
+            <column name="CPNCREGNOD" length="1" not-null="true" />
+        </property>
+        <property name="cpncmodnod" type="string">
+            <column name="CPNCMODNOD" length="1" />
+        </property>
+        <property name="cpnccalnod" type="string">
+            <column name="CPNCCALNOD" length="1" />
+        </property>
+        <property name="cpnctomnod" type="string">
+            <column name="CPNCTOMNOD" length="1" not-null="true" />
+        </property>
+        <property name="cpncpagada" type="string">
+            <column name="CPNCPAGADA" length="1" not-null="true" />
+        </property>
+        <property name="cpnavalpag" type="big_decimal">
+            <column name="CPNAVALPAG" precision="15" not-null="true" />
+        </property>
+        <property name="cpndfeccon" type="date">
+            <column name="CPNDFECCON" length="7" not-null="true" />
+        </property>
+        <property name="cpndfecreg" type="date">
+            <column name="CPNDFECREG" length="7" />
+        </property>
+        <property name="cpndfecmod" type="date">
+            <column name="CPNDFECMOD" length="7" />
+        </property>
+        <property name="cpndfeccal" type="date">
+            <column name="CPNDFECCAL" length="7" />
+        </property>
+        <property name="cpncusureg" type="string">
+            <column name="CPNCUSUREG" length="14" />
+        </property>
+        <property name="cpncusumod" type="string">
+            <column name="CPNCUSUMOD" length="14" />
+        </property>
+        <property name="cpncusucal" type="string">
+            <column name="CPNCUSUCAL" length="14" />
+        </property>
+        <property name="cpnnclinic" type="integer">
+            <column name="CPNNCLINIC" precision="4" scale="0" not-null="true" />
+        </property>
+           <property name="cpncestado" type="string">
+            <column name="CPNCESTADO" length="2" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

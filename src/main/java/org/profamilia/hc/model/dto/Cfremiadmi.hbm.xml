@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping>
+    <!-- 
+    Created by the Middlegen Hibernate plugin 2.2
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+    <class name="org.profamilia.hc.model.dto.Cfremiadmi" table="CFREMIADMI" lazy="false" schema="CLINICO">
+        <id name="crannumero" type="java.lang.Long" column="CRANNUMERO">
+            <generator class="assigned"/>
+        </id>
+        <property name="cranadmisi" type="java.lang.Long" column="CRANADMISI" not-null="true" length="10"/>
+        <property name="cranclnorig" type="java.lang.Integer" column="CRANCLNORIG" not-null="true" length="4"/>
+        <property name="cranclndest" type="java.lang.Integer" column="CRANCLNDEST" not-null="true" length="4"/>
+        <property name="cradfecreg" type="java.util.Date" column="CRADFECREG" not-null="true" length="11"/>
+        <property name="cracusuari" type="java.lang.String" column="CRACUSUARI" not-null="true" length="14"/>
+        <property name="cracestado" type="java.lang.String" column="CRACESTADO" not-null="true" length="2"/>
+        <property name="version" type="java.lang.Integer" column="VERSION" length="22"/>
+        <!-- Associations -->
+    </class>
+</hibernate-mapping>

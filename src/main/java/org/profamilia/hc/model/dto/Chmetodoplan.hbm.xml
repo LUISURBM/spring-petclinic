@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping>
+    <!-- 
+    Created by the Middlegen Hibernate plugin 2.2
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+    <class name="org.profamilia.hc.model.dto.Chmetodoplan" table="CHMETODOPLAN" schema="HISTORIA"
+           lazy="false">
+        <id name="hmpccodigo" type="java.lang.String" column="HMPCCODIGO">
+            <generator class="assigned"/>
+        </id>
+          <version name="version" column="VERSION"/>
+        <property name="hmpcdescripcio" type="java.lang.String" column="HMPCDESCRIPCIO" length="400"/>
+        <property name="hmpcsexoaplic" type="java.lang.String" column="HMPCSEXOAPLIC" length="1"/>
+        <property name="hmpcoperador" type="java.lang.String" column="HMPCOPERADOR" length="14"/>
+        <property name="hmpdfecregistr" type="java.util.Date" column="HMPDFECREGISTR" length="7"/>
+        <property name="hmpcestado" type="java.lang.String" column="HMPCESTADO" length="2"/>
+        <!-- Associations -->
+    </class>
+</hibernate-mapping>

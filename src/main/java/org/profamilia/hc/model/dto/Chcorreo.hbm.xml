@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping>
+    <!-- 
+    Created by the Middlegen Hibernate plugin 2.2
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+    <class name="org.profamilia.hc.model.dto.Chcorreo" table="CHCORREO" schema="HISTORIA"  lazy="false">
+        <id name="hcnconsec" type="java.lang.Long" column="HCNCONSEC">
+              <generator class="sequence">
+                <param name="sequence">HISTORIA.CHCORREO_SEQ</param>
+            </generator>
+        </id>
+        <property name="hcncontrato" type="java.lang.Integer" column="HCNCONTRATO" not-null="true" length="22"/>
+        <property name="hcccorreo" type="java.lang.String" column="HCCCORREO" not-null="true" length="150"/>
+        <property name="hccdocum" type="java.lang.String" column="HCCDOCUM" not-null="true" length="3"/>
+        <property name="hccestado" type="java.lang.String" column="HCCESTADO" not-null="true" length="2"/>
+        <property name="hccusuareg" type="java.lang.String" column="HCCUSUAREG" not-null="true" length="20"/>
+        <property name="hcdfecreg" type="java.util.Date" column="HCDFECREG" not-null="true" length="7"/>
+        <property name="version" type="java.math.BigDecimal" column="VERSION" length="22"/>
+        <!-- Associations -->
+        
+    </class>
+</hibernate-mapping>

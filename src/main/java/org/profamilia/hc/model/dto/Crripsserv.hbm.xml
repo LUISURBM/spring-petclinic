@@ -1,0 +1,68 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+<!-- 
+        Auto-generated mapping file from
+        the hibernate.org cfg2hbm engine
+-->
+    <class name="org.profamilia.hc.model.dto.Crripsserv" table="CRRIPSSERV" schema="CLINICO">
+        <composite-id name="id" class="org.profamilia.hc.model.dto.CrripsservId">
+            <key-property name="crsngrupo" type="integer">
+                <column name="CRSNGRUPO" precision="4" scale="0" />
+            </key-property>
+            <key-property name="crsnsubgru" type="integer">
+                <column name="CRSNSUBGRU" precision="4" scale="0" />
+            </key-property>
+            <key-property name="crscservic" type="string">
+                <column name="CRSCSERVIC" length="12" />
+            </key-property>
+        </composite-id>
+        <version name="version" column="VERSION"/>
+        <property name="crscconpro" type="string">
+           <column name="CRSCCONPRO" length="1" not-null="true" />
+        </property>
+        <property name="crsnconcep" type="integer">
+            <column name="CRSNCONCEP" precision="4" scale="0" not-null="true" />
+        </property>
+        <property name="crsnfinali" type="integer">
+            <column name="CRSNFINALI" precision="4" scale="0" not-null="true" />
+        </property>
+        <property name="crsnambito" type="integer">
+            <column name="CRSNAMBITO" precision="4" scale="0" not-null="true" />
+        </property>
+        <property name="crsncauext" type="integer">
+            <column name="CRSNCAUEXT" precision="4" scale="0" not-null="true" />
+        </property>
+        <property name="crscperate" type="string">
+           <column name="CRSCPERATE" length="1" />
+        </property>
+        <property name="crscdiagpr" type="string">
+           <column name="CRSCDIAGPR" length="4" />
+        </property>
+        <property name="crscdiagre" type="string">
+           <column name="CRSCDIAGRE" length="4" />
+        </property>
+        <property name="crsntipdia" type="integer">
+            <column name="CRSNTIPDIA" precision="4" scale="0" not-null="true" />
+        </property>
+        <property name="crsnrealiz" type="integer">
+            <column name="CRSNREALIZ" precision="4" scale="0" not-null="true" />
+        </property>
+        <property name="crsdfecreg" type="date">
+            <column name="CRSDFECREG" length="7" not-null="true" />
+        </property>
+        <property name="crscusuari" type="string">
+            <column name="CRSCUSUARI" length="14" not-null="true" />
+        </property>
+        <property name="crsdfecmod" type="date">
+            <column name="CRSDFECMOD" length="7" />
+        </property>
+        <property name="crscusumod" type="string">
+            <column name="CRSCUSUMOD" length="14" />
+        </property>
+        <property name="crscestado" type="string">
+            <column name="CRSCESTADO" length="2" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

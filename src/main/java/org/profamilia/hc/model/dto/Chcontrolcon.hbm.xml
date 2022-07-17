@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping>
+    <!-- 
+    Created by the Middlegen Hibernate plugin 2.2
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+    <class name="org.profamilia.hc.model.dto.Chcontrolcon" table="CHCONTROLCON"  schema="HISTORIA"
+           lazy="false">
+        <composite-id name="id"
+                      class="org.profamilia.hc.model.dto.ChcontrolconPK">
+            <key-property name="hcclconsulta" column="HCCLCONSULTA"
+                          type="java.lang.Long" length="12"/>
+            <key-property name="hccctiposervi" column="HCCCTIPOSERVI"
+                          type="java.lang.String" length="1"/>
+        </composite-id>
+         <version name="version" column="VERSION"/> 
+        <property name="hcccdescripcio" type="java.lang.String"
+                  column="HCCCDESCRIPCIO" length="4000"/>
+        <property name="hcccoperador" type="java.lang.String"
+                  column="HCCCOPERADOR" length="14"/>
+        <property name="hccdfecregistr" type="java.util.Date"
+                  column="HCCDFECREGISTR" length="7"/>
+
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping>
+    <!-- 
+    Created by the Middlegen Hibernate plugin 2.2
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+    <class name="org.profamilia.hc.model.dto.Sapermiso" table="SAPERMISO"  schema="ACTIVOS" lazy="false">
+        <composite-id name="comp_id" class="org.profamilia.hc.model.dto.SapermisoPK">
+            <key-property name="spmcusuari" column="SPMCUSUARI" type="java.lang.String" length="14"/>
+            <key-property name="spmcprogra" column="SPMCPROGRA" type="java.lang.String" length="20"/>
+        </composite-id>
+        <property name="spmdfecdef" type="java.sql.Date" column="SPMDFECDEF" not-null="true" length="7"/>
+        <property name="spmdfecfin" type="java.sql.Date" column="SPMDFECFIN" length="7"/>
+        <property name="version" type="java.math.BigDecimal" column="VERSION" length="22"/>
+        <property name="spmcoperac" type="java.lang.String" column="SPMCOPERAC" length="8"/>
+        <!-- Associations -->
+        <!-- bi-directional many-to-one association to Saprograma -->
+        <many-to-one name="saprograma" class="org.profamilia.hc.model.dto.Saprograma" update="false" insert="false">
+            <column name="SPMCPROGRA"/>
+        </many-to-one>         
+    </class>
+</hibernate-mapping>

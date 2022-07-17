@@ -1,0 +1,92 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping>
+    <!-- 
+    Created by the Middlegen Hibernate plugin 2.2
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+    <class name="org.profamilia.hc.model.dto.Chexafismama" table="CHEXAFISMAMA"   schema="HISTORIA"
+           lazy="false">
+        <composite-id name="id"
+                      class="org.profamilia.hc.model.dto.ChexafismamaPK">
+            <key-property name="hemlconsulta" column="HEMLCONSULTA"
+                          type="java.lang.Long" length="12"/>
+            <key-property name="hemctiposervi" column="HEMCTIPOSERVI"
+                          type="java.lang.String" length="1"/>
+        </composite-id>
+          <version name="version" column="VERSION"/> 
+        <property name="hemeexamamader" type="java.lang.String"
+                  column="HEMEEXAMAMADER" length="1"/>
+        <property name="hemelesimamade" type="java.lang.String"
+                  column="HEMELESIMAMADE" length="1"/>
+        <property name="hemelesionaxde" type="java.lang.String"
+                  column="HEMELESIONAXDE" length="1"/>
+        <property name="hemelesipielde" type="java.lang.String"
+                  column="HEMELESIPIELDE" length="1"/>
+        <property name="hemetipolepide" type="java.lang.String"
+                  column="HEMETIPOLEPIDE" length="1"/>
+        <property name="hemelespezonde" type="java.lang.String"
+                  column="HEMELESPEZONDE" length="1"/>
+        <property name="hemesecreciode" type="java.lang.String"
+                  column="HEMESECRECIODE" length="1"/>
+        <property name="hemetiposecrde" type="java.lang.String"
+                  column="HEMETIPOSECRDE" length="1"/>
+        <property name="hememasaderech" type="java.lang.String"
+                  column="HEMEMASADERECH" length="1"/>
+        <property name="hemndiammasade" type="java.lang.Integer"
+                  column="HEMNDIAMMASADE" length="2"/>
+        <property name="hemedolorosade" type="java.lang.String"
+                  column="HEMEDOLOROSADE" length="1"/>
+        <property name="hemeexamamaizq" type="java.lang.String"
+                  column="HEMEEXAMAMAIZQ" length="1"/>
+        <property name="hemelesimamaiz" type="java.lang.String"
+                  column="HEMELESIMAMAIZ" length="1"/>
+        <property name="hemelesionaxiz" type="java.lang.String"
+                  column="HEMELESIONAXIZ" length="1"/>
+        <property name="hemelesipieliz" type="java.lang.String"
+                  column="HEMELESIPIELIZ" length="1"/>
+        <property name="hemetipolepiiz" type="java.lang.String"
+                  column="HEMETIPOLEPIIZ" length="1"/>
+        <property name="hemelespezoniz" type="java.lang.String"
+                  column="HEMELESPEZONIZ" length="1"/>
+        <property name="hemesecrecioiz" type="java.lang.String"
+                  column="HEMESECRECIOIZ" length="1"/>
+        <property name="hemetiposecriz" type="java.lang.String"
+                  column="HEMETIPOSECRIZ" length="1"/>
+        <property name="hememasaizquie" type="java.lang.String"
+                  column="HEMEMASAIZQUIE" length="1"/>
+        <property name="hemndiammasaiz" type="java.lang.Integer"
+                  column="HEMNDIAMMASAIZ" length="2"/>
+        <property name="hemedolorosaiz" type="java.lang.String"
+                  column="HEMEDOLOROSAIZ" length="1"/>
+        <property name="hemcoperador" type="java.lang.String"
+                  column="HEMCOPERADOR" length="14"/>
+        <property name="hemdfecregistr" type="java.util.Date"
+                  column="HEMDFECREGISTR" length="7"/>
+        <property name="hemctipolepede" type="java.lang.String"
+                  column="HEMCTIPOLEPEDE" length="4000"/>
+        <property name="hemctipodolode" type="java.lang.String"
+                  column="HEMCTIPODOLODE" length="4000"/>
+        <property name="hemctipolesaxde" type="java.lang.String"
+                  column="HEMCTIPOLESAXDE" length="4000"/>
+        <property name="hemctipolesaxiz" type="java.lang.String"
+                  column="HEMCTIPOLESAXIZ" length="4000"/>
+        <property name="hemctipolepeiz" type="java.lang.String"
+                  column="HEMCTIPOLEPEIZ" length="4000"/>
+        <property name="hemctipodoloiz" type="java.lang.String"
+                  column="HEMCTIPODOLOIZ" length="4000"/>
+        <property name="hemczonalesder" type="java.lang.String"
+                  column="HEMCZONALESDER" length="1"/>
+        <property name="hemczonalesizq" type="java.lang.String"
+                  column="HEMCZONALESIZQ" length="1"/>
+        <property name="hemccuadlesder" type="java.lang.String"
+                  column="HEMCCUADLESDER" length="2"/>
+        <property name="hemccuadlesizq" type="java.lang.String"
+                  column="HEMCCUADLESIZQ" length="2"/>
+     
+    </class>
+</hibernate-mapping>

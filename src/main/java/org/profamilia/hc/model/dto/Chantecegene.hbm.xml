@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping>
+    <!-- 
+    Created by the Middlegen Hibernate plugin 2.2
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+    <class name="org.profamilia.hc.model.dto.Chantecegene" table="CHANTECEGENE"
+           schema="HISTORIA" lazy="false">
+        <composite-id name="id" class="org.profamilia.hc.model.dto.ChantecegenePK">
+            <key-property name="hanlconsulta" column="HANLCONSULTA"
+                          type="java.lang.Long" length="12"/>
+            <key-property name="hannconsecuti" column="HANNCONSECUTI"
+                          type="java.lang.Integer" length="4"/>
+            <key-property name="hanctiposervi" column="HANCTIPOSERVI"
+                          type="java.lang.String" length="1"/>
+        </composite-id>
+        <version name="version" column="VERSION"/>
+        <property name="handfecregistr" type="java.util.Date"
+                  column="HANDFECREGISTR" length="7"/>
+        <property name="hancoperador" type="java.lang.String"
+                  column="HANCOPERADOR" length="14"/>
+        <property name="hantdescripcio" type="java.lang.String"
+                  column="HANTDESCRIPCIO" length="4000"/>
+        <property name="hanntipoante" type="java.lang.Integer"
+                  column="HANNTIPOANTE" length="4"/>
+         <property name="hancreacvac" type="java.lang.String"
+                  column="HANCREACVAC" length="1"/>
+         <property name="hancreacvacdesc" type="java.lang.String"
+                  column="HANCREACVACDESC" length="100"/>
+        <!-- Associations -->
+        <!-- derived association(s) for compound key -->
+        <!-- bi-directional many-to-one association to Chconsulta -->
+    </class>
+</hibernate-mapping>

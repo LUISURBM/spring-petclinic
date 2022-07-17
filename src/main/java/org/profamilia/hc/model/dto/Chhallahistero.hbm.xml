@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping>
+    <!-- 
+    Created by the Middlegen Hibernate plugin 2.2
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+    <class name="org.profamilia.hc.model.dto.Chhallahistero" table="CHHALLAHISTERO" schema="HISTORIA" lazy="false">
+        <id name="hhhlconsulta" type="java.lang.Long" column="HHHLCONSULTA">
+         </id>
+         <version name="version" column="VERSION"/> 
+        <property name="hhhctiposerv" type="java.lang.String" column="HHHCTIPOSERV" length="1"/>
+        <property name="hhhdfechregi" type="java.util.Date" column="HHHDFECHREGI" length="7"/>
+        <property name="hhhcusuaregi" type="java.lang.String" column="HHHCUSUAREGI" length="14"/>
+        <property name="hhhlnumeusua" type="java.lang.Long" column="HHHLNUMEUSUA" length="22"/>
+        <property name="hhhchallazgo" type="java.lang.String" column="HHHCHALLAZGO" length="1"/>
+        <property name="hhhcvaginosc" type="java.lang.String" column="HHHCVAGINOSC" length="4000"/>
+        <property name="hhhccancervi" type="java.lang.String" column="HHHCCANCERVI" length="4000"/>
+        <property name="hhhcaspeendo" type="java.lang.String" column="HHHCASPEENDO" length="4000"/>
+        <property name="hhhcostituba" type="java.lang.String" column="HHHCOSTITUBA" length="4000"/>
+        <property name="hhhcmasaintr" type="java.lang.String" column="HHHCMASAINTR" length="4000"/>
+        <property name="hhhcotros" type="java.lang.String" column="HHHCOTROS" length="4000"/>
+        <!-- Associations -->
+    </class>
+</hibernate-mapping>

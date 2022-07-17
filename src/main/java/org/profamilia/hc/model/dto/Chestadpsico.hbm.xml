@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping>
+    <!-- 
+    Created by the Middlegen Hibernate plugin 2.2
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+    <class name="org.profamilia.hc.model.dto.Chestadpsico" table="CHESTADPSICO" lazy="false"  schema="HISTORIA">
+        <composite-id name="id" class="org.profamilia.hc.model.dto.ChestadpsicoPK">
+            <key-property name="heplconsulta" column="HEPLCONSULTA" type="java.lang.Long" length="12"/>
+            <key-property name="hepctiposerv" column="HEPCTIPOSERV" type="java.lang.String" length="1"/>
+        </composite-id>
+        <version name="version" column="VERSION"/>
+        <property name="hepcoperador" type="java.lang.String" column="HEPCOPERADOR" length="14"/>
+        <property name="hepdfecreg" type="java.util.Date" column="HEPDFECREG" length="7"/>
+        <property name="hepcareaafect" type="java.lang.String" column="HEPCAREAAFECT" length="80"/>
+        <property name="hepcareacogni" type="java.lang.String" column="HEPCAREACOGNI" length="80"/>
+        <property name="hepcareasomat" type="java.lang.String" column="HEPCAREASOMAT" length="80"/>
+        <property name="hepcarearelac" type="java.lang.String" column="HEPCAREARELAC" length="80"/>
+        <property name="hepcotrosomat" type="java.lang.String" column="HEPCOTROSOMAT" length="80"/>
+        <property name="hepcotrorelac" type="java.lang.String" column="HEPCOTRORELAC" length="80"/>
+        <property name="hepcotrocogni" type="java.lang.String" column="HEPCOTROCOGNI" length="80"/>
+        <property name="hepccualfobia" type="java.lang.String" column="HEPCCUALFOBIA" length="60"/>
+        <property name="hepcobservacio" type="java.lang.String" column="HEPCOBSERVACIO" length="4000"/>
+       
+        <!-- Associations -->
+        <!-- derived association(s) for compound key -->
+        <!-- end of derived association(s) -->
+    </class>
+</hibernate-mapping>

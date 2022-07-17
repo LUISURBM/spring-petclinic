@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping>
+    <!-- 
+    Created by the Middlegen Hibernate plugin 2.2
+
+        http://boss.bekk.no/boss/middlegen/
+        http://www.hibernate.org/
+    -->
+    <class name="org.profamilia.hc.model.dto.Cpparentes" table="CPPARENTES" lazy="false" schema="CLINICO">
+        <id name="cpancodigo" type="java.lang.String" column="CPANCODIGO">
+            <generator class="assigned"/>
+        </id>
+        <version name="version" column="VERSION"/>
+        <property name="cpacdescrip" type="java.lang.String" column="CPACDESCRIP" not-null="true" length="50"/>
+        <property name="cpacestado" type="java.lang.String" column="CPACESTADO" not-null="true" length="2"/>
+        <property name="cpadfecreg" type="java.util.Date" column="CPADFECREG" not-null="true" length="7"/>
+        <property name="cpacusuari" type="java.lang.String" column="CPACUSUARI" not-null="true" length="14"/>
+        <!-- Associations -->
+    </class>
+</hibernate-mapping>

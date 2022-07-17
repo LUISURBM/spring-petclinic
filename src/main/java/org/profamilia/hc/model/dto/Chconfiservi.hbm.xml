@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping>
+    <!-- 
+    Created by the Middlegen Hibernate plugin 2.2
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+    <class name="org.profamilia.hc.model.dto.Chconfiservi" table="CHCONFISERVI" lazy="false" schema = "HISTORIA">
+        <composite-id name="comp_id" class="org.profamilia.hc.model.dto.ChconfiserviPK">
+            <key-property name="hcslconsulta" column="HCSLCONSULTA" type="java.lang.Long" length="12"/>
+            <key-property name="hcsctiposervi" column="HCSCTIPOSERVI" type="java.lang.String" length="1"/>
+        </composite-id>
+          <version name="version" column="VERSION"/> 
+        <property name="hcscrealiservi" type="java.lang.String" column="HCSCREALISERVI" not-null="true" length="1"/>
+        <property name="hcscserviingre" type="java.lang.String" column="HCSCSERVIINGRE" length="12"/>
+        <property name="hcscserviegres" type="java.lang.String" column="HCSCSERVIEGRES" length="12"/>
+        <property name="hcsdfecregistr" type="java.util.Date" column="HCSDFECREGISTR" not-null="true" length="7"/>
+        <property name="hcscoperador" type="java.lang.String" column="HCSCOPERADOR" not-null="true" length="14"/>
+      
+        <!-- Associations -->
+        <!-- derived association(s) for compound key -->
+        <!-- end of derived association(s) -->
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping>
+    <!-- 
+    Created by the Middlegen Hibernate plugin 2.2
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+    <class name="org.profamilia.hc.model.dto.Chtipointerc" table="CHTIPOINTERC" schema="HISTORIA" lazy="false">
+        <id name="hticcodigo" type="java.lang.String" column="HTICCODIGO">
+            <generator class="assigned"/>
+        </id>
+        <version name="version" column="VERSION"/>
+        <property name="hticdescripcio" type="java.lang.String" column="HTICDESCRIPCIO" length="60"/>
+        <property name="htidfecregistr" type="java.util.Date" column="HTIDFECREGISTR" length="7"/>
+        <property name="htioperador" type="java.lang.String" column="HTIOPERADOR" length="14"/>
+        <property name="hticestado" type="java.lang.String" column="HTICESTADO" length="2"/>
+    </class>
+</hibernate-mapping>

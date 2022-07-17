@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping>
+    <!-- 
+    Created by the Middlegen Hibernate plugin 2.2
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+    <class name="org.profamilia.hc.model.dto.Chhisteroscopia" table="CHHISTEROSCOPIA" schema="HISTORIA" lazy="false">
+        <id name="hhtlnumero" type="java.lang.Long" column="HHTLNUMERO">
+        </id>
+        <version name="version" column="VERSION"/> 
+        <property name="hhtctiposerv" type="java.lang.String" column="HHTCTIPOSERV" length="1"/>
+        <property name="hhtdfecreg" type="java.util.Date" column="HHTDFECREG" length="7"/>
+        <property name="hhtcusureg" type="java.lang.String" column="HHTCUSUREG" length="14"/>
+        <property name="hhtlnumusu" type="java.lang.Long" column="HHTLNUMUSU" length="22"/>
+        <property name="hhtcintpro" type="java.lang.String" column="HHTCINTPRO" length="4000"/>
+        <property name="hhtcmedidist" type="java.lang.String" column="HHTCMEDIDIST" length="2"/>
+        <property name="hhtlcantirri" type="java.lang.Long" column="HHTLCANTIRRI" length="5"/>
+        <property name="httlcantreco" type="java.lang.Long" column="HTTLCANTRECO" length="5"/>
+        <property name="httlbalance" type="java.lang.Long" column="HTTLBALANCE" length="22"/>
+        <property name="httlbalposneg" type="java.lang.String" column="HTTLBALPOSNEG" length="8"/>
+        <!-- Associations -->
+    </class>
+</hibernate-mapping>

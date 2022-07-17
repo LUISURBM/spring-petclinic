@@ -1,0 +1,77 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping>
+    <!-- 
+    Created by the Middlegen Hibernate plugin 2.2
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+    <class name="org.profamilia.hc.model.dto.Chtecnianest" table="CHTECNIANEST"
+           schema="HISTORIA" lazy="false">
+        <composite-id name="id" class="org.profamilia.hc.model.dto.ChtecnianestPK">
+            <key-property name="htalnumero" column="HTALNUMERO"
+                          type="java.lang.Long" length="12"/>
+            <key-property name="htactiposervi" column="HTACTIPOSERVI"
+                          type="java.lang.String" length="1"/>
+        </composite-id>
+        <version name="version" column="VERSION"/>
+        <property name="htacanestlocal" type="java.lang.String"
+                  column="HTACANESTLOCAL" length="1"/>
+        <property name="htacanestgener" type="java.lang.String"
+                  column="HTACANESTGENER" length="1"/>
+        <property name="htacanestregio" type="java.lang.String"
+                  column="HTACANESTREGIO" length="1"/>
+        <property name="htactiponeuroa" type="java.lang.String"
+                  column="HTACTIPONEUROA" length="1"/>
+        <property name="htacdescrproce" type="java.lang.String"
+                  column="HTACDESCRPROCE" length="1000"/>
+        <property name="htacinducagent" type="java.lang.String"
+                  column="HTACINDUCAGENT" length="1"/>
+        <property name="htacmanteagent" type="java.lang.String"
+                  column="HTACMANTEAGENT" length="1"/>
+        <property name="htanconcentrac" type="java.math.BigDecimal"
+                  column="HTANCONCENTRAC" length="3"/>
+        <property name="htancambiconce" type="java.math.BigDecimal"
+                  column="HTANCAMBICONCE" length="3"/>
+        <property name="htacobservacio" type="java.lang.String"
+                  column="HTACOBSERVACIO" length="2000"/>
+        <property name="htanclinica" type="java.lang.Integer"
+                  column="HTANCLINICA" length="4"/>
+        <property name="htacoperador" type="java.lang.String"
+                  column="HTACOPERADOR" length="14"/>
+        <property name="htactipoanegen" type="java.lang.String"
+                  column="HTACTIPOANEGEN" length="2"/>
+        <property name="htactipoanereg" type="java.lang.String"
+                  column="HTACTIPOANEREG" length="2"/>
+        <property name="htanoxigeno" type="java.math.BigDecimal"
+                  column="HTANOXIGENO" length="1"/>
+        <property name="htanoxidonitro" type="java.math.BigDecimal"
+                  column="HTANOXIDONITRO" length="1"/>
+        <property name="htanmanteconce" type="java.math.BigDecimal"
+                  column="HTANMANTECONCE" length="3"/>
+        <property name="htaccambiconce" type="java.lang.String"
+                  column="HTACCAMBICONCE" length="1"/>
+        <property name="htadfechininit" type="java.util.Date"
+                  column="HTADFECHININIT" length="7"/>
+        <property name="htadfechfinnit" type="java.util.Date"
+                  column="HTADFECHFINNIT" length="7"/>
+        <property name="htadfechacambi" type="java.util.Date"
+                  column="HTADFECHACAMBI" length="7"/>
+        <property name="htadfecregistr" type="java.util.Date"
+                  column="HTADFECREGISTR" length="7"/>
+        <property name="htadfechfinoxi" type="java.util.Date"
+                  column="HTADFECHFINOXI" length="7"/>
+        <property name="htadfechfininh" type="java.util.Date"
+                  column="HTADFECHFININH" length="7"/>
+        <property name="htadfechiniinh" type="java.util.Date"
+                  column="HTADFECHINIINH" length="7"/>
+        <property name="htadfechinioxi" type="java.util.Date"
+                  column="HTADFECHINIOXI" length="7"/>
+        <!-- Associations -->
+        <!-- derived association(s) for compound key -->
+        <!-- end of derived association(s) -->
+    </class>
+</hibernate-mapping>

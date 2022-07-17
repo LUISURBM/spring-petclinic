@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping>
+    <!-- 
+    Created by the Middlegen Hibernate plugin 2.2
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+    <class name="org.profamilia.hc.model.dto.Chremision" table="CHREMISION"
+           schema="HISTORIA" lazy="false">
+        <composite-id name="id" class="org.profamilia.hc.model.dto.ChremisionPK">
+            <key-property name="hrelconsulta" column="HRELCONSULTA"
+                          type="java.lang.Long" length="12"/>
+            <key-property name="hrenconsecuti" column="HRENCONSECUTI"
+                          type="java.lang.Integer" length="4"/>
+            <key-property name="hrectiposervi" column="HRECTIPOSERVI"
+                          type="java.lang.String" length="1"/>
+            <key-property name="hrenllave" column="HRENLLAVE"
+                          type="java.lang.Integer" length="4"/>
+        </composite-id>
+        <version name="version" column="VERSION"/>
+        <property name="hredfecregistr" type="java.util.Date"
+                  column="HREDFECREGISTR" length="7"/>
+        <property name="hrecoperador" type="java.lang.String"
+                  column="HRECOPERADOR" length="14"/>
+        <property name="hrecservicio" type="java.lang.String"
+                  column="HRECSERVICIO" length="12"/>
+        <property name="hrecdescripcio" type="java.lang.String"
+                  column="HRECDESCRIPCIO" length="4000"/>
+    </class>
+</hibernate-mapping>

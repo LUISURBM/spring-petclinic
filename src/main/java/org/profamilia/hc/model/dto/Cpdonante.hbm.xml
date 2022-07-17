@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+<!-- 
+        Auto-generated mapping file from
+        the hibernate.org cfg2hbm engine
+-->
+    <class name="org.profamilia.hc.model.dto.Cpdonante" table="CPDONANTE" schema="CLINICO">
+        <id name="cdnncodigo" type="big_decimal">
+            <column name="CDNNCODIGO" precision="10" scale="0" />
+            <generator class="assigned" />
+        </id>
+        <version name="version" column="VERSION"/>
+        <property name="cdncdescri" type="string">
+            <column name="CDNCDESCRI" length="40" not-null="true" />
+        </property>
+        <property name="cdncestado" type="string">
+            <column name="CDNCESTADO" length="2" not-null="true" />
+        </property>
+        <property name="cdndfecreg" type="date">
+            <column name="CDNDFECREG" length="7" not-null="true" />
+        </property>
+        <property name="cdncusureg" type="string">
+            <column name="CDNCUSUREG" length="14" not-null="true" />
+        </property>
+        <property name="cdncproyec" type="string">
+            <column name="CDNCPROYEC" length="1" not-null="true" />
+        </property>        
+        <property name="cdncexeiva" type="string">
+            <column name="CDNCEXEIVA" length="1" not-null="true" />
+        </property>        
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping>
+    <!-- 
+    Created by the Middlegen Hibernate plugin 2.2
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+    <class name="org.profamilia.hc.model.dto.Chentregavph" table="CHENTREGAVPH" schema="HISTORIA" lazy="false">
+        <id name="hevlidentificador" type="java.lang.Long" column="HEVLIDENTIFICADOR">
+            <meta attribute="field-description" inherit="false"></meta>
+           <generator class="sequence">
+                <param name="sequence">HISTORIA.SEC_CHENTREGAVPH</param>
+            </generator>    
+        </id>
+        
+          
+        <property name="hevdfechaenvio" type="java.util.Date" column="HEVDFECHAENVIO" not-null="true" length="7"/>
+        <property name="hevdfechamod" type="java.util.Date" column="HEVDFECHAMOD" not-null="true" length="7"/>
+        <property name="hevnlablectura" type="java.lang.Long" column="HEVNLABLECTURA" not-null="true" length="10"/>
+        <property name="hevnclinica" type="java.lang.Integer" column="HEVNCLINICA" not-null="true" length="4"/>
+        <property name="hevcoperador" type="java.lang.String" column="HEVCOPERADOR" not-null="true" length="14"/>
+        <!-- Associations -->
+        <!-- bi-directional one-to-many association to Chdetaentvph -->
+        <set name="chdetaentvphs" lazy="true" inverse="true" cascade="all">
+            <key>
+                <column name="HDELIDENTREGAVPH"/>
+            </key>
+            <one-to-many class="org.profamilia.hc.model.dto.Chdetaentvph"/>
+        </set>
+    </class>
+</hibernate-mapping>

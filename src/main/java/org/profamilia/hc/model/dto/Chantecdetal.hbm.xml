@@ -1,0 +1,112 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping>
+    <!-- 
+    Created by the Middlegen Hibernate plugin 2.2
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+    <class name="org.profamilia.hc.model.dto.Chantecdetal" table="CHANTECDETAL" schema="HISTORIA" lazy="false">
+        <composite-id name="comp_id" class="org.profamilia.hc.model.dto.ChantecdetalPK">
+            <key-property name="hadlconsulta" column="HADLCONSULTA" type="java.lang.Long" length="12"/>
+            <key-property name="hadnconsecuti" column="HADNCONSECUTI" type="java.lang.Integer" length="4"/>
+        </composite-id>
+        <version name="version" column="VERSION"/>
+        <property name="haddfecregistr" type="java.util.Date" column="HADDFECREGISTR" length="7"/>
+        <property name="hadcoperador" type="java.lang.String" column="HADCOPERADOR" length="14"/>
+        <property name="hadcgrupsang" type="java.lang.String" column="HADCGRUPSANG" length="2"/>
+        <property name="hadcrh" type="java.lang.String" column="HADCRH" length="8"/>
+        <property name="hadcfumacttox" type="java.lang.String" column="HADCFUMACTTOX" length="1"/>
+        <property name="hadcfumpastox" type="java.lang.String" column="HADCFUMPASTOX" length="1"/>
+        <property name="hadcsuspsitox" type="java.lang.String" column="HADCSUSPSITOX" length="1"/>
+        <property name="hadcalctox" type="java.lang.String" column="HADCALCTOX" length="1"/>
+        <property name="hadcisoinabort" type="java.lang.String" column="HADCISOINABORT" length="1"/>
+        <property name="hadcultpruvih" type="java.lang.String" column="HADCULTPRUVIH" length="4"/>
+        <property name="hadcresultpruvih" type="java.lang.String" column="HADCRESULTPRUVIH" length="2"/>
+        <property name="hadcultprusif" type="java.lang.String" column="HADCULTPRUSIF" length="4"/>
+        <property name="hadcresultprusif" type="java.lang.String" column="HADCRESULTPRUSIF" length="2"/>
+        <property name="hadcprurapcon" type="java.lang.String" column="HADCPRURAPCON" length="1"/>
+        <property name="hadcembarazo" type="java.lang.String" column="HADCEMBARAZO" length="1"/>
+        <property name="hadcsifilis" type="java.lang.String" column="HADCSIFILIS" length="1"/>
+        <property name="hadcvih" type="java.lang.String" column="HADCVIH" length="1"/>
+        <property name="hadcantepato" type="java.lang.String" column="HADCANTEPATO" length="1"/>
+        <property name="hadctbcpato" type="java.lang.String" column="HADCTBCPATO" length="1"/>
+        <property name="hadcdiabpato" type="java.lang.String" column="HADCDIABPATO" length="1"/>
+        <property name="hadchipepato" type="java.lang.String" column="HADCHIPEPATO" length="1"/>
+        <property name="hadcprecpato" type="java.lang.String" column="HADCPRECPATO" length="1"/>
+        <property name="hadceclapato" type="java.lang.String" column="HADCECLAPATO" length="1"/>
+        <property name="hadccardpato" type="java.lang.String" column="HADCCARDPATO" length="1"/>
+        <property name="hadcnefrpato" type="java.lang.String" column="HADCNEFRPATO" length="1"/>
+        <property name="hadciferpato" type="java.lang.String" column="HADCIFERPATO" length="1"/>
+        <property name="hadcantefami" type="java.lang.String" column="HADCANTEFAMI" length="1"/>
+        <property name="hadctbcfami" type="java.lang.String" column="HADCTBCFAMI" length="1"/>
+        <property name="hadcdiabfami" type="java.lang.String" column="HADCDIABFAMI" length="1"/>
+        <property name="hadchipefami" type="java.lang.String" column="HADCHIPEFAMI" length="1"/>
+        <property name="hadceclafami" type="java.lang.String" column="HADCECLAFAMI" length="1"/>
+        <property name="hadcprecfami" type="java.lang.String" column="HADCPRECFAMI" length="1"/>
+        <property name="hadcanteqx" type="java.lang.String" column="HADCANTEQX" length="1"/>
+        <property name="hadcgeurqx" type="java.lang.String" column="HADCGEURQX" length="1"/>
+        <property name="hadcantetoxi" type="java.lang.String" column="HADCANTETOXI" length="1"/>
+        <property name="hadctbcpatdes" type="java.lang.String" column="HADCTBCPATDES" length="4000"/>
+        <property name="hadcdiapatdes" type="java.lang.String" column="HADCDIAPATDES" length="4000"/>
+        <property name="hadchippatdes" type="java.lang.String" column="HADCHIPPATDES" length="4000"/>
+        <property name="hadcprepatdes" type="java.lang.String" column="HADCPREPATDES" length="4000"/>
+        <property name="hadceclpatdes" type="java.lang.String" column="HADCECLPATDES" length="4000"/>
+        <property name="hadccarpatdes" type="java.lang.String" column="HADCCARPATDES" length="4000"/>
+        <property name="hadcnefpatdes" type="java.lang.String" column="HADCNEFPATDES" length="4000"/>
+        <property name="hadcifepatdes" type="java.lang.String" column="HADCIFEPATDES" length="4000"/>
+        <property name="hadctbcfamdes" type="java.lang.String" column="HADCTBCFAMDES" length="4000"/>
+        <property name="hadcdiafamdes" type="java.lang.String" column="HADCDIAFAMDES" length="4000"/>
+        <property name="hadchipfamdes" type="java.lang.String" column="HADCHIPFAMDES" length="4000"/>
+        <property name="hadceclfamdes" type="java.lang.String" column="HADCECLFAMDES" length="4000"/>
+        <property name="hadcprefamdes" type="java.lang.String" column="HADCPREFAMDES" length="4000"/>
+        <property name="hadcgeurqxdes" type="java.lang.String" column="HADCGEURQXDES" length="4000"/>
+        <property name="hadcantenuev" type="java.lang.String" column="HADCANTENUEV" length="1"/>
+        <property name="hadcantealer" type="java.lang.String" column="HADCANTEALER" length="1"/>
+        <property name="hadcantaledes" type="java.lang.String" column="HADCANTALEDES" length="4000"/>
+        <property name="hadcantetran" type="java.lang.String" column="HADCANTETRAN" length="1"/>
+        <property name="hadcanttrades" type="java.lang.String" column="HADCANTTRADES" length="4000"/>
+        <property name="hadcantits" type="java.lang.String" column="HADCANTITS" length="1"/>
+        <property name="hadcantitsdes" type="java.lang.String" column="HADCANTITSDES" length="4000"/>
+        <property name="hadcantefarm" type="java.lang.String" column="HADCANTEFARM" length="1"/>
+        <property name="hadcantfardes" type="java.lang.String" column="HADCANTFARDES" length="4000"/>
+        <property name="hadcantetrau" type="java.lang.String" column="HADCANTETRAU" length="1"/>
+        <property name="hadctraantdesc" type="java.lang.String" column="HADCTRAANTDESC" length="4000"/>
+        <property name="hadcendoundo" type="java.lang.String" column="HADCENDOUNDO" length="1"/>
+        <property name="hadcendotrcu" type="java.lang.String" column="HADCENDOTRCU" length="1"/>
+        <property name="hadcepi" type="java.lang.String" column="HADCEPI" length="1"/>
+        <property name="hadccirabd" type="java.lang.String" column="HADCCIRABD" length="1"/>
+        <property name="hadclapparosc" type="java.lang.String" column="HADCLAPPAROSC" length="1"/>
+        <property name="hadcinffam" type="java.lang.String" column="HADCINFFAM" length="1"/>
+        <property name="hadcprogenfa" type="java.lang.String" column="HADCPROGENFA" length="1"/>
+        <property name="hadcpaternidad" type="java.lang.String" column="HADCPATERNIDAD" length="1"/>
+        <property name="hadcorquitis" type="java.lang.String" column="HADCORQUITIS" length="1"/>
+        <property name="hadccriporquidea" type="java.lang.String" column="HADCCRIPORQUIDEA" length="1"/>
+        <property name="hadctrautest" type="java.lang.String" column="HADCTRAUTEST" length="1"/>
+        <property name="hadccirtest" type="java.lang.String" column="HADCCIRTEST" length="1"/>
+        <property name="hadcquimrad" type="java.lang.String" column="HADCQUIMRAD" length="1"/>
+        <property name="hadcocuparies" type="java.lang.String" column="HADCOCUPARIES" length="1"/>
+        <property name="hadcdiserectil" type="java.lang.String" column="HADCDISERECTIL" length="1"/>
+        <property name="hadceyaprecoz" type="java.lang.String" column="HADCEYAPRECOZ" length="1"/>
+        <property name="hadcpatdes" type="java.lang.String" column="HADCPATDES" length="100"/>
+        <property name="hadcquirdes" type="java.lang.String" column="HADCQUIRDES" length="100"/>
+        <property name="hadctoxdes" type="java.lang.String" column="HADCTOXDES" length="100"/>
+        <property name="hadcaledes" type="java.lang.String" column="HADCALEDES" length="100"/>
+        <property name="hadcfamdes" type="java.lang.String" column="HADCFAMDES" length="100"/>
+        <property name="hadctransdes" type="java.lang.String" column="HADCTRANSDES" length="100"/>
+        <property name="hadcitsdes" type="java.lang.String" column="HADCITSDES" length="100"/>
+        <property name="hadcfarmdes" type="java.lang.String" column="HADCFARMDES" length="100"/>
+        <property name="hadctraudes" type="java.lang.String" column="HADCTRAUDES" length="100"/>
+        <property name="hadcgendes" type="java.lang.String" column="HADCGENDES" length="100"/>
+        <property name="hadcmasdes" type="java.lang.String" column="HADCMASDES" length="500"/>
+         <property name="hadcantegen" type="java.lang.String" column="HADCANTEGEN" length="1"/>
+         <property name="hadcantemas" type="java.lang.String" column="HADCANTEMAS" length="1"/>
+          <property name="hadcitsmas" type="java.lang.String" column="HADCITSMAS" length="1"/>
+        <!-- Associations -->
+        <!-- derived association(s) for compound key -->
+        <!-- end of derived association(s) -->
+    </class>
+</hibernate-mapping>

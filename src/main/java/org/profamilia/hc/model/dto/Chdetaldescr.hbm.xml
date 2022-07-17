@@ -1,0 +1,64 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping>
+    <!-- 
+    Created by the Middlegen Hibernate plugin 2.2
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+    <class name="org.profamilia.hc.model.dto.Chdetaldescr" table="CHDETALDESCR" lazy="false" schema="HISTORIA">
+        <composite-id name="id" class="org.profamilia.hc.model.dto.ChdetaldescrPK">
+            <key-property name="hddlnumero" column="HDDLNUMERO" type="java.lang.Long" length="12"/>
+            <key-property name="hddnconsec" column="HDDNCONSEC" type="java.lang.Integer" length="4"/>
+        </composite-id>
+        <version name="version" column="VERSION"/>
+        <property name="hddccirujano" type="big_decimal" column="HDDCCIRUJANO" not-null="true" length="10"/>
+        <property name="hddcdiagnprinc" type="java.lang.String" column="HDDCDIAGNPRINC" not-null="true" length="4"/>
+        <property name="hddcdiagnrelac" type="java.lang.String" column="HDDCDIAGNRELAC" length="4"/>
+        <property name="hddcpiezapatol" type="java.lang.String" column="HDDCPIEZAPATOL" length="200"/>
+        <property name="hddchallazgos" type="java.lang.String" column="HDDCHALLAZGOS" length="4000"/>
+        <property name="hddcdescripcio" type="java.lang.String" column="HDDCDESCRIPCIO" length="4000"/>
+        <property name="hddctienecompl" type="java.lang.String" column="HDDCTIENECOMPL" length="1"/>
+        <property name="hddcdiagncompl" type="java.lang.String" column="HDDCDIAGNCOMPL" length="4"/>
+        <property name="hddctienesangr" type="java.lang.String" column="HDDCTIENESANGR" length="1"/>
+        <property name="hddnsangraprox" type="java.lang.Integer" column="HDDNSANGRAPROX" length="4"/>
+        <property name="hddcanotardiur" type="java.lang.String" column="HDDCANOTARDIUR" length="1"/>
+        <property name="hddncantidadiu" type="java.lang.Integer" column="HDDNCANTIDADIU" length="4"/>
+        <property name="hddcaspectodiu" type="java.lang.String" column="HDDCASPECTODIU" length="2"/>
+        <property name="hdddfecregistr" type="java.util.Date" column="HDDDFECREGISTR" length="7"/>
+        <property name="hddcoperador" type="java.lang.String" column="HDDCOPERADOR" length="14"/>
+        <property name="hddcdescrcompl" type="java.lang.String" column="HDDCDESCRCOMPL" length="4000"/>
+        <property name="hddcgradohemar" type="java.lang.String" column="HDDCGRADOHEMAR" length="1"/>
+        <property name="hddnfinalidad" type="java.lang.Integer" column="HDDNFINALIDAD" not-null="true" length="4"/>
+        <property name="hddcanestesiol" type="java.lang.String" column="HDDCANESTESIOL" length="60"/>
+        <property name="hddctipoaneste" type="java.lang.String" column="HDDCTIPOANESTE" length="2"/>   
+        <property name="hddninstrument" type="big_decimal" column="HDDNINSTRUMENT"  length="10"/>
+        <property name="hddnayudante1" type="big_decimal" column="HDDNAYUDANTE1"  length="10"/>
+        <property name="hddnayudante2" type="big_decimal" column="HDDNAYUDANTE2"  length="10"/>
+        <property name="hddncirculante" type="big_decimal" column="HDDNCIRCULANTE"  length="10"/>
+        <property name="hddntiempohora" type="java.lang.Integer" column="HDDNTIEMPOHORA" length="2"/>
+        <property name="hddntiempominu" type="java.lang.Integer" column="HDDNTIEMPOMINU" length="2"/>
+        <property name="hddctienepiepa" type="java.lang.String" column="HDDCTIENEPIEPA" length="1"/>
+        <property name="hddcestado" type="java.lang.String" column="HDDCESTADO" length="2"/>
+        <property name="hddcnomresiden" type="java.lang.String" column="HDDCNOMRESIDEN" length="30"/>
+        <property name="hddcayudante1" type="java.lang.String" column="HDDCAYUDANTE1"  length="60"/>
+        <property name="hddcayudante2" type="java.lang.String" column="HDDCAYUDANTE2"  length="60"/>
+        <property name="hddcmediayud1" type="big_decimal" column="HDDCMEDIAYUD1" length="10"/>
+        <property name="hddcmediayud2" type="big_decimal" column="HDDCMEDIAYUD2" length="10"/>
+        <property name="hddcnomresiden1" type="java.lang.String" column="HDDCNOMRESIDEN1"  length="60"/>
+        <property name="hddcnomresiden2" type="java.lang.String" column="HDDCNOMRESIDEN2"  length="60"/>
+        <property name="hddccuantifi" type="java.lang.String" column="HDDCCUANTIFI" length="1"/>
+        <property name="hddccuantidiure" type="java.lang.String" column="HDDCCUANTIDIURE" length="1"/>
+        
+        
+        <!-- Associations -->
+        <!-- derived association(s) for compound key -->
+        <!-- end of derived association(s) -->
+        <many-to-one name="hddlusuario" class="org.profamilia.hc.model.dto.Chusuario" not-null="true">
+            <column name="HDDLUSUARIO"/>
+        </many-to-one>
+    </class>
+</hibernate-mapping>

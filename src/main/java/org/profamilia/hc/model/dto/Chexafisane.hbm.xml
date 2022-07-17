@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping>
+    <!-- 
+    Created by the Middlegen Hibernate plugin 2.2
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+    <class name="org.profamilia.hc.model.dto.Chexafisane" table="CHEXAFISANES" schema="HISTORIA" lazy="false">
+        <composite-id name="id" class="org.profamilia.hc.model.dto.ChexafisanePK">
+            <key-property name="healconsulta" column="HEALCONSULTA" type="java.lang.Long" length="12"/>
+            <key-property name="heactiposervi" column="HEACTIPOSERVI" type="java.lang.String" length="1"/>
+        </composite-id>
+        <version name="version" column="VERSION"/>
+        <property name="headfecregistr" type="java.util.Date" column="HEADFECREGISTR" length="7"/>
+        <property name="heacoperador" type="java.lang.String" column="HEACOPERADOR" length="14"/>
+        <property name="heanapertoral" type="java.lang.Integer" column="HEANAPERTORAL" length="2"/>
+        <property name="heactieneprosu" type="java.lang.String" column="HEACMOVILPROSU" length="1"/>
+        <property name="heactieneproin" type="java.lang.String" column="HEACTIENEPROIN" length="1"/>
+        <property name="heacgradoproin" type="java.lang.String" column="HEACGRADOPROIN" length="2"/>
+        <property name="heacgradoprosu" type="java.lang.String" column="HEACGRADOPROSU" length="2"/>
+        <property name="heacmallampati" type="java.lang.String" column="HEACMALLAMPATI" length="3"/>
+        <property name="heandistametri" type="java.lang.String" column="HEANDISTAMETRI" length="20"/>
+        <property name="heacmovilanter" type="java.lang.String" column="HEACMOVILANTER" length="1"/>
+        <property name="heacmovilatlan" type="java.lang.String" column="HEACMOVILATLAN" length="1"/>
+        <property name="heacevalugloba" type="java.lang.String" column="HEACEVALUGLOBA" length="1"/>
+        <property name="heacmovilproin" type="java.lang.String" column="HEACMOVILPROIN" length="2"/>
+        <property name="heacmovilprosu" type="java.lang.String" column="HEACTIENEPROSU" length="2"/>
+        <property name="heactieneprote" type="java.lang.String" column="HEACTIENEPROTE" length="1"/>
+        <!-- Associations -->
+        <!-- derived association(s) for compound key -->
+        <!-- end of derived association(s) -->
+    </class>
+</hibernate-mapping>

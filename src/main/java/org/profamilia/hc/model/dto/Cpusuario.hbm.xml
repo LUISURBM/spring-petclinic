@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping>
+    <!-- 
+    Created by the Middlegen Hibernate plugin 2.2
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+    <class name="org.profamilia.hc.model.dto.Cpusuario" table="CPUSUARIO"  schema="CLINICO" lazy="false">
+        <id name="curcusuari" type="java.lang.String" column="CURCUSUARI">
+            <generator class="assigned"/>
+        </id>
+        <property name="curnclinic" type="java.lang.Integer" column="CURNCLINIC" not-null="true" length="4"/>
+        <property name="curcnombre" type="java.lang.String" column="CURCNOMBRE" not-null="true" length="40"/>
+        <property name="curacedula" type="java.math.BigDecimal" column="CURACEDULA" not-null="true" length="17"/>
+        <property name="curcactivo" type="java.lang.String" column="CURCACTIVO" not-null="true" length="1"/>
+        <property name="curcgrabad" type="java.lang.String" column="CURCGRABAD" not-null="true" length="14"/>
+        <property name="curdfecgra" type="java.sql.Date" column="CURDFECGRA" not-null="true" length="7"/>
+        <property name="curnbodega" type="java.lang.Integer" column="CURNBODEGA" not-null="true" length="9"/>
+        <property name="version" type="java.math.BigDecimal" column="VERSION" length="22"/>
+        <property name="curnprofes" type="big_decimal" column="CURNPROFES" not-null="true" length="10"/>
+        <!-- Associations -->
+    </class>
+</hibernate-mapping>

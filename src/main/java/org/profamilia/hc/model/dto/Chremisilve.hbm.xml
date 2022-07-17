@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping>
+    <!-- 
+    Created by the Middlegen Hibernate plugin 2.2
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+    <class name="org.profamilia.hc.model.dto.Chremisilve" table="CHREMISILVE" lazy="false"  schema="HISTORIA">
+        <composite-id name="id" class="org.profamilia.hc.model.dto.ChremisilvePK">
+            <key-property name="hrilconsulta" column="HRILCONSULTA" type="java.lang.Long" length="12"/>
+            <key-property name="hrictiposerv" column="HRICTIPOSERV" type="java.lang.String" length="1"/>
+        </composite-id>
+         <version name="version" column="VERSION"/>
+        <property name="hriccertimedic" type="java.lang.String" column="HRICCERTIMEDIC"  length="4000"/>
+        <property name="hrictiporemis" type="java.lang.String" column="HRICTIPOREMIS" length="2"/>
+        <property name="hricotroremis" type="java.lang.String" column="HRICOTROREMIS" length="80"/>
+        <property name="hricoperador" type="java.lang.String" column="HRICOPERADOR" not-null="true" length="14"/>
+        <property name="hridfecreg" type="java.util.Date" column="HRIDFECREG" not-null="true" length="7"/>
+        <property name="hricmetodplani" type="java.lang.String" column="HRICMETODPLANI" length="12"/>
+        <property name="hricotrometod" type="java.lang.String" column="HRICOTROMETOD" length="80"/>
+        <property name="hricaceptpacie" type="java.lang.String" column="HRICACEPTPACIE" length="1"/>
+        <property name="hricmotivrecha" type="java.lang.String" column="HRICMOTIVRECHA" length="4"/>
+        <property name="hriccausailve" type="java.lang.String" column="HRICCAUSAILVE" length="4"/>
+        <property name="hriccausailve2" type="java.lang.String" column="HRICCAUSAILVE2" length="4"/>
+        <property name="hriccausailve3" type="java.lang.String" column="HRICCAUSAILVE3" length="4"/>
+        
+        <property name="hricdeseaplan" type="java.lang.String" column="HRICDESEAPLAN" length="1"/>
+        <property name="hricsumiprofa" type="java.lang.String" column="HRICSUMIPROFA" length="1"/>
+        <property name="hricsumiprofno" type="java.lang.String" column="HRICSUMIPROFNO" length="4"/>
+        <property name="hricsumiotro" type="java.lang.String" column="HRICSUMIOTRO" length="80"/>
+        
+        <property name="hricescogvolun" type="java.lang.String" column="HRICESCOGVOLUN" length="2"/>
+        <property name="hricdesinvoem" type="java.lang.String" column="HRICDESINVOEM" />
+        <property name="hricpsicosocial" type="java.lang.String" column="HRICPSICOSOCIAL" length="2"/>
+        <property name="hricdescrpsico" type="java.lang.String" column="HRICDESCRPSICO" />
+        <property name="hricantemedi" type="java.lang.String" column="HRICANTEMEDI" length="2"/>
+        <property name="hricdesantmed" type="java.lang.String" column="HRICDESANTMED" />
+         <property name="hricobserplan" type="java.lang.String" column="HRICOBSERPLAN"  length="4000"/>
+         <property name="hricinicimetod" type="java.lang.String" column="HRICINICIMETOD" length="1"/>
+       
+        <!-- Associations -->
+        <!-- derived association(s) for compound key -->
+        <!-- end of derived association(s) -->
+    </class>
+</hibernate-mapping>

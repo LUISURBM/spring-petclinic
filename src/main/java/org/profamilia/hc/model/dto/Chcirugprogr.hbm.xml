@@ -1,0 +1,268 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping>
+    <!-- 
+    Created by the Middlegen Hibernate plugin 2.2
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+    <class name="org.profamilia.hc.model.dto.Chcirugprogr" table="CHCIRUGPROGR"
+           schema="HISTORIA" lazy="false">
+        <id name="hcplnumero" type="java.lang.Long" column="HCPLNUMERO">
+            <generator class="assigned"/>
+        </id>
+        <version name="version" column="VERSION"/>
+        <property name="hcpdfechacirug" type="java.util.Date"
+                  column="HCPDFECHACIRUG" length="7"/>
+        <property name="hcpdfechfincir" type="java.util.Date"
+                  column="HCPDFECHFINCIR" length="7"/>
+        <property name="hcpntiempointe" type="java.lang.Integer"
+                  column="HCPNTIEMPOINTE" length="4"/>
+        <property name="hcpnsalainterv" type="java.lang.Integer"
+                  column="HCPNSALAINTERV" length="2"/>
+        <property name="hcpnclinica" type="java.lang.Integer"
+                  column="HCPNCLINICA" length="4"/>
+        <property name="hcpcentidadadm" type="java.lang.String"
+                  column="HCPCENTIDADADM" length="6"/>
+        <property name="hcpcanestesiol" type="java.lang.String"
+                  column="HCPCANESTESIOL" length="50"/>
+        <property name="hcpcestado" type="java.lang.String" column="HCPCESTADO"
+                  length="2"/>
+        <property name="hcpcetapa" type="java.lang.String" column="HCPCETAPA"
+                  length="2"/>
+        <property name="hcpdfecregistr" type="java.util.Date"
+                  column="HCPDFECREGISTR" length="7"/>
+        <property name="hcpdfechamodif" type="java.util.Date"
+                  column="HCPDFECHAMODIF" length="7"/>
+        <property name="hcpcoperamodif" type="java.lang.String"
+                  column="HCPCOPERAMODIF" length="14"/>
+        <property name="hcpcoperador" type="java.lang.String"
+                  column="HCPCOPERADOR" length="14"/>
+        <property name="hcpctipoaneste" type="java.lang.String"
+                  column="HCPCTIPOANESTE" length="1"/>
+        <property name="hcpctipoestanc" type="java.lang.String"
+                  column="HCPCTIPOESTANC" length="1"/>
+        <property name="hcpeayudantia" type="java.lang.String"
+                  column="HCPEAYUDANTIA" length="1"/>
+        <property name="hcpndiasestanc" type="java.lang.Integer"
+                  column="HCPNDIASESTANC" length="4"/>
+        <property name="hcpcingremedic" type="java.lang.String"
+                  column="HCPCINGREMEDIC" length="1"/>
+        <property name="hcpcingreenfer" type="java.lang.String"
+                  column="HCPCINGREENFER" length="1"/>
+        <property name="hcpcsalidenfer" type="java.lang.String"
+                  column="HCPCSALIDENFER" length="1"/>
+        <property name="hcpcsalidmedic" type="java.lang.String"
+                  column="HCPCSALIDMEDIC" length="1"/>
+        <property name="hcpcopersalmed" type="java.lang.String"
+                  column="HCPCOPERSALMED" length="14"/>
+        <property name="hcpcopersalenf" type="java.lang.String"
+                  column="HCPCOPERSALENF" length="14"/>
+        <property name="hcpdfechsalmed" type="java.util.Date"
+                  column="HCPDFECHSALMED" length="7"/>
+        <property name="hcpdfechsalenf" type="java.util.Date"
+                  column="HCPDFECHSALENF" length="7"/>
+        <property name="hcpcoperingenf" type="java.lang.String"
+                  column="HCPCOPERINGENF" length="14"/>
+        <property name="hcpdfechingenf" type="java.util.Date"
+                  column="HCPDFECHINGENF" length="7"/>
+        <property name="hcpcoperingmed" type="java.lang.String"
+                  column="HCPCOPERINGMED" length="14"/>
+        <property name="hcpdfechingmed" type="java.util.Date"
+                  column="HCPDFECHINGMED" length="7"/>
+        <property name="hcpcregisepicr" type="java.lang.String"
+                  column="HCPCREGISEPICR" length="1"/>
+        <property name="hcpcoperaepicr" type="java.lang.String"
+                  column="HCPCOPERAEPICR" length="14"/>
+        <property name="hcpcoperaanula" type="java.lang.String"
+                  column="HCPCOPERAANULA" length="14"/>
+        <property name="hcpdfechaanula" type="java.util.Date"
+                  column="HCPDFECHAANULA" length="7"/>
+        <property name="hcpcmotivanula" type="java.lang.String"
+                  column="HCPCMOTIVANULA" length="2"/>
+        <property name="hcpcregisinstr" type="java.lang.String"
+                  column="HCPCREGISINSTR" length="1"/>
+        <property name="hcpcoperainstr" type="java.lang.String"
+                  column="HCPCOPERAINSTR" length="14"/>
+        <property name="hcpcobseranula" type="java.lang.String"
+                  column="HCPCOBSERANULA" length="200"/>
+        <property name="hcpctipoayudan" type="java.lang.String"
+                  column="HCPCTIPOAYUDAN" length="1"/>
+        <property name="hcpcprofeayuda" type="java.lang.String"
+                  column="HCPCPROFEAYUDA" length="50"/>
+        <property name="hcpcregisanest" type="java.lang.String"
+                  column="HCPCREGISANEST" length="1"/>
+        <property name="hcpcminutdurac" type="java.lang.String"
+                  column="HCPCMINUTDURAC" length="2"/>
+        <property name="hcpchoradurac" type="java.lang.String"
+                  column="HCPCHORADURAC" length="2"/>
+        <property name="hcpnordenllega" type="java.lang.Integer"
+                  column="HCPNORDENLLEGA" length="4"/> 
+        <property name="hcpctiposedacio" type="java.lang.String"
+                  column="HCPCTIPOSEDACIO" length="2"/>  
+        <property name="hcpcnomresiden"  type="java.lang.String"
+                  column="HCPCNOMRESIDEN" length="100"/>  
+        <property name="hcpcressangre" type="java.lang.String"
+                  column="HCPCRESSANGRE" length="1"/>  
+        <property name="hcpcobserv" type="java.lang.String"
+                  column="HCPCOBSERV" length="4000"/>  
+        <property name="hcpctipohemoco" type="java.lang.String"
+                  column="HCPCTIPOHEMOCO" length="2"/>  
+        <property name="hcpnnumerounid" type="java.lang.Integer"
+                  column="HCPNNUMEROUNID" length="4"/> 
+                  
+        <!-- Associations -->
+        <many-to-one name="hcplusuario"
+                     class="org.profamilia.hc.model.dto.Chusuario" not-null="true">
+            <column name="HCPLUSUARIO"/>
+        </many-to-one>
+        <set name="chdetacirpros" lazy="true" inverse="true" cascade="all">
+            <key>
+                <column name="HDCLCONSUPRINC"/>
+            </key>
+            <one-to-many class="org.profamilia.hc.model.dto.Chdetacirpro"/>
+        </set>
+        <set name="chepicrisis" lazy="true" inverse="true" cascade="all">
+            <key>
+                <column name="HEPLNUMERO"/>
+            </key>
+            <one-to-many class="org.profamilia.hc.model.dto.Chepicrisi"/>
+        </set>
+        <!-- bi-directional one-to-one association to Chdescrquiru -->
+        <one-to-one name="chdescrquiru"
+                    class="org.profamilia.hc.model.dto.Chdescrquiru"
+                    outer-join="auto"/>
+        <!-- bi-directional one-to-many association to Chcontrmedic -->
+        <set name="chcontrmedics" lazy="true" inverse="true" cascade="all">
+            <key>
+                <column name="HCMLCONSULTA"/>
+            </key>
+            <one-to-many class="org.profamilia.hc.model.dto.Chcontrmedic"/>
+        </set>
+        <!-- bi-directional one-to-many association to Chnotaenferm -->
+        <set name="chnotaenferms" lazy="true" inverse="true" cascade="all">
+            <key>
+                <column name="HNELNUMERO"/>
+            </key>
+            <one-to-many class="org.profamilia.hc.model.dto.Chnotaenferm"/>
+        </set>
+        <!-- bi-directional one-to-many association to Chcontroliqu -->
+        <set name="chcontroliqus" lazy="true" inverse="true" cascade="all">
+            <key>
+                <column name="HCLLNUMERO"/>
+            </key>
+            <one-to-many class="org.profamilia.hc.model.dto.Chcontroliqu"/>
+        </set>
+        <!-- bi-directional one-to-many association to Chcanalivena -->
+        <set name="chcanalivenas" lazy="true" inverse="true" cascade="all">
+            <key>
+                <column name="HCVLNUMERO"/>
+            </key>
+            <one-to-many class="org.profamilia.hc.model.dto.Chcanalivena"/>
+        </set>
+        <set name="chsignovitals" lazy="true" inverse="true" cascade="all">
+            <key>
+                <column name="HSVLCONSULTA"/>
+            </key>
+            <one-to-many class="org.profamilia.hc.model.dto.Chsignovital"/>
+        </set>
+        <set name="chevolucions" lazy="true" inverse="true" cascade="all">
+            <key>
+                <column name="HEVLNUMERO"/>
+            </key>
+            <one-to-many class="org.profamilia.hc.model.dto.Chevolucion"/>
+        </set>
+        <set name="chingresoenfs" lazy="true" inverse="true" cascade="all">
+            <key>
+                <column name="HIELNUMERO"/>
+            </key>
+            <one-to-many class="org.profamilia.hc.model.dto.Chingresoenf"/>
+        </set>
+        <set name="chanestesia" lazy="true" inverse="true" cascade="all">
+            <key>
+                <column name="HANLNUMERO"/>
+            </key>
+            <one-to-many class="org.profamilia.hc.model.dto.Chanestesia"/>
+        </set>
+        <set name="chcontmedane" lazy="true" inverse="true" cascade="all">
+            <key>
+                <column name="HMALCONSULTA"/>
+            </key>
+            <one-to-many class="org.profamilia.hc.model.dto.Chcontmedane"/>
+        </set>
+        <!-- bi-directional one-to-many association to Chsegutelefo -->
+        <set name="chsegutelefo" lazy="true" inverse="true" cascade="all">
+            <key>
+                <column name="HSTLNUMERO"/>
+            </key>
+            <one-to-many class="org.profamilia.hc.model.dto.Chsegutelefo"/>
+        </set>
+        <set name="chverquirofa" lazy="true" inverse="true" cascade="all">
+            <key>
+                <column name="HVQLCIRUGIA"/>
+            </key>
+            <one-to-many class="org.profamilia.hc.model.dto.Chverquirofa"/>
+        </set>
+        
+          <set name="chposicanest" lazy="true" inverse="true" cascade="all">
+            <key>
+                <column name="HPALNUMERO"/>
+            </key>
+            <one-to-many class="org.profamilia.hc.model.dto.Chposicanest"/>
+        </set>
+        
+          <set name="chmonitoria" lazy="true" inverse="true" cascade="all">
+            <key>
+                <column name="HMOLNUMERO"/>
+            </key>
+            <one-to-many class="org.profamilia.hc.model.dto.Chmonitoria"/>
+        </set>
+
+        <set name="chventiaerea" lazy="true" inverse="true" cascade="all">
+            <key>
+                <column name="HVALNUMERO"/>
+            </key>
+            <one-to-many class="org.profamilia.hc.model.dto.Chventiaerea"/>
+        </set>
+
+        <set name="chcierreanest" lazy="true" inverse="true" cascade="all">
+            <key>
+                <column name="HCILNUMERO"/>
+            </key>
+            <one-to-many class="org.profamilia.hc.model.dto.Chcierreanest"/>
+        </set>
+
+        <set name="chtecnianests" lazy="true" inverse="true" cascade="all">
+            <key>
+                <column name="HTALNUMERO"/>
+            </key>
+            <one-to-many class="org.profamilia.hc.model.dto.Chtecnianest"/>
+        </set>
+        
+        <set name="chconductas" inverse="true">
+            <key>
+                <column name="HCNLCONSULTA" not-null="true"/>
+              </key>
+            <one-to-many class="org.profamilia.hc.model.dto.Chconducta"/>
+        </set>
+        
+        <set name="chanatopatols" inverse="true">
+            <key>
+                <column name="HAPLCONSULTA" not-null="true"/>
+             </key>
+            <one-to-many class="org.profamilia.hc.model.dto.Chanatopatol"/>
+        </set>
+        
+        <set name="chescvalcai" lazy="true" inverse="true" cascade="all">
+            <key>
+                <column name="HEVCLCONSULTA"/>
+            </key>
+            <one-to-many class="org.profamilia.hc.model.dto.Chescvalcai"/>
+        </set>
+
+            
+    </class>
+</hibernate-mapping>

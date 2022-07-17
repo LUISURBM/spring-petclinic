@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping>
+    <!-- 
+    Created by the Middlegen Hibernate plugin 2.2
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+    <class name="org.profamilia.hc.model.dto.Chregisexame" table="CHREGISEXAME" lazy="false" schema="HISTORIA">
+        <composite-id name="id" class="org.profamilia.hc.model.dto.ChregisexamePK">
+            <key-property name="hrelconsulta" column="HRELCONSULTA" type="java.lang.Long" length="12"/>
+            <key-property name="hrenconsecuti" column="HRENCONSECUTI" type="java.lang.Integer" length="4"/>
+        </composite-id>
+        <version name="version" column="VERSION"/>
+        <property name="hreelaborclini" type="java.lang.String" column="HREELABORCLINI" length="1"/>
+        <property name="hreclaborclini" type="java.lang.String" column="HRECLABORCLINI" length="4000"/>
+        <property name="hreeimagediagn" type="java.lang.String" column="HREEIMAGEDIAGN" length="1"/>
+        <property name="hrecimagediagn" type="java.lang.String" column="HRECIMAGEDIAGN" length="4000"/>
+        <property name="hreeestudpatol" type="java.lang.String" column="HREEESTUDPATOL" length="1"/>
+        <property name="hrecestudpatol" type="java.lang.String" column="HRECESTUDPATOL" length="4000"/>
+        <property name="hreepruebembar" type="java.lang.String" column="HREEPRUEBEMBAR" length="1"/>
+        <property name="hrecpruebembar" type="java.lang.String" column="HRECPRUEBEMBAR" length="4000"/>
+        <property name="hreecitologia" type="java.lang.String" column="HREECITOLOGIA" length="1"/>
+        <property name="hreccitologia" type="java.lang.String" column="HRECCITOLOGIA" length="4000"/>
+        <property name="hreecolposcopi" type="java.lang.String" column="HREECOLPOSCOPI" length="1"/>
+        <property name="hreccolposcopi" type="java.lang.String" column="HRECCOLPOSCOPI" length="4000"/>
+        <property name="hreecualexame" type="java.lang.String" column="HREECUALEXAME" length="1"/>
+        <property name="hreccualexame" type="java.lang.String" column="HRECCUALEXAME" length="4000"/>
+        <property name="hrecoperador" type="java.lang.String" column="HRECOPERADOR" length="14"/>
+        <property name="hredfecregistr" type="java.util.Date" column="HREDFECREGISTR" length="7"/>
+        <property name="hrenclinica" type="java.lang.Integer" column="HRENCLINICA" length="4"/>
+        <!-- Associations -->
+        <!-- derived association(s) for compound key -->
+        <!-- end of derived association(s) -->
+    </class>
+</hibernate-mapping>

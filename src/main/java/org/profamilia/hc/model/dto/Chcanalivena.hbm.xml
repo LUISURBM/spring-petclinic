@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping>
+    <!-- 
+    Created by the Middlegen Hibernate plugin 2.2
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+    <class name="org.profamilia.hc.model.dto.Chcanalivena" table="CHCANALIVENA" schema="HISTORIA" lazy="false">
+        <composite-id name="id" class="org.profamilia.hc.model.dto.ChcanalivenaPK">
+            <key-property name="hcvlnumero" column="HCVLNUMERO" type="java.lang.Long" length="12"/>
+            <key-property name="hcvnllave" column="HCVNLLAVE" type="java.lang.Integer" length="4"/>
+            <key-property name="hcvlconsecutiv" column="HCVLCONSECUTIV" type="java.lang.Integer" length="4"/>
+            <key-property name="hcvctiposervi" column="HCVCTIPOSERVI" type="java.lang.String" length="1"/>
+            
+            
+        </composite-id>
+        <version name="version" column="VERSION"/>
+        <property name="hcvlusuario" type="java.lang.Long" column="HCVLUSUARIO" length="12"/>
+        <property name="hcvecanalizaci" type="java.lang.String" column="HCVECANALIZACI" length="1"/>
+        <property name="hcveasepsia" type="java.lang.String" column="HCVEASEPSIA" length="1"/>
+        <property name="hcvczonacanali" type="java.lang.String" column="HCVCZONACANALI" length="60"/>
+        <property name="hcvnclinica" type="java.lang.Integer" column="HCVNCLINICA" length="4"/>
+        <property name="hcvcestado" type="java.lang.String" column="HCVCESTADO" length="2"/>
+        <property name="hcvdfecregistr" type="java.util.Date" column="HCVDFECREGISTR" length="7"/>
+        <property name="hcvcoperador" type="java.lang.String" column="HCVCOPERADOR" length="14"/>
+        <property name="hcvcmiembsuper" type="java.lang.String" column="HCVCMIEMBSUPER" length="1"/>
+        <property name="hcvcubicamiemb" type="java.lang.String" column="HCVCUBICAMIEMB" length="1"/>
+        <property name="hcvctipocatete" type="java.lang.String" column="HCVCTIPOCATETE" length="1"/>
+        <property name="hcvncalibre" type="java.lang.Integer" column="HCVNCALIBRE" length="3"/>
+        <property name="hcvdfechamodif" type="java.util.Date" column="HCVDFECHAMODIF" length="7"/>
+        <property name="hcvcoperamodif" type="java.lang.String" column="HCVCOPERAMODIF" length="14"/>
+        <property name="hcvnnumerinten" type="java.lang.Integer" column="HCVNNUMERINTEN" length="2"/>
+    </class>
+</hibernate-mapping>

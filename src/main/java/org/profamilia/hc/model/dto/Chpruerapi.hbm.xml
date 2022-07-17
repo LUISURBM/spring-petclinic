@@ -1,0 +1,55 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping>
+    <!-- 
+    Created by the Middlegen Hibernate plugin 2.2
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+    <class name="org.profamilia.hc.model.dto.Chpruerapi" table="CHPRUERAPI" schema="HISTORIA" lazy="false">
+        <id name="hprlconsulta" type="java.lang.Long" column="HPRLCONSULTA">
+            <generator class="assigned"/>
+        </id>
+        <property name="hprndepartamen" type="java.lang.Long" column="HPRNDEPARTAMEN" length="4"/>
+        <property name="hprnmunicipio" type="java.lang.Long" column="HPRNMUNICIPIO" length="4"/>
+        <property name="hprntemperatura" type="java.lang.String" column="HPRNTEMPERATURA" length="3"/>
+        <property name="hprcvih" type="java.lang.String" column="HPRCVIH" length="1"/>
+        <property name="hprchepatitisb" type="java.lang.String" column="HPRCHEPATITISB" length="1"/>
+        <property name="hprchepatitisc" type="java.lang.String" column="HPRCHEPATITISC" length="1"/>
+        <property name="hprcsifilis" type="java.lang.String" column="HPRCSIFILIS" length="1"/>
+        <property name="hprcprueemba" type="java.lang.String" column="HPRCPRUEEMBA" length="1"/>
+        <property name="hprcmarcavih" type="java.lang.String" column="HPRCMARCAVIH" length="40"/>
+        <property name="hprclotevih" type="java.lang.String" column="HPRCLOTEVIH" length="40"/>
+        <property name="hprcreginvvih" type="java.lang.String" column="HPRCREGINVVIH" length="50"/>
+        <property name="hprdfecvenvih" type="java.util.Date" column="HPRDFECVENVIH" length="7"/>
+        <property name="hprcresulvih" type="java.lang.String" column="HPRCRESULVIH" length="1"/>
+        <property name="hprcmarcahepab" type="java.lang.String" column="HPRCMARCAHEPAB" length="40"/>
+        <property name="hprclotehepab" type="java.lang.String" column="HPRCLOTEHEPAB" length="40"/>
+        <property name="hprcreginvhepb" type="java.lang.String" column="HPRCREGINVHEPB" length="50"/>
+        <property name="hprdfecvenhepb" type="java.util.Date" column="HPRDFECVENHEPB" length="7"/>
+        <property name="hprcresulhepab" type="java.lang.String" column="HPRCRESULHEPAB" length="1"/>
+        <property name="hprcmarcahepac" type="java.lang.String" column="HPRCMARCAHEPAC" length="40"/>
+        <property name="hprclotehepac" type="java.lang.String" column="HPRCLOTEHEPAC" length="40"/>
+        <property name="hprcreginvhepc" type="java.lang.String" column="HPRCREGINVHEPC" length="50"/>
+        <property name="hprdfecvenhepc" type="java.util.Date" column="HPRDFECVENHEPC" length="7"/>
+        <property name="hprcresulhepac" type="java.lang.String" column="HPRCRESULHEPAC" length="1"/>
+        <property name="hprcmarcasifil" type="java.lang.String" column="HPRCMARCASIFIL" length="40"/>
+        <property name="hprclotesifi" type="java.lang.String" column="HPRCLOTESIFI" length="40"/>
+        <property name="hprcreginvsif" type="java.lang.String" column="HPRCREGINVSIF" length="50"/>
+        <property name="hprdfecvensif" type="java.util.Date" column="HPRDFECVENSIF" length="7"/>
+        <property name="hprcresulsifil" type="java.lang.String" column="HPRCRESULSIFIL" length="1"/>
+        <property name="hprcmarcapruemb" type="java.lang.String" column="HPRCMARCAPRUEMB" length="40"/>
+        <property name="hprclotepruemb" type="java.lang.String" column="HPRCLOTEPRUEMB" length="40"/>
+        <property name="hprcreginvpruemb" type="java.lang.String" column="HPRCREGINVPRUEMB" length="50"/>
+        <property name="hprdfecvenpruemb" type="java.util.Date" column="HPRDFECVENPRUEMB" length="7"/>
+        <property name="hprcresulpruemb" type="java.lang.String" column="HPRCRESULPRUEMB" length="1"/>
+        <property name="hprcobservacion" type="java.lang.String" column="HPRCOBSERVACION" length="255"/>
+        <property name="hprdfecregistr" type="java.util.Date" column="HPRDFECREGISTR" not-null="true" length="7"/>
+        <property name="hprcoperador" type="java.lang.String" column="HPRCOPERADOR" not-null="true" length="14"/>
+        <property name="version" type="java.lang.Integer" column="VERSION" length="22"/>
+        <!-- Associations -->
+    </class>
+</hibernate-mapping>

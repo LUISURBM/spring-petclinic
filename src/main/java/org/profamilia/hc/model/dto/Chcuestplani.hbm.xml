@@ -1,0 +1,53 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping>
+    <!-- 
+    Created by the Middlegen Hibernate plugin 2.2
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+    <class name="org.profamilia.hc.model.dto.Chcuestplani" table="CHCUESTPLANI"  schema="HISTORIA"
+           lazy="false">
+        <composite-id name="id"
+                      class="org.profamilia.hc.model.dto.ChcuestplaniPK">
+            <key-property name="hcplconsulta" column="HCPLCONSULTA"
+                          type="java.lang.Long" length="12"/>
+            <key-property name="hcpctiposervi" column="HCPCTIPOSERVI"
+                          type="java.lang.String" length="1"/>
+        </composite-id>
+          <version name="version" column="VERSION"/> 
+        <property name="hcpcmetotempla" type="java.lang.String"
+                  column="HCPCMETOTEMPLA" length="1"/>
+        <property name="hcpcmetodefpla" type="java.lang.String"
+                  column="HCPCMETODEFPLA" length="1"/>
+        <property name="hcpcembarazada" type="java.lang.String"
+                  column="HCPCEMBARAZADA" length="1"/>
+        <property name="hcpcmestnormal" type="java.lang.String"
+                  column="HCPCMESTNORMAL" length="1"/>
+        <property name="hcpcfallametem" type="java.lang.String"
+                  column="HCPCFALLAMETEM" length="1"/>
+        <property name="hcpcinfometoso" type="java.lang.String"
+                  column="HCPCINFOMETOSO" length="1"/>
+        <property name="hcpcusametopla" type="java.lang.String"
+                  column="HCPCUSAMETOPLA" length="1"/>
+        <property name="hcpcpartoabort" type="java.lang.String"
+                  column="HCPCPARTOABORT" length="1"/>
+        <property name="hcpcmetodoplan" type="java.lang.String"
+                  column="HCPCMETODOPLAN" length="10"/>
+        <property name="hcpdfechaparto" type="java.util.Date"
+                  column="HCPDFECHAPARTO" length="7"/>
+        <property name="hcpdfechultmes" type="java.util.Date"
+                  column="HCPDFECHULTMES" length="7"/>
+        <property name="hcpcoperador" type="java.lang.String"
+                  column="HCPCOPERADOR" length="14"/>
+        <property name="hcpdfecregistr" type="java.util.Date"
+                  column="HCPDFECREGISTR" length="7"/>        
+        <property name="hcpcmetintemb" type="java.lang.String"
+                  column="HCPCMETINTEMB" length="1"/>
+                  
+                  
+    </class>
+</hibernate-mapping>

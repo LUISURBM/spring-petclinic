@@ -1,0 +1,80 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping>
+    <!-- Created by the Middlegen Hibernate plugin 2.2 http://boss.bekk.no/boss/middlegen/ http://www.hibernate.org/ -->
+    <class name="org.profamilia.hc.model.dto.Chcuestester" table="CHCUESTESTER" schema="HISTORIA" lazy="false">
+        <composite-id name="comp_id" class="org.profamilia.hc.model.dto.ChcuestesterPK">
+            <key-property name="hcelconsulta" column="HCELCONSULTA" type="java.lang.Long" length="12"/>
+            <key-property name="hcectiposerv" column="HCECTIPOSERV" type="java.lang.String" length="1"/>
+        </composite-id>
+        <property name="version" column="VERSION"/>
+        <property name="hcecoperador" type="java.lang.String" column="HCECOPERADOR" length="14"/>
+        <property name="hcedfecreg" type="java.util.Date" column="HCEDFECREG" length="7"/>
+        <property name="hcecobserv" type="java.lang.String" column="HCECOBSERV" length="1000"/>
+        <property name="hcecenfermo" type="java.lang.String" column="HCECENFERMO" length="1"/>
+        <property name="hcecenfergrav" type="java.lang.String" column="HCECENFERGRAV" length="1"/>
+        <property name="hcecoperado" type="java.lang.String" column="HCECOPERADO" length="1"/>
+        <property name="hcectransfusion" type="java.lang.String" column="HCECTRANSFUSION" length="1"/>
+        <property name="hcecpresionalta" type="java.lang.String" column="HCECPRESIONALTA" length="1"/>
+        <property name="hcecejercicio" type="java.lang.String" column="HCECEJERCICIO" length="1"/>
+        <property name="hcecpalpitacion" type="java.lang.String" column="HCECPALPITACION" length="1"/>
+        <property name="hcecsoplo" type="java.lang.String" column="HCECSOPLO" length="1"/>
+        <property name="hcecasma" type="java.lang.String" column="HCECASMA" length="1"/>
+        <property name="hcectos" type="java.lang.String" column="HCECTOS" length="1"/>
+        <property name="hcecgripa" type="java.lang.String" column="HCECGRIPA" length="1"/>
+        <property name="hcecfuma" type="java.lang.String" column="HCECFUMA" length="1"/>
+        <property name="hcecnocigarrillo" type="java.lang.Integer" column="HCECNOCIGARRILLO" length="3"/>
+        <property name="hcecprobanestesia" type="java.lang.String" column="HCECPROBANESTESIA" length="1"/>
+        <property name="hcecalergia" type="java.lang.String" column="HCECALERGIA" length="1"/>
+        <property name="hcecdrogas" type="java.lang.String" column="HCECDROGAS" length="1"/>
+        <property name="hcecconvulsion" type="java.lang.String" column="HCECCONVULSION" length="1"/>
+        <property name="hcecenfermental" type="java.lang.String" column="HCECENFERMENTAL" length="1"/>
+        <property name="hcecdiabetes" type="java.lang.String" column="HCECDIABETES" length="1"/>
+        <property name="hcechepatitis" type="java.lang.String" column="HCECHEPATITIS" length="1"/>
+        <property name="hcecotraenfer" type="java.lang.String" column="HCECOTRAENFER" length="1"/>
+        <property name="hcecembarazo" type="java.lang.String" column="HCECEMBARAZO" length="1"/>
+        <property name="hcedfechultmes" type="java.util.Date" column="HCEDFECHULTMES" length="7"/>
+        <property name="hcecmesnorm" type="java.lang.String" column="HCECMESNORM" length="1"/>
+        <property name="hcecmetplan" type="java.lang.String" column="HCECMETPLAN" length="12"/>
+        <property name="hcedfechaparto" type="java.util.Date" column="HCEDFECHAPARTO" length="7"/>
+        <property name="hcecinfomet" type="java.lang.String" column="HCECINFOMET" length="1"/>
+        <property name="hcecmetdef" type="java.lang.String" column="HCECMETDEF" length="1"/>
+        <property name="hcecligfalla" type="java.lang.String" column="HCECLIGFALLA" length="1"/>
+        <property name="hcecinsester" type="java.lang.String" column="HCECINSESTER" length="1"/>
+        <property name="hcecanenfermo" type="java.lang.String" column="HCECANENFERMO" length="500"/>
+        <property name="hcecanenfergrav" type="java.lang.String" column="HCECANENFERGRAV" length="500"/>
+        <property name="hcecanoperado" type="java.lang.String" column="HCECANOPERADO" length="500"/>
+        <property name="hcecantransfusion" type="java.lang.String" column="HCECANTRANSFUSION" length="500"/>
+        <property name="hcecanpresionalta" type="java.lang.String" column="HCECANPRESIONALTA" length="500"/>
+        <property name="hcecanejercicio" type="java.lang.String" column="HCECANEJERCICIO" length="500"/>
+        <property name="hcecanpalpitacion" type="java.lang.String" column="HCECANPALPITACION" length="500"/>
+        <property name="hcecansoplo" type="java.lang.String" column="HCECANSOPLO" length="500"/>
+        <property name="hcecanasma" type="java.lang.String" column="HCECANASMA" length="500"/>
+        <property name="hcecantos" type="java.lang.String" column="HCECANTOS" length="500"/>
+        <property name="hcecangripa" type="java.lang.String" column="HCECANGRIPA" length="500"/>
+        <property name="hcecanfuma" type="java.lang.String" column="HCECANFUMA" length="500"/>
+        <property name="hcecanprobanestesia" type="java.lang.String" column="HCECANPROBANESTESIA" length="500"/>
+        <property name="hcecanalergia" type="java.lang.String" column="HCECANALERGIA" length="500"/>
+        <property name="hcecandrogas" type="java.lang.String" column="HCECANDROGAS" length="500"/>
+        <property name="hcecanconvulsion" type="java.lang.String" column="HCECANCONVULSION" length="500"/>
+        <property name="hcecanenfermental" type="java.lang.String" column="HCECANENFERMENTAL" length="500"/>
+        <property name="hcecandiabetes" type="java.lang.String" column="HCECANDIABETES" length="500"/>
+        <property name="hcecanhepatitis" type="java.lang.String" column="HCECANHEPATITIS" length="500"/>
+        <property name="hcecanotraenfer" type="java.lang.String" column="HCECANOTRAENFER" length="500"/>
+        <property name="hcecanembarazo" type="java.lang.String" column="HCECANEMBARAZO" length="500"/>
+        <property name="hcecanmesnorm" type="java.lang.String" column="HCECANMESNORM" length="500"/>
+        <property name="hcecanmetplan" type="java.lang.String" column="HCECANMETPLAN" length="500"/>
+        <property name="hcecaninfomet" type="java.lang.String" column="HCECANINFOMET" length="500"/>
+        <property name="hcecanmetdef" type="java.lang.String" column="HCECANMETDEF" length="500"/>
+        <property name="hcecanligfalla" type="java.lang.String" column="HCECANLIGFALLA" length="500"/>
+        <property name="hcecaninsester" type="java.lang.String" column="HCECANINSESTER" length="500"/>
+        
+        <property name="hcecesparto" type="java.lang.String" column="HCECESPARTO" length="1"/>
+        <property name="hcecutilmetplan" type="java.lang.String" column="HCECUTILMETPLAN" length="1"/>
+        
+        
+        <!-- Associations -->
+        <!-- derived association(s) for compound key -->
+        <!-- end of derived association(s) -->
+    </class>
+</hibernate-mapping>

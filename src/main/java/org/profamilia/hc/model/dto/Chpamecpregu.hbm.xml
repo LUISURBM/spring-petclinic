@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping>
+    <!-- 
+    Created by the Middlegen Hibernate plugin 2.2
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+    <class name="org.profamilia.hc.model.dto.Chpamecpregu" table="CHPAMECPREGU"   schema="HISTORIA"  lazy="false">
+        <composite-id name="id" class="org.profamilia.hc.model.dto.ChpamecpreguPK">
+            <key-property name="hppncodigo" column="HPPNCODIGO" type="java.lang.Integer" length="4"/>
+            <key-property name="hppncodigtema" column="HPPNCODIGTEMA" type="java.lang.Integer" length="4"/>
+            <key-property name="hppncodigindic" column="HPPNCODIGINDIC" type="java.lang.Integer" length="4"/>
+        </composite-id>
+         <version name="version" column="VERSION"/>
+        <property name="hppcdescripcio" type="java.lang.String" column="HPPCDESCRIPCIO" not-null="true" length="500"/>
+        <property name="hppcestado" type="java.lang.String" column="HPPCESTADO" length="2"/>
+        <property name="hppdfecregistr" type="java.util.Date" column="HPPDFECREGISTR" length="7"/>
+        <property name="hppcoperador" type="java.lang.String" column="HPPCOPERADOR" length="14"/>
+         </class>
+</hibernate-mapping>

@@ -1,0 +1,104 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <!-- 
+        Auto-generated mapping file from
+        the hibernate.org cfg2hbm engine
+-->
+    <class name="org.profamilia.hc.model.dto.Cpcontrato" table="CPCONTRATO" schema="CLINICO">
+        <composite-id name="id" class="org.profamilia.hc.model.dto.CpcontratoId">
+            <key-property name="ccnnclinic" type="integer">
+                <column name="CCNNCLINIC" precision="4" scale="0"/>
+            </key-property>
+            <key-property name="ccnnnumero" type="integer">
+                <column name="CCNNNUMERO" precision="6" scale="0"/>
+            </key-property>
+        </composite-id>
+        <version name="version" column="VERSION"/>
+        <property name="ccncdescri" type="string">
+            <column name="CCNCDESCRI" length="40" not-null="true"/>
+        </property>
+        <property name="ccnanit" type="big_decimal">
+            <column name="CCNANIT" precision="15" not-null="true"/>
+        </property>
+        <property name="ccndfecreg" type="date">
+            <column name="CCNDFECREG" length="7" not-null="true"/>
+        </property>
+        <property name="ccnthorreg" type="timestamp">
+            <column name="CCNTHORREG" length="7" not-null="true"/>
+        </property>
+        <property name="ccndfecini" type="date">
+            <column name="CCNDFECINI" length="7" not-null="true"/>
+        </property>
+        <property name="ccndfecfin" type="date">
+            <column name="CCNDFECFIN" length="7" not-null="true"/>
+        </property>
+        <property name="ccnavaltot" type="big_decimal">
+            <column name="CCNAVALTOT" precision="15" not-null="true"/>
+        </property>
+        <property name="ccnavalcub" type="big_decimal">
+            <column name="CCNAVALCUB" precision="15" not-null="true"/>
+        </property>
+        <property name="ccnnswcont" type="integer">
+            <column name="CCNNSWCONT" precision="4" scale="0" not-null="true"/>
+        </property>
+        <property name="ccncusuar" type="string">
+            <column name="CCNCUSUAR" length="14" not-null="true"/>
+        </property>
+        <property name="ccncporcen" type="string">
+            <column name="CCNCPORCEN" length="1" not-null="true"/>
+        </property>
+        <property name="ccncregime" type="string">
+            <column name="CCNCREGIME" length="1" not-null="true"/>
+        </property>
+        <property name="ccnccodsgs" type="string">
+            <column name="CCNCCODSGS" length="6"/>
+        </property>
+        <property name="ccncobserv" type="string">
+            <column name="CCNCOBSERV" length="40"/>
+        </property>
+        <property name="ccncestado" type="string">
+            <column name="CCNCESTADO" length="2"/>
+        </property>
+        <property name="ccnnnumcon" type="integer">
+            <column name="CCNNNUMCON" precision="9" scale="0" not-null="true"/>
+        </property>
+        <property name="ccncdirecc" type="string">
+            <column name="CCNCDIRECC" length="30" not-null="true"/>
+        </property>
+        <property name="ccnctelefo" type="string">
+            <column name="CCNCTELEFO" length="20" not-null="true"/>
+        </property>
+        <property name="ccncciudad" type="string">
+            <column name="CCNCCIUDAD" length="30"/>
+        </property>
+        <property name="ccncdepart" type="string">
+            <column name="CCNCDEPART" length="30"/>
+        </property>
+        <property name="ccncfax" type="string">
+            <column name="CCNCFAX" length="20"/>
+        </property>
+        <property name="ccnndigver" type="integer">
+            <column name="CCNNDIGVER" precision="4" scale="0" not-null="true"/>
+        </property>
+        <property name="ccnndonant" type="big_decimal">
+            <column name="CCNNDONANT" precision="10" scale="0" not-null="true"/>
+        </property>
+        <property name="ccnncopfac" type="integer">
+            <column name="CCNNCOPFAC" precision="4" scale="0" not-null="true"/>
+        </property>
+        <property name="ccnccapita" type="string">
+            <column name="CCNCCAPITA" length="1" not-null="true"/>
+        </property>
+        <property name="ccncactite" type="string">
+            <column name="CCNCACTITE" length="1" not-null="true"/>
+        </property>
+        <property name="ccnnclient" type="integer">
+            <column name="CCNNCLIENT" precision="9" scale="0" not-null="true"/>
+        </property>
+        <property name="ccnnswalca" type="integer">
+            <column name="CCNNSWALCA" precision="4" not-null="true"/>
+        </property>
+    </class>
+</hibernate-mapping>

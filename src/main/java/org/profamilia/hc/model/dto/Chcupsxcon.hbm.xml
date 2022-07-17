@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping>
+    <!-- 
+    Created by the Middlegen Hibernate plugin 2.2
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+    <class name="org.profamilia.hc.model.dto.Chcupsxcon" table="CHCUPSXCON" schema="HISTORIA" lazy="false">
+        <id name="ccupnconsec" type="java.lang.Long" column="CCUPNCONSEC">
+            <generator class="sequence">
+                <param name="sequence">HISTORIA.CHCUPSXCON_SEQ</param>
+            </generator>
+        </id>
+        <property name="ccupnconsulta" type="long" column="CCUPNCONSULTA" not-null="true" length="10"/>
+        <property name="ccupccodcups" type="java.lang.String" column="CCUPCCODCUPS" not-null="true" length="20"/>
+        <property name="ccupcusuareg" type="java.lang.String" column="CCUPCUSUAREG" not-null="true" length="14"/>
+        <property name="ccupdfecreg" type="java.util.Date" column="CCUPDFECREG" not-null="true" length="7"/>
+        <property name="version" type="java.math.BigDecimal" column="VERSION" length="22"/>
+        <property name="ccupcdatosrel" type="java.lang.String" column="CCUPCDATOSREL" not-null="true" length="100"/>
+        <!-- Associations -->
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping>
+    <!-- 
+    Created by the Middlegen Hibernate plugin 2.2
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+    <class name="org.profamilia.hc.model.dto.Chdispoaplic" table="CHDISPOAPLIC" lazy="false"  schema="HISTORIA" >
+        <composite-id name="id" class="org.profamilia.hc.model.dto.ChdispoaplicPK">
+            <key-property name="hdalconsulta" column="HDALCONSULTA" type="java.lang.Long" length="12"/>
+            <key-property name="hdactiposerv" column="HDACTIPOSERV" type="java.lang.String" length="1"/>
+        </composite-id>
+        <version name="version" column="VERSION"/>
+        <property name="hdacdispoinser" type="java.lang.String" column="HDACDISPOINSER" length="2"/>
+        <property name="hdacretiro" type="java.lang.String" column="HDACRETIRO" length="1"/>
+        <property name="hdacdescrproce" type="java.lang.String" column="HDACDESCRPROCE" length="4000"/>
+        <property name="hdadfecregistr" type="java.util.Date" column="HDADFECREGISTR" length="7"/>
+        <property name="hdacoperador" type="java.lang.String" column="HDACOPERADOR" length="14"/>
+        <property name="hdacdisporetir" type="java.lang.String" column="HDACDISPORETIR" length="2"/>
+        <property name="hdacinsercion" type="java.lang.String" column="HDACINSERCION" length="20"/>
+        <property name="hdacmotivretir" type="java.lang.String" column="HDACMOTIVRETIR" length="4"/>
+        <property name="hdacdiagprinci" type="java.lang.String" column="HDACDIAGPRINCI" length="4"/>
+        <property name="hdacdiagposter" type="java.lang.String" column="HDACDIAGPOSTER" length="4"/>
+        <property name="hdacdiagcompli" type="java.lang.String" column="HDACDIAGCOMPLI" length="4"/>
+        <property name="hdacdescrcompl" type="java.lang.String" column="HDACDESCRCOMPL" length="4000"/>
+        <property name="hdanfinalidad" type="java.lang.Integer" column="HDANFINALIDAD" length="4"/>
+        <property name="hdanambitproce" type="java.lang.Integer" column="HDANAMBITPROCE" length="1"/>
+        <property name="hdanrealizacio" type="java.lang.Integer" column="HDANREALIZACIO" length="4"/>
+        <property name="hdacdeslugmar" type="java.lang.String" column="HDACDESLUGMAR" length="4000"/>
+        <property name="hdacreaproins" type="java.lang.String" column="HDACREAPROINS" length="1"/>
+        <property name="hdacreaproret" type="java.lang.String" column="HDACREAPRORET" length="1"/>
+        
+        <!-- Associations -->
+        <!-- derived association(s) for compound key -->
+        <!-- end of derived association(s) -->
+    </class>
+</hibernate-mapping>

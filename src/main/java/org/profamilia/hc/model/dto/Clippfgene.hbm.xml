@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping>
+    <!-- 
+    Created by the Middlegen Hibernate plugin 2.2
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+    <class name="org.profamilia.hc.model.dto.Clippfgene" table="CLIPPFGENE" lazy="false" schema="CLINICO">
+        <id name="clccodid" type="java.lang.String" column="CLCCODID">
+            <meta attribute="field-description" inherit="false">Id</meta>
+            <generator class="assigned"/>
+        </id>
+        <property name="clcgenero" type="java.lang.String" column="CLCGENERO" length="20"/>
+        <property name="clnedamax" type="java.math.BigDecimal" column="CLNEDAMAX" length="22"/>
+        <property name="clnedamin" type="java.math.BigDecimal" column="CLNEDAMIN" length="22"/>
+        <property name="clcnumuid" type="java.lang.String" column="CLCNUMUID" length="20"/>
+        <property name="clncodigo" type="java.lang.String" column="CLNCODIGO" length="20"/>
+        <!-- Associations -->
+    </class>
+</hibernate-mapping>

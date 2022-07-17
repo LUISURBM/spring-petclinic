@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping>
+    <!-- 
+    Created by the Middlegen Hibernate plugin 2.2
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+    <class name="org.profamilia.hc.model.dto.Chanatopatol" table="CHANATOPATOL"
+               schema="HISTORIA" lazy="false">
+        <composite-id name="id"
+                      class="org.profamilia.hc.model.dto.ChanatopatolPK">
+            <key-property name="haplconsulta" column="HAPLCONSULTA"
+                          type="java.lang.Long" length="12"/>
+            <key-property name="hapctiposervi" column="HAPCTIPOSERVI"
+                          type="java.lang.String" length="1"/>
+            <key-property name="hapnconsecutiv" column="HAPNCONSECUTIV"
+                          type="java.lang.Integer" length="4"/>
+        </composite-id>
+        <version name="version" column="VERSION"/>
+        <property name="hapcorigepieza" type="java.lang.String"
+                  column="HAPCORIGEPIEZA" length="4000"/>
+        <property name="hapdfecregistr" type="java.util.Date"
+                  column="HAPDFECREGISTR" length="7"/>
+        <property name="hapcoperador" type="java.lang.String"
+                  column="HAPCOPERADOR" length="14"/>
+        <!-- Associations -->
+        <!-- derived association(s) for compound key -->
+        <!-- end of derived association(s) -->
+        <!-- bi-directional one-to-one association to Chconsulta -->
+    </class>
+</hibernate-mapping>

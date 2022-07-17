@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping>
+    <!-- 
+    Created by the Middlegen Hibernate plugin 2.2
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+    <class name="org.profamilia.hc.model.dto.Chantecfarma" table="CHANTECFARMA" lazy="false" schema="HISTORIA">
+        <composite-id name="comp_id" class="org.profamilia.hc.model.dto.ChantecfarmaPK">
+            <key-property name="haflconsulta" column="HAFLCONSULTA" type="java.lang.Long" length="12"/>
+            <key-property name="hafctiposervi" column="HAFCTIPOSERVI" type="java.lang.String" length="1"/>
+        </composite-id>
+         <version name="version" column="VERSION"/> 
+        <property name="hafcaines" type="java.lang.String" column="HAFCAINES" length="1"/>
+        <property name="hafcainecual" type="java.lang.String" column="HAFCAINECUAL" length="200"/>
+        <property name="hafcainefrecu" type="java.lang.String" column="HAFCAINEFRECU" length="200"/>
+        <property name="hafcantiagre" type="java.lang.String" column="HAFCANTIAGRE" length="1"/>
+        <property name="hafcaagrecual" type="java.lang.String" column="HAFCAAGRECUAL" length="200"/>
+        <property name="hafcaagrefrecu" type="java.lang.String" column="HAFCAAGREFRECU" length="200"/>
+        <property name="hafcanticoag" type="java.lang.String" column="HAFCANTICOAG" length="1"/>
+        <property name="hafcacoagcual" type="java.lang.String" column="HAFCACOAGCUAL" length="200"/>
+        <property name="hafcacoagfrec" type="java.lang.String" column="HAFCACOAGFREC" length="200"/>
+        <property name="hafcaplimedic" type="java.lang.String" column="HAFCAPLIMEDIC" length="1"/>
+        <property name="hafcaplmedcual" type="java.lang.String" column="HAFCAPLMEDCUAL" length="200"/>
+        <property name="hafcaplivacu" type="java.lang.String" column="HAFCAPLIVACU" length="1"/>
+        <property name="hafcapvacucual" type="java.lang.String" column="HAFCAPVACUCUAL" length="200"/>
+        <property name="haflapvacudias" type="java.lang.Long" column="HAFLAPVACUDIAS" length="22"/>
+        <property name="hafdfecharegis" type="java.util.Date" column="HAFDFECHAREGIS" length="7"/>
+        <property name="hafcoperador" type="java.lang.String" column="HAFCOPERADOR" length="14"/>
+       
+        <!-- Associations -->
+        <!-- derived association(s) for compound key -->
+        <!-- end of derived association(s) -->
+    </class>
+</hibernate-mapping>

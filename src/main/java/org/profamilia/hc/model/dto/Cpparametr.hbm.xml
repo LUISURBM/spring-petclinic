@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping>
+    <!-- 
+    Created by the Middlegen Hibernate plugin 2.2
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+    <class name="org.profamilia.hc.model.dto.Cpparametr" table="CPPARAMETR" lazy="false" schema="CLINICO">
+        <composite-id name="comp_id" class="org.profamilia.hc.model.dto.CpparametrPK">
+            <key-property name="cpccampo" column="CPCCAMPO" type="java.lang.String" length="12"/>
+            <key-property name="cpnconsec" column="CPNCONSEC" type="java.lang.Integer" length="4"/>
+        </composite-id>
+         <version name="version" column="VERSION"/>
+        <property name="cpcdescrip" type="java.lang.String" column="CPCDESCRIP" not-null="true" length="60"/>
+        <property name="cpcvalor" type="java.lang.String" column="CPCVALOR" not-null="true" length="6"/>
+        <property name="cpcestado" type="java.lang.String" column="CPCESTADO" not-null="true" length="2"/>
+       
+        <!-- Associations -->
+        <!-- derived association(s) for compound key -->
+        <!-- end of derived association(s) -->
+    </class>
+</hibernate-mapping>

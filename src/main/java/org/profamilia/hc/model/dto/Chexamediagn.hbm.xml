@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping>
+    <!-- 
+    Created by the Middlegen Hibernate plugin 2.2
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+    <class name="org.profamilia.hc.model.dto.Chexamediagn" table="CHEXAMEDIAGN"
+           schema="HISTORIA" lazy="false">
+        <composite-id name="id" class="org.profamilia.hc.model.dto.ChexamediagnPK">
+            <key-property name="hedlconsulta" column="HEDLCONSULTA"
+                          type="java.lang.Long" length="12"/>
+            <key-property name="hedctiposervi" column="HEDCTIPOSERVI"
+                          type="java.lang.String" length="1"/>
+        </composite-id>
+        <version name="version" column="VERSION"/>
+        <property name="hedccontraindi" type="java.lang.String"
+                  column="HEDCCONTRAINDI" length="4000"/>
+        <property name="heddfecregistr" type="java.util.Date"
+                  column="HEDDFECREGISTR" length="7"/>
+        <property name="hedcoperador" type="java.lang.String"
+                  column="HEDCOPERADOR" length="14"/>
+        <property name="hedcmetodopaci" type="java.lang.String"
+                  column="HEDCMETODOPACI" length="14"/>
+        <property name="hedcmetodosuge" type="java.lang.String"
+                  column="HEDCMETODOSUGE" length="14"/>
+        <property name="hedcmetodosoli" type="java.lang.String"
+                  column="HEDCMETODOSOLI" length="14"/>
+        <property name="hedcprimmet" type="java.lang.String"
+                  column="HEDCPRIMMET" length="1"/>
+        <property name="hednmetodopaq" type="java.lang.Long"
+                  column="HEDNMETODOPAQ" length="12"/>          
+    </class>
+</hibernate-mapping>

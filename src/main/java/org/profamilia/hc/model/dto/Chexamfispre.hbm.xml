@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping>
+    <!-- 
+    Created by the Middlegen Hibernate plugin 2.2
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+    <class name="org.profamilia.hc.model.dto.Chexamfispre" table="CHEXAMFISPRE" lazy="false">
+        <composite-id name="id" class="org.profamilia.hc.model.dto.ChexamfisprePK">
+            <key-property name="heplconsulta" column="HEPLCONSULTA" type="java.lang.Long" length="12"/>
+            <key-property name="hepctiposervi" column="HEPCTIPOSERVI" type="java.lang.String" length="1"/>
+        </composite-id>
+        <property name="hepcpresart1" type="java.lang.String" column="HEPCPRESART1" length="3"/>
+        <property name="hepnfreccard" type="java.lang.Integer" column="HEPNFRECCARD" length="4"/>
+        <property name="hepnfrecresp" type="java.lang.Integer" column="HEPNFRECRESP" length="4"/>
+        <property name="hepapeso" type="java.math.BigDecimal" column="HEPAPESO" length="5"/>
+        <property name="hepatalla" type="java.math.BigDecimal" column="HEPATALLA" length="5"/>
+        <property name="hepaimc" type="java.math.BigDecimal" column="HEPAIMC" length="5"/>
+        <property name="hepatemperatu" type="java.math.BigDecimal" column="HEPATEMPERATU" length="5"/>
+        <property name="hepnpericefali" type="java.lang.Integer" column="HEPNPERICEFALI" length="4"/>
+        <property name="hepnsatuoxihe" type="java.lang.Integer" column="HEPNSATUOXIHE" length="4"/>
+        <property name="hepthallaorl" type="java.lang.String" column="HEPTHALLAORL" length="4000"/>
+        <property name="hepthallcarpul" type="java.lang.String" column="HEPTHALLCARPUL" length="4000"/>
+        <property name="hepnalturuteri" type="java.math.BigDecimal" column="HEPNALTURUTERI" length="5"/>
+        <property name="hepnfreccarfet" type="java.lang.Integer" column="HEPNFRECCARFET" length="3"/>
+        <property name="hepcmovimfetal" type="java.lang.String" column="HEPCMOVIMFETAL" length="1"/>
+        <property name="hepthallaextre" type="java.lang.String" column="HEPTHALLAEXTRE" length="4000"/>
+        <property name="hepcedemas" type="java.lang.String" column="HEPCEDEMAS" length="1"/>
+        <property name="hepthallsisner" type="java.lang.String" column="HEPTHALLSISNER" length="4000"/>
+        <property name="hepdfecregistr" type="java.util.Date" column="HEPDFECREGISTR" length="7"/>
+        <property name="hepcoperador" type="java.lang.String" column="HEPCOPERADOR" length="14"/>
+        <property name="hepcpresart2" type="java.lang.String" column="HEPCPRESART2" length="3"/>
+        <property name="hepetipotemper" type="java.lang.String" column="HEPETIPOTEMPER" length="1"/>
+        <property name="version" type="java.lang.Integer" column="VERSION" length="22"/>
+        <!-- Associations -->
+        <!-- derived association(s) for compound key -->
+        <!-- end of derived association(s) -->
+    </class>
+</hibernate-mapping>

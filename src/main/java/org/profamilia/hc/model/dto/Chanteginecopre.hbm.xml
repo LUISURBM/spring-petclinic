@@ -1,0 +1,49 @@
+<?xml version="1.0"?> 
+<!DOCTYPE hibernate-mapping PUBLIC
+     "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+     "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping>
+   <!--      Created by the Middlegen Hibernate plugin 2.2      
+         http://boss.bekk.no/boss/middlegen/     
+         http://www.hibernate.org/ 
+         -->
+   <class name="org.profamilia.hc.model.dto.Chanteginecopre" table="CHANTEGINECOPRE" schema="HISTORIA" lazy="false">
+      <id name="haglconsulta" type="java.lang.Long" column="HAGLCONSULTA">
+         <generator class="assigned"/>
+      </id>
+        <version name="version" column="VERSION"/>
+      <property name="hagnmenarquia" type="java.lang.Integer" column="HAGNMENARQUIA" length="2"/>
+      <property name="hagdfur" type="java.util.Date" column="HAGDFUR" length="7"/>
+      <property name="hagdfpr" type="java.util.Date" column="HAGDFPR" length="7"/>
+      <property name="hagdfecregistr" type="java.util.Date" column="HAGDFECREGISTR" length="7"/>
+      <property name="hagcoperador" type="java.lang.String" column="HAGCOPERADOR" length="14"/>
+      <property name="hagnfreciclo" type="java.lang.Integer" column="HAGNFRECICLO" length="3"/>
+      <property name="hagndurciclo" type="java.lang.Integer" column="HAGNDURCICLO" length="2"/>
+      <property name="hagetipciclo" type="java.lang.String" column="HAGETIPCICLO" length="1"/>
+      <property name="hagcmetodoplan" type="java.lang.String" column="HAGCMETODOPLAN" length="12"/>
+      <property name="hagcotrometodo" type="java.lang.String" column="HAGCOTROMETODO" length="50"/>
+      <property name="hagctiposervi" type="java.lang.String" column="HAGCTIPOSERVI" not-null="true" length="1"/>
+      <property name="hagcobservacio" type="java.lang.String" column="HAGCOBSERVACIO" length="4000"/>
+      <property name="hagcresulcitol" type="java.lang.String" column="HAGCRESULCITOL" length="4"/>
+      <property name="hagcotroresul" type="java.lang.String" column="HAGCOTRORESUL" length="100"/>
+      <property name="hagcultcitolo" type="java.lang.String" column="HAGCULTCITOLO" length="2"/>
+      <property name="hagcnoaplica" type="java.lang.String" column="HAGCNOAPLICA" length="1"/>
+      <property name="hagcpildoobser" type="java.lang.String" column="HAGCPILDOOBSER" length="4000"/>
+      <property name="hagcpildouso" type="java.lang.String" column="HAGCPILDOUSO" length="1"/>
+      <property name="hagcciclos" type="java.lang.String" column="HAGCCICLOS" length="10"/>
+      <property name="hagdfecfinmetodoplan" type="java.util.Date" column="HAGDFECFINMETODOPLAN" length="7"/>
+      <property name="hagcfluvag" type="java.lang.String" column="HAGCFLUVAG" length="2"/>
+      <property name="hagcobsfluvag" type="java.lang.String" column="HAGCOBSFLUVAG" length="100"/>
+      <property name="hagctratainfert" type="java.lang.String" column="HAGCTRATAINFERT" length="2"/>
+      <property name="hagcobstratainfert" type="java.lang.String" column="HAGCOBSTRATAINFERT" length="1000"/>
+      <property name="hagnfinfreciclo" type="java.lang.Integer" column="HAGNFINFRECICLO" length="3"/>
+      <property name="hagnfindurciclo" type="java.lang.Integer" column="HAGNFINDURCICLO" length="2"/>
+      <property name="hagdfecultaplmet" type="java.util.Date" column="HAGDFECULTAPLMET" length="7"/>
+      <property name="hagccolposcopi" type="java.lang.String" column="HAGCCOLPOSCOPI" length="2"/>
+      <property name="hagcresulcolpo" type="java.lang.String" column="HAGCRESULCOLPO" length="1000"/>
+      <!-- Associations -->
+      
+    
+   </class>
+
+</hibernate-mapping> 

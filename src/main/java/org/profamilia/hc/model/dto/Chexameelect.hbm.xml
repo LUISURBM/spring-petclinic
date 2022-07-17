@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping>
+    <!-- 
+    Created by the Middlegen Hibernate plugin 2.2
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+    <class name="org.profamilia.hc.model.dto.Chexameelect" table="CHEXAMEELECT"  schema="HISTORIA"
+           lazy="false">
+        <composite-id name="id"
+                      class="org.profamilia.hc.model.dto.ChexameelectPK">
+            <key-property name="heelconsulta" column="HEELCONSULTA"
+                          type="java.lang.Long" length="12"/>
+            <key-property name="heenconsecuti" column="HEENCONSECUTI"
+                          type="java.lang.Integer" length="4"/>
+            <key-property name="heectiposervi" column="HEECTIPOSERVI"
+                          type="java.lang.String" length="1"/>
+             <key-property name="heenllave" column="HEENLLAVE"
+                          type="java.lang.Integer" length="4"/>
+        </composite-id>
+          <version name="version" column="VERSION"/> 
+        <property name="heecobservacio" type="java.lang.String"
+                  column="HEECOBSERVACIO" length="4000"/>
+        <property name="heecoperador" type="java.lang.String"
+                  column="HEECOPERADOR" length="14"/>
+        <property name="heedfecregistr" type="java.util.Date"
+                  column="HEEDFECREGISTR" length="7"/>
+                  
+                    <many-to-one name="cpservicio"  lazy = "false"
+                     class="org.profamilia.hc.model.dto.Cpservicio"
+                     not-null="true">
+            <column name="HEECSERVICIO"/>
+        </many-to-one>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,123 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+ <!-- 
+		Auto-generated mapping file from
+		the hibernate.org cfg2hbm engine
+	-->
+ <class name="org.profamilia.hc.model.dto.Cncapaespe" table="CNCAPAESPE" schema="CLINICO">
+  <composite-id name="id" class="org.profamilia.hc.model.dto.CncapaespeId">
+     <key-property name="ccenclinic" type="integer">
+       <column name="CCENCLINIC" precision="4" scale="0"/>
+     </key-property>
+     <key-property name="ccennumero" type="integer">
+       <column name="CCENNUMERO" precision="9"/>
+     </key-property>
+  </composite-id>
+  <version name="version" column="VERSION"/>
+  <property name="ccectipide" type="string">
+   <column name="CCECTIPIDE" length="3" not-null="true"/>
+  </property>
+  <property name="cceanumide" type="big_decimal">
+   <column name="CCEANUMIDE" precision="15" />
+  </property>
+  <property name="ccecpacien" type="string">
+   <column name="CCECPACIEN" length="45" not-null="true"/>
+  </property>
+  <property name="ccedfeccap" type="java.util.Date">
+   <column name="CCEDFECCAP" length="7" not-null="true"/>
+  </property>
+  <property name="ccenesperm" type="integer">
+   <column name="CCENESPERM" precision="9" scale="0"/>
+  </property>
+  <property name="ccencantid" type="integer">
+   <column name="CCENCANTID" precision="4" scale="0"/>
+  </property>
+  <property name="ccenprorap" type="integer">
+   <column name="CCENPRORAP" precision="4" scale="0"/>
+  </property>
+  <property name="ccenprolen" type="integer">
+   <column name="CCENPROLEN" precision="4" scale="0"/>
+  </property>
+  <property name="ccenpendul" type="integer">
+   <column name="CCENPENDUL" precision="4" scale="0"/>
+  </property>
+  <property name="cceninmovi" type="integer">
+   <column name="CCENINMOVI" precision="4" scale="0"/>
+  </property>
+  <property name="ccenvitali" type="integer">
+   <column name="CCENVITALI" precision="4" scale="0"/>
+  </property>
+  <property name="ccenposcan" type="integer">
+   <column name="CCENPOSCAN" precision="4" scale="0"/>
+  </property>
+  <property name="ccenposrap" type="integer">
+   <column name="CCENPOSRAP" precision="4" scale="0"/>
+  </property>
+  <property name="ccenposlen" type="integer">
+   <column name="CCENPOSLEN" precision="4" scale="0"/>
+  </property>
+  <property name="ccenpospen" type="integer">
+   <column name="CCENPOSPEN" precision="4" scale="0"/>
+  </property>
+  <property name="ccenposinm" type="integer">
+   <column name="CCENPOSINM" precision="4" scale="0"/>
+  </property>
+  <property name="ccenposvit" type="integer">
+   <column name="CCENPOSVIT" precision="4" scale="0"/>
+  </property>
+  <property name="ccennormal" type="integer">
+   <column name="CCENNORMAL" precision="4" scale="0"/>
+  </property>
+  <property name="ccenligelo" type="integer">
+   <column name="CCENLIGELO" precision="4" scale="0"/>
+  </property>
+  <property name="ccenmarelo" type="integer">
+   <column name="CCENMARELO" precision="4" scale="0"/>
+  </property>
+  <property name="ccenanoacr" type="integer">
+   <column name="CCENANOACR" precision="4" scale="0"/>
+  </property>
+  <property name="ccenanomul" type="integer">
+   <column name="CCENANOMUL" precision="4" scale="0"/>
+  </property>
+  <property name="ccexobserv" type="string">
+   <column name="CCEXOBSERV" length="4000"/>
+  </property>
+  <property name="ccedfecreg" type="java.util.Date">
+   <column name="CCEDFECREG" length="7" not-null="true"/>
+  </property>
+  <property name="ccecusureg" type="string">
+   <column name="CCECUSUREG" length="14" not-null="true"/>
+  </property>
+  <property name="cceavolume" type="big_decimal">
+   <column name="CCEAVOLUME" precision="9" />
+  </property>
+  <property name="cceaposvol" type="big_decimal">
+   <column name="CCEAPOSVOL" precision="9" />
+  </property>
+  <property name="ccenprogre" type="integer">
+   <column name="CCENPROGRE" precision="4" scale="0"/>
+  </property>
+  <property name="ccenpospgr" type="integer">
+   <column name="CCENPOSPGR" precision="4" scale="0"/>
+  </property>
+  <property name="ccenanorma" type="integer">
+   <column name="CCENANORMA" precision="4" scale="0"/>
+  </property>
+  <property name="ccenanocab" type="integer">
+   <column name="CCENANOCAB" precision="4" scale="0"/>
+  </property>
+  <property name="ccenanopie" type="integer">
+   <column name="CCENANOPIE" precision="4" scale="0"/>
+  </property>
+  <property name="ccenanofla" type="integer">
+   <column name="CCENANOFLA" precision="4" scale="0"/>
+  </property>
+  <property name="ccectipocp" type="string">
+   <column name="CCECTIPOCP" length="1" not-null="true"/>
+  </property>
+  
+ </class>
+</hibernate-mapping>

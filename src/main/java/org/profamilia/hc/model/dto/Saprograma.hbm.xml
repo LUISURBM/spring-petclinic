@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping>
+    <!-- 
+    Created by the Middlegen Hibernate plugin 2.2
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+    <class name="org.profamilia.hc.model.dto.Saprograma" table="SAPROGRAMA"  schema="ACTIVOS" lazy="false">
+        <id name="spgcnombre" type="java.lang.String" column="SPGCNOMBRE">
+            <generator class="assigned"/>
+        </id>
+        <property name="spgcdescri" type="java.lang.String" column="SPGCDESCRI" not-null="true" length="30"/>
+        <property name="spgcaplica" type="java.lang.String" column="SPGCAPLICA" length="20"/>
+        <property name="spgdfecing" type="java.sql.Date" column="SPGDFECING" not-null="true" length="7"/>
+        <property name="spgcetapa" type="java.lang.String" column="SPGCETAPA" not-null="true" length="2"/>
+        <property name="version" type="java.math.BigDecimal" column="VERSION" length="22"/>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <!-- 
+        Auto-generated mapping file from
+        the hibernate.org cfg2hbm engine
+-->
+    <class name="org.profamilia.hc.model.dto.Cptipocont" table="CPTIPOCONT"
+           schema="CLINICO">
+        <id name="ctcnnumero" type="integer">
+            <column name="CTCNNUMERO" precision="4" scale="0"/>
+            <generator class="assigned"/>
+        </id>
+        <version name="version" column="VERSION"/>
+        <property name="ctccdescri" type="string">
+            <column name="CTCCDESCRI" length="40" not-null="true"/>
+        </property>
+        <property name="ctccpagnom" type="string">
+            <column name="CTCCPAGNOM" length="1" not-null="true"/>
+        </property>
+        <property name="ctccconnom" type="string">
+            <column name="CTCCCONNOM" length="1" not-null="true"/>
+        </property>
+        <property name="ctcdfecreg" type="date">
+            <column name="CTCDFECREG" length="7" not-null="true"/>
+        </property>
+        <property name="ctcthorreg" type="timestamp">
+            <column name="CTCTHORREG" length="7" not-null="true"/>
+        </property>
+        <property name="ctccusuar" type="string">
+            <column name="CTCCUSUAR" length="14" not-null="true"/>
+        </property>
+        <property name="ctccestado" type="string">
+            <column name="CTCCESTADO" length="2" not-null="true"/>
+        </property>
+        <property name="ctccdestaj" type="string">
+            <column name="CTCCDESTAJ" length="1" not-null="true"/>
+        </property>
+        <property name="ctccporhor" type="string">
+            <column name="CTCCPORHOR" length="1" not-null="true"/>
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,74 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping>
+    <!-- 
+    Created by the Middlegen Hibernate plugin 2.2
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+    <class name="org.profamilia.hc.model.dto.Chsegutelefo" table="CHSEGUTELEFO" schema="HISTORIA" lazy="false">
+        <composite-id name="id" class="org.profamilia.hc.model.dto.ChsegutelefoPK">
+            <key-property name="hstlnumero" column="HSTLNUMERO" type="java.lang.Long" length="12"/>
+            <key-property name="hstlconsecutiv" column="HSTLCONSECUTIV" type="java.lang.Integer" length="12"/>
+            <key-property name="hstctiposervi" column="HSTCTIPOSERVI" type="java.lang.String" length="1"/>
+        </composite-id>
+        <version name="version" column="VERSION"/>
+        <property name="hstlusuario" type="java.lang.Long" column="HSTLUSUARIO" length="12"/>
+        <property name="hstcsegtelefo" type="java.lang.String" column="HSTCSEGTELEFO" length="4000"/>
+        <property name="hstnclinica" type="java.lang.Integer" column="HSTNCLINICA" length="4"/>
+        <property name="hstcestado" type="java.lang.String" column="HSTCESTADO" length="2"/>
+        <property name="hstcetapa" type="java.lang.String" column="HSTCETAPA" length="2"/>
+        <property name="hstdfecregistr" type="java.util.Date" column="HSTDFECREGISTR" length="7"/>
+        <property name="hstcoperador" type="java.lang.String" column="HSTCOPERADOR" length="14"/>
+        <property name="hstdfechaseg" type="java.util.Date" column="HSTDFECHASEG" length="7"/>
+        <property name="hstcreccoloro" type="java.lang.String" column="HSTCRECCOLORO" length="2"/>
+        <property name="hstcdolormedi" type="java.lang.String" column="HSTCDOLORMEDI" length="2"/>
+        <property name="hstccalorheri" type="java.lang.String" column="HSTCCALORHERI" length="2"/>
+        <property name="hstcenroherid" type="java.lang.String" column="HSTCENROHERID" length="2"/>
+        <property name="hstcsalisanher" type="java.lang.String" column="HSTCSALISANHER" length="2"/>
+        <property name="hstcsalipusher" type="java.lang.String" column="HSTCSALIPUSHER" length="2"/>
+        <property name="hstcsaliliqher" type="java.lang.String" column="HSTCSALILIQHER" length="2"/>
+        <property name="hstcmalolorhe" type="java.lang.String" column="HSTCMALOLORHE" length="2"/>
+        <property name="hstcpremolest" type="java.lang.String" column="HSTCPREMOLEST" length="2"/>
+        <property name="hstccualmoles" type="java.lang.String" column="HSTCCUALMOLES" length="2"/>
+        <property name="hstcobseradic" type="java.lang.String" column="HSTCOBSERADIC" length="2"/>
+        <property name="hstcobservaci" type="java.lang.String" column="HSTCOBSERVACI" length="2"/>
+        
+        
+        
+        
+        <property name="hstcenrositio" type="java.lang.String" column="HSTCENROSITIO" length="2"/>
+        <property name="hstcpresedolo" type="java.lang.String" column="HSTCPRESEDOLO" length="2"/>
+        <property name="hstcrecucanal" type="java.lang.String" column="HSTCRECUCANAL" length="2"/>
+        <property name="hstcpussavena" type="java.lang.String" column="HSTCPUSSAVENA" length="2"/>
+        <property name="hstcpresmoles" type="java.lang.String" column="HSTCPRESMOLES" length="2"/>
+        <property name="hstcmolescual" type="java.lang.String" column="HSTCMOLESCUAL" length="4000"/>
+        <property name="hstcobservadi" type="java.lang.String" column="HSTCOBSERVADI" length="2"/>
+        <property name="hstcobseracio" type="java.lang.String" column="HSTCOBSERACIO" length="4000"/>
+        <property name="hstccasiconpos" type="java.lang.String" column="HSTCASICONPOS" length="2"/>
+        <property name="hstcsigantcon" type="java.lang.String" column="HSTCSIGANTCON" length="2"/>
+        <property name="hstcordeantiv" type="java.lang.String" column="HSTCORDEANTIV" length="2"/>
+        <property name="hstccualantiv" type="java.lang.String" column="HSTCCUALANTIV" length="4000"/>
+        <property name="hstcmedimedic" type="java.lang.String" column="HSTCMEDIMEDIC" length="2"/>
+        <property name="hstcmedpospr" type="java.lang.String" column="HSTCMEDPOSPR" length="2"/>
+        <property name="hstccualhosp" type="java.lang.String" column="HSTCCUALHOSP" length="4000"/>
+        <property name="hstcdiermedic" type="java.lang.String" column="HSTCDIERMEDIC" length="2"/>
+        <property name="hstccualmedic" type="java.lang.String" column="HSTCCUALMEDIC" length="4000"/>
+        <property name="hstcdeputrata" type="java.lang.String" column="HSTCDEPUTRATA" length="2"/>
+        <property name="hstcrecoemiti" type="java.lang.String" column="HSTCRECOEMITI" length="2"/>
+        <property name="hstcrecomend" type="java.lang.String" column="HSTCRECOMEND" length="4000"/>
+        <property name="hstcnoasiconpos" type="java.lang.String" column="HSTCNOASICONPOS" length="4000"/>
+        
+        
+        
+        
+        
+        
+        
+        
+        
+    </class>
+</hibernate-mapping>

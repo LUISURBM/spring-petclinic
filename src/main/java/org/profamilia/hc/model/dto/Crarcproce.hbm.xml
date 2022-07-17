@@ -1,0 +1,74 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+<!-- 
+        Auto-generated mapping file from
+        the hibernate.org cfg2hbm engine
+-->
+    <class name="org.profamilia.hc.model.dto.Crarcproce" table="CRARCPROCE" schema="CLINICO">
+        <composite-id name="id" class="org.profamilia.hc.model.dto.CrarcproceId">
+            <key-property name="capnconcli" type="integer">
+                <column name="CAPNCONCLI" precision="10" scale="0" />
+            </key-property>
+            <key-property name="capnconsec" type="integer">
+                <column name="CAPNCONSEC" precision="4" scale="0" />
+            </key-property>
+        </composite-id>
+        <version name="version" column="VERSION"/>
+        <property name="capdfecpro" type="date">
+            <column name="CAPDFECPRO" length="7" not-null="true" />
+        </property>
+        <property name="capctipide" type="string">
+            <column name="CAPCTIPIDE" length="2" not-null="true" />
+        </property>
+        <property name="capanumide" type="big_decimal">
+            <column name="CAPANUMIDE" precision="15" not-null="true" />
+        </property>
+        <property name="capnconcep" type="integer">
+            <column name="CAPNCONCEP" precision="4" scale="0" not-null="true" />
+        </property>
+        <property name="capcautori" type="string">
+            <column name="CAPCAUTORI" length="15" />
+        </property>
+        <property name="capccodpro" type="string">
+            <column name="CAPCCODPRO" length="12" not-null="true" />
+        </property>
+        <property name="capnambito" type="integer">
+            <column name="CAPNAMBITO" precision="4" scale="0" not-null="true" />
+        </property>
+        <property name="capnfinpro" type="integer">
+            <column name="CAPNFINPRO" precision="4" scale="0" not-null="true" />
+        </property>
+        <property name="capcperate" type="string">
+            <column name="CAPCPERATE" length="1" />
+        </property>
+        <property name="capcdiagpr" type="string">
+            <column name="CAPCDIAGPR" length="4" />
+        </property>
+        <property name="capcdiagre" type="string">
+            <column name="CAPCDIAGRE" length="4" />
+        </property>
+        <property name="capccompli" type="string">
+            <column name="CAPCCOMPLI" length="4" />
+        </property>
+        <property name="capnrealiz" type="integer">
+            <column name="CAPNREALIZ" precision="4" scale="0" not-null="true" />
+        </property>
+        <property name="capavalpro" type="big_decimal">
+            <column name="CAPAVALPRO" precision="15" not-null="true" />
+        </property>
+        <property name="capdfecreg" type="date">
+            <column name="CAPDFECREG" length="7" not-null="true" />
+        </property>
+        <property name="capcusuari" type="string">
+            <column name="CAPCUSUARI" length="14" not-null="true" />
+        </property>
+        <property name="caplusuario" type="big_decimal">
+            <column name="CAPLUSUARIO" precision="12" not-null="true" />
+        </property>
+        <property name="capnclinic" type="integer">
+            <column name="CAPNCLINIC" precision="4" scale="0" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

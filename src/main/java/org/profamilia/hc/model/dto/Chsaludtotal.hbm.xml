@@ -1,0 +1,102 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+    
+<hibernate-mapping>
+<!-- 
+    Created by the Middlegen Hibernate plugin 2.2
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+
+<class 
+    name="org.profamilia.hc.model.dto.Chsaludtotal" 
+    table="CHSALUDTOTAL"
+    lazy="false"
+>
+
+    <composite-id>
+        <key-property 
+            name="contrato" 
+            column="CONTRATO" 
+            type="java.lang.Long"
+            length="15"
+        />
+        <key-property 
+            name="tipoiden" 
+            column="TIPOIDEN" 
+            type="java.lang.String"
+            length="2"
+        />
+        <key-property 
+            name="numiden" 
+            column="NUMIDEN" 
+            type="java.math.BigDecimal"
+            length="19"
+        />
+        <key-property 
+            name="primerapellido" 
+            column="PRIMERAPELLIDO" 
+            type="java.lang.String"
+            length="20"
+        />
+        <key-property 
+            name="segundoapellido" 
+            column="SEGUNDOAPELLIDO" 
+            type="java.lang.String"
+            length="20"
+        />
+        <key-property 
+            name="nombres" 
+            column="NOMBRES" 
+            type="java.lang.String"
+            length="40"
+        />
+        <key-property 
+            name="fechanac" 
+            column="FECHANAC" 
+            type="java.util.Date"
+            length="7"
+        />
+        <key-property 
+            name="edad" 
+            column="EDAD" 
+            type="java.lang.Integer"
+            length="3"
+        />
+        <key-property 
+            name="sucursal" 
+            column="SUCURSAL" 
+            type="java.lang.String"
+            length="30"
+        />
+        <key-property 
+            name="numerocelular" 
+            column="NUMEROCELULAR" 
+            type="java.lang.String"
+            length="20"
+        />
+        <key-property 
+            name="direccion" 
+            column="DIRECCION" 
+            type="java.lang.String"
+            length="60"
+        />
+        <key-property 
+            name="otrocontrato" 
+            column="OTROCONTRATO" 
+            type="java.lang.String"
+            length="30"
+        />
+    </composite-id>    
+
+
+    <!-- Associations -->
+    <!-- derived association(s) for compound key -->
+    <!-- end of derived association(s) -->
+  
+
+</class>
+</hibernate-mapping>

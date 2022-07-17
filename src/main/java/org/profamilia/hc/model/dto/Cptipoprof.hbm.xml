@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+<!-- 
+        Auto-generated mapping file from
+        the hibernate.org cfg2hbm engine
+-->
+    <class name="org.profamilia.hc.model.dto.Cptipoprof" table="CPTIPOPROF" schema="CLINICO">
+        <id name="ctpncodigo" type="big_decimal">
+            <column name="CTPNCODIGO" precision="4" scale="0" />
+            <generator class="assigned" />
+        </id>
+        <version name="version" column="VERSION"/>
+        <property name="ctpcdescri" type="string">
+            <column name="CTPCDESCRI" length="40" not-null="true" />
+        </property>
+        <property name="ctpcusuar" type="string">
+            <column name="CTPCUSUAR" length="14" not-null="true" />
+        </property>
+        <property name="ctpdfecreg" type="date">
+            <column name="CTPDFECREG" length="7" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

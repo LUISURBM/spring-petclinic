@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping>
+    <!-- 
+    Created by the Middlegen Hibernate plugin 2.2
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+    <class name="org.profamilia.hc.model.dto.Ctwsdetsolent" table="CTWSDETSOLENT" schema="CLINICO" lazy="false">
+        <composite-id name="comp_id" class="org.profamilia.hc.model.dto.CtwsdetsolentPK">
+            <key-property name="cdsennumero" column="CDSENNUMERO" type="java.lang.Long" length="12"/>
+            <key-property name="cdsenitem" column="CDSENITEM" type="java.lang.Integer" length="4"/>
+        </composite-id>
+        <property name="cdseccodmat" type="java.lang.String" column="CDSECCODMAT" not-null="true" length="12"/>
+        <property name="cdsencante" type="int" column="CDSENCANTE" not-null="true" length="3"/>
+        <property name="cdseclote" type="java.lang.String" column="CDSECLOTE" not-null="true" length="50"/>
+        <property name="cdsedfecvenc" type="java.util.Date" column="CDSEDFECVENC" not-null="true" length="7"/>
+        <property name="cdsecarea" type="java.lang.String" column="CDSECAREA" length="30"/>
+        <property name="cdseccab1" type="java.lang.String" column="CDSECCAB1" length="4000"/>
+        <property name="cdseccab2" type="java.lang.String" column="CDSECCAB2" length="4000"/>
+        <property name="cdsedfecreg" type="java.util.Date" column="CDSEDFECREG" not-null="true" length="7"/>
+        <property name="cdsecusuareg" type="java.lang.String" column="CDSECUSUAREG" not-null="true" length="14"/>
+        <property name="version" type="java.lang.Long" column="VERSION" length="10"/>
+        <property name="cdseccodsust" type="java.lang.String" column="CDSECCODSUST" length="12"/>
+        <property name="cdsecunimed" type="java.lang.String" column="CDSECUNIMED" not-null="true" length="3"/>
+        <!-- Associations -->
+        <!-- derived association(s) for compound key -->
+        <!-- end of derived association(s) -->
+    </class>
+</hibernate-mapping>

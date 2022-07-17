@@ -1,0 +1,84 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping>
+    <!-- 
+    Created by the Middlegen Hibernate plugin 2.2
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+    <class name="org.profamilia.hc.model.dto.Cncitotoma" table="CNCITOTOMA" schema="CLINICO" lazy="false">
+        <id name="ctmnconsec" type="java.lang.Integer" column="CTMNCONSEC">
+            <generator class="assigned"/>
+        </id>
+        <version name="version" column="VERSION"/>
+        <property name="ctmnclinic" type="java.lang.Integer" column="CTMNCLINIC" not-null="true" length="4"/>
+        <property name="ctmnnumero" type="java.lang.Integer" column="CTMNNUMERO" not-null="true" length="9"/>
+        <property name="ctmdfectom" type="java.util.Date" column="CTMDFECTOM" not-null="true" length="7"/>
+        <property name="ctmctomada" type="java.lang.String" column="CTMCTOMADA" not-null="true" length="4"/>
+        <property name="ctmcnomtom" type="java.lang.String" column="CTMCNOMTOM" not-null="true" length="30"/>
+        <property name="ctmcesquem" type="java.lang.String" column="CTMCESQUEM" not-null="true" length="1"/>
+        <property name="ctmdultmen" type="java.util.Date" column="CTMDULTMEN" not-null="true" length="7"/>
+        <property name="ctmdultpar" type="java.util.Date" column="CTMDULTPAR" length="7"/>
+        <property name="ctmngestac" type="java.lang.Integer" column="CTMNGESTAC" not-null="true" length="4"/>
+        <property name="ctmnpartos" type="java.lang.Integer" column="CTMNPARTOS" not-null="true" length="4"/>
+        <property name="ctmnaborto" type="java.lang.Integer" column="CTMNABORTO" not-null="true" length="4"/>
+        <property name="ctmcembara" type="java.lang.String" column="CTMCEMBARA" not-null="true" length="1"/>
+        <property name="ctmnedarel" type="java.lang.Integer" column="CTMNEDAREL" not-null="true" length="4"/>
+        <property name="ctmcmetpla" type="java.lang.String" column="CTMCMETPLA" not-null="true" length="3"/>
+        <property name="ctmdultcit" type="java.util.Date" column="CTMDULTCIT" length="7"/>
+        <property name="ctmcultres" type="java.lang.String" column="CTMCULTRES" length="4"/>
+        <property name="ctmcpningu" type="java.lang.String" column="CTMCPNINGU" length="1"/>
+        <property name="ctmcpcaute" type="java.lang.String" column="CTMCPCAUTE" length="1"/>
+        <property name="ctmdpcaute" type="java.util.Date" column="CTMDPCAUTE" length="7"/>
+        <property name="ctmcphiste" type="java.lang.String" column="CTMCPHISTE" length="1"/>
+        <property name="ctmdphiste" type="java.util.Date" column="CTMDPHISTE" length="7"/>
+        <property name="ctmcpconiz" type="java.lang.String" column="CTMCPCONIZ" length="1"/>
+        <property name="ctmdpconiz" type="java.util.Date" column="CTMDPCONIZ" length="7"/>
+        <property name="ctmcpradio" type="java.lang.String" column="CTMCPRADIO" length="1"/>
+        <property name="ctmdpradio" type="java.util.Date" column="CTMDPRADIO" length="7"/>
+        <property name="ctmcpbiops" type="java.lang.String" column="CTMCPBIOPS" length="1"/>
+        <property name="ctmdpbiops" type="java.util.Date" column="CTMDPBIOPS" length="7"/>
+        <property name="ctmcpcriot" type="java.lang.String" column="CTMCPCRIOT" length="1"/>
+        <property name="ctmdpcriot" type="java.util.Date" column="CTMDPCRIOT" length="7"/>
+        <property name="ctmcpata" type="java.lang.String" column="CTMCPATA" length="1"/>
+        <property name="ctmdpata" type="java.util.Date" column="CTMDPATA" length="7"/>
+        <property name="ctmcpotro" type="java.lang.String" column="CTMCPOTRO" length="1"/>
+        <property name="ctmdpotro" type="java.util.Date" column="CTMDPOTRO" length="7"/>
+        <property name="ctmcpdotro" type="java.lang.String" column="CTMCPDOTRO" length="20"/>
+        <property name="ctmcaspcue" type="java.lang.String" column="CTMCASPCUE" not-null="true" length="60"/>
+        <property name="ctmcusureg" type="java.lang.String" column="CTMCUSUREG" not-null="true" length="12"/>
+        <property name="ctmdfecreg" type="java.util.Date" column="CTMDFECREG" not-null="true" length="7"/>
+        <property name="ctmcvph" type="java.lang.String" column="CTMCVPH" length="1"/>
+        <property name="ctmnvph" type="java.lang.Integer" column="CTMNVPH" length="1"/>
+        <property name="ctmdvph" type="java.util.Date" column="CTMDVPH" length="7"/>
+        <property name="ctmcotrmet" type="java.lang.String" column="CTMCOTRMET" length="60"/>
+        <property name="ctmcobstom" type="java.lang.String" column="CTMCOBSTOM" length="600"/>
+        <property name="ctmcotrhal" type="java.lang.String" column="CTMCOTRHAL" length="100"/>
+        <property name="ctmcpvapor" type="java.lang.String" column="CTMCPVAPOR" length="1"/>
+        <property name="ctmdpvapor" type="java.util.Date" column="CTMDPVAPOR" length="7"/>
+        <property name="ctmcphormo" type="java.lang.String" column="CTMCPHORMO" length="1"/>
+        <property name="ctmdphormo" type="java.util.Date" column="CTMDPHORMO" length="7"/>
+        <property name="ctmccomvph" type="java.lang.String" column="CTMCCOMVPH" length="1"/>
+        <property name="ctmntiemet" type="java.math.BigDecimal" column="CTMNTIEMET"  length="3"/>
+        <property name="ctmclactan" type="java.lang.String" column="CTMCLACTAN" length="1"/>
+        <property name="ctmctipusu" type="java.lang.String" column="CTMCTIPUSU" length="2"/>
+        <property name="ctmcnumrem" type="java.lang.String" column="CTMCNUMREM" length="20"/>
+        <property name="ctmcplaemb" type="java.lang.String" column="CTMCPLAEMB" length="1"/>
+        <property name="ctmcccuconv" type="java.lang.String" column="CTMCCCUCONV" length="1"/>
+        <property name="ctmcccubl" type="java.lang.String" column="CTMCCCUBL" length="1"/>
+        <property name="ctmctipifi" type="java.lang.String" column="CTMCTIPIFI" length="1"/>
+        <property name="ctmdtipifi" type="java.util.Date" column="CTMDTIPIFI" length="7"/>
+        <property name="ctmcpcolpo" type="java.lang.String" column="CTMCPCOLPO" length="1"/>
+        <property name="ctmdpcolpo" type="java.util.Date" column="CTMDPCOLPO" length="7"/>
+        <property name="ctmntiphis" type="java.lang.Integer" column="CTMNTIPHIS" length="4"/>
+        <property name="ctmcotresq" type="java.lang.String" column="CTMCOTRESQ" length="60"/>
+        <property name="ctmnnudoad" type="java.lang.Integer" column="CTMNNUDOAD" length="2"/>
+        <property name="ctmcesqvph" type="java.lang.String" column="CTMCESQVPH" length="1"/>
+        <property name="ctmcotresqvph" type="java.lang.String" column="CTMCOTRESQVPH" length="60"/>
+        
+         <!-- Associations -->
+    </class>
+</hibernate-mapping>

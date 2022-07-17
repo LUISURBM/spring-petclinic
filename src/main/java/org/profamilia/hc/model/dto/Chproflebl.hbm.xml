@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping>
+    <!-- 
+    Created by the Middlegen Hibernate plugin 2.2
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+    <class name="org.profamilia.hc.model.dto.Chproflebl" table="CHPROFLEBL"  schema="HISTORIA"  lazy="false">
+        <composite-id name="comp_id" class="org.profamilia.hc.model.dto.ChprofleblPK">
+            <key-property name="hplncodprofes" column="HPLNCODPROFES" type="big_decimal" length="10"/>
+            <key-property name="hplnclinica" column="HPLNCLINICA" type="java.lang.Integer" length="4"/>
+        </composite-id>
+        <property name="hplcestado" type="java.lang.String" column="HPLCESTADO" not-null="true" length="2"/>
+        <property name="hplcoperador" type="java.lang.String" column="HPLCOPERADOR" not-null="true" length="14"/>
+        <property name="hpldfechamod" type="java.sql.Date" column="HPLDFECHAMOD" not-null="true" length="7"/>
+        <!-- Associations -->
+        <!-- derived association(s) for compound key -->
+        <!-- end of derived association(s) -->
+    </class>
+</hibernate-mapping>
+

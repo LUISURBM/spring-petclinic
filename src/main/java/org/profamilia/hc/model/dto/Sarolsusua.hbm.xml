@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <!-- 
+        Auto-generated mapping file from
+        the hibernate.org cfg2hbm engine
+-->
+    <class name="org.profamilia.hc.model.dto.Sarolsusua" table="SAROLSUSUA" schema="ACTIVOS">
+        <composite-id name="id" class="org.profamilia.hc.model.dto.SarolsusuaId">
+            <key-property name="srucrol" type="string">
+                <column name="SRUCROL" length="14"/>
+            </key-property>
+            <key-property name="srucaplica" type="string">
+                <column name="SRUCAPLICA" length="20"/>
+            </key-property>
+            <key-property name="srucusuari" type="string">
+                <column name="SRUCUSUARI" length="14"/>
+            </key-property>
+        </composite-id>
+        <version name="version" column="VERSION"/>
+        <property name="srudfeccre" type="date">
+            <column name="SRUDFECCRE" length="7" not-null="true"/>
+        </property>
+        <property name="srucusucre" type="string">
+            <column name="SRUCUSUCRE" length="20"/>
+        </property>
+        <property name="srudfecini" type="date">
+            <column name="SRUDFECINI" length="7" not-null="true"/>
+        </property>
+        <property name="srudfecfin" type="date">
+            <column name="SRUDFECFIN" length="7"/>
+        </property>
+        <property name="srucetapa" type="string">
+            <column name="SRUCETAPA" length="2" not-null="false"/>
+        </property>
+    </class>
+</hibernate-mapping>

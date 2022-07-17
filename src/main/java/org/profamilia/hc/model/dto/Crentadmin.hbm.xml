@@ -1,0 +1,59 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+<!-- 
+        Auto-generated mapping file from
+        the hibernate.org cfg2hbm engine
+-->
+    <class name="org.profamilia.hc.model.dto.Crentadmin" table="CRENTADMIN" schema="CLINICO">
+        <composite-id name="id" class="org.profamilia.hc.model.dto.CrentadminId">
+            <key-property name="ceanclinic" type="integer">
+                <column name="CEANCLINIC" precision="4" scale="0" />
+            </key-property>
+            <key-property name="ceaccodigo" type="string">
+                <column name="CEACCODIGO" length="6" />
+            </key-property>
+        </composite-id>
+        <version name="version" column="VERSION"/>
+        <property name="ceactipent" type="string">
+            <column name="CEACTIPENT" length="1" not-null="true" />
+        </property>
+        <property name="ceacnombre" type="string">
+            <column name="CEACNOMBRE" length="30" not-null="true" />
+        </property>
+        <property name="ceacnumcon" type="string">
+            <column name="CEACNUMCON" length="15" />
+        </property>
+        <property name="ceacdespla" type="string">
+            <column name="CEACDESPLA" length="30" />
+        </property>
+        <property name="ceacarccon" type="string">
+            <column name="CEACARCCON" length="1" not-null="true" />
+        </property>
+        <property name="ceacarcpro" type="string">
+            <column name="CEACARCPRO" length="1" not-null="true" />
+        </property>
+        <property name="ceacarchos" type="string">
+            <column name="CEACARCHOS" length="1" not-null="true" />
+        </property>
+        <property name="ceacarcurg" type="string">
+            <column name="CEACARCURG" length="1" not-null="true" />
+        </property>
+        <property name="ceacarcnac" type="string">
+            <column name="CEACARCNAC" length="1" not-null="true" />
+        </property>
+        <property name="ceacarcmed" type="string">
+            <column name="CEACARCMED" length="1" not-null="true" />
+        </property>
+        <property name="ceacarcotr" type="string">
+            <column name="CEACARCOTR" length="1" not-null="true" />
+        </property>
+        <property name="ceadfecreg" type="date">
+            <column name="CEADFECREG" length="7" not-null="true" />
+        </property>
+        <property name="ceacusuari" type="string">
+            <column name="CEACUSUARI" length="14" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

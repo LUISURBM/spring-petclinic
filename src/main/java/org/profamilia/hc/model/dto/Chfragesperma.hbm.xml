@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping>
+    <!-- 
+    Created by the Middlegen Hibernate plugin 2.2
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+    <class name="org.profamilia.hc.model.dto.Chfragesperma" table="CHFRAGESPERMA" schema="HISTORIA"  lazy="false">
+        <id name="cfelconsulta" type="java.lang.Long" column="CFELCONSULTA" length="12">
+            <generator class="assigned"/>
+        </id>
+        <version name="version" column="VERSION"/>
+        <property name="cfelnumepaci" type="java.lang.Long" column="CFELNUMEPACI" length="12"/>
+        <property name="cfecusuaregi" type="java.lang.String" column="CFECUSUAREGI" length="14"/>
+        <property name="cfetfechregi" type="java.util.Date" column="CFETFECHREGI" length="11"/>
+        <property name="cfelnumexam" type="java.lang.Integer" column="CFELNUMEXAM" length="6"/>
+        <property name="cfectipomuest" type="java.lang.String" column="CFECTIPOMUEST" length="30"/>
+        <property name="cfedfechtoma" type="java.util.Date" column="CFEDFECHTOMA" length="7"/>
+        <property name="cfedfechinfor" type="java.util.Date" column="CFEDFECHINFOR" length="7"/>
+        <property name="cfecmediremi" type="java.lang.String" column="CFECMEDIREMI" length="100"/>
+        <property name="cfelnesinfrag" type="java.lang.Integer" column="CFELNESINFRAG" length="5"/>
+        <property name="cfelneconfrag" type="java.lang.Integer" column="CFELNECONFRAG" length="5"/>
+        <property name="cfenidf" type="java.lang.Double" column="CFENIDF" length="3"/>
+        <property name="cfenporcentaje" type="java.lang.Double" column="CFENPORCENTAJE" length="3"/>
+        <property name="cfecconsidera" type="java.lang.String" column="CFECCONSIDERA" length="30"/>
+        <property name="cfecusuaprofes" type="java.lang.String" column="CFECUSUAPROFES" length="14"/>
+        <!-- Associations -->
+    </class>
+</hibernate-mapping>

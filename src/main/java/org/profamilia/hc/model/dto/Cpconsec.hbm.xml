@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+<!-- 
+        Auto-generated mapping file from
+        the hibernate.org cfg2hbm engine
+-->
+    <class name="org.profamilia.hc.model.dto.Cpconsec" table="CPCONSEC" schema="CLINICO">
+        <id name="conncodigo" type="integer">
+            <column name="CONNCODIGO" precision="4" scale="0" />
+            <generator class="assigned" />
+        </id> 
+        <version name="version" column="VERSION"/>       
+        <property name="concdescri" type="string">
+            <column name="CONCDESCRI" length="40" not-null="true" />
+        </property>
+        <property name="connnumero" type="integer">
+            <column name="CONNNUMERO" precision="9" scale="0" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,57 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping>
+    <!-- 
+    Created by the Middlegen Hibernate plugin 2.2
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+    <class name="org.profamilia.hc.model.dto.Chresersangr" table="CHRESERSANGR"  schema="HISTORIA"
+           lazy="false">
+        <composite-id name="id"
+                      class="org.profamilia.hc.model.dto.ChresersangrPK">
+            <key-property name="hrslconsulta" column="HRSLCONSULTA"
+                          type="java.lang.Long" length="12"/>
+            <key-property name="hrsctiposervi" column="HRSCTIPOSERVI"
+                          type="java.lang.String" length="1"/>
+             <key-property name="hrscconsecutiv" column="HRSCCONSECUTIV"
+                          type="java.lang.Integer" length="4"/>
+        </composite-id>
+          <version name="version" column="VERSION"/> 
+        <property name="hrscdiagprin" type="java.lang.String"
+                  column="HRSCDIAGPRIN" length="4"/>
+        <property name="hrseconmedalta" type="java.lang.String"
+                  column="HRSECONMEDALTA" length="1"/>
+        <property name="hrsccirugiapro" type="java.lang.String"
+                  column="HRSCCIRUGIAPRO" length="80"/>
+        <property name="hrsdcirugiapro" type="java.util.Date"
+                  column="HRSDCIRUGIAPRO" length="7"/>
+        <property name="hrsdfecregistr" type="java.util.Date"
+                  column="HRSDFECREGISTR" length="7"/>
+        <property name="hrsetiporeserv" type="java.lang.String"
+                  column="HRSETIPORESERV" length="1"/>
+        <property name="hrsecompreserv" type="java.lang.String"
+                  column="HRSECOMPRESERV" length="1"/>
+        <property name="hrsncantidadre" type="java.lang.Integer"
+                  column="HRSNCANTIDADRE" length="1"/>
+        <property name="hrseotrcompsan" type="java.lang.String"
+                  column="HRSEOTRCOMPSAN" length="1"/>
+        <property name="hrsccuales" type="java.lang.String" column="HRSCCUALES"
+                  length="80"/>
+        <property name="hrscsolbancsan" type="java.lang.String"
+                  column="HRSCSOLBANCSAN" length="80"/>
+        <property name="hrsncantiotros" type="java.lang.Integer"
+                  column="HRSNCANTIOTROS" length="1"/>
+        <property name="hrscoperador" type="java.lang.String"
+                  column="HRSCOPERADOR" length="14"/>
+        <property name="hrscconmedaltadesc" type="java.lang.String"
+                  column="HRSCCONMEDALTADESC" length="200"/>         
+        <property name="hrscviaacceso" type="java.lang.String"
+                  column="HRSCVIAACCESO" length="2"/>        
+        <property name="hrsccualviaacceso" type="java.lang.String"
+                  column="HRSCCUALVIAACCESO" length="80"/>
+    </class>
+</hibernate-mapping>

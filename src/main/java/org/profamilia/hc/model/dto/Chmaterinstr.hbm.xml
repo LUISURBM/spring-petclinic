@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping>
+    <!-- 
+    Created by the Middlegen Hibernate plugin 2.2
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+    <class name="org.profamilia.hc.model.dto.Chmaterinstr" table="CHMATERINSTR" lazy="false" schema="HISTORIA">
+        <id name="hmincodigo" type="java.lang.Integer" column="HMINCODIGO">
+            <generator class="assigned"/>
+        </id>
+        <version name="version" column="VERSION"/> 
+        <property name="hmicdescripcio" type="java.lang.String" column="HMICDESCRIPCIO" length="50"/>
+        <property name="hmicestado" type="java.lang.String" column="HMICESTADO" length="2"/>
+        <property name="hmidfecregistr" type="java.util.Date" column="HMIDFECREGISTR" length="7"/>
+        <property name="hmicoperador" type="java.lang.String" column="HMICOPERADOR" length="14"/>
+        <!-- Associations -->
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <!-- 
+        Auto-generated mapping file from
+        the hibernate.org cfg2hbm engine
+-->
+    <class name="org.profamilia.hc.model.dto.Sapermusua" table="SAPERMUSUA" schema="ACTIVOS"  lazy="false">
+        <composite-id name="id" class="org.profamilia.hc.model.dto.SapermusuaId">
+            <key-property name="spucprogra" type="string">
+                <column name="SPUCPROGRA" length="20"/>
+            </key-property>
+            <key-property name="spucusuari" type="string">
+                <column name="SPUCUSUARI" length="14"/>
+            </key-property>
+        </composite-id>
+        <version name="version" column="VERSION"/>
+        <property name="spuchabili" type="string">
+            <column name="SPUCHABILI" length="1" not-null="true"/>
+        </property>
+        <property name="spucetapa" type="string">
+            <column name="SPUCETAPA" length="2" not-null="true"/>
+        </property>
+        <property name="spudfeccre" type="date">
+            <column name="SPUDFECCRE" length="7" not-null="true"/>
+        </property>
+        <property name="spucusucre" type="string">
+            <column name="SPUCUSUCRE" length="14" not-null="false"/>
+        </property>
+        <property name="spucaplica" type="string">
+            <column name="SPUCAPLICA" length="40" not-null="false"/>
+        </property>
+        <property name="spudfecini" type="date">
+            <column name="SPUDFECINI" length="7" not-null="true"/>
+        </property>
+        <property name="spudfecfin" type="date">
+            <column name="SPUDFECFIN" length="7"/>
+        </property>
+        
+          <many-to-one name="saprograma" class="org.profamilia.hc.model.dto.Saprograma" update="false" insert="false">
+            <column name="SPRCPROGRA"/>
+        </many-to-one>         
+    </class>
+</hibernate-mapping>

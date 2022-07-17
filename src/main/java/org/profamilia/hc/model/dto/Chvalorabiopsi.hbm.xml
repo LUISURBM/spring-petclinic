@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping>
+    <!-- 
+    Created by the Middlegen Hibernate plugin 2.2
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+    <class name="org.profamilia.hc.model.dto.Chvalorabiopsi" table="CHVALORABIOPSI" lazy="false" schema="HISTORIA">
+        <id name="hvbnconsulta" type="java.lang.Long" column="HVBNCONSULTA">
+            <generator class="assigned"/>
+        </id>
+        <property name="hvbnedad" type="java.lang.Integer" column="HVBNEDAD" length="22"/>
+        <property name="hvbccesaprev" type="java.lang.String" column="HVBCCESAPREV" length="1"/>
+        <property name="hvbcpreehipe" type="java.lang.String" column="HVBCPREEHIPE" length="1"/>
+        <property name="hvbcaborinfe" type="java.lang.String" column="HVBCABORINFE" length="1"/>
+        <property name="hvbnparidad" type="java.lang.Integer" column="HVBNPARIDAD" length="22"/>
+        <property name="hvbchemposrem" type="java.lang.String" column="HVBCHEMPOSREM" length="1"/>
+        <property name="hvbcmanuplac" type="java.lang.String" column="HVBCMANUPLAC" length="1"/>
+        <property name="hvbnpesrecnac" type="java.lang.Integer" column="HVBNPESRECNAC" length="22"/>
+        <property name="hvbcmorfetneo" type="java.lang.String" column="HVBCMORFETNEO" length="1"/>
+        <property name="hvbcparanodifi" type="java.lang.String" column="HVBCPARANODIFI" length="1"/>
+        <property name="hvbccirginpre" type="java.lang.String" column="HVBCCIRGINPRE" length="1"/>
+        <property name="hvbcenfrencro" type="java.lang.String" column="HVBCENFRENCRO" length="1"/>
+        <property name="hvbcdiabgest" type="java.lang.String" column="HVBCDIABGEST" length="1"/>
+        <property name="hvbcdiabprec" type="java.lang.String" column="HVBCDIABPREC" length="1"/>
+        <property name="hvbnhemorragia" type="java.lang.Integer" column="HVBNHEMORRAGIA" length="22"/>
+        <property name="hvbcanemia" type="java.lang.String" column="HVBCANEMIA" length="1"/>
+        <property name="hvbnembpro" type="java.lang.Integer" column="HVBNEMBPRO" length="1"/>
+        <property name="hvbchipearte" type="java.lang.String" column="HVBCHIPEARTE" length="1"/>
+        <property name="hvbcpolihidra" type="java.lang.String" column="HVBCPOLIHIDRA" length="1"/>
+        <property name="hvbcembmult" type="java.lang.String" column="HVBCEMBMULT" length="1"/>
+        <property name="hvbcprefretra" type="java.lang.String" column="HVBCPREFRETRA" length="1"/>
+        <property name="hvbcisoinnmu" type="java.lang.String" column="HVBCISOINNMU" length="1"/>
+        <property name="hvbcansiseve" type="java.lang.String" column="HVBCANSISEVE" length="1"/>
+        <property name="hvbcsosofain" type="java.lang.String" column="HVBCSOSOFAIN" length="1"/>
+        <property name="hvbcobservacion" type="java.lang.String" column="HVBCOBSERVACION" length="4000"/>
+        <property name="version" type="java.lang.Integer" column="VERSION" length="22"/>
+        <property name="hvbcusuaregi" type="java.lang.String" column="HVBCUSUAREGI" length="20"/>
+        <property name="hvbdfechregi" type="java.util.Date" column="HVBDFECHREGI" length="7"/>
+        <property name="hvbnpuntos" type="java.lang.Integer" column="HVBNPUNTOS" length="22"/>
+        <property name="hvbnanemiadesc" type="java.lang.Integer" column="HVBNANEMIADESC" length="22"/>
+        
+        
+        <!-- Associations -->
+    </class>
+</hibernate-mapping>

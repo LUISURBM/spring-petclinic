@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping>
+    <!-- 
+    Created by the Middlegen Hibernate plugin 2.2
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+    -->
+    <class name="org.profamilia.hc.model.dto.Chdetaentpatol" table="CHDETAENTPATOL" schema="HISTORIA" lazy="false">
+        <composite-id name="comp_id" class="org.profamilia.hc.model.dto.ChdetaentpatolPK">
+            <key-property name="heplidentregapatol" column="HEPLIDENTREGAPATOL" type="java.lang.Long" length="12"/>
+            <key-property name="hepnpatologia" column="HEPNPATOLOGIA" type="java.math.BigDecimal" length="22"/>
+        </composite-id>
+        <property name="hepcetapa" type="java.lang.String" column="HEPCETAPA" not-null="true" length="3"/>
+        <property name="hepcresultado" type="java.lang.String" column="HEPCRESULTADO" length="2"/>
+        <property name="hepnclinica" type="java.lang.Integer" column="HEPNCLINICA" not-null="true" length="4"/>
+        <property name="hepcoperador" type="java.lang.String" column="HEPCOPERADOR" not-null="true" length="14"/>
+        <property name="hepdfechamod" type="java.sql.Date" column="HEPDFECHAMOD" not-null="true" length="7"/>
+        <property name="hepdfechaentreg" type="java.sql.Date" column="HEPDFECHAENTREG" length="7"/>
+        <property name="hepcrecibido" type="java.lang.String" column="HEPCRECIBIDO" length="2"/>
+        <!-- Associations -->
+        <!-- derived association(s) for compound key -->
+        <!-- bi-directional many-to-one association to Chentregapatol -->
+        <many-to-one name="chentregapatol" class="org.profamilia.hc.model.dto.Chentregapatol" update="false" insert="false">
+            <column name="HEPLIDENTREGAPATOL"/>
+        </many-to-one>
+        <many-to-one name="chotraspatolog" class="org.profamilia.hc.model.dto.Chotraspatolog" update="false" insert="false">
+            <column name="HEPNPATOLOGIA"/>
+        </many-to-one>
+        <!-- end of derived association(s) -->
+    </class>
+</hibernate-mapping>

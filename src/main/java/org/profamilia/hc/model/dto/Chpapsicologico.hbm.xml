@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping>
+    <!-- 
+    Created by the Middlegen Hibernate plugin 2.2
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+    <class name="org.profamilia.hc.model.dto.Chpapsicologico" table="CHPAPSICOLOGICO" schema="HISTORIA" lazy="false">
+        <id name="hppnconsulta" type="java.lang.Long" column="HPPNCONSULTA">
+            <meta attribute="field-description" inherit="false">NUMERO CONSULTA</meta>
+            <generator class="assigned"/>
+        </id>
+        <version name="version" column="VERSION"/>
+        <property name="hppcobservacion" type="java.lang.String" column="HPPCOBSERVACION" length="1000"/>
+        <property name="hppdfecreg" type="java.util.Date" column="HPPDFECREG" length="7"/>
+        <property name="hppcusuario" type="java.lang.String" column="HPPCUSUARIO" length="14"/>
+        <property name="hppnpaciente" type="java.lang.Long" column="HPPNPACIENTE" length="12"/>
+        <!-- Associations -->
+    </class>
+</hibernate-mapping>

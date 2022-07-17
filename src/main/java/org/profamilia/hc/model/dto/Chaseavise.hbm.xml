@@ -1,0 +1,128 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping>
+    <!-- 
+    Created by the Middlegen Hibernate plugin 2.2
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+    <class name="org.profamilia.hc.model.dto.Chaseavise" table="CHASEAVISE" lazy="false" schema="HISTORIA">
+        <composite-id name="id" class="org.profamilia.hc.model.dto.ChaseavisePK">
+            <key-property name="havdfecase" column="HAVDFECASE" type="java.util.Date" length="7"/>
+            <key-property name="havlusuario" column="HAVLUSUARIO" type="java.lang.Long" length="12"/>
+        </composite-id>
+        <version name="version" column="VERSION"/>
+        <property name="havctipide" type="java.lang.String" column="HAVCTIPIDE" not-null="true" length="2"/>
+        <property name="havanumide" type="java.lang.Long" column="HAVANUMIDE" not-null="true" length="17"/>
+        <property name="havnclinic" type="java.lang.Integer" column="HAVNCLINIC" not-null="true" length="4"/>
+        <property name="havnescola" type="java.lang.Integer" column="HAVNESCOLA" not-null="true" length="4"/>
+        <property name="havnedad" type="java.lang.Integer" column="HAVNEDAD" not-null="true" length="4"/>
+        <property name="havcagrcon" type="java.lang.String" column="HAVCAGRCON" length="1"/>
+        <property name="havnlugech" type="java.lang.Integer" column="HAVNLUGECH" length="4"/>
+        <property name="havcotrlug" type="java.lang.String" column="HAVCOTRLUG" length="30"/>
+        <property name="havntieocu" type="java.lang.Integer" column="HAVNTIEOCU"  length="4"/>
+        <property name="havcaccnin" type="java.lang.String" column="HAVCACCNIN" length="1"/>
+        <property name="havcaccden" type="java.lang.String" column="HAVCACCDEN" length="1"/>
+        <property name="havcaccate" type="java.lang.String" column="HAVCACCATE" length="1"/>
+        <property name="havcaccapo" type="java.lang.String" column="HAVCACCAPO" length="1"/>
+        <property name="havcrecotr" type="java.lang.String" column="HAVCRECOTR" length="1"/>
+        <property name="havcrecnom" type="java.lang.String" column="HAVCRECNOM" length="30"/>
+        <property name="havcremotr" type="java.lang.String" column="HAVCREMOTR" not-null="true" length="1"/>
+        <property name="havcnmbotr" type="java.lang.String" column="HAVCNMBOTR" length="30"/>
+        <property name="havdfecreg" type="java.util.Date" column="HAVDFECREG" not-null="true" length="7"/>
+        <property name="havcusureg" type="java.lang.String" column="HAVCUSUREG" not-null="true" length="12"/>
+        <property name="havnconavs" type="java.lang.Integer" column="HAVNCONAVS" not-null="true" length="4"/>
+        <property name="havnintase" type="java.lang.Integer" column="HAVNINTASE" not-null="true" length="4"/>
+        <property name="havetranqu" type="java.lang.String" column="HAVETRANQU" length="1"/>
+        <property name="haveangust" type="java.lang.String" column="HAVEANGUST" length="1"/>
+        <property name="havetriste" type="java.lang.String" column="HAVETRISTE" length="1"/>
+        <property name="haveconfun" type="java.lang.String" column="HAVECONFUN" length="1"/>
+        <property name="havedesori" type="java.lang.String" column="HAVEDESORI" length="1"/>
+        <property name="haveansios" type="java.lang.String" column="HAVEANSIOS" length="1"/>
+        <property name="havesendes" type="java.lang.String" column="HAVESENDES" length="1"/>
+        <property name="haveimpote" type="java.lang.String" column="HAVEIMPOTE" length="1"/>
+        <property name="havedolor" type="java.lang.String" column="HAVEDOLOR" length="1"/>
+        <property name="havehemato" type="java.lang.String" column="HAVEHEMATO" length="1"/>
+        <property name="havefractu" type="java.lang.String" column="HAVEFRACTU" length="1"/>
+        <property name="haveinsomn" type="java.lang.String" column="HAVEINSOMN" length="1"/>
+        <property name="haveinapet" type="java.lang.String" column="HAVEINAPET" length="1"/>
+        <property name="havesendeb" type="java.lang.String" column="HAVESENDEB" length="1"/>
+        <property name="haveahogo" type="java.lang.String" column="HAVEAHOGO" length="1"/>
+        <property name="haveagresi" type="java.lang.String" column="HAVEAGRESI" length="1"/>
+        <property name="haveaislam" type="java.lang.String" column="HAVEAISLAM" length="1"/>
+        <property name="havepasmad" type="java.lang.String" column="HAVEPASMAD" length="1"/>
+        <property name="havereftem" type="java.lang.String" column="HAVEREFTEM" length="1"/>
+        <property name="havedisper" type="java.lang.String" column="HAVEDISPER" length="1"/>
+        <property name="havepenneg" type="java.lang.String" column="HAVEPENNEG" length="1"/>
+        <property name="havedifpro" type="java.lang.String" column="HAVEDIFPRO" length="1"/>
+        <property name="haveideper" type="java.lang.String" column="HAVEIDEPER" length="1"/>
+        <property name="haveotro" type="java.lang.String" column="HAVEOTRO" length="1"/>
+        <property name="havedocden" type="java.lang.String" column="HAVEDOCDEN" length="1"/>
+        <property name="havepruemb" type="java.lang.String" column="HAVEPRUEMB" length="1"/>
+        <property name="havcestado" type="java.lang.String" column="HAVCESTADO" not-null="true" length="2"/>
+        <property name="havcusumod" type="java.lang.String" column="HAVCUSUMOD" length="14"/>
+        <property name="havdfecmod" type="java.util.Date" column="HAVDFECMOD" length="11"/>
+        <property name="havepalpi" type="java.lang.String" column="HAVEPALPI" length="1"/>
+        <property name="haveaccot" type="java.lang.String" column="HAVEACCOT" length="1"/>
+        <property name="haveincme" type="java.lang.String" column="HAVEINCME" length="1"/>
+        <property name="havevalps" type="java.lang.String" column="HAVEVALPS" length="1"/>
+        <property name="havecerme" type="java.lang.String" column="HAVECERME" length="1"/>
+        <property name="haveotrdoc" type="java.lang.String" column="HAVEOTRDOC" length="1"/>
+        <property name="havcnomdoc" type="java.lang.String" column="HAVCNOMDOC" length="30"/>
+        <property name="havcnindoc" type="java.lang.String" column="HAVCNINDOC" length="1"/>
+        <property name="havcconclu" type="java.lang.String" column="HAVCCONCLU" length="4000"/>
+        <property name="havcconpsi" type="java.lang.String" column="HAVCCONPSI" length="4000"/>
+        <property name="havcremilv" type="java.lang.String" column="HAVCREMILV" length="1"/>
+        <property name="havcotrcon" type="java.lang.String" column="HAVCOTRCON" length="50"/>
+        <property name="havndetint" type="java.lang.Integer" column="HAVNDETINT" length="4"/>
+        <property name="havcremind" type="java.lang.String" column="HAVCREMIND" length="1"/>
+        <property name="havcremcos" type="java.lang.String" column="HAVCREMCOS" length="1"/>
+        <property name="havcremeps" type="java.lang.String" column="HAVCREMEPS" length="1"/>
+        <property name="havcremips" type="java.lang.String" column="HAVCREMIPS" length="1"/>
+        <property name="havcremcau" type="java.lang.String" column="HAVCREMCAU" length="1"/>
+        <property name="havcremmay" type="java.lang.String" column="HAVCREMMAY" length="1"/>
+        <property name="havcremcon" type="java.lang.String" column="HAVCREMCON" length="1"/>
+        <property name="havedoceco" type="java.lang.String" column="HAVEDOCECO" length="1"/>
+        <property name="haveagotad" type="java.lang.String" column="HAVEAGOTAD" length="1"/>
+        <property name="havehostil" type="java.lang.String" column="HAVEHOSTIL" length="1"/>
+        <property name="havedesesp" type="java.lang.String" column="HAVEDESESP" length="1"/>
+        <property name="havedisfru" type="java.lang.String" column="HAVEDISFRU" length="1"/>
+        <property name="havehipera" type="java.lang.String" column="HAVEHIPERA" length="1"/>
+        <property name="havepareja" type="java.lang.String" column="HAVEPAREJA" length="1"/>
+        <property name="havefamili" type="java.lang.String" column="HAVEFAMILI" length="1"/>
+        <property name="havedesamp" type="java.lang.String" column="HAVEDESAMP" length="1"/>
+        <property name="havepobrez" type="java.lang.String" column="HAVEPOBREZ" length="1"/>
+        <property name="haveviolen" type="java.lang.String" column="HAVEVIOLEN" length="1"/>
+        <property name="havedesemp" type="java.lang.String" column="HAVEDESEMP" length="1"/>
+        <property name="havedificu" type="java.lang.String" column="HAVEDIFICU" length="1"/>
+        <property name="haveconcen" type="java.lang.String" column="HAVECONCEN" length="1"/>
+        <property name="havesuicid" type="java.lang.String" column="HAVESUICID" length="1"/>
+        <property name="havemareo" type="java.lang.String" column="HAVEMAREO" length="1"/>
+        <property name="havcremapl" type="java.lang.String" column="HAVCREMAPL" length="1"/>
+        <property name="havcremmot" type="java.lang.String" column="HAVCREMMOT" length="50"/>
+        <property name="havnrelagr" type="java.lang.Integer" column="HAVNRELAGR" length="4"/>
+        <property name="havnparagr" type="java.lang.Integer" column="HAVNPARAGR" length="4"/>
+        <property name="havcotrpar" type="java.lang.String" column="HAVCOTRPAR" length="30"/>
+        <property name="havcotrrel" type="java.lang.String" column="HAVCOTRREL" length="30"/>
+        <property name="havndiaeve" type="java.lang.Integer" column="HAVNDIAEVE" length="4"/>
+        <property name="havnedages" type="java.lang.Integer" column="HAVNEDAGES" length="4"/>
+        <property name="havcintcri" type="java.lang.String" column="HAVCINTCRI" length="1"/>
+        <property name="haveantem" type="java.lang.String" column="HAVEANTEM" length="1"/>
+        <property name="havcotracc" type="java.lang.String" column="HAVCOTRACC" length="30"/>
+        
+          <set name="hnseguavis" inverse="true" order-by="HSANCONSEC">
+            <key>
+                <column name="HSADFECASE" not-null="true"/>
+                <column name="HSALUSUARIO" not-null="true"/>
+             </key>
+            <one-to-many class="org.profamilia.hc.model.dto.Chseguavis"/>
+        </set>
+        
+        <!-- Associations -->
+        <!-- derived association(s) for compound key -->
+        <!-- end of derived association(s) -->
+    </class>
+</hibernate-mapping>

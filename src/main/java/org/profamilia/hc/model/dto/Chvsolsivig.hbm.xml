@@ -1,0 +1,66 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping>
+    <!-- 
+    Created by the Middlegen Hibernate plugin 2.2
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+    <class name="org.profamilia.hc.model.dto.Chvsolsivig" table="CHVSOLSIVIG"  schema="HISTORIA" lazy="false">
+        <composite-id name="id" class="org.profamilia.hc.model.dto.ChvsolsivigPK">
+            <key-property name="hvslconsulta" column="HVSLCONSULTA" type="java.lang.Long" length="12"/>
+            <key-property name="hvslnumerusuar" column="HVSLNUMERUSUAR" type="java.lang.Long" length="12"/>
+        </composite-id>
+          <version name="version" column="VERSION"/>
+        <property name="hvscmodalviole" type="java.lang.String" column="HVSCMODALVIOLE" length="80"/>
+        <property name="hvscdatvicacti" type="java.lang.String" column="HVSCDATVICACTI" length="2"/>
+        <property name="hvscpoblaclgtb" type="java.lang.String" column="HVSCPOBLACLGTB" length="1"/>
+        <property name="hvscconsumespa" type="java.lang.String" column="HVSCCONSUMESPA" length="1"/>
+        <property name="hvsctrabajosex" type="java.lang.String" column="HVSCTRABAJOSEX" length="1"/>
+        <property name="hvscdesmoviliz" type="java.lang.String" column="HVSCDESMOVILIZ" length="1"/>
+        <property name="hvsccampesino" type="java.lang.String" column="HVSCCAMPESINO" length="1"/>
+        <property name="hvscmujercabfa" type="java.lang.String" column="HVSCMUJERCABFA" length="1"/>
+        <property name="hvscamadecasa" type="java.lang.String" column="HVSCAMADECASA" length="1"/>
+        <property name="hvscnnasnbf" type="java.lang.String" column="HVSCNNASNBF" length="1"/>
+        <property name="hvscprivaliber" type="java.lang.String" column="HVSCPRIVALIBER" length="1"/>
+        <property name="hvscvicconarma" type="java.lang.String" column="HVSCVICCONARMA" length="1"/>
+        <property name="hvscotro" type="java.lang.String" column="HVSCOTRO" length="1"/>
+        <property name="hvscreincidenc" type="java.lang.String" column="HVSCREINCIDENC" length="1"/>
+        <property name="hvscalcoholvic" type="java.lang.String" column="HVSCALCOHOLVIC" length="1"/>
+        <property name="hvscparentvict" type="java.lang.String" column="HVSCPARENTVICT" length="3"/>
+        <property name="hvscconvcagres" type="java.lang.String" column="HVSCCONVCAGRES" length="1"/>
+        <property name="hvscagrenofami" type="java.lang.String" column="HVSCAGRENOFAMI" length="3"/>
+        <property name="hvscgruperviol" type="java.lang.String" column="HVSCGRUPERVIOL" length="3"/>
+        <property name="hvscmecanutili" type="java.lang.String" column="HVSCMECANUTILI" length="3"/>
+        <property name="hvscsitioanato" type="java.lang.String" column="HVSCSITIOANATO" length="85"/>
+        <property name="hvsngrado" type="java.lang.Integer" column="HVSNGRADO" length="1"/>
+        <property name="hvsnextension" type="java.lang.Integer" column="HVSNEXTENSION" length="1"/>
+        <property name="hvsdfechaecho" type="java.util.Date" column="HVSDFECHAECHO" length="7"/>
+        <property name="hvscescenario" type="java.lang.String" column="HVSCESCENARIO" length="2"/>
+        <property name="hvscmarcocoar" type="java.lang.String" column="HVSCMARCOCOAR" length="1"/>
+        <property name="hvscprofilavih" type="java.lang.String" column="HVSCPROFILAVIH" length="1"/>
+        <property name="hvscprofilhepb" type="java.lang.String" column="HVSCPROFILHEPB" length="1"/>
+        <property name="hvscotrasprofi" type="java.lang.String" column="HVSCOTRASPROFI" length="1"/>
+        <property name="hvscanticoemer" type="java.lang.String" column="HVSCANTICOEMER" length="1"/>
+        <property name="hvscorientaive" type="java.lang.String" column="HVSCORIENTAIVE" length="1"/>
+        <property name="hvscsaludmenta" type="java.lang.String" column="HVSCSALUDMENTA" length="1"/>
+        <property name="hvscremaprotec" type="java.lang.String" column="HVSCREMAPROTEC" length="1"/>
+        <property name="hvscdenuncia" type="java.lang.String" column="HVSCDENUNCIA" length="1"/>
+        <property name="hvscrecoevimed" type="java.lang.String" column="HVSCRECOEVIMED" length="1"/>
+        <property name="hvsnedadagre" type="java.lang.Integer" column="HVSNEDADAGRE" length="2"/>
+        <property name="hvscsexoagre" type="java.lang.String" column="HVSCSEXOAGRE" length="2"/>
+        
+        <property name="hvschoraecho" type="java.lang.String" column="HVSCHORAECHO" length="2"/>
+        <property name="hvscminuecho" type="java.lang.String" column="HVSCMINUECHO" length="2"/>
+        <property name="hvscoperador" type="java.lang.String" column="HVSCOPERADOR" length="14"/>
+        <property name="hvsdfechregis" type="java.util.Date" column="HVSDFECHREGIS" length="7"/>
+        
+        
+        <!-- Associations -->
+        <!-- derived association(s) for compound key -->
+        <!-- end of derived association(s) -->
+    </class>
+</hibernate-mapping>

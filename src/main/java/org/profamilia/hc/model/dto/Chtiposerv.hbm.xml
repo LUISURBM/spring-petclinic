@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping>
+    <!-- 
+    Created by the Middlegen Hibernate plugin 2.2
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+    <class name="org.profamilia.hc.model.dto.Chtiposerv" table="CHTIPOSERV"  schema="HISTORIA"
+           lazy="false">
+        <id name="htsncodigo" type="java.lang.Integer" column="HTSNCODIGO">
+          <generator class="sequence">
+                <param name="sequence">HISTORIA.SEC_CHTIPOSERV</param>
+            </generator>     
+        </id>
+          <version name="version" column="VERSION"/> 
+        <property name="htscdescripc" type="java.lang.String"
+                  column="HTSCDESCRIPC" not-null="true" length="120"/>
+        <property name="htscestado" type="java.lang.String" column="HTSCESTADO"
+                  not-null="true" length="2"/>
+        <property name="htscoperador" type="java.lang.String"
+                  column="HTSCOPERADOR" not-null="true" length="14"/>
+        <property name="htsdfechregi" type="java.util.Date"
+                  column="HTSDFECHREGI" not-null="true" length="7"/>
+     
+        <!-- Associations -->
+    </class>
+</hibernate-mapping>

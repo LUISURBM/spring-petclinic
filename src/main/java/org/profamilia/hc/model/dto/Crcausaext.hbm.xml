@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+<!-- 
+        Auto-generated mapping file from
+        the hibernate.org cfg2hbm engine
+-->
+    <class name="org.profamilia.hc.model.dto.Crcausaext" table="CRCAUSAEXT" schema="CLINICO">
+        <id name="ccancodigo" type="integer">
+            <column name="CCANCODIGO" precision="4" scale="0" />
+            <generator class="assigned" />
+        </id>
+        <version name="version" column="VERSION"/>
+        <property name="ccacdescri" type="string">
+            <column name="CCACDESCRI" length="25" not-null="true" />
+        </property>
+        <property name="ccadfecreg" type="date">
+            <column name="CCADFECREG" length="7" not-null="true" />
+        </property>
+        <property name="ccacusuari" type="string">
+            <column name="CCACUSUARI" length="14" not-null="true" />
+        </property>
+        <property name="ccacestado" type="string">
+            <column name="CCACESTADO" length="2" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

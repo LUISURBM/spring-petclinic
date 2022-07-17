@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping>
+    <!-- 
+    Created by the Middlegen Hibernate plugin 2.2
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+    <class name="org.profamilia.hc.model.dto.Cfnovedeta" table="CFNOVEDETA" lazy="false" schema="CLINICO">
+        <composite-id name="comp_id" class="org.profamilia.hc.model.dto.CfnovedetaPK">
+            <key-property name="cndnnovedad" column="CNDNNOVEDAD" type="java.lang.Long" length="10"/>
+            <key-property name="cndnitem" column="CNDNITEM" type="java.lang.Long" length="10"/>
+        </composite-id>
+         <version name="version" column="VERSION" type="java.lang.Long"/>
+        <property name="cndcservic" type="java.lang.String" column="CNDCSERVIC" not-null="true" length="12"/>
+        <property name="cndnvalser" type="java.lang.Double" column="CNDNVALSER" not-null="true" length="17"/>
+        <property name="cndnivaser" type="java.lang.Double" column="CNDNIVASER" length="17"/>
+        <property name="cndndescto" type="java.lang.Double" column="CNDNDESCTO" length="17"/>
+        <property name="cndncantid" type="java.lang.Long" column="CNDNCANTID" not-null="true" length="9"/>
+        <property name="cndnvalent" type="java.lang.Double" column="CNDNVALENT" length="17"/>
+        <property name="cndnvaltot" type="java.lang.Double" column="CNDNVALTOT" not-null="true" length="17"/>
+        <property name="cndcpaquet" type="java.lang.String" column="CNDCPAQUET" length="12"/>
+        <property name="cndcswpaqu" type="java.lang.String" column="CNDCSWPAQU" length="1"/>
+        <property name="cndcdesserv" type="java.lang.String" column="CNDCDESSERV" not-null="true" length="240"/>
+        <property name="cndnrecaudo" type="java.lang.Double" column="CNDNRECAUDO" length="22"/>
+        <property name="cndncuotcopa" type="java.lang.String" column="CNDNCUOTCOPA" length="4"/>
+        <property name="cndctipdscto" type="java.lang.String" column="CNDCTIPDSCTO" length="1"/>
+        <property name="cndnidedscto" type="java.lang.Long" column="CNDNIDEDSCTO" length="9"/>
+        <property name="cndcestado" type="java.lang.String" column="CNDCESTADO" length="2"/>
+        <property name="cndcsrvant" type="java.lang.String" column="CNDCSRVANT" length="12"/>
+        <!-- Associations -->
+        <!-- derived association(s) for compound key -->
+        <!-- end of derived association(s) -->
+    </class>
+</hibernate-mapping>

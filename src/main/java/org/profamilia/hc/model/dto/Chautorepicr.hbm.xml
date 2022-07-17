@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping>
+    <!-- 
+    Created by the Middlegen Hibernate plugin 2.2
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+    <class name="org.profamilia.hc.model.dto.Chautorepicr" table="CHAUTOREPICR"
+    schema="HISTORIA"  lazy="false">
+        <id name="haelnumero" type="java.lang.Long" column="HAELNUMERO">
+            <generator class="assigned"/>
+        </id>
+         <version name="version" column="VERSION"/>
+        <property name="haelnumerepicr" type="java.lang.Long" column="HAELNUMEREPICR" not-null="true" length="12"/>
+        <property name="haenconseepicr" type="java.lang.Integer" column="HAENCONSEEPICR" not-null="true" length="4"/>
+        <property name="haecaceptsolic" type="java.lang.String" column="HAECACEPTSOLIC" length="1"/>
+        <property name="haecmotivsolic" type="java.lang.String" column="HAECMOTIVSOLIC" length="100"/>
+        <property name="haecmotivrecha" type="java.lang.String" column="HAECMOTIVRECHA" length="100"/>
+        <property name="haenclinica" type="java.lang.Integer" column="HAENCLINICA" not-null="true" length="4"/>
+        <property name="haedfechasolic" type="java.util.Date" column="HAEDFECHASOLIC" length="7"/>
+        <property name="haecoperasolic" type="java.lang.String" column="HAECOPERASOLIC" length="14"/>
+        <property name="haedfecharespu" type="java.util.Date" column="HAEDFECHARESPU" length="7"/>
+        <property name="haecoperarespu" type="java.lang.String" column="HAECOPERARESPU" length="14"/>
+        <!-- Associations -->
+    </class>
+</hibernate-mapping>

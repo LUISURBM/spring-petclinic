@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE tiles-definitions PUBLIC "-//Apache Software Foundation//DTD Tiles Configuration 1.1//EN" "http://jakarta.apache.org/struts/dtds/tiles-config_1_1.dtd">
+<tiles-definitions>
+	<definition name="layout" path="/pages/tiles/layout.jsp">
+                <put name="title" value="::: PROFAMILIA :::"></put>
+		<put name="header" value="/pages/tiles/header.jsp"/>
+		<put name="footer" value="/pages/tiles/footer.jsp"/>
+                <put name="menu" value="/pages/tiles/menu.jsp"/>
+	</definition>
+         <definition name="layoutCirugia" path="/pages/tiles/layoutCirugia.jsp">
+                <put name="title" value="::: PROFAMILIA :::"></put>
+		<put name="header" value="/pages/tiles/header.jsp"/>
+		<put name="footer" value="/pages/tiles/footer.jsp"/>
+                <put name="menu" value="/pages/tiles/menu.jsp"/>
+                <put name="menuCirugia" value="/pages/tiles/menuCirugia.jsp"/>
+	</definition>
+        
+        <definition name="layoutClave" path="/pages/tiles/layoutClave.jsp">
+          <put name="title" value="::: PROFAMILIA :::"></put>
+          <put name="headerClave" value="/pages/tiles/headerClave.jsp"></put>
+          <put name="footer" value="/pages/tiles/footer.jsp"></put>
+         </definition>
+        
+</tiles-definitions>

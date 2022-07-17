@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping>
+    <!-- 
+    Created by the Middlegen Hibernate plugin 2.2
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+    <class name="org.profamilia.hc.model.dto.Cfdetafactura" table="CFDETAFACTURA" lazy="false" schema="CLINICO">
+        <composite-id name="comp_id" class="org.profamilia.hc.model.dto.CfdetafacturaPK">
+            <key-property name="cdfnnumitem" column="CDFNNUMITEM" type="java.lang.Long" length="22"/>
+            <key-property name="cdfnconsfact" column="CDFNCONSFACT" type="java.lang.Long" length="22"/>
+        </composite-id>
+        <version name="version" column="VERSION" type="java.lang.Long"/>
+        <property name="cdfcservicio" type="java.lang.String" column="CDFCSERVICIO" length="20"/>
+        <property name="cdfnorden" type="java.lang.Long" column="CDFNORDEN" length="22"/>
+        <property name="cdfcobserv" type="java.lang.String" column="CDFCOBSERV" length="200"/>
+        <property name="cdfclote" type="java.lang.String" column="CDFCLOTE" length="20"/>
+        <property name="cdfndescuento" type="java.lang.Double" column="CDFNDESCUENTO" length="22"/>
+        <property name="cdfniva" type="java.lang.Double" column="CDFNIVA" length="22"/>
+        <property name="cdfncliente" type="java.lang.Long" column="CDFNCLIENTE" length="22"/>
+        <property name="cdfnestado" type="java.lang.String" column="CDFNESTADO" length="20"/>
+        <property name="cdfcpaquet" type="java.lang.String" column="CDFCPAQUET" length="12"/>
+        <property name="cdfctipdscto" type="java.lang.String" column="CDFCTIPDSCTO" length="1"/>
+        <property name="cdfnvalsrv" type="java.lang.Double" column="CDFNVALSRV" length="22"/>
+        <property name="cdfncantidad" type="java.lang.Long" column="CDFNCANTIDAD" length="22"/>
+        <property name="cdfcetapa" type="java.lang.String" column="CDFCETAPA" length="2"/>
+        <property name="cdfcusuamodi" type="java.lang.String" column="CDFCUSUAMODI" length="20"/>
+        <property name="cdfdfechmodi" type="java.util.Date" column="CDFDFECHMODI" length="11"/>
+        <property name="cdfnconsuclin" type="java.lang.Long" column="CDFNCONSUCLIN" length="12"/>
+        <property name="cdfcswitpaq" type="java.lang.String" column="CDFCSWITPAQ" length="1"/>
+        <!-- Associations -->
+        <!-- derived association(s) for compound key -->
+        <!-- end of derived association(s) -->
+    </class>
+</hibernate-mapping>

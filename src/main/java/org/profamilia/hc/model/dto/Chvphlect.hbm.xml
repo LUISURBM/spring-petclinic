@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping>
+    <!-- 
+    Created by the Middlegen Hibernate plugin 2.2
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+    <class name="org.profamilia.hc.model.dto.Chvphlect" table="CHVPHLECT" schema="HISTORIA" lazy="false">
+        <id name="hvlnconsec" type="java.lang.Integer" column="HVLNCONSEC">
+            <generator class="assigned"/>
+        </id>
+        <version name="version" column="VERSION"/>
+        <property name="hvlnclinic" type="java.lang.Integer" column="HVLNCLINIC" not-null="true" length="4"/>
+        <property name="hvlnnumero" type="java.lang.Integer" column="HVLNNUMERO" not-null="true" length="9"/>
+        <property name="hvldfeclec" type="java.util.Date" column="HVLDFECLEC" not-null="true" length="7"/>
+        <property name="hvlclectur" type="java.lang.String" column="HVLCLECTUR" not-null="true" length="4"/>
+        <property name="hvlcnomlec" type="java.lang.String" column="HVLCNOMLEC" not-null="true" length="30"/>
+        <property name="hvlcobserv" type="java.lang.String" column="HVLCOBSERV" length="80"/>
+        <property name="hvlcusureg" type="java.lang.String" column="HVLCUSUREG" not-null="true" length="12"/>
+        <property name="hvldfecreg" type="java.util.Date" column="HVLDFECREG" length="7"/>
+        <property name="hvlcnumtar" type="java.lang.String" column="HVLCNUMTAR" length="30"/>
+        <property name="hvlcgenoneg" type="java.lang.String" column="HVLCGENONEG" length="1"/>
+        
+        <property name="hvlcgt16" type="java.lang.String" column="HVLCGT16" length="1"/>
+        <property name="hvlcgt18" type="java.lang.String" column="HVLCGT18" length="1"/>
+        <property name="hvlcgt31" type="java.lang.String" column="HVLCGT31" length="1"/>
+        <property name="hvlcgt45" type="java.lang.String" column="HVLCGT45" length="1"/>
+        <property name="hvlcgt51" type="java.lang.String" column="HVLCGT51" length="1"/>
+        <property name="hvlcgt52" type="java.lang.String" column="HVLCGT52" length="1"/>
+        <property name="hvlcgt3858" type="java.lang.String" column="HVLCGT3858" length="1"/>
+        <property name="hvlcgt353968" type="java.lang.String" column="HVLCGT353968" length="1"/>
+        <property name="hvlcgt565966" type="java.lang.String" column="HVLCGT565966" length="1"/>
+        <property name="hvlcconduc" type="java.lang.String" column="HVLCCONDUC" length="6"/>
+        
+        <!-- Associations -->
+    </class>
+</hibernate-mapping>

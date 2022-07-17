@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping>
+    <!-- 
+    Created by the Middlegen Hibernate plugin 2.2
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+    <class name="org.profamilia.hc.model.dto.Chpladetrat" table="CHPLADETRAT" lazy="false" schema="HISTORIA">
+        <composite-id name="id" class="org.profamilia.hc.model.dto.ChpladetratPK">
+            <key-property name="hptlconsulta" column="HPTLCONSULTA" type="java.lang.Long" length="12"/>
+            <key-property name="hptctiposervi" column="HPTCTIPOSERVI" type="java.lang.String" length="1"/>
+        </composite-id>
+        <version name="version" column="VERSION"/>
+        <property name="hptcoperador" type="java.lang.String" column="HPTCOPERADOR" length="14"/>
+        <property name="hptdfecregistr" type="java.util.Date" column="HPTDFECREGISTR" length="7"/>
+        <property name="hptnnumersesio" type="java.lang.Integer" column="HPTNNUMERSESIO" length="2"/>
+        <property name="hptctipointer" type="java.lang.String" column="HPTCTIPOINTER" length="20"/>
+        <property name="hptccompromiso" type="java.lang.String" column="HPTCCOMPROMISO" length="4000"/>
+        <!-- Associations -->
+        <!-- derived association(s) for compound key -->
+        <!-- end of derived association(s) -->
+    </class>
+</hibernate-mapping>

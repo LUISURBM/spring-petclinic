@@ -1,0 +1,68 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping>
+    <!-- 
+    Created by the Middlegen Hibernate plugin 2.2
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+    <class name="org.profamilia.hc.model.dto.Chmonitoria" table="CHMONITORIA" schema="HISTORIA"
+           lazy="false">
+        <composite-id name="id" class="org.profamilia.hc.model.dto.ChmonitoriaPK">
+            <key-property name="hmolnumero" column="HMOLNUMERO"
+                          type="java.lang.Long" length="12"/>
+            <key-property name="hmoctiposervi" column="HMOCTIPOSERVI"
+                          type="java.lang.String" length="1"/>
+        </composite-id>
+        <version name="version" column="VERSION"/>
+        <property name="hmocfonendosco" type="java.lang.String"
+                  column="HMOCFONENDOSCO" length="1"/>
+        <property name="hmocelectderiv" type="java.lang.String"
+                  column="HMOCELECTDERIV" length="4"/>
+        <property name="hmocotraderiva" type="java.lang.String"
+                  column="HMOCOTRADERIVA" length="20"/>
+        <property name="hmocobserderiv" type="java.lang.String"
+                  column="HMOCOBSERDERIV" length="200"/>
+        <property name="hmocpresiarter" type="java.lang.String"
+                  column="HMOCPRESIARTER" length="1"/>
+        <property name="hmoccanuaarter" type="java.lang.String"
+                  column="HMOCCANUAARTER" length="200"/>
+        <property name="hmocoximepulso" type="java.lang.String"
+                  column="HMOCOXIMEPULSO" length="1"/>
+        <property name="hmoctipocapnog" type="java.lang.String"
+                  column="HMOCTIPOCAPNOG" length="1"/>
+        <property name="hmocobsercapno" type="java.lang.String"
+                  column="HMOCOBSERCAPNO" length="200"/>
+        <property name="hmocrelajmuscu" type="java.lang.String"
+                  column="HMOCRELAJMUSCU" length="1"/>
+        <property name="hmocobserrelaj" type="java.lang.String"
+                  column="HMOCOBSERRELAJ" length="200"/>
+        <property name="hmocmonittempe" type="java.lang.String"
+                  column="HMOCMONITTEMPE" length="1"/>
+        <property name="hmocsitiotempe" type="java.lang.String"
+                  column="HMOCSITIOTEMPE" length="100"/>
+        <property name="hmocotromonito" type="java.lang.String"
+                  column="HMOCOTROMONITO" length="1"/>
+        <property name="hmoccualmonito" type="java.lang.String"
+                  column="HMOCCUALMONITO" length="200"/>
+        <property name="hmonclinica" type="java.lang.Integer"
+                  column="HMONCLINICA" length="4"/>
+        <property name="hmodfecregistr" type="java.util.Date"
+                  column="HMODFECREGISTR" length="7"/>
+        <property name="hmocoperador" type="java.lang.String"
+                  column="HMOCOPERADOR" length="14"/>
+        <property name="hmoccapnografi" type="java.lang.String"
+                  column="HMOCCAPNOGRAFI" length="1"/>
+        <property name="hmocsitiofonen" type="java.lang.String"
+                  column="HMOCSITIOFONEN" length="80"/>
+        <property name="hmoctipopresio" type="java.lang.String"
+                  column="HMOCTIPOPRESIO" length="20"/>
+      
+      <!-- Associations -->
+      <!-- derived association(s) for compound key -->
+      <!-- end of derived association(s) -->
+    </class>
+</hibernate-mapping>

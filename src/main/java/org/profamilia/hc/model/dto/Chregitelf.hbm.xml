@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping>
+    <!-- 
+    Created by the Middlegen Hibernate plugin 2.2
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+    <class name="org.profamilia.hc.model.dto.Chregitelf" table="CHREGITELF" lazy="false" schema="HISTORIA">
+        <id name="hrtlnumero" type="java.lang.Long" column="HRTLNUMERO">
+            <generator class="sequence">
+                <param name="sequence">HISTORIA.CHREGITELF_SEQ</param>
+            </generator>
+        </id>
+        <property name="hrtlnumusu" type="java.lang.Long" column="HRTLNUMUSU" not-null="true" length="12"/>
+        <property name="hrtcregistro" type="java.lang.String" column="HRTCREGISTRO" not-null="true" length="4000"/>
+        <property name="hrtcusureg" type="java.lang.String" column="HRTCUSUREG" not-null="true" length="14"/>
+        <property name="hrtdfecreg" type="java.util.Date" column="HRTDFECREG" not-null="true" length="7"/>
+        <property name="hrtcusumod" type="java.lang.String" column="HRTCUSUMOD" not-null="true" length="14"/>
+        <property name="hrtdfecmod" type="java.util.Date" column="HRTDFECMOD" not-null="true" length="7"/>
+        <property name="version" type="java.lang.Long" column="VERSION" length="22"/>
+        <property name="hrtcproqui" type="java.lang.String" column="HRTCPROQUI" length="1"/>
+        <property name="hrtctos" type="java.lang.String" column="HRTCTOS" length="1"/>
+        <property name="hrtnnumdiatos" type="java.lang.Integer" column="HRTNNUMDIATOS" length="22"/>
+        <property name="hrtcfiebre" type="java.lang.String" column="HRTCFIEBRE" length="1"/>
+        <property name="hrtnnumdiafie" type="java.lang.Integer" column="HRTNNUMDIAFIE" length="22"/>
+        <property name="hrtcdolgar" type="java.lang.String" column="HRTCDOLGAR" length="1"/>
+        <property name="hrtnnudidoga" type="java.lang.Integer" column="HRTNNUDIDOGA" length="22"/>
+        <property name="hrtcconnal" type="java.lang.String" column="HRTCCONNAL" length="1"/>
+        <property name="hrtnnudicona" type="java.lang.Integer" column="HRTNNUDICONA" length="22"/>
+        <property name="hrtcdifres" type="java.lang.String" column="HRTCDIFRES" length="1"/>
+        <property name="hrtnnudidire" type="java.lang.Integer" column="HRTNNUDIDIRE" length="22"/>
+        <property name="hrtcfatiga" type="java.lang.String" column="HRTCFATIGA" length="1"/>
+        <property name="hrtnnumdiafat" type="java.lang.Integer" column="HRTNNUMDIAFAT" length="22"/>
+        <property name="hrtcescalofrio" type="java.lang.String" column="HRTCESCALOFRIO" length="1"/>
+        <property name="hrtnnumdiaesc" type="java.lang.Integer" column="HRTNNUMDIAESC" length="22"/>
+        <property name="hrtcninguna" type="java.lang.String" column="HRTCNINGUNA" length="1"/>
+        <!-- Associations -->
+    </class>
+</hibernate-mapping>

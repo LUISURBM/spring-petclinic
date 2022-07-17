@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping>
+    <!-- 
+    Created by the Middlegen Hibernate plugin 2.2
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+    <class name="org.profamilia.hc.model.dto.Chcontrvasec" table="CHCONTRVASEC" lazy="false" schema="HISTORIA">
+        <composite-id name="id" class="org.profamilia.hc.model.dto.ChcontrvasecPK">
+            <key-property name="hcvlconsulta" column="HCVLCONSULTA" type="java.lang.Long" length="12"/>
+            <key-property name="hcvnconsecutiv" column="HCVNCONSECUTIV" type="java.lang.Integer" length="4"/>
+        </composite-id>
+        <version name="version" column="VERSION"/> 
+        <property name="hcvcdescripcio" type="java.lang.String" column="HCVCDESCRIPCIO" length="4000"/>
+        <property name="hcvcoperador" type="java.lang.String" column="HCVCOPERADOR" length="14"/>
+        <property name="hcvdfecregistr" type="java.util.Date" column="HCVDFECREGISTR" length="7"/>
+        <property name="hcvctiposervi" type="java.lang.String" column="HCVCTIPOSERVI" not-null="true" length="1"/>
+        <!-- Associations -->
+    </class>
+</hibernate-mapping>

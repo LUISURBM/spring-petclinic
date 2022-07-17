@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping>
+    <!-- 
+    Created by the Middlegen Hibernate plugin 2.2
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+    <class name="org.profamilia.hc.model.dto.Chantalerg" table="CHANTALERG" schema="HISTORIA" lazy="false">
+        <id name="hananconsulta" type="java.lang.Long" column="HANANCONSULTA">
+            <meta attribute="field-description" inherit="false">Consulta asociada</meta>
+            <generator class="assigned"/>
+        </id>
+        <property name="hanacrefiere" type="java.lang.String" column="HANACREFIERE" not-null="true" length="1"/>
+        <property name="hanacdesc" type="java.lang.String" column="HANACDESC" length="4000"/>
+        <property name="hanacmedchk" type="java.lang.String" column="HANACMEDCHK" length="1"/>
+        <property name="hanacalichk" type="java.lang.String" column="HANACALICHK" length="1"/>
+        <property name="hanacsusambchk" type="java.lang.String" column="HANACSUSAMBCHK" length="1"/>
+        <property name="hanacsuspielchk" type="java.lang.String" column="HANACSUSPIELCHK" length="1"/>
+        <property name="hanacpicadchk" type="java.lang.String" column="HANACPICADCHK" length="1"/>
+        <property name="hanacotrachk" type="java.lang.String" column="HANACOTRACHK" length="1"/>
+        <property name="hanacmedcual" type="java.lang.String" column="HANACMEDCUAL" length="100"/>
+        <property name="hanacalicual" type="java.lang.String" column="HANACALICUAL" length="100"/>
+        <property name="hanacsusambcual" type="java.lang.String" column="HANACSUSAMBCUAL" length="100"/>
+        <property name="hanacsuspielcual" type="java.lang.String" column="HANACSUSPIELCUAL" length="100"/>
+        <property name="hanacpicadcual" type="java.lang.String" column="HANACPICADCUAL" length="100"/>
+        <property name="hanacotracual" type="java.lang.String" column="HANACOTRACUAL" length="100"/>
+        <property name="hanadfecreg" type="java.util.Date" column="HANADFECREG" not-null="true" length="7"/>
+        <property name="hanacusuareg" type="java.lang.String" column="HANACUSUAREG" not-null="true" length="14"/>
+        <property name="version" type="java.math.BigDecimal" column="VERSION" length="22"/>
+        <!-- Associations -->
+    </class>
+</hibernate-mapping>

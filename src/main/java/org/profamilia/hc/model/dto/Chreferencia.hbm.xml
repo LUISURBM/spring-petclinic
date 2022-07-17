@@ -1,0 +1,53 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping>
+    <!-- 
+    Created by the Middlegen Hibernate plugin 2.2
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+    <class name="org.profamilia.hc.model.dto.Chreferencia" table="CHREFERENCIA" schema="HISTORIA" lazy="false">
+        <composite-id name="id" class="org.profamilia.hc.model.dto.ChreferenciaPK">
+            <key-property name="hrelconsulta" column="HRELCONSULTA" type="java.lang.Long" length="12"/>
+            <key-property name="hrectiposervi" column="HRECTIPOSERVI" type="java.lang.String" length="1"/>
+            <key-property name="hrenconsecutiv" column="HRENCONSECUTIV" type="java.lang.Integer" length="4"/>
+        </composite-id>
+        <version name="version" column="VERSION"/>
+        <property name="hrectiporefere" type="java.lang.String" column="HRECTIPOREFERE" length="30"/>
+        <property name="hrecnombrespon" type="java.lang.String" column="HRECNOMBRESPON" length="40"/>
+        <property name="hrecdirecrespo" type="java.lang.String" column="HRECDIRECRESPO" length="40"/>
+        <property name="hrectelefrespo" type="java.lang.String" column="HRECTELEFRESPO" length="20"/>
+        <property name="hrecanamnesis" type="java.lang.String" column="HRECANAMNESIS" length="4000"/>
+        <property name="hrecapoyodiagn" type="java.lang.String" column="HRECAPOYODIAGN" length="4000"/>
+        <property name="hrecjustirefer" type="java.lang.String" column="HRECJUSTIREFER" length="4000"/>
+        <property name="hredfecregistr" type="java.util.Date" column="HREDFECREGISTR" length="7"/>
+        <property name="hrecoperador" type="java.lang.String" column="HRECOPERADOR" length="14"/>
+        <property name="hrecetapa" type="java.lang.String" column="HRECETAPA" length="2"/>
+        <property name="hredfecconf" type="java.util.Date" column="HREDFECCONF" length="7"/>
+        <property name="hrecoperconf" type="java.lang.String" column="HRECOPERCONF" length="14"/>
+        <property name="hrecobsconf" type="java.lang.String" column="HRECOBSCONF" length="4000"/>
+        <property name="hrendeparrespo" type="java.lang.Integer" column="HRENDEPARRESPO" length="4"/>
+        <property name="hrenciudarespo" type="java.lang.Integer" column="HRENCIUDARESPO" length="4"/>
+        <property name="hreetipideresp" type="java.lang.String" column="HREETIPIDERESP" length="2"/>
+        <property name="hreccelulrespo" type="java.lang.String" column="HRECCELULRESPO" length="20"/>
+        <property name="hreclugarservi" type="java.lang.String" column="HRECLUGARSERVI" length="2"/>
+        <property name="hrecservisolic" type="java.lang.String" column="HRECSERVISOLIC" length="40"/>
+        <property name="hrecserviencu" type="java.lang.String" column="HRECSERVIENCU" length="120"/>
+        <property name="hreccomplicaci" type="java.lang.String" column="HRECCOMPLICACI" length="4000"/>
+        <property name="hrectrataaplic" type="java.lang.String" column="HRECTRATAAPLIC" length="4000"/>
+        <property name="hrecmotivremis" type="java.lang.String" column="HRECMOTIVREMIS" length="4000"/>
+        <property name="hreanumideresp" type="java.math.BigDecimal" column="HREANUMIDERESP" precision="17" scale="2"/>
+        <property name="hrecdiligforma" type="java.lang.String" column="HRECDILIGFORMA" length="1"/>
+        <property name="hreccopiahisto" type="java.lang.String" column="HRECCOPIAHISTO" length="1"/>
+        <property name="hrecresulapoyo" type="java.lang.String" column="HRECRESULAPOYO" length="1"/>
+        <property name="hreccartapago" type="java.lang.String" column="HRECCARTAPAGO" length="1"/>
+        <property name="hrecexamfisc" type="java.lang.String" column="HRECEXAMFISC" length="4000"/>
+        <property name="hrecdiagnosti" type="java.lang.String" column="HRECDIAGNOSTI" length="4000"/>
+        <property name="hrenmedauttra" type="java.lang.Long" column="HRENMEDAUTTRA" precision="10" scale="0"/>
+        <property name="hrecmormatext" type="java.lang.String" column="HRECMORMATEXT" length="1"/>
+
+    </class>
+</hibernate-mapping>

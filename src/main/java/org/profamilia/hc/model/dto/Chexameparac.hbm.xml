@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping>
+    <!-- 
+    Created by the Middlegen Hibernate plugin 2.2
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+    <class name="org.profamilia.hc.model.dto.Chexameparac" table="CHEXAMEPARAC" schema="HISTORIA"
+           lazy="false">
+        <composite-id name="id"
+                      class="org.profamilia.hc.model.dto.ChexameparacPK">
+            <key-property name="heplconsulta" column="HEPLCONSULTA"
+                          type="java.lang.Long" length="12"/>
+            <key-property name="hepnconsecuti" column="HEPNCONSECUTI"
+                          type="java.lang.Integer" length="4"/>
+            <key-property name="hepctiposervi" column="HEPCTIPOSERVI"
+                          type="java.lang.String" length="1"/>
+        </composite-id>
+        <version name="version" column="VERSION"/> 
+        <property name="hepntipoexam" type="java.lang.Integer"
+                  column="HEPNTIPOEXAM" length="2"/>
+        <property name="hepcdescripc" type="java.lang.String" column="HEPCDESCRIPC"
+                  length="4000"/>
+        <property name="hepcoperador" type="java.lang.String"
+                  column="HEPCOPERADOR" length="14"/>
+        <property name="hepdfecregistr" type="java.util.Date"
+                  column="HEPDFECREGISTR" length="7"/>
+    </class>
+</hibernate-mapping>

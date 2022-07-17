@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping>
+    <!-- 
+    Created by the Middlegen Hibernate plugin 2.2
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+    <class name="org.profamilia.hc.model.dto.Chseguipsico" table="CHSEGUIPSICO" lazy="false" schema="HISTORIA">
+        <composite-id name="id" class="org.profamilia.hc.model.dto.ChseguipsicoPK">
+            <key-property name="hsplconsulta" column="HSPLCONSULTA" type="java.lang.Long" length="12"/>
+            <key-property name="hspctiposervi" column="HSPCTIPOSERVI" type="java.lang.String" length="1"/>
+        </composite-id>
+        <version name="version" column="VERSION"/>
+        <property name="hspcoperador" type="java.lang.String" column="HSPCOPERADOR" length="14"/>
+        <property name="hspdfecregistr" type="java.util.Date" column="HSPDFECREGISTR" length="7"/>
+        <property name="hspcretrocumpl" type="java.lang.String" column="HSPCRETROCUMPL" length="2000"/>
+        <property name="hspcavancpsico" type="java.lang.String" column="HSPCAVANCPSICO" length="2000"/>
+        <property name="hspcrevistarea" type="java.lang.String" column="HSPCREVISTAREA" length="2000"/>
+        <property name="hspcobsergener" type="java.lang.String" column="HSPCOBSERGENER" length="2000"/>
+        <!-- Associations -->
+        <!-- derived association(s) for compound key -->
+        <!-- end of derived association(s) -->
+    </class>
+</hibernate-mapping>

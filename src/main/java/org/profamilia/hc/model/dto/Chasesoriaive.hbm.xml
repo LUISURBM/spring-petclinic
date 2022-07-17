@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping>
+    <!-- 
+    Created by the Middlegen Hibernate plugin 2.2
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+    <class name="org.profamilia.hc.model.dto.Chasesoriaive" table="CHASESORIAIVE" lazy="false" schema="HISTORIA">
+        <id name="hailconsulta" type="java.lang.Long" column="HAILCONSULTA">
+        </id>
+        <version name="version" column="VERSION"/>
+        <property name="haidfecregistr" type="java.util.Date" column="HAIDFECREGISTR" length="7"/>
+        <property name="haicoperador" type="java.lang.String" column="HAICOPERADOR" length="14"/>
+        <property name="haicobservacion" type="java.lang.String" column="HAICOBSERVACION"/>
+        <property name="haicderecho" type="java.lang.String" column="HAICDERECHO" length="1"/>
+        <property name="haicrespdeci" type="java.lang.String" column="HAICRESPDECI" length="1"/>
+        <property name="haicautodeci" type="java.lang.String" column="HAICAUTODECI" length="1"/>
+        <property name="haiccontgest" type="java.lang.String" column="HAICCONTGEST" length="1"/>
+        <property name="haicadopcion" type="java.lang.String" column="HAICADOPCION" length="1"/>
+        <property name="haicintvolemb" type="java.lang.String" column="HAICINTVOLEMB" length="1"/>
+        <!-- Associations -->
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping>
+    <!-- 
+    Created by the Middlegen Hibernate plugin 2.2
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+    <class name="org.profamilia.hc.model.dto.Ctacumcosto" table="CTACUMCOSTO" schema="CLINICO" lazy="false">
+        <id name="cacnnumero" type="java.lang.Long" column="CACNNUMERO">
+            <meta attribute="field-description" inherit="false">Identificador acumulado de costos</meta>
+            <generator class="sequence">
+                <param name="sequence">CLINICO.CTACUMCOSTO_SEQ</param>
+            </generator>
+        </id>
+         
+        <property name="cacnclinica" type="java.lang.Long" column="CACNCLINICA" not-null="true" length="22"/>
+        <property name="cacdfecmov" type="java.util.Date" column="CACDFECMOV" not-null="true" length="7"/>
+        <property name="cacnadmision" type="long" column="CACNADMISION" not-null="true" length="10"/>
+        <property name="cacctipocost" type="java.lang.String" column="CACCTIPOCOST" not-null="true" length="4"/>
+        <property name="caccinsumo" type="java.lang.String" column="CACCINSUMO" not-null="true" length="12"/>
+        <property name="cacclote" type="java.lang.String" column="CACCLOTE" length="50"/>
+        <property name="cacncantidad" type="long" column="CACNCANTIDAD" not-null="true" length="10"/>
+        <property name="caccunidmedi" type="java.lang.String" column="CACCUNIDMEDI" not-null="true" length="3"/>
+        <property name="cacccargpaci" type="java.lang.String" column="CACCCARGPACI" not-null="true" length="1"/>
+        <property name="cacnconsclin" type="java.lang.Long" column="CACNCONSCLIN" length="12"/>
+        <property name="caccservicio" type="java.lang.String" column="CACCSERVICIO" not-null="true" length="12"/>
+        <property name="caccsector" type="java.lang.String" column="CACCSECTOR" length="2"/>
+        <property name="cacccencos" type="java.lang.String" column="CACCCENCOS" length="5"/>
+        <property name="caccestado" type="java.lang.String" column="CACCESTADO" not-null="true" length="2"/>
+        <property name="caccetapa" type="java.lang.String" column="CACCETAPA" not-null="true" length="2"/>
+        <property name="caccusureg" type="java.lang.String" column="CACCUSUREG" not-null="true" length="14"/>
+        <property name="cacdfecreg" type="java.sql.Timestamp" column="CACDFECREG" not-null="true" length="11"/>
+        <property name="caccusuanu" type="java.lang.String" column="CACCUSUANU" length="14"/>
+        <property name="cacdfecanu" type="java.sql.Timestamp" column="CACDFECANU" length="11"/>
+        <property name="version" type="java.math.BigDecimal" column="VERSION" length="22"/>
+        <!-- Associations -->
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping>
+    <!-- 
+    Created by the Middlegen Hibernate plugin 2.2
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+    <class name="org.profamilia.hc.model.dto.Cpempresa" table="CPEMPRESA" schema="CLINICO" lazy="false">
+        <id name="cemncodigo" type="java.lang.Integer" column="CEMNCODIGO">
+            <generator class="assigned"/>
+        </id>
+        <property name="cemcnombre" type="java.lang.String" column="CEMCNOMBRE" not-null="true" length="30"/>
+        <property name="cemanit" type="java.math.BigDecimal" column="CEMANIT" not-null="true" length="17"/>
+        <property name="cemcrepleg" type="java.lang.String" column="CEMCREPLEG" length="30"/>
+        <property name="cemcdirecc" type="java.lang.String" column="CEMCDIRECC" length="30"/>
+        <property name="cemctelefo" type="java.lang.String" column="CEMCTELEFO" length="20"/>
+        <property name="cemctesore" type="java.lang.String" column="CEMCTESORE" not-null="true" length="1"/>
+        <property name="cemclin980" type="java.lang.String" column="CEMCLIN980" length="15"/>
+        <property name="cemcserial" type="java.lang.String" column="CEMCSERIAL" length="15"/>
+        <property name="version" type="java.math.BigDecimal" column="VERSION" length="22"/>
+        <property name="cemcactual" type="java.lang.String" column="CEMCACTUAL" length="10"/>
+        <property name="cemctokmen" type="java.lang.String" column="CEMCTOKMEN" length="50"/>
+        <property name="cemcclimen" type="java.lang.String" column="CEMCCLIMEN" length="30"/>
+        <property name="cemcpasmen" type="java.lang.String" column="CEMCPASMEN" length="30"/>
+        <property name="cemcact084" type="java.lang.String" column="CEMCACT084" length="2"/>
+        <property name="cemcambiente" type="java.lang.String" column="CEMCAMBIENTE" length="20"/>
+        <property name="cemcremfac" type="java.lang.String" column="CEMCREMFAC" length="2"/>
+        <property name="cemcwsosap" type="java.lang.String" column="CEMCWSOSAP" length="2"/>
+        <property name="cemccostos" type="java.lang.String" column="CEMCCOSTOS" length="2"/>
+        <!-- Associations -->
+    </class>
+</hibernate-mapping>

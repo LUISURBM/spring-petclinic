@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping>
+    <class name="org.profamilia.hc.model.dto.Chformulahos" table="CHFORMULAHOS" schema="HISTORIA" lazy="false">
+        <composite-id name="id" class="org.profamilia.hc.model.dto.ChformulahosPK">
+            <key-property name="hfhlconsulta" column="HFHLCONSULTA" type="java.lang.Long" length="12"/>
+            <key-property name="hfhnconsecut" column="HFHNCONSECUT" type="java.lang.Integer" length="4"/>
+            <key-property name="hfhnevoluconse" column="HFHNEVOLUCONSE" type="java.lang.Integer" length="4"/>
+        </composite-id>
+        <version name="version" column="VERSION"/>
+        <property name="hfhcmedicament" type="java.lang.String" column="HFHCMEDICAMENT" length="600"/>
+        <property name="hfhlusuario" type="java.lang.Long" column="HFHLUSUARIO" not-null="true" length="12"/>
+        <property name="hfhcpresentaci" type="java.lang.String" column="HFHCPRESENTACI" length="50"/>
+        <property name="hfhcadosis" type="java.math.BigDecimal" column="HFHCADOSIS" length="17"/>
+        <property name="hfhnfrecuadmin" type="java.lang.Integer" column="HFHNFRECUADMIN" length="2"/>
+        <property name="hfhcviadministr" type="java.lang.String" column="HFHCVIADMINISTR" length="2"/>
+        <property name="hfhcviadminotr" type="java.lang.String" column="HFHCVIADMINOTR" length="600"/>
+        <property name="hfhcformaadmin" type="java.lang.String" column="HFHCFORMAADMIN" length="2"/>
+        <property name="hfhcunidad" type="java.lang.String" column="HFHCUNIDAD" length="2"/>
+        <property name="hfhnvolumburet" type="java.lang.Integer" column="HFHNVOLUMBURET" length="4"/>
+        <property name="hfhntiempburet" type="java.lang.Integer" column="HFHNTIEMPBURET" length="4"/>
+        <property name="hfhnvelocinfus" type="java.lang.Integer" column="HFHNVELOCINFUS" length="4"/>
+        <property name="hfhdfecregistr" type="java.util.Date" column="HFHDFECREGISTR" length="7"/>
+        <property name="hfhcoperador" type="java.lang.String" column="HFHCOPERADOR" length="14"/>
+        <property name="hfhcetapa" type="java.lang.String" column="HFHCETAPA" length="2"/>
+        <property name="hfhdfechamodif" type="java.util.Date" column="HFHDFECHAMODIF" length="7"/>
+        <property name="hfhcoperamodif" type="java.lang.String" column="HFHCOPERAMODIF" length="14"/>
+        <property name="hfhdhorasumin" type="java.util.Date" column="HFHDHORASUMIN" length="11"/>
+        <property name="hfhctiposerv" type="java.lang.String" column="HFHCTIPOSERV" length="1"/>
+        <property name="hfhcunitiempo" type="java.lang.String" column="HFHCUNITIEMPO" length="1"/>
+        <property name="hfhntiempotot" type="java.lang.Integer" column="HFHNTIEMPOTOT" length="4"/>
+        <property name="hfhnconsmedic" type="java.lang.Integer" column="HFHNCONSMEDIC" length="2"/>
+        <property name="hfhcviaintreco" type="java.lang.String" column="HFHCVIAINTRECO" length="600"/>
+        <property name="hfhnevolususp" type="java.lang.Integer" column="HFHNEVOLUSUSP" length="4"/>
+        <property name="hfhdhorasusp" type="java.util.Date" column="HFHDHORASUSP" length="11"/>
+        <property name="hfhcconcimedi" type="java.lang.String" column="HFHCCONCIMEDI" length="1"/>
+       <property name="hfhccodsap" type="java.lang.String" column="HFHCCODSAP" length="20"/>
+       
+        <!-- Associations -->
+        <!-- derived association(s) for compound key -->
+        <!-- end of derived association(s) -->
+    </class>
+</hibernate-mapping>

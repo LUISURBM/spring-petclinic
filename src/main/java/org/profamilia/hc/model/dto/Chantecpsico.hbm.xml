@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping>
+    <!-- 
+    Created by the Middlegen Hibernate plugin 2.2
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+    <class name="org.profamilia.hc.model.dto.Chantecpsico" table="CHANTECPSICO" lazy="false" schema="HISTORIA">
+        <composite-id name="id" class="org.profamilia.hc.model.dto.ChantecpsicoPK">
+            <key-property name="haplconsulta" column="HAPLCONSULTA" type="java.lang.Long" length="12"/>
+            <key-property name="hapctiposervi" column="HAPCTIPOSERVI" type="java.lang.String" length="1"/>
+        </composite-id>
+        <version name="version" column="VERSION"/>
+        <property name="hapcoperador" type="java.lang.String" column="HAPCOPERADOR" length="14"/>
+        <property name="hapdfecregistr" type="java.util.Date" column="HAPDFECREGISTR" length="7"/>
+        <property name="hapcsientenfer" type="java.lang.String" column="HAPCSIENTENFER" length="1"/>
+        <property name="hapcdescrenfer" type="java.lang.String" column="HAPCDESCRENFER" length="1000"/>
+        <property name="hapcalterfisic" type="java.lang.String" column="HAPCALTERFISIC" length="1"/>
+        <property name="hapccualalter" type="java.lang.String" column="HAPCCUALALTER" length="1000"/>
+        <property name="hapcnuncafisic" type="java.lang.String" column="HAPCNUNCAFISIC" length="1"/>
+        <property name="hapcocasifisic" type="java.lang.String" column="HAPCOCASIFISIC" length="1"/>
+        <property name="hapcalimtredia" type="java.lang.String" column="HAPCALIMTREDIA" length="1"/>
+        <property name="hapcalimmasdia" type="java.lang.String" column="HAPCALIMMASDIA" length="1"/>
+        <property name="hapctipoalime" type="java.lang.String" column="HAPCTIPOALIME" length="2000"/>
+        <property name="hapcmedicformu" type="java.lang.String" column="HAPCMEDICFORMU" length="1"/>
+        <property name="hapccualmedic" type="java.lang.String" column="HAPCCUALMEDIC" length="2000"/>
+        <property name="hapchabitsalud" type="java.lang.String" column="HAPCHABITSALUD" length="1"/>
+        <property name="hapccualhabit" type="java.lang.String" column="HAPCCUALHABIT" length="2000"/>
+        <property name="hapcoriensexua" type="java.lang.String" column="HAPCORIENSEXUA" length="2"/>
+        <property name="hapccualorien" type="java.lang.String" column="HAPCCUALORIEN" length="100"/>
+        <property name="hapcactuaparej" type="java.lang.String" column="HAPCACTUAPAREJ" length="1"/>
+        <property name="hapctipovincu" type="java.lang.String" column="HAPCTIPOVINCU" length="2"/>
+        <property name="hapcsexuaactiv" type="java.lang.String" column="HAPCSEXUAACTIV" length="1"/>
+        <property name="hapcsexuasatis" type="java.lang.String" column="HAPCSEXUASATIS" length="1"/>
+        <property name="hapcsexuadific" type="java.lang.String" column="HAPCSEXUADIFIC" length="1"/>
+        <property name="hapccualdific" type="java.lang.String" column="HAPCCUALDIFIC" length="2000"/>
+        <property name="hapctrastpsiqu" type="java.lang.String" column="HAPCTRASTPSIQU" length="1"/>
+        <property name="hapccualtrast" type="java.lang.String" column="HAPCCUALTRAST" length="1000"/>
+        <property name="hapctipofamil" type="java.lang.String" column="HAPCTIPOFAMIL" length="2"/>
+        <property name="hapccompofamil" type="java.lang.String" column="HAPCCOMPOFAMIL" length="2000"/>
+        <property name="hapcvincufamil" type="java.lang.String" column="HAPCVINCUFAMIL" length="2"/>
+        <property name="hapcrelacfamil" type="java.lang.String" column="HAPCRELACFAMIL" length="2000"/>
+        <!-- Associations -->
+        <!-- derived association(s) for compound key -->
+        <!-- end of derived association(s) -->
+    </class>
+</hibernate-mapping>

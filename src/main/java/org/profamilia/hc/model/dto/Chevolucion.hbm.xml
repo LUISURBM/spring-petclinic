@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping>
+    <!-- 
+    Created by the Middlegen Hibernate plugin 2.2
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+    <class name="org.profamilia.hc.model.dto.Chevolucion" table="CHEVOLUCION" schema="HISTORIA" lazy="false">
+        <composite-id name="id" class="org.profamilia.hc.model.dto.ChevolucionPK">
+            <key-property name="hevlnumero" column="HEVLNUMERO" type="java.lang.Long" length="12"/>
+            <key-property name="hevnconsecutiv" column="HEVNCONSECUTIV" type="java.lang.Integer" length="4"/>
+            <key-property name="hevctiposervi" column="HEVCTIPOSERVI" type="java.lang.String" length="1"/>
+        </composite-id>
+        <version name="version" column="VERSION"/>
+        <property name="hevlusuario" type="java.lang.Long" column="HEVLUSUARIO" length="12"/>
+        <property name="hevcnotapacien" type="java.lang.String" column="HEVCNOTAPACIEN" length="4000"/>
+        <property name="hevdfecevoluci" type="java.util.Date" column="HEVDFECEVOLUCI" length="7"/>
+        <property name="hevdfecregistr" type="java.util.Date" column="HEVDFECREGISTR" length="7"/>
+        <property name="hevcoperador" type="java.lang.String" column="HEVCOPERADOR" length="14"/>
+        <property name="hevcestado" type="java.lang.String" column="HEVCESTADO" length="2" not-null="true"/>
+        <property name="hevcrefiedolor" type="java.lang.String" column="HEVCREFIEDOLOR" length="2"/>
+        <property name="hevnescaladolo" type="java.lang.Integer" column="HEVNESCALADOLO" length="4"/>
+        <property name="hevcdudointen" type="java.lang.String" column="HEVCDUDOINTEN" length="2"/>
+        <property name="hevnduradolor" type="java.lang.Integer" column="HEVNDURADOLOR" length="4"/>
+    </class>
+</hibernate-mapping>

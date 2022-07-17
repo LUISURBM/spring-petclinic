@@ -1,0 +1,160 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+ <!-- 
+		Auto-generated mapping file from
+		the hibernate.org cfg2hbm engine
+	-->
+ <class name="org.profamilia.hc.model.dto.Cnplanfert" table="CNPLANFERT" schema="CLINICO">
+  <composite-id name="id" class="org.profamilia.hc.model.dto.CnplanfertId">
+   <key-property name="cpflusuario" type="long">
+    <column name="CPFLUSUARIO" precision="12"/>
+   </key-property>
+   <key-property name="cpfnnumero" type="integer">
+    <column name="CPFNNUMERO" precision="4" scale="0"/>
+   </key-property>
+  </composite-id>
+  <version name="version" column="VERSION"/>
+  <property name="cpfdfecpla" type="date">
+   <column name="CPFDFECPLA" length="7" not-null="true"/>
+  </property>
+  <property name="cpfntippla" type="integer">
+   <column name="CPFNTIPPLA" precision="4" scale="0"/>
+  </property>
+  <property name="cpfcmedico" type="string">
+   <column name="CPFCMEDICO" length="40" not-null="true"/>
+  </property>
+  <property name="cpfcinducc" type="string">
+   <column name="CPFCINDUCC" length="80"/>
+  </property>
+  <property name="cpfddiahcg" type="date">
+   <column name="CPFDDIAHCG" length="7"/>
+  </property>
+  <property name="cpfcestrad" type="string">
+   <column name="CPFCESTRAD" length="10"/>
+  </property>
+  <property name="cpfcesptip" type="string">
+   <column name="CPFCESPTIP" length="2"/>
+  </property>
+  <property name="cpfcpascat" type="string">
+   <column name="CPFCPASCAT" length="1"/>
+  </property>
+  <property name="cpfnespdon" type="integer">
+   <column name="CPFNESPDON" precision="4" scale="0"/>
+  </property>
+  <property name="cpfcgradie" type="string">
+   <column name="CPFCGRADIE" length="1"/>
+  </property>
+  <property name="cpfcovutip" type="string">
+   <column name="CPFCOVUTIP" length="2"/>
+  </property>
+  <property name="cpfnovudon" type="integer">
+   <column name="CPFNOVUDON" precision="4" scale="0" />
+  </property>
+  <property name="cpfcgrabad" type="string">
+   <column name="CPFCGRABAD" length="14" not-null="true"/>
+  </property>
+  <property name="cpfdfecgra" type="date">
+   <column name="CPFDFECGRA" length="7" not-null="true"/>
+  </property>
+  <property name="cpfnfolicu" type="integer">
+   <column name="CPFNFOLICU" precision="4" scale="0" />
+  </property>
+  <property name="cpfaendome" type="big_decimal">
+   <column name="CPFAENDOME" precision="9" />
+  </property>
+  <property name="cpfnfolovu" type="integer">
+   <column name="CPFNFOLOVU" precision="4" scale="0"/>
+  </property>
+  <property name="cpfnfolmad" type="integer">
+   <column name="CPFNFOLMAD" precision="4" scale="0"/>
+  </property>
+  <property name="cpfnfolfec" type="integer">
+   <column name="CPFNFOLFEC" precision="4" scale="0" />
+  </property>
+  <property name="cpfndiacic" type="integer">
+   <column name="CPFNDIACIC" precision="4" scale="0" />
+  </property>
+  <property name="cpfndiagcf" type="integer">
+   <column name="CPFNDIAGCF" precision="4" scale="0" />
+  </property>
+  <property name="cpfnestrad" type="integer">
+   <column name="CPFNESTRAD" precision="4" scale="0" />
+  </property>
+  <property name="cpfninducc" type="integer">
+   <column name="CPFNINDUCC" precision="4" scale="0"/>
+  </property>
+  <property name="cpfnvolova" type="integer">
+   <column name="CPFNVOLOVA" precision="4" scale="0" />
+  </property>
+  <property name="cpfnfolcen" type="integer">
+   <column name="CPFNFOLCEN" precision="4" scale="0"/>
+  </property>
+  <property name="cpfccancel" type="string">
+   <column name="CPFCCANCEL" length="1"/>
+  </property>
+  <property name="cpfnperiod" type="integer">
+   <column name="CPFNPERIOD" precision="4" scale="0" not-null="true"/>
+  </property>
+  <property name="cpfnmes" type="integer">
+   <column name="CPFNMES" precision="4" scale="0" not-null="true"/>
+  </property>
+  <property name="cpfcmedic1" type="string">
+   <column name="CPFCMEDIC1" length="15"/>
+  </property>
+  <property name="cpfcvalme1" type="string">
+   <column name="CPFCVALME1" length="10"/>
+  </property>
+  <property name="cpfcmedic2" type="string">
+   <column name="CPFCMEDIC2" length="15"/>
+  </property>
+  <property name="cpfcvalme2" type="string">
+   <column name="CPFCVALME2" length="10"/>
+  </property>
+  <property name="cpfcmedic3" type="string">
+   <column name="CPFCMEDIC3" length="15"/>
+  </property>
+  <property name="cpfcvalme3" type="string">
+   <column name="CPFCVALME3" length="10"/>
+  </property>
+  <property name="cpfnclinic" type="integer">
+   <column name="CPFNCLINIC" precision="4" scale="0" not-null="true"/>
+  </property>
+  <property name="cpfctipide" type="string">
+   <column name="CPFCTIPIDE" length="3" not-null="true"/>
+  </property>
+  <property name="cpfanumide" type="long">
+   <column name="CPFANUMIDE" precision="15" not-null="true"/>
+  </property>
+  <property name="cpfcestado" type="string">
+   <column name="CPFCESTADO" length="2" not-null="true"/>
+  </property>
+  <property name="cpfnnumint" type="integer">
+   <column name="CPFNNUMINT" precision="4" scale="0" not-null="true"/>
+  </property>
+  <property name="cpfcbiotes" type="string">
+   <column name="CPFCBIOTES" length="1"/>
+  </property>
+  <property name="cpfcaspira" type="string">
+   <column name="CPFCASPIRA" length="1"/>
+  </property>
+  <property name="cpfctipemb" type="string">
+   <column name="CPFCTIPEMB" length="1"/>
+  </property>
+  <property name="cpfnpreend" type="integer">
+   <column name="CPFNPREEND" precision="4" scale="0"/>
+  </property>
+  <property name="cpfcidesp" type="string">
+   <column name="CPFCIDESP" length="7"/>
+  </property>
+  <property name="cpfcidovu" type="string">
+   <column name="CPFCIDOVU" length="7"/>
+  </property>
+  
+    <property name="cpfnconcli" type="long">
+   <column name="CPFNCONCLI" precision="9" scale="0" />
+  </property>
+  
+ </class>
+</hibernate-mapping>

@@ -1,0 +1,60 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping>
+    <!-- 
+    Created by the Middlegen Hibernate plugin 2.2
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+    <class name="org.profamilia.hc.model.dto.Chseguavis" table="CHSEGUAVIS" lazy="false" schema="HISTORIA">
+        <composite-id name="id" class="org.profamilia.hc.model.dto.ChseguavisPK">
+            <key-property name="hsadfecase" column="HSADFECASE" type="java.util.Date" length="7"/>
+            <key-property name="hsalusuario" column="HSALUSUARIO" type="java.lang.Long" length="12"/>
+            <key-property name="hsanconsec" column="HSANCONSEC" type="java.lang.Integer" length="4"/>
+        </composite-id>
+          <version name="version" column="VERSION"/>
+        <property name="hsactipide" type="java.lang.String" column="HSACTIPIDE" not-null="true" length="2"/>
+        <property name="hsaanumide" type="java.lang.Long" column="HSAANUMIDE" not-null="true" length="17"/>
+        <property name="hsanclinic" type="java.lang.Integer" column="HSANCLINIC" not-null="true" length="4"/>
+        <property name="hsadfecreg" type="java.util.Date" column="HSADFECREG" not-null="true" length="7"/>
+        <property name="hsacusureg" type="java.lang.String" column="HSACUSUREG" not-null="true" length="12"/>
+        <property name="hsanedages" type="java.lang.Integer" column="HSANEDAGES" length="4"/>
+        <property name="hsacremmot" type="java.lang.String" column="HSACREMMOT" length="50"/>
+        <property name="hsacnmbotr" type="java.lang.String" column="HSACNMBOTR" length="30"/>
+        <property name="hsacremotr" type="java.lang.String" column="HSACREMOTR" not-null="true" length="1"/>
+        <property name="hsacremind" type="java.lang.String" column="HSACREMIND" not-null="true" length="1"/>
+        <property name="hsacremcos" type="java.lang.String" column="HSACREMCOS" not-null="true" length="1"/>
+        <property name="hsacremeps" type="java.lang.String" column="HSACREMEPS" not-null="true" length="1"/>
+        <property name="hsacremips" type="java.lang.String" column="HSACREMIPS" not-null="true" length="1"/>
+        <property name="hsacremcau" type="java.lang.String" column="HSACREMCAU" not-null="true" length="1"/>
+        <property name="hsacremmay" type="java.lang.String" column="HSACREMMAY" not-null="true" length="1"/>
+        <property name="hsacremcon" type="java.lang.String" column="HSACREMCON" not-null="true" length="1"/>
+        <property name="hsacremilv" type="java.lang.String" column="HSACREMILV" not-null="true" length="1"/>
+        <property name="hsacremapl" type="java.lang.String" column="HSACREMAPL" not-null="true" length="1"/>
+        <property name="hsacestado" type="java.lang.String" column="HSACESTADO" not-null="true" length="2"/>
+        <property name="hsacasesor" type="java.lang.String" column="HSACASESOR" length="50"/>
+        <property name="hsacseguim" type="java.lang.String" column="HSACSEGUIM" not-null="true" length="4000"/>
+        <property name="hsansemest" type="java.lang.Integer" column="HSANSEMEST" length="4"/>
+        <property name="hsadfececo" type="java.util.Date" column="HSADFECECO" length="7"/>
+        <property name="hsansemeco" type="java.lang.Integer" column="HSANSEMECO" length="4"/>
+        <property name="hsacconduc" type="java.lang.String" column="HSACCONDUC" length="30"/>
+        <property name="hsacinsrem" type="java.lang.String" column="HSACINSREM" length="200"/>
+        <property name="hsantelcon" type="java.math.BigDecimal" column="HSANTELCON" length="12"/>
+        <property name="hsacreapro" type="java.lang.String" column="HSACREAPRO" length="1"/>
+        <property name="hsaclugpro" type="java.lang.String" column="HSACLUGPRO" length="200"/>
+        <property name="hsacmetant" type="java.lang.String" column="HSACMETANT" length="50"/>
+        <property name="hsacconuso" type="java.lang.String" column="HSACCONUSO" length="1"/>
+        <property name="hsacobserv" type="java.lang.String" column="HSACOBSERV" length="4000"/>
+        <property name="hsaccontac" type="java.lang.String" column="HSACCONTAC" length="200"/>
+        <property name="hsaccousan" type="java.lang.String" column="HSACCOUSAN" length="1"/>
+        <property name="hsaciveins" type="java.lang.String" column="HSACIVEINS" length="1"/>
+        <property name="hsacotrins" type="java.lang.String" column="HSACOTRINS" length="50"/>
+
+        <!-- Associations -->
+        <!-- derived association(s) for compound key -->
+        <!-- end of derived association(s) -->
+    </class>
+</hibernate-mapping>

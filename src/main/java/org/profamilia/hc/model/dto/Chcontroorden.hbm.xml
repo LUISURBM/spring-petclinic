@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping>
+    <!-- 
+    Created by the Middlegen Hibernate plugin 2.2
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+    <class name="org.profamilia.hc.model.dto.Chcontroorden" table="CHCONTROORDEN" lazy="false" schema="HISTORIA">
+        <composite-id name="id" class="org.profamilia.hc.model.dto.ChcontroordenPK">
+            <key-property name="hcolnumero" column="HCOLNUMERO" type="java.lang.Long" length="12"/>
+            <key-property name="hconconsecutiv" column="HCONCONSECUTIV" type="java.lang.Integer" length="4"/>
+           
+        </composite-id>
+        <version name="version" column="VERSION"/>
+        <property name="hcocestado" type="java.lang.String" column="HCOCESTADO" length="2"/>
+        <property name="hcocetapa" type="java.lang.String" column="HCOCETAPA" length="2"/>
+        <property name="hcocoperaasig" type="java.lang.String" column="HCOCOPERAASIG" length="20"/>
+        <property name="hcocoperaadmi" type="java.lang.String" column="HCOCOPERAADMI" length="20"/>
+        <property name="hcodfechaasig" type="java.util.Date" column="HCODFECHAASIG" length="7"/>
+        <property name="hcodfechaadmi" type="java.util.Date" column="HCODFECHAADMI" length="7"/>
+        <property name="hcocordenenvi" type="java.lang.String" column="HCOCORDENENVI" length="1000"/>
+        <property name="hcocnombreord" type="java.lang.String" column="HCOCNOMBREORD" length="40"/>
+        <property name="hcocobserva" type="java.lang.String" column="HCOCOBSERVA" length="500"/>
+        <property name="hcocoperamodif" type="java.lang.String" column="HCOCOPEROMODIF" length="20"/>
+        <property name="hcodfechamodif" type="java.util.Date" column="HCODFECHAMODIF" length="7"/>
+        <property name="hconevoluconse" type="java.lang.Integer" column="HCONEVOLUCONSE" length="4"/>
+        <property name="hcocsistoxige" type="java.lang.String" column="HCOCSISTOXIGE" length="2"/>
+        <property name="hcoccantlitros" type="java.lang.String" column="HCOCCANTLITROS" length="10"/>
+        <property name="hcoccantminutos" type="java.lang.Long" column="HCOCCANTMINUTOS" length="9"/>
+        <property name="hcoccduracion" type="java.lang.String" column="HCOCCDURACION" length="500"/>
+        <property name="hcoccadminisoxig" type="java.lang.String" column="HCOCCADMINISOXIG" length="1"/>
+        <property name="hcocdfechadminis" type="java.util.Date" column="HCOCDFECHADMINIS" length="7"/>
+        <property name="hcoccadminoxigdesc" type="java.lang.String" column="HCOCCADMINOXIGDESC" length="200"/>
+        <property name="hcoccestadoadminox" type="java.lang.String" column="HCOCCESTADOADMINOX" length="2"/>
+        <property name="hcodhorainioxi" type="java.util.Date" column="HCODHORAINIOXI" length="11"/>
+        <property name="hcodhorafinoxi" type="java.util.Date" column="HCODHORAFINOXI" length="11"/>
+        <property name="hcolusuario" type="java.lang.Long" column="HCOLUSUARIO" length="12"/>
+        
+   
+      
+        <!-- Associations -->
+        <!-- derived association(s) for compound key -->
+        <!-- end of derived association(s) -->
+    </class>
+</hibernate-mapping>

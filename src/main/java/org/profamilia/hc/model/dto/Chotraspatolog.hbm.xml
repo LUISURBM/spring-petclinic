@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping>
+    <!-- 
+    Created by the Middlegen Hibernate plugin 2.2 http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+    -->
+    <class name="org.profamilia.hc.model.dto.Chotraspatolog" table="CHOTRASPATOLOG"  schema="HISTORIA" lazy="false">
+        <id name="chopnconsec" type="java.lang.Integer" column="CHOPNCONSEC">
+            <meta attribute="field-description" inherit="false">Secuencia de la patologia.</meta>
+            <generator class="sequence">
+                <param name="sequence">HISTORIA.SEC_CHOTRASPATOLOG</param>
+            </generator>   
+        </id>        
+        <property name="chopntipodoc" type="java.lang.Integer" column="CHOPNTIPODOC" not-null="true" length="4"/>
+        <property name="chopnnumdoc" type="java.lang.Integer" column="CHOPNNUMDOC" not-null="true" length="9"/>
+        <property name="chopnclinorig" type="java.lang.Integer" column="CHOPNCLINORIG" not-null="true" length="4"/>
+        <property name="chopccodiserv" type="java.lang.String" column="CHOPCCODISERV" not-null="true" length="12"/>
+        <property name="chopcobspatol" type="java.lang.String" column="CHOPCOBSPATOL" length="400"/>
+        <property name="chopcoperador" type="java.lang.String" column="CHOPCOPERADOR" not-null="true" length="12"/>
+        <property name="chopdfechareg" type="java.sql.Date" column="CHOPDFECHAREG" not-null="true" length="7"/>
+        <property name="chopcdiagn" type="java.lang.String" column="CHOPCDIAGN" length="100"/>        
+        <property name="chopcnombrerecl" type="java.lang.String" column="CHOPCNOMBRERECL"  length="60"/>
+        <property name="chopcparentesco" type="java.lang.String" column="CHOPCPARENTESCO"  length="20"/>
+        <property name="chopdfechaent" type="java.sql.Date" column="CHOPDFECHAENT"  length="7"/>
+        
+        
+    </class>
+</hibernate-mapping>

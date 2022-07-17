@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+<!-- 
+        Auto-generated mapping file from
+        the hibernate.org cfg2hbm engine
+-->
+    <class name="org.profamilia.hc.model.dto.Cpservxsal" table="CPSERVXSAL" schema="CLINICO">
+        <composite-id name="id" class="org.profamilia.hc.model.dto.CpservxsalId">
+            <key-property name="cspcservic" type="string">
+                <column name="CSPCSERVIC" length="12" />
+            </key-property>
+            <key-property name="cspnsalesp" type="integer">
+                <column name="CSPNSALESP" precision="4" scale="0" />
+            </key-property>
+            <key-property name="cspnclinic" type="integer">
+                <column name="CSPNCLINIC" precision="4" scale="0" />
+            </key-property>
+        </composite-id>
+        <version name="version" column="VERSION"/>
+        <property name="cspcusuar" type="string">
+            <column name="CSPCUSUAR" length="14" not-null="true" />
+        </property>
+        <property name="cspdfecreg" type="date">
+            <column name="CSPDFECREG" length="7" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

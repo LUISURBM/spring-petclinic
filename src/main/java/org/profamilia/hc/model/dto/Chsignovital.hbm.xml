@@ -1,0 +1,59 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping>
+    <!-- 
+    Created by the Middlegen Hibernate plugin 2.2
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+    <class name="org.profamilia.hc.model.dto.Chsignovital" table="CHSIGNOVITAL"
+           schema="HISTORIA" lazy="false">
+        <composite-id name="id" class="org.profamilia.hc.model.dto.ChsignovitalPK">
+            <key-property name="hsvlconsulta" column="HSVLCONSULTA"
+                          type="java.lang.Long" length="12"/>
+            <key-property name="hsvlconsecutiv" column="HSVLCONSECUTIV"
+                          type="java.lang.Integer" length="12"/>
+        </composite-id>
+        <version name="version" column="VERSION"/>
+        <property name="hsvlusuario" type="java.lang.Long" column="HSVLUSUARIO"
+                  length="12"/>
+       
+        <property name="hsvnpresart1" type="java.lang.Integer"
+                  column="HSVCPRESART1" length="3"/>
+        <property name="hsvnpresart2" type="java.lang.Integer"
+                  column="HSVCPRESART2" length="3"/>
+        <property name="hsvnfreccard" type="java.lang.Integer"
+                  column="HSVNFRECCARD" length="4"/>
+        <property name="hsvnfrecresp" type="java.lang.Integer"
+                  column="HSVNFRECRESP" length="4"/>
+        <property name="hsvetipotemper" type="java.lang.String"
+                  column="HSVETIPOTEMPER" length="1"/>
+        <property name="hsvatemperatu" type="java.math.BigDecimal"
+                  column="HSVATEMPERATU" length="5"/>
+        <property name="hsvnsatuoxihe" type="java.lang.Integer"
+                  column="HSVNSATUOXIHE" length="4"/>
+        <property name="hsvnclinica" type="java.lang.Integer"
+                  column="HSVNCLINICA" length="4"/>
+        <property name="hsvcestado" type="java.lang.String" column="HSVCESTADO"
+                  length="2"/>
+        <property name="hsvdfecregistr" type="java.util.Date"
+                  column="HSVDFECREGISTR" length="7"/>
+        <property name="hsvcoperador" type="java.lang.String"
+                  column="HSVCOPERADOR" length="14"/>
+        <property name="hsvdfechaactiv" type="java.util.Date"
+                  column="HSVDFECHAACTIV" length="7"/>
+        <property name="hsvctiporespir" type="java.lang.String"
+                  column="HSVCTIPORESPIR" length="1"/>
+        <property name="hsvnpresioxido" type="java.lang.Integer"
+                  column="HSVNPRESIOXIDO" length="4"/>
+        <property name="hsvctipoproced" type="java.lang.String"
+                  column="HSVCTIPOPROCED" length="1"/>
+        <property name="hsvnescaldolor" type="java.lang.Integer"
+                  column="HSVNESCALDOLOR" length="2"/>
+        <property name="hsvctiposervi" type="java.lang.String"
+                  column="HSVCTIPOSERVI" length="1"/>          
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,86 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping>
+    <!-- 
+    Created by the Middlegen Hibernate plugin 2.2
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+    <class name="org.profamilia.hc.model.dto.Chexamfisico" table="CHEXAMFISICO" schema="HISTORIA" lazy="false">
+        <composite-id name="id" class="org.profamilia.hc.model.dto.ChexamfisicoPK">
+            <key-property name="heflconsulta" column="HEFLCONSULTA" type="java.lang.Long" length="12"/>
+            <key-property name="hefctiposervi" column="HEFCTIPOSERVI" type="java.lang.String" length="1"/>
+            <key-property name="hefnconsecutiv" column="HEFNCONSECUTIV" type="java.lang.Integer" length="4"/>
+        </composite-id>
+        <version name="version" column="VERSION"/>
+        <property name="hefcpresart1" type="java.lang.String" column="HEFCPRESART1" length="3"/>
+        <property name="hefnfreccard" type="java.lang.Integer" column="HEFNFRECCARD" length="4"/>
+        <property name="hefnfrecresp" type="java.lang.Integer" column="HEFNFRECRESP" length="4"/>
+        <property name="hefapeso" type="java.math.BigDecimal" column="HEFAPESO" length="5" not-null="true"/>
+        <property name="hefatalla" type="java.math.BigDecimal" column="HEFATALLA" length="5" not-null="true"/>
+        <property name="hefaimc" type="java.math.BigDecimal" column="HEFAIMC" length="5"/>
+        <property name="hefatemperatu" type="java.math.BigDecimal" column="HEFATEMPERATU" length="5"/>
+        <property name="hefnpericefali" type="java.lang.Integer" column="HEFNPERICEFALI" length="4"/>
+        <property name="hefnsatuoxihe" type="java.lang.Integer" column="HEFNSATUOXIHE" length="4"/>
+        <property name="hefthallazgo" type="java.lang.String" column="HEFTHALLAZGO" length="4000"/>
+        <property name="hefdfecregistr" type="java.util.Date" column="HEFDFECREGISTR" length="7"/>
+        <property name="hefcoperador" type="java.lang.String" column="HEFCOPERADOR" length="14"/>
+        <property name="hefcpresart2" type="java.lang.String" column="HEFCPRESART2" length="3"/>
+        <property name="hefetipotemper" type="java.lang.String" column="HEFETIPOTEMPER" length="1"/>
+        <property name="heferefiepiel" type="java.lang.String" column="HEFEREFIEPIEL" length="1"/>
+        <property name="hefcrefiepiel" type="java.lang.String" column="HEFCREFIEPIEL" length="4000"/>
+        <property name="heferefiecrane" type="java.lang.String" column="HEFEREFIECRANE" length="1"/>
+        <property name="hefcrefiecrane" type="java.lang.String" column="HEFCREFIECRANE" length="4000"/>
+        <property name="heferefieojos" type="java.lang.String" column="HEFEREFIEOJOS" length="1"/>
+        <property name="hefcrefieojos" type="java.lang.String" column="HEFCREFIEOJOS" length="4000"/>
+        <property name="heferefieoidos" type="java.lang.String" column="HEFEREFIEOIDOS" length="1"/>
+        <property name="hefcrefieoidos" type="java.lang.String" column="HEFCREFIEOIDOS" length="4000"/>
+        <property name="heferefienariz" type="java.lang.String" column="HEFEREFIENARIZ" length="1"/>
+        <property name="hefcrefienariz" type="java.lang.String" column="HEFCREFIENARIZ" length="4000"/>
+        <property name="heferefieboca" type="java.lang.String" column="HEFEREFIEBOCA" length="1"/>
+        <property name="hefcrefieboca" type="java.lang.String" column="HEFCREFIEBOCA" length="4000"/>
+        <property name="heferefiecuell" type="java.lang.String" column="HEFEREFIECUELL" length="1"/>
+        <property name="hefcrefiecuell" type="java.lang.String" column="HEFCREFIECUELL" length="4000"/>
+        <property name="heferefietorax" type="java.lang.String" column="HEFEREFIETORAX" length="1"/>
+        <property name="hefcrefietorax" type="java.lang.String" column="HEFCREFIETORAX" length="4000"/>
+        <property name="heferefiecoraz" type="java.lang.String" column="HEFEREFIECORAZ" length="1"/>
+        <property name="hefcrefiecoraz" type="java.lang.String" column="HEFCREFIECORAZ" length="4000"/>
+        <property name="heferefiesenos" type="java.lang.String" column="HEFEREFIESENOS" length="1"/>
+        <property name="hefcrefiesenos" type="java.lang.String" column="HEFCREFIESENOS" length="4000"/>
+        <property name="heferefieabdom" type="java.lang.String" column="HEFEREFIEABDOM" length="1"/>
+        <property name="hefcrefieabdom" type="java.lang.String" column="HEFCREFIEABDOM" length="4000"/>
+        <property name="heferefiegenit" type="java.lang.String" column="HEFEREFIEGENIT" length="1"/>
+        <property name="hefcrefiegenit" type="java.lang.String" column="HEFCREFIEGENIT" length="4000"/>
+        <property name="heferefieextre" type="java.lang.String" column="HEFEREFIEEXTRE" length="1"/>
+        <property name="hefcrefieextre" type="java.lang.String" column="HEFCREFIEEXTRE" length="4000"/>
+        <property name="heferefieneuro" type="java.lang.String" column="HEFEREFIENEURO" length="1"/>
+        <property name="hefcrefieneuro" type="java.lang.String" column="HEFCREFIENEURO" length="4000"/>
+        <property name="heferefietacto" type="java.lang.String" column="HEFEREFIETACTO" length="1"/>
+        <property name="hefcrefietacto" type="java.lang.String" column="HEFCREFIETACTO" length="4000"/>
+        <property name="hefcdiscapadid" type="java.lang.String" column="HEFCDISCAPADID" length="2"/>
+        <property name="hefcdiscaselec" type="java.lang.String" column="HEFCDISCASELEC" length="30"/>
+        <property name="hefelugartemp" type="java.lang.String" column="HEFELUGARTEMP" length="1"/>
+        <property name="hefcdudointen" type="java.lang.String" column="HEFCDUDOINTEN" length="2"/>
+        <property name="hefnduradolor" type="java.lang.Integer" column="HEFNDURADOLOR" length="4"/>
+        <property name="hefnescadolor" type="java.lang.Integer" column="HEFNESCADOLOR" length="4"/>
+        <property name="hefcposiutero" type="java.lang.String" column="HEFCPOSIUTERO" length="1"/>
+        <property name="hefcdesviautero" type="java.lang.String" column="HEFCDESVIAUTERO" length="1"/>
+        <property name="hefccuellocerra" type="java.lang.String" column="HEFCCUELLOCERRA" length="1"/>
+        <property name="hefcobscuecerra" type="java.lang.String" column="HEFCOBSCUECERRA" length="200"/>
+        <property name="hefcdolormovcuello" type="java.lang.String" column="HEFCDOLORMOVCUELLO" length="1"/>
+        <property name="hefcsangrado" type="java.lang.String" column="HEFCSANGRADO" length="1"/>
+        <property name="hefcecoespecialis" type="java.lang.String" column="HEFCECOESPECIALIS" length="1"/>
+        <property name="hefnedadsem" type="java.lang.Integer" column="HEFNEDADSEM" length="2"/>
+        <property name="hefnedaddia" type="java.lang.Integer" column="HEFNEDADDIA" length="1"/>
+        <property name="hefntamauterocm" type="java.lang.Integer" column="HEFNTAMAUTEROCM" length="2"/>
+        <property name="hefntamauteroml" type="java.lang.Integer" column="HEFNTAMAUTEROML" length="1"/>
+        <property name="hefcevalupelvi" type="java.lang.String" column="HEFCEVALUPELVI" length="1"/>
+        <property name="hefcconfiembar" type="java.lang.String" column="HEFCCONFIEMBAR" length="1"/>
+        <property name="hefcobsereco" type="java.lang.String" column="HEFCOBSERECO" length="4000"/>
+        <property name="hefcdesccfemb" type="java.lang.String" column="HEFCDESCCFEMB" length="2000"/>
+        <property name="hefnspo2" type="java.lang.Integer" column="HEFNSPO2" length="3"/>
+    </class>
+</hibernate-mapping>

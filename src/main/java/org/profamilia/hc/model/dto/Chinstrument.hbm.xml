@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping>
+    <!-- 
+    Created by the Middlegen Hibernate plugin 2.2
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+    <class name="org.profamilia.hc.model.dto.Chinstrument" table="CHINSTRUMENT" lazy="false" schema="HISTORIA">
+        <id name="hinlcirugia" type="java.lang.Long" column="HINLCIRUGIA">
+            <generator class="assigned"/>
+        </id>
+        <version name="version" column="VERSION"/> 
+        <property name="hincpaqueester" type="java.lang.String" column="HINCPAQUEESTER" length="1"/>
+        <property name="hincrealiconte" type="java.lang.String" column="HINCREALICONTE" length="1"/>
+        <property name="hincestado" type="java.lang.String" column="HINCESTADO" length="2"/>
+        <property name="hindfecregistr" type="java.util.Date" column="HINDFECREGISTR" length="7"/>
+        <property name="hincoperador" type="java.lang.String" column="HINCOPERADOR" length="14"/>
+        <!-- Associations -->
+    </class>
+</hibernate-mapping>

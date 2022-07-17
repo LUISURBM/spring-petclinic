@@ -1,0 +1,88 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping>
+    <!-- 
+    Created by the Middlegen Hibernate plugin 2.2
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+    <class name="org.profamilia.hc.model.dto.Chtamizalapr" table="CHTAMIZALAPR" schema="HISTORIA" lazy="false">
+        <composite-id name="id" class="org.profamilia.hc.model.dto.ChtamizalaprPK">
+            <key-property name="htllconsulta" column="HTLLCONSULTA" type="java.lang.Long" length="12"/>
+            <key-property name="htlctiposervi" column="HTLCTIPOSERVI" type="java.lang.String" length="1"/>
+        </composite-id>
+        <version name="version" column="VERSION"/>
+        <property name="htlcecografia" type="java.lang.String" column="HTLCECOGRAFIA" length="4000"/>
+        <property name="htleparciorina" type="java.lang.String" column="HTLEPARCIORINA" length="1"/>
+        <property name="htlebacteriuri" type="java.lang.String" column="HTLEBACTERIURI" length="1"/>
+        <property name="htleproteinuri" type="java.lang.String" column="HTLEPROTEINURI" length="1"/>
+        <property name="htlehematies" type="java.lang.String" column="HTLEHEMATIES" length="1"/>
+        <property name="htleleucocitos" type="java.lang.String" column="HTLELEUCOCITOS" length="1"/>
+        <property name="htlemicronutri" type="java.lang.String" column="HTLEMICRONUTRI" length="1"/>
+        <property name="htldfecharegis" type="java.util.Date" column="HTLDFECHAREGIS" length="7"/>
+        <property name="htlcoperador" type="java.lang.String" column="HTLCOPERADOR" length="14"/>
+        <property name="htllconsulprin" type="java.lang.Long" column="HTLLCONSULPRIN" length="12"/>
+        <property name="htletoxoplaigg" type="java.lang.String" column="HTLETOXOPLAIGG" length="1"/>
+        <property name="htlcresutoxigg" type="java.lang.String" column="HTLCRESUTOXIGG" length="1"/>
+        <property name="htldfechtoxigg" type="java.util.Date" column="HTLDFECHTOXIGG" length="7"/>
+        <property name="htletoxoplaigm" type="java.lang.String" column="HTLETOXOPLAIGM" length="1"/>
+        <property name="htlcresutoxigm" type="java.lang.String" column="HTLCRESUTOXIGM" length="1"/>
+        <property name="htldfechtoxigm" type="java.util.Date" column="HTLDFECHTOXIGM" length="7"/>
+        <property name="htletestsulliv" type="java.lang.String" column="HTLETESTSULLIV" length="1"/>
+        <property name="htlnrestestsul" type="java.lang.Integer" column="HTLNRESTESTSUL" length="3"/>
+        <property name="htldfectestsul" type="java.util.Date" column="HTLDFECTESTSUL" length="7"/>
+        <property name="htlehemoglobin" type="java.lang.String" column="HTLEHEMOGLOBIN" length="1"/>
+        <property name="htldfechemoglo" type="java.util.Date" column="HTLDFECHEMOGLO" length="7"/>
+        <property name="htleglucosa" type="java.lang.String" column="HTLEGLUCOSA" length="1"/>
+        <property name="htlnresglucosa" type="java.lang.Integer" column="HTLNRESGLUCOSA" length="3"/>
+        <property name="htldfecglucosa" type="java.util.Date" column="HTLDFECGLUCOSA" length="7"/>
+        <property name="htleserologia" type="java.lang.String" column="HTLESEROLOGIA" length="1"/>
+        <property name="htleresuserolo" type="java.lang.String" column="HTLERESUSEROLO" length="1"/>
+        <property name="htldfecserolog" type="java.util.Date" column="HTLDFECSEROLOG" length="7"/>
+        <property name="htlnreshemoglo" type="java.math.BigDecimal" column="HTLNRESHEMOGLO" length="3"/>
+        <property name="htlcparorides" type="java.lang.String" column="HTLCPARORIDES" length="4000"/>
+        
+        <property name="htleurocultivo" type="java.lang.String" column="HTLEUROCULTIVO" length="1"/>
+        <property name="htlcresulurocu" type="java.lang.String" column="HTLCRESULUROCU" length="255"/>
+        <property name="htldfechaurocu" type="java.util.Date" column="HTLDFECHAUROCU" length="7"/>
+        <property name="htleantibiogra" type="java.lang.String" column="HTLEANTIBIOGRA" length="1"/>
+        <property name="htlcresulantib" type="java.lang.String" column="HTLCRESULANTIB" length="255"/>
+        <property name="htldfechaantib" type="java.util.Date" column="HTLDFECHAANTIB" length="7"/>
+        <property name="htlehemograma" type="java.lang.String" column="HTLEHEMOGRAMA" length="1"/>
+        <property name="htlcresulhemog" type="java.lang.String" column="HTLCRESULHEMOG" length="255"/>
+        <property name="htldfechahemog" type="java.util.Date" column="HTLDFECHAHEMOG" length="7"/>
+        <property name="htlehemoclasif" type="java.lang.String" column="HTLEHEMOCLASIF" length="1"/>
+        <property name="htlcresulhemoc" type="java.lang.String" column="HTLCRESULHEMOC" length="255"/>
+        <property name="htldfechahemoc" type="java.util.Date" column="HTLDFECHAHEMOC" length="7"/>
+        <property name="htleprurapvih" type="java.lang.String" column="HTLEPRURAPVIH" length="1"/>
+        <property name="htlcresulprravi" type="java.lang.String" column="HTLCRESULPRRAVI" length="255"/>
+        <property name="htldfechaprravi" type="java.util.Date" column="HTLDFECHAPRRAVI" length="7"/>
+        <property name="htleantisupehepa" type="java.lang.String" column="HTLEANTISUPEHEPA" length="1"/>
+        <property name="htlcresulansuhe" type="java.lang.String" column="HTLCRESULANSUHE" length="255"/>
+        <property name="htldfechaansuhe" type="java.util.Date" column="HTLDFECHAANSUHE" length="7"/>
+        <property name="htletamcancue" type="java.lang.String" column="HTLETAMCANCUE" length="1"/>
+        <property name="htlcresultacacu" type="java.lang.String" column="HTLCRESULTACACU" length="255"/>
+        <property name="htldfechatacacu" type="java.util.Date" column="HTLDFECHATACACU" length="7"/>
+        <property name="htlepruigg" type="java.lang.String" column="HTLEPRUIGG" length="1"/>
+        <property name="htlcresulpruigg" type="java.lang.String" column="HTLCRESULPRUIGG" length="255"/>
+        <property name="htldfechpruigg" type="java.util.Date" column="HTLDFECHPRUIGG" length="7"/>
+        <property name="htlepruigatox" type="java.lang.String" column="HTLEPRUIGATOX" length="1"/>
+        <property name="htlcresulprigto" type="java.lang.String" column="HTLCRESULPRIGTO" length="255"/>
+        <property name="htldfechprigto" type="java.util.Date" column="HTLDFECHPRIGTO" length="7"/>
+        <property name="htletamizestre" type="java.lang.String" column="HTLETAMIZESTRE" length="1"/>
+        <property name="htlcresultamest" type="java.lang.String" column="HTLCRESULTAMEST" length="255"/>
+        <property name="htldfechtamest" type="java.util.Date" column="HTLDFECHTAMEST" length="7"/>
+        <property name="htleprutoloraglu" type="java.lang.String" column="HTLEPRUTOLORAGLU" length="1"/>
+        <property name="htlcresulprtoorgl" type="java.lang.String" column="HTLCRESULPRTOORGL" length="255"/>
+        <property name="htldfechprtoorgl" type="java.util.Date" column="HTLDFECHPRTOORGL" length="7"/>
+        <property name="htletamgotgru" type="java.lang.String" column="HTLETAMGOTGRU" length="1"/>
+        <property name="htlcresultagogr" type="java.lang.String" column="HTLCRESULTAGOGR" length="255"/>
+        <property name="htldfechtagogr" type="java.util.Date" column="HTLDFECHTAGOGR" length="7"/>
+        <property name="htleelisa" type="java.lang.String" column="HTLEELISA" length="1"/>
+        <property name="htlcresulelisa" type="java.lang.String" column="HTLCRESULELISA" length="255"/>
+        <property name="htldfechelisa" type="java.util.Date" column="HTLDFECHELISA" length="7"/>
+    </class>
+</hibernate-mapping>

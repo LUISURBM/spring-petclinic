@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping>
+    <!-- 
+    Created by the Middlegen Hibernate plugin 2.2
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+    <class name="org.profamilia.hc.model.dto.Cfdetaadmision" table="CFDETAADMISION" lazy="false" schema="CLINICO">
+        <composite-id name="id" class="org.profamilia.hc.model.dto.CfdetaadmisionPK">
+            <key-property name="cdannumadm" column="CDANNUMADM" type="java.lang.Long" length="10"/>
+            <key-property name="cdanconsec" column="CDANCONSEC" type="java.lang.Long" length="4"/>
+        </composite-id>
+        <version name="version" column="VERSION" type="java.lang.Long"/>
+        <property name="cdacservic" type="java.lang.String" column="CDACSERVIC" not-null="true" length="12"/>
+        <property name="cdaccodent" type="java.lang.String" column="CDACCODENT" length="9"/>
+        <property name="cdanvalser" type="java.lang.Double" column="CDANVALSER" not-null="true" length="17"/>
+        <property name="cdanivaser" type="java.lang.Double" column="CDANIVASER" length="17"/>
+        <property name="cdandescto" type="java.lang.Double" column="CDANDESCTO" length="17"/>
+        <property name="cdancantid" type="java.lang.Long" column="CDANCANTID" not-null="true" length="9"/>
+        <property name="cdanvalent" type="java.lang.Double" column="CDANVALENT" length="17"/>
+        <property name="cdanvaltot" type="java.lang.Double" column="CDANVALTOT" not-null="true" length="17"/>
+        <property name="cdannumite" type="java.lang.Long" column="CDANNUMITE" not-null="true" length="9"/>
+        <property name="cdacpaquet" type="java.lang.String" column="CDACPAQUET" length="12"/>
+        <property name="cdacswpaqu" type="java.lang.String" column="CDACSWPAQU" length="1"/>
+        <property name="cdacdesserv" type="java.lang.String" column="CDACDESSERV" not-null="true" length="240"/>
+        <property name="cdanrecaudo" type="java.lang.Double" column="CDANRECAUDO" length="22"/>
+        <property name="cdancuotcopa" type="java.lang.String" column="CDANCUOTCOPA" length="4"/>
+        <property name="cdactipdscto" type="java.lang.String" column="CDACTIPDSCTO" length="1"/>
+        <property name="cdanidedscto" type="java.lang.Long" column="CDANIDEDSCTO" length="9"/>
+        <property name="cdacestado" type="java.lang.String" column="CDACESTADO" length="2"/>
+        <!-- Associations -->
+        <!-- derived association(s) for compound key -->
+        <!-- end of derived association(s) -->
+    </class>
+</hibernate-mapping>

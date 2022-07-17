@@ -1,0 +1,126 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <!-- 
+        Auto-generated mapping file from
+        the hibernate.org cfg2hbm engine
+-->
+    <class name="org.profamilia.hc.model.dto.Cnconsclin" table="CNCONSCLIN"
+           schema="CLINICO">
+        <id name="cconnumero" type="java.lang.Integer" column="CCONNUMERO">
+              <generator class="sequence">
+                <param name="sequence">CLINICO.SEC_CNCONSCLIN</param>
+            </generator>         
+        </id>
+        <version name="version" column="VERSION"/>
+        <property name="cconclinic" type="integer">
+            <column name="CCONCLINIC" precision="4" scale="0" not-null="true"/>
+        </property>
+        <property name="cconsalesp" type="integer">
+            <column name="CCONSALESP" precision="4" scale="0" not-null="true"/>
+        </property>
+        <property name="cconconsul" type="integer">
+            <column name="CCONCONSUL" precision="4" scale="0" not-null="true"/>
+        </property>
+        <property name="ccontconcl" type="integer">
+            <column name="CCONTCONCL" precision="4" scale="0" not-null="true"/>
+        </property>
+        <property name="ccodfeccon" type="date">
+            <column name="CCODFECCON" length="7" not-null="true"/>
+        </property>
+        <property name="cconhistor" type="integer">
+            <column name="CCONHISTOR" precision="9" scale="0"/>
+        </property>
+        <property name="ccoctipide" type="string">
+            <column name="CCOCTIPIDE" length="3"/>
+        </property>
+        <property name="ccoanumide" type="big_decimal">
+            <column name="CCOANUMIDE" precision="15"/>
+        </property>
+        <property name="ccocprinom" type="string">
+            <column name="CCOCPRINOM" length="20" not-null="true"/>
+        </property>
+        <property name="ccocsegnom" type="string">
+            <column name="CCOCSEGNOM" length="20"/>
+        </property>
+        <property name="ccocpriape" type="string">
+            <column name="CCOCPRIAPE" length="20" not-null="true"/>
+        </property>
+        <property name="ccocsegape" type="string">
+            <column name="CCOCSEGAPE" length="20"/>
+        </property>
+        <property name="cconclidoc" type="integer">
+            <column name="CCONCLIDOC" precision="4" scale="0" not-null="true"/>
+        </property>
+        <property name="cconnumdoc" type="big_decimal">
+            <column name="CCONNUMDOC" precision="10" scale="0" not-null="true"/>
+        </property>
+        <property name="cconprogra" type="integer">
+            <column name="CCONPROGRA" precision="4" scale="0" not-null="true"/>
+        </property>
+        <property name="cconcontra" type="integer">
+            <column name="CCONCONTRA" precision="9" scale="0" not-null="true"/>
+        </property>
+        <property name="cconcantid" type="integer">
+            <column name="CCONCANTID" precision="9" scale="0" not-null="true"/>
+        </property>
+        <property name="ccoavalser" type="big_decimal">
+            <column name="CCOAVALSER" precision="15" not-null="true"/>
+        </property>
+        <property name="ccodfecreg" type="date">
+            <column name="CCODFECREG" length="7" not-null="true"/>
+        </property>
+        <property name="ccothorcon" type="timestamp">
+            <column name="CCOTHORCON" length="7" not-null="true"/>
+        </property>
+        <property name="ccocusureg" type="string">
+            <column name="CCOCUSUREG" length="14" not-null="true"/>
+        </property>
+        <property name="ccocetapa" type="string">
+            <column name="CCOCETAPA" length="2" not-null="true"/>
+        </property>
+        <property name="ccothorate" type="timestamp">
+            <column name="CCOTHORATE" length="7"/>
+        </property>
+        <property name="ccocusumod" type="string">
+            <column name="CCOCUSUMOD" length="14"/>
+        </property>
+        <property name="ccocestado" type="string">
+            <column name="CCOCESTADO" length="2" not-null="true"/>
+        </property>
+        <property name="ccondonant" type="big_decimal">
+            <column name="CCONDONANT" precision="10" scale="0" not-null="true"/>
+        </property>
+        <property name="ccocgenero" type="string">
+            <column name="CCOCGENERO" length="1" not-null="true"/>
+        </property>
+        <property name="ccocintext" type="string">
+            <column name="CCOCINTEXT" length="1" not-null="true"/>
+        </property>
+        <property name="cconfaccli" type="string">
+            <column name="CCONFACCLI" length="16" />
+        </property>
+        <many-to-one name="ccocservic" 
+                     class="org.profamilia.hc.model.dto.Cpservicio"
+                     not-null="true">
+            <column name="CCOCSERVIC"/>
+        </many-to-one>  
+        
+           <many-to-one name="ccolusuario" 
+                     class="org.profamilia.hc.model.dto.Chusuario"
+                     not-null="true">
+            <column name="CCOLUSUARIO"/>
+        </many-to-one>  
+        
+        
+                <many-to-one name="ccontipdoc" 
+                     class="org.profamilia.hc.model.dto.Cptipodocu"
+                     not-null="true">
+            <column name="CCONTIPDOC"/>
+        </many-to-one>   
+
+        
+        
+    </class>
+</hibernate-mapping>

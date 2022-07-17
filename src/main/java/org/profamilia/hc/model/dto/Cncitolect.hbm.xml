@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping>
+    <!-- 
+    Created by the Middlegen Hibernate plugin 2.2
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+    <class name="org.profamilia.hc.model.dto.Cncitolect" table="CNCITOLECT"   schema="CLINICO"
+           lazy="false">
+        <id name="clcnconsec" type="java.lang.Integer" column="CLCNCONSEC">
+            <generator class="assigned"/>
+        </id>
+          <version name="version" column="VERSION"/>
+        <property name="clcnclinic" type="java.lang.Integer" column="CLCNCLINIC" not-null="true" length="4"/>
+        <property name="clcnnumero" type="java.lang.Integer" column="CLCNNUMERO" not-null="true" length="9"/>
+        <property name="clcdprilec" type="java.util.Date" column="CLCDPRILEC" not-null="true" length="7"/>
+        <property name="clccprilec" type="java.lang.String" column="CLCCPRILEC" not-null="true" length="4"/>
+        <property name="clccnompri" type="java.lang.String" column="CLCCNOMPRI" not-null="true" length="30"/>
+        <property name="clcdseglec" type="java.util.Date" column="CLCDSEGLEC" length="7"/>
+        <property name="clccseglec" type="java.lang.String" column="CLCCSEGLEC" length="4"/>
+        <property name="clccnomseg" type="java.lang.String" column="CLCCNOMSEG" length="30"/>
+        <property name="clcccalmue" type="java.lang.String" column="CLCCCALMUE" length="3"/>
+        <property name="clccmicorg" type="java.lang.String" column="CLCCMICORG" length="3"/>
+        <property name="clccotrmic" type="java.lang.String" column="CLCCOTRMIC" length="20"/>
+        <property name="clcccatego" type="java.lang.String" column="CLCCCATEGO" length="3"/>
+        <property name="clccotrhal" type="java.lang.String" column="CLCCOTRHAL" length="3"/>
+        <property name="clccanoesc" type="java.lang.String" column="CLCCANOESC" length="3"/>
+        <property name="clccanogla" type="java.lang.String" column="CLCCANOGLA" length="4"/>
+        <property name="clccotrneo" type="java.lang.String" column="CLCCOTRNEO" length="40"/>
+        <property name="clccobserv" type="java.lang.String" column="CLCCOBSERV" length="80"/>
+        <property name="clccusureg" type="java.lang.String" column="CLCCUSUREG" not-null="true" length="12"/>
+        <property name="clcdfecreg" type="java.util.Date" column="CLCDFECREG" length="7"/>
+        <property name="clccnumpri" type="java.lang.String" column="CLCCNUMPRI" length="30"/>
+        <property name="clccnumseg" type="java.lang.String" column="CLCCNUMSEG" length="30"/>
+        <!-- Associations -->
+    </class>
+</hibernate-mapping>

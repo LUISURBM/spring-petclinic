@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping>
+    <!-- 
+    Created by the Middlegen Hibernate plugin 2.2
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+    <class name="org.profamilia.hc.model.dto.Chestermascu" table="CHESTERMASCU" lazy="false" schema="HISTORIA">
+        <composite-id name="id" class="org.profamilia.hc.model.dto.ChestermascuPK">
+            <key-property name="hemlconsulta" column="HEMLCONSULTA" type="java.lang.Long" length="12"/>
+            <key-property name="hemctiposerv" column="HEMCTIPOSERV" type="java.lang.String" length="1"/>
+        </composite-id>
+        <version name="version" column="VERSION"/>
+        <property name="hemcoperador" type="java.lang.String" column="HEMCOPERADOR" not-null="true" length="14"/>
+        <property name="hemdfecreg" type="java.util.Date" column="HEMDFECREG" not-null="true" length="7"/>
+        <property name="hemcinformetod" type="java.lang.String" column="HEMCINFORMETOD" not-null="true" length="1"/>
+        <property name="hemcvasecdefin" type="java.lang.String" column="HEMCVASECDEFIN" not-null="true" length="1"/>
+        <property name="hemcvasecfalla" type="java.lang.String" column="HEMCVASECFALLA"  length="1"/>
+        <property name="hemcexitoesper" type="java.lang.String" column="HEMCEXITOESPER" not-null="true" length="1"/>
+        <property name="hemcinforsufic" type="java.lang.String" column="HEMCINFORSUFIC" not-null="true" length="1"/>
+        <property name="hemcaclarinfor" type="java.lang.String" column="HEMCACLARINFOR" length="600"/>
+        <property name="hemcaclardefin" type="java.lang.String" column="HEMCACLARDEFIN" length="600"/>
+        <property name="hemcaclarfalla" type="java.lang.String" column="HEMCACLARFALLA" length="600"/>
+        <property name="hemcaclarexito" type="java.lang.String" column="HEMCACLAREXITO" length="600"/>
+        <property name="hemcaclarsufic" type="java.lang.String" column="HEMCACLARSUFIC" length="600"/>
+        
+        <property name="hemcvasecfalnue" type="java.lang.String" column="HEMCVASECFALNUE"  length="1"/>
+        <property name="hemcaclarfalnue" type="java.lang.String" column="HEMCACLARFALNUE" length="600"/>
+        <!-- Associations -->
+        <!-- derived association(s) for compound key -->
+        <!-- end of derived association(s) -->
+    </class>
+</hibernate-mapping>

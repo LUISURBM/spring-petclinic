@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping>
+    <!-- 
+    Created by the Middlegen Hibernate plugin 2.2
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+    <class name="org.profamilia.hc.model.dto.Cprestxcon" table="CPRESTXCON" lazy="false" schema="CLINICO">
+        <composite-id name="id" class="org.profamilia.hc.model.dto.CprestxconId">
+            <key-property name="crxnclinic" column="CRXNCLINIC" type="java.lang.Integer" length="4"/>
+            <key-property name="crxncontra" column="CRXNCONTRA" type="java.lang.Integer" length="9"/>
+            <key-property name="crxnconsec" column="CRXNCONSEC" type="java.lang.Integer" length="4"/>
+        </composite-id>
+        <version name="version" column="VERSION"/>
+        <property name="crxcservic" type="java.lang.String" column="CRXCSERVIC" not-null="true" length="12"/>
+        <property name="crxnedamin" type="java.lang.Integer" column="CRXNEDAMIN" not-null="true" length="4"/>
+        <property name="crxnedamax" type="java.lang.Integer" column="CRXNEDAMAX" not-null="true" length="4"/>
+        <property name="crxcsexo" type="java.lang.String" column="CRXCSEXO" not-null="true" length="1"/>
+        <property name="crxdfecreg" type="java.sql.Date" column="CRXDFECREG" not-null="true" length="7"/>
+        <property name="crxcusuari" type="java.lang.String" column="CRXCUSUARI" not-null="true" length="12"/>
+        <property name="crxcestado" type="java.lang.String" column="CRXCESTADO" not-null="true" length="2"/>
+        <property name="crxcregime" type="java.lang.String" column="CRXCREGIME" not-null="true" length="1"/>
+        
+        <property name="crxndiafac" type="java.lang.Integer" column="CRXNDIAFAC" not-null="true" length="4"/>
+        <property name="crxctideex" type="java.lang.String" column="CRXCTIDEEX" length="30"/>
+        <!-- Associations -->
+        <!-- derived association(s) for compound key -->
+        <!-- end of derived association(s) -->
+    </class>
+</hibernate-mapping>

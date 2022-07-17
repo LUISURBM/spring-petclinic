@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping>
+    <!-- 
+    Created by the Middlegen Hibernate plugin 2.2
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+    <class name="org.profamilia.hc.model.dto.Chformulaliq" table="CHFORMULALIQ" schema="HISTORIA" lazy="false">
+        <composite-id name="id" class="org.profamilia.hc.model.dto.ChformulaliqPK">
+            <key-property name="hfllconsulta" column="HFLLCONSULTA" type="java.lang.Long" length="12"/>
+            <key-property name="hflnconsecutiv" column="HFLNCONSECUTIV" type="java.lang.Integer" length="4"/>
+            <key-property name="hflnllave" column="HFLNLLAVE" type="java.lang.Integer" length="4"/>
+        </composite-id>
+        <version name="version" column="VERSION"/>
+        <property name="hflcnombreliqu" type="java.lang.String" column="HFLCNOMBRELIQU" length="2"/>
+        <property name="hflncantidad" type="java.lang.Integer" column="HFLNCANTIDAD" length="4"/>
+        <property name="hflnvelocidadm" type="java.lang.Integer" column="HFLNVELOCIDADM" length="4"/>
+        <property name="hflcviadminist" type="java.lang.String" column="HFLCVIADMINIST" length="2"/>
+        <property name="hflcformadmins" type="java.lang.String" column="HFLCFORMADMINS" length="1"/>
+        <property name="hfldfecregistr" type="java.util.Date" column="HFLDFECREGISTR" length="7"/>
+        <property name="hflcoperador" type="java.lang.String" column="HFLCOPERADOR" length="14"/>
+        <property name="hflctiposangre" type="java.lang.String" column="HFLCTIPOSANGRE" length="2"/>
+        <property name="hflcgrupsangre" type="java.lang.String" column="HFLCGRUPSANGRE" length="2"/>
+        <property name="hflcfactosangre" type="java.lang.String" column="HFLCFACTOSANGRE" length="1"/>
+        <property name="hflnunidasangr" type="java.lang.Integer" column="HFLNUNIDASANGR" length="8"/>
+        <property name="hflnsellocalid" type="java.lang.Integer" column="HFLNSELLOCALID" length="4"/>
+        <property name="hfldsangrvenci" type="java.util.Date" column="HFLDSANGRVENCI" length="7"/>
+        <property name="hflcestado" type="java.lang.String" column="HFLCESTADO" length="2"/>
+         <property name="hfllusuario" type="java.lang.Long" column="HFLLUSUARIO" not-null="true" length="12"/>
+         <property name="hflctiposerv" type="java.lang.String" column="HFLCTIPOSERV" length="1"/>
+         <property name="hflctiposoluci" type="java.lang.String" column="HFLCTIPOSOLUCI" length="2"/>
+         <property name="hflcotroliquid" type="java.lang.String" column="HFLCOTROLIQUID" length="80"/>
+        
+         
+        <!-- Associations -->
+        <!-- derived association(s) for compound key -->
+        <!-- end of derived association(s) -->
+    </class>
+</hibernate-mapping>

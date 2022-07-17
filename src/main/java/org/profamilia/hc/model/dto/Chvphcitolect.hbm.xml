@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping>
+    <!-- 
+    Created by the Middlegen Hibernate plugin 2.2
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+    <class name="org.profamilia.hc.model.dto.Chvphcitolect" table="CHVPHCITOLECT" schema="HISTORIA" lazy="false">
+        <id name="hvcnconsec" type="java.lang.Integer" column="HVCNCONSEC">
+            <generator class="assigned"/>
+        </id>
+        <version name="version" column="VERSION"/>
+        <property name="hvcnclinic" type="java.lang.Integer" column="HVCNCLINIC" not-null="true" length="4"/>
+        <property name="hvcnnumero" type="java.lang.Integer" column="HVCNNUMERO" not-null="true" length="9"/>
+        <property name="hvcdprilec" type="java.util.Date" column="HVCDPRILEC" not-null="true" length="7"/>
+        <property name="hvccprilec" type="java.lang.String" column="HVCCPRILEC" not-null="true" length="4"/>
+        <property name="hvccnompri" type="java.lang.String" column="HVCCNOMPRI" not-null="true" length="30"/>
+        <property name="hvcdseglec" type="java.util.Date" column="HVCDSEGLEC" length="7"/>
+        <property name="hvccseglec" type="java.lang.String" column="HVCCSEGLEC" length="4"/>
+        <property name="hvccnomseg" type="java.lang.String" column="HVCCNOMSEG" length="30"/>
+        <property name="hvcccalmue" type="java.lang.String" column="HVCCCALMUE" length="3"/>
+        <property name="hvccmicorg" type="java.lang.String" column="HVCCMICORG" length="3"/>
+        <property name="hvccotrmic" type="java.lang.String" column="HVCCOTRMIC" length="20"/>
+        <property name="hvcccatego" type="java.lang.String" column="HVCCCATEGO" length="3"/>
+        <property name="hvccotrhal" type="java.lang.String" column="HVCCOTRHAL" length="3"/>
+        <property name="hvccanoesc" type="java.lang.String" column="HVCCANOESC" length="3"/>
+        <property name="hvccanogla" type="java.lang.String" column="HVCCANOGLA" length="4"/>
+        <property name="hvccotrneo" type="java.lang.String" column="HVCCOTRNEO" length="40"/>
+        <property name="hvccobserv" type="java.lang.String" column="HVCCOBSERV" length="80"/>
+        <property name="hvccusureg" type="java.lang.String" column="HVCCUSUREG" not-null="true" length="12"/>
+        <property name="hvcdfecreg" type="java.util.Date" column="HVCDFECREG" length="7"/>
+        <property name="hvccnumpri" type="java.lang.String" column="HVCCNUMPRI" length="30"/>
+        <property name="hvccnumseg" type="java.lang.String" column="HVCCNUMSEG" length="30"/>
+        <!-- Associations -->
+    </class>
+</hibernate-mapping>

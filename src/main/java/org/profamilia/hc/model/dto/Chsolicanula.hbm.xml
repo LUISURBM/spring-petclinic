@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping>
+    <!-- 
+    Created by the Middlegen Hibernate plugin 2.2
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+    <class name="org.profamilia.hc.model.dto.Chsolicanula" table="CHSOLICANULA"  schema="HISTORIA" lazy="false">
+        <composite-id name="id" class="org.profamilia.hc.model.dto.ChsolicanulaPK">
+            <key-property name="hsalconsulta" column="HSALCONSULTA" type="java.lang.Long" length="12"/>
+            <key-property name="hsactiposervi" column="HSACTIPOSERVI" type="java.lang.String" length="1"/>
+        </composite-id>
+        <version name="version" column="VERSION"/>
+        <property name="hsacobsermedic" type="java.lang.String" column="HSACOBSERMEDIC" length="1000"/>
+        <property name="hsacobseradmin" type="java.lang.String" column="HSACOBSERADMIN" length="1000"/>
+        <property name="hsadfecharegis" type="java.util.Date" column="HSADFECHAREGIS" not-null="true" length="7"/>
+        <property name="hsadfechamodif" type="java.util.Date" column="HSADFECHAMODIF" length="7"/>
+        <property name="hsacoperaregis" type="java.lang.String" column="HSACOPERAREGIS" not-null="true" length="14"/>
+        <property name="hsacoperamodif" type="java.lang.String" column="HSACOPERAMODIF" length="14"/>
+        <property name="hsanclinica" type="java.lang.Integer" column="HSANCLINICA" not-null="true" length="4"/>
+        <property name="hsacetapa" type="java.lang.String" column="HSACETAPA" not-null="true" length="2"/>
+        <!-- Associations -->
+        <!-- derived association(s) for compound key -->
+        <!-- end of derived association(s) -->
+        <property name="hsacacepta" type="java.lang.String" column="HSACACEPTA" length="1"/>
+        <many-to-one name="hsacservicio" class="org.profamilia.hc.model.dto.Cpservicio" not-null="true">
+                    <column name="HSACSERVICIO"/>
+        </many-to-one>
+        
+         <many-to-one name="hsalusuario" class="org.profamilia.hc.model.dto.Chusuario" not-null="true">
+                    <column name="HSALUSUARIO"/>
+        </many-to-one>
+
+        
+    </class>
+</hibernate-mapping>

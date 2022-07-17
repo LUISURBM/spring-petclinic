@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping>
+    <!-- 
+    Created by the Middlegen Hibernate plugin 2.2
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+    <class name="org.profamilia.hc.model.dto.Chremihospit" table="CHREMIHOSPIT"  schema="HISTORIA"
+           lazy="false">
+        <composite-id name="id"
+                      class="org.profamilia.hc.model.dto.ChremihospitPK">
+            <key-property name="hrhlconsulta" column="HRHLCONSULTA"
+                          type="java.lang.Long" length="12"/>
+            <key-property name="hrhctiposervi" column="HRHCTIPOSERVI"
+                          type="java.lang.String" length="1"/>
+            <key-property name="hrhnconsecutiv" column="HRHNCONSECUTIV"
+                          type="java.lang.Integer" length="4"/>
+        </composite-id>
+          <version name="version" column="VERSION"/> 
+        <property name="hrhcmotivhospi" type="java.lang.String"
+                  column="HRHCMOTIVHOSPI" length="4000"/>
+        <property name="hrhcplanmanejo" type="java.lang.String"
+                  column="HRHCPLANMANEJO" length="4000"/>
+        <property name="hrhdfecregistr" type="java.util.Date"
+                  column="HRHDFECREGISTR" length="7"/>
+        <property name="hrhcoperador" type="java.lang.String"
+                  column="HRHCOPERADOR" length="14"/>
+    </class>
+</hibernate-mapping>

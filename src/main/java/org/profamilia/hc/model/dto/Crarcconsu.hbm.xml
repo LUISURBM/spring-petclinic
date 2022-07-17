@@ -1,0 +1,80 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+<!-- 
+        Auto-generated mapping file from
+        the hibernate.org cfg2hbm engine
+-->
+    <class name="org.profamilia.hc.model.dto.Crarcconsu" table="CRARCCONSU" schema="CLINICO">
+        <composite-id name="id" class="org.profamilia.hc.model.dto.CrarcconsuId">
+            <key-property name="cacnconcli" type="integer">
+                <column name="CACNCONCLI" precision="10" scale="0" />
+            </key-property>
+            <key-property name="cacnconsec" type="integer">
+                <column name="CACNCONSEC" precision="4" scale="0" />
+            </key-property>
+        </composite-id>
+        <version name="version" column="VERSION"/>
+        <property name="cacdfeccon" type="date">
+            <column name="CACDFECCON" length="7" not-null="true" />
+        </property>
+        <property name="cacctipide" type="string">
+            <column name="CACCTIPIDE" length="2" not-null="true" />
+        </property>
+        <property name="cacanumide" type="big_decimal">
+            <column name="CACANUMIDE" precision="15" not-null="true" />
+        </property>
+        <property name="cacnconcep" type="integer">
+            <column name="CACNCONCEP" precision="4" scale="0" not-null="true" />
+        </property>
+        <property name="caccautori" type="string">
+            <column name="CACCAUTORI" length="15" />
+        </property>
+        <property name="cacccodcon" type="string">
+            <column name="CACCCODCON" length="12" not-null="true" />
+        </property>
+        <property name="cacnfincon" type="integer">
+            <column name="CACNFINCON" precision="4" scale="0" not-null="true" />
+        </property>
+        <property name="cacncauext" type="integer">
+            <column name="CACNCAUEXT" precision="4" scale="0" not-null="true" />
+        </property>
+        <property name="caccdiagpr" type="string">
+            <column name="CACCDIAGPR" length="4" />
+        </property>
+        <property name="caccdiagr1" type="string">
+            <column name="CACCDIAGR1" length="4" />
+        </property>
+        <property name="caccdiagr2" type="string">
+            <column name="CACCDIAGR2" length="4" />
+        </property>
+        <property name="caccdiagr3" type="string">
+            <column name="CACCDIAGR3" length="4" />
+        </property>
+        <property name="cacntipdia" type="integer">
+            <column name="CACNTIPDIA" precision="4" scale="0" not-null="true" />
+        </property>
+        <property name="cacavalcon" type="big_decimal">
+            <column name="CACAVALCON" precision="15" not-null="true" />
+        </property>
+        <property name="cacavalcuo" type="big_decimal">
+            <column name="CACAVALCUO" precision="15" not-null="true" />
+        </property>
+        <property name="cacavalnet" type="big_decimal">
+            <column name="CACAVALNET" precision="15" not-null="true" />
+        </property>
+        <property name="cacdfecreg" type="date">
+            <column name="CACDFECREG" length="7" not-null="true" />
+        </property>
+        <property name="caccusuari" type="string">
+            <column name="CACCUSUARI" length="14" not-null="true" />
+        </property>
+        <property name="caclusuario" type="big_decimal">
+            <column name="CACLUSUARIO" precision="12" not-null="true" />
+        </property>
+        <property name="cacnclinic" type="integer">
+            <column name="CACNCLINIC" precision="4" scale="0" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

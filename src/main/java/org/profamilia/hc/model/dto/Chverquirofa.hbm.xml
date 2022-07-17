@@ -1,0 +1,56 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping>
+    <!-- 
+    Created by the Middlegen Hibernate plugin 2.2
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+    <class name="org.profamilia.hc.model.dto.Chverquirofa" table="CHVERQUIROFA"  schema="HISTORIA"
+           lazy="false">
+        <id name="hvqlcirugia" type="java.lang.Long" column="HVQLCIRUGIA">
+            <generator class="assigned"/>
+        </id>
+        <version name="version" column="VERSION"/> 
+        <property name="hvqdfecverifi" type="java.util.Date"
+                  column="HVQDFECVERIFI" length="7"/>
+        <property name="hvqctipoaneste" type="java.lang.String"
+                  column="HVQCTIPOANESTE" length="1"/>
+        <property name="hvqchoraingres" type="java.lang.String"
+                  column="HVQCHORAINGRES" length="5"/>
+        <property name="hvqchorasalida" type="java.lang.String"
+                  column="HVQCHORASALIDA" length="5"/>
+        <property name="hvqcobservac" type="java.lang.String"
+                  column="HVQCOBSERVAC" length="1000"/>
+        <property name="hvqnanestesio" type="big_decimal"
+                  column="HVQNANESTESIO" precision="15" not-null="true" />
+        <property name="hvqncirujano" type="big_decimal"
+                  column="HVQNCIRUJANO" precision="15" not-null="true" />
+        <property name="hvqnenfermero" type="big_decimal"
+                  column="HVQNENFERMERO" precision="15" not-null="true" />
+        <property name="hvqninstrumen" type="big_decimal"
+                  column="HVQNINSTRUMEN" precision="15" not-null="true" />
+        <property name="hvqcetapa" type="java.lang.String"
+                  column="HVQCETAPA" length="2" not-null="true" />
+        <property name="hvqdfecreg" type="java.util.Date"
+                  column="HVQDFECREG" length="7"/>
+        <property name="hvqcgrabador" type="java.lang.String"
+                  column="HVQCGRABADOR" length="14"/>
+        <property name="hvqcimpreso" type="java.lang.String"
+                  column="HVQCIMPRESO" length="1"/>
+        <many-to-one name="hvqlusuario"
+                     class="org.profamilia.hc.model.dto.Chusuario" not-null="true">
+            <column name="HVQLUSUARIO"/>
+        </many-to-one>
+        <set name="chitemvrquir" lazy="true" inverse="true" cascade="all">
+            <key>
+                <column name="HIQLCIRUGIA"/>
+            </key>
+            <one-to-many class="org.profamilia.hc.model.dto.Chitemvrquir"/>
+        </set>
+
+    </class>
+</hibernate-mapping>

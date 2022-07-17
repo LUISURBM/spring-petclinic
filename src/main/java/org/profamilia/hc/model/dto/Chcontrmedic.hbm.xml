@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping>
+    <!-- 
+    Created by the Middlegen Hibernate plugin 2.2
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+    <class name="org.profamilia.hc.model.dto.Chcontrmedic" table="CHCONTRMEDIC" schema="HISTORIA" lazy="false">
+        <composite-id name="id" class="org.profamilia.hc.model.dto.ChcontrmedicPK">
+            <key-property name="hcmlconsulta" column="HCMLCONSULTA" type="java.lang.Long" length="12"/>
+            <key-property name="hcmnconsecut" column="HCMNCONSECUT" type="java.lang.Integer" length="4"/>
+            <key-property name="hcmnevoluconse" column="HCMNEVOLUCONSE" type="java.lang.Integer" length="4"/>
+            <key-property name="hcmnnumerdosis" column="HCMNNUMERDOSIS" type="java.lang.Integer" length="4"/>
+        </composite-id>
+        <version name="version" column="VERSION"/>
+        <property name="hcmcmedicament" type="java.lang.String" column="HCMCMEDICAMENT" length="600"/>
+        <property name="hcmcpresentaci" type="java.lang.String" column="HCMCPRESENTACI" length="50"/>
+        <property name="hcmcadosis" type="java.math.BigDecimal" column="HCMCADOSIS" length="17"/>
+        <property name="hcmnfrecuadmin" type="java.lang.Integer" column="HCMNFRECUADMIN" length="2"/>
+        <property name="hcmcviadministr" type="java.lang.String" column="HCMCVIADMINISTR" length="2"/>
+        <property name="hcmcviadminotr" type="java.lang.String" column="HCMCVIADMINOTR" length="600"/>
+        <property name="hcmcformaadmin" type="java.lang.String" column="HCMCFORMAADMIN" length="2"/>
+        <property name="hcmcetapa" type="java.lang.String" column="HCMCETAPA" length="2"/>
+        <property name="hcmdfecregistr" type="java.util.Date" column="HCMDFECREGISTR" length="7"/>
+        <property name="hcmdfechaanota" type="java.util.Date" column="HCMDFECHAANOTA" length="7"/>
+        <property name="hcmcoperador" type="java.lang.String" column="HCMCOPERADOR" length="14"/>
+        <property name="hcmcunidad" type="java.lang.String" column="HCMCUNIDAD" length="2"/>
+        <property name="hcmctiposerv" type="java.lang.String" column="HCMCTIPOSERV" length="1"/>
+    
+        <!-- Associations -->
+        <!-- derived association(s) for compound key -->
+        <!-- end of derived association(s) -->
+    </class>
+</hibernate-mapping>

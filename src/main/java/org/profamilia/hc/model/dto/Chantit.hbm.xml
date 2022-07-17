@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping>
+    <!-- 
+    Created by the Middlegen Hibernate plugin 2.2
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+    <class name="org.profamilia.hc.model.dto.Chantit" table="CHANTITS"  schema="HISTORIA" lazy="false">
+        <id name="haninconsulta" type="java.lang.Long" column="HANINCONSULTA">
+            <meta attribute="field-description" inherit="false">Consulta asociada</meta>
+            <generator class="assigned"/>
+        </id>
+        <property name="hanicrefiere" type="java.lang.String" column="HANICREFIERE" not-null="true" length="1"/>
+        <property name="hanicdesc" type="java.lang.String" column="HANICDESC" length="4000"/>
+        <property name="hanidfecreg" type="java.util.Date" column="HANIDFECREG" not-null="true" length="7"/>
+        <property name="hanicusuareg" type="java.lang.String" column="HANICUSUAREG" not-null="true" length="14"/>
+        <property name="version" type="java.lang.String" column="VERSION" length="20"/>
+        <!-- Associations -->
+    </class>
+</hibernate-mapping>

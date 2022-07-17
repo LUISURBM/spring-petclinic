@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping>
+    <!-- 
+    Created by the Middlegen Hibernate plugin 2.2
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+    <class name="org.profamilia.hc.model.dto.Chviolenremi" table="CHVIOLENREMI" schema="HISTORIA"
+           lazy="false">
+        <id name="hvrccodigo" type="java.lang.String" column="HVRCCODIGO">
+            <generator class="assigned"/>
+        </id>
+          <version name="version" column="VERSION"/> 
+        <property name="hvrcdescripcio" type="java.lang.String"
+                  column="HVRCDESCRIPCIO" length="60"/>
+        <property name="hvrcinterno" type="java.lang.String"
+                  column="HVRCINTERNO" length="1"/>
+        <property name="hvrdfecregistr" type="java.util.Date"
+                  column="HVRDFECREGISTR" length="7"/>
+        <property name="hvrcoperador" type="java.lang.String"
+                  column="HVRCOPERADOR" length="14"/>
+          
+           <property name="hvrcestado" type="java.lang.String"
+                  column="HVRCESTADO" length="2"/>        
+                  
+    </class>
+</hibernate-mapping>

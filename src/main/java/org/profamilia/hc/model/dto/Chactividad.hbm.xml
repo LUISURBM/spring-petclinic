@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping>
+    <!-- 
+    Created by the Middlegen Hibernate plugin 2.2
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+    <class name="org.profamilia.hc.model.dto.Chactividad" table="CHACTIVIDAD" schema="HISTORIA" 
+           lazy="false">
+        <id name="hacncodigo" type="java.lang.Integer" column="HACNCODIGO">
+            <generator class="assigned"/>
+        </id>
+          <version name="version" column="VERSION"/>
+        <property name="haccdescripcio" type="java.lang.String"
+                  column="HACCDESCRIPCIO" length="600"/>
+        <property name="hacntipohistor" type="java.lang.Integer"
+                  column="HACNTIPOHISTOR" length="2"/>
+        <property name="haccoperador" type="java.lang.String"
+                  column="HACCOPERADOR" length="14"/>
+        <property name="hacdfecregistr" type="java.util.Date"
+                  column="HACDFECREGISTR" length="7"/>
+        <!-- Associations -->
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping>
+    <!-- 
+    Created by the Middlegen Hibernate plugin 2.2
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+    <class name="org.profamilia.hc.model.dto.Chlecttuber" table="CHLECTTUBER" lazy="false" schema="HISTORIA">
+        <composite-id name="comp_id" class="org.profamilia.hc.model.dto.ChlecttuberPK">
+            <key-property name="hltlconsulta" column="HLTLCONSULTA" type="java.lang.Long" length="22"/>
+            <key-property name="hltctiposervi" column="HLTCTIPOSERVI" type="java.lang.String" length="1"/>
+        </composite-id>
+        <version name="version" column="VERSION"/>
+        <property name="hltdfechlect" type="java.util.Date" column="HLTDFECHLECT" length="7"/>
+        <property name="hltcresultado" type="java.lang.String" column="HLTCRESULTADO" length="400"/>
+        <property name="hltcobservac" type="java.lang.String" column="HLTCOBSERVAC" length="400"/>
+        <property name="hltcusuregisl" type="java.lang.String" column="HLTCUSUREGISL" length="14"/>
+        <property name="hltcusunombl" type="java.lang.String" column="HLTCUSUNOMBL" not-null="true" length="100"/>
+        <property name="hltcusuprofel" type="java.lang.String" column="HLTCUSUPROFEL" length="100"/>
+        <property name="hltcentilectl" type="java.lang.String" column="HLTCENTILECTL" length="150"/>
+        <property name="hltcusuregist" type="java.lang.String" column="HLTCUSUREGIST" length="400"/>
+        <property name="hltcusunombt" type="java.lang.String" column="HLTCUSUNOMBT" length="100"/>
+        <property name="hltcusuprofet" type="java.lang.String" column="HLTCUSUPROFET" length="100"/>
+        <property name="hltcentilectt" type="java.lang.String" column="HLTCENTILECTT" length="20"/>
+         
+        <!-- Associations -->
+        <!-- derived association(s) for compound key -->
+        <!-- end of derived association(s) -->
+    </class>
+</hibernate-mapping>

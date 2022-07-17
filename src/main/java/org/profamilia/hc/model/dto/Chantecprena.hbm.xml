@@ -1,0 +1,61 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping>
+    <!-- 
+    Created by the Middlegen Hibernate plugin 2.2
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+    <class name="org.profamilia.hc.model.dto.Chantecprena" table="CHANTECPRENA" schema="HISTORIA" lazy="false">
+        <composite-id name="id" class="org.profamilia.hc.model.dto.ChantecprenaPK">
+            <key-property name="haplconsulta" column="HAPLCONSULTA" type="java.lang.Long" length="12"/>
+            <key-property name="hapctiposervi" column="HAPCTIPOSERVI" type="java.lang.String" length="1"/>
+        </composite-id>
+        <version name="version" column="VERSION"/>
+        <property name="hapchtacrofami" type="java.lang.String" column="HAPCHTACROFAMI" length="1"/>
+        <property name="hapcdiabetfami" type="java.lang.String" column="HAPCDIABETFAMI" length="1"/>
+        <property name="hapcpreeclfami" type="java.lang.String" column="HAPCPREECLFAMI" length="1"/>
+        <property name="hapceclampfami" type="java.lang.String" column="HAPCECLAMPFAMI" length="1"/>
+        <property name="hapcgemelafami" type="java.lang.String" column="HAPCGEMELAFAMI" length="1"/>
+        <property name="hapccardiofami" type="java.lang.String" column="HAPCCARDIOFAMI" length="1"/>
+        <property name="hapctbcfamilia" type="java.lang.String" column="HAPCTBCFAMILIA" length="1"/>
+        <property name="hapcotrofamili" type="java.lang.String" column="HAPCOTROFAMILI" length="1"/>
+        <property name="hapctuberperso" type="java.lang.String" column="HAPCTUBERPERSO" length="1"/>
+        <property name="hapcdiabeperso" type="java.lang.String" column="HAPCDIABEPERSO" length="1"/>
+        <property name="hapchtacropers" type="java.lang.String" column="HAPCHTACROPERS" length="1"/>
+        <property name="hapccirpeutepe" type="java.lang.String" column="HAPCCIRPEUTEPE" length="1"/>
+        <property name="hapcpreeclpers" type="java.lang.String" column="HAPCPREECLPERS" length="1"/>
+        <property name="hapceclamppers" type="java.lang.String" column="HAPCECLAMPPERS" length="1"/>
+        <property name="hapcalergipers" type="java.lang.String" column="HAPCALERGIPERS" length="1"/>
+        <property name="hapctabaqupers" type="java.lang.String" column="HAPCTABAQUPERS" length="1"/>
+        <property name="hapcantitepers" type="java.lang.String" column="HAPCANTITEPERS" length="1"/>
+        <property name="hapcotrosperso" type="java.lang.String" column="HAPCOTROSPERSO" length="1"/>
+        <property name="hapcgemelapers" type="java.lang.String" column="HAPCGEMELAPERS" length="1"/>
+        <property name="hapccardiopers" type="java.lang.String" column="HAPCCARDIOPERS" length="1"/>
+        <property name="hapccualotrfam" type="java.lang.String" column="HAPCCUALOTRFAM" length="4000"/>
+        <property name="hapccualotrper" type="java.lang.String" column="HAPCCUALOTRPER" length="4000"/>
+        <property name="hapcdeshtacrof" type="java.lang.String" column="HAPCDESHTACROF" length="4000"/>
+        <property name="hapcdesdiabetf" type="java.lang.String" column="HAPCDESDIABETF" length="4000"/>
+        <property name="hapcdespreeclf" type="java.lang.String" column="HAPCDESPREECLF" length="4000"/>
+        <property name="hapcdeseclampf" type="java.lang.String" column="HAPCDESECLAMPF" length="4000"/>
+        <property name="hapcdesgemelaf" type="java.lang.String" column="HAPCDESGEMELAF" length="4000"/>
+        <property name="hapcdescardiof" type="java.lang.String" column="HAPCDESCARDIOF" length="4000"/>
+        <property name="hapcdestbcfami" type="java.lang.String" column="HAPCDESTBCFAMI" length="4000"/>
+        <property name="hapcdestuberpe" type="java.lang.String" column="HAPCDESTUBERPE" length="4000"/>
+        <property name="hapcdesdiabepe" type="java.lang.String" column="HAPCDESDIABEPE" length="4000"/>
+        <property name="hapcdeshtacrop" type="java.lang.String" column="HAPCDESHTACROP" length="4000"/>
+        <property name="hapcdescirugpe" type="java.lang.String" column="HAPCDESCIRUGPE" length="4000"/>
+        <property name="hapcdespreeclp" type="java.lang.String" column="HAPCDESPREECLP" length="4000"/>
+        <property name="hapcdeseclampp" type="java.lang.String" column="HAPCDESECLAMPP" length="4000"/>
+        <property name="hapcdesalergip" type="java.lang.String" column="HAPCDESALERGIP" length="4000"/>
+        <property name="hapcdestabaqup" type="java.lang.String" column="HAPCDESTABAQUP" length="4000"/>
+        <property name="hapcdesantitep" type="java.lang.String" column="HAPCDESANTITEP" length="4000"/>
+        <property name="hapcdesgemelap" type="java.lang.String" column="HAPCDESGEMELAP" length="4000"/>
+        <property name="hapcdescardiop" type="java.lang.String" column="HAPCDESCARDIOP" length="4000"/>
+        <property name="hapcoperador" type="java.lang.String" column="HAPCOPERADOR" length="14"/>
+        <property name="hapdfecregistr" type="java.util.Date" column="HAPDFECREGISTR" length="7"/>
+    </class>
+</hibernate-mapping>

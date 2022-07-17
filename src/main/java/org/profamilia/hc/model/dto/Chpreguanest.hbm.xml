@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping>
+    <!-- 
+    Created by the Middlegen Hibernate plugin 2.2
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+    <class name="org.profamilia.hc.model.dto.Chpreguanest" table="CHPREGUANEST" schema="HISTORIA"
+           lazy="false">
+        <id name="hpancodigo" type="java.lang.Integer" column="HPANCODIGO">
+            <generator class="assigned"/>
+        </id>
+         <version name="version" column="VERSION"/> 
+        <property name="hpacdescripcio" type="java.lang.String"
+                  column="HPACDESCRIPCIO" not-null="true" length="120"/>
+        <property name="hpadfecregistr" type="java.util.Date"
+                  column="HPADFECREGISTR" length="7"/>
+        <property name="hpacoperador" type="java.lang.String"
+                  column="HPACOPERADOR" length="14"/>
+        <property name="hpanorden" type="java.lang.Integer"
+                  column="HPANORDEN" length="2"/>
+     
+       <!-- Associations -->
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping>
+    <!-- 
+    Created by the Middlegen Hibernate plugin 2.2
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+    <class name="org.profamilia.hc.model.dto.Chpediexamen" table="CHPEDIEXAMEN"  schema="HISTORIA"
+           lazy="false">
+        <composite-id name="id"
+                      class="org.profamilia.hc.model.dto.ChpediexamenPK">
+            <key-property name="hpelconsulta" column="HPELCONSULTA"
+                          type="java.lang.Long" length="12"/>
+            <key-property name="hpectiposervi" column="HPECTIPOSERVI"
+                          type="java.lang.String" length="1"/>
+        </composite-id>
+         <version name="version" column="VERSION"/> 
+        <property name="hpeccompofamil" type="java.lang.String"
+                  column="HPECCOMPOFAMIL" length="4000"/>
+        <property name="hpeeestadogene" type="java.lang.String"
+                  column="HPEEESTADOGENE" length="1"/>
+        <property name="hpeeestadoresp" type="java.lang.String"
+                  column="HPEEESTADORESP" length="1"/>
+        <property name="hpeeestadohidr" type="java.lang.String"
+                  column="HPEEESTADOHIDR" length="1"/>
+        <property name="hpeeestadoconc" type="java.lang.String"
+                  column="HPEEESTADOCONC" length="1"/>
+        <property name="hpecobservacio" type="java.lang.String"
+                  column="HPECOBSERVACIO" length="4000"/>
+        <property name="hpecoperador" type="java.lang.String"
+                  column="HPECOPERADOR" length="14"/>
+        <property name="hpedfecregistr" type="java.util.Date"
+                  column="HPEDFECREGISTR" length="7"/>
+    </class>
+</hibernate-mapping>

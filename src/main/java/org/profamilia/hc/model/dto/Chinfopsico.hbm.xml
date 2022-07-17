@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping>
+    <!-- 
+    Created by the Middlegen Hibernate plugin 2.2
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+    <class name="org.profamilia.hc.model.dto.Chinfopsico" table="CHINFOPSICO" lazy="false" schema="HISTORIA">
+        <composite-id name="id" class="org.profamilia.hc.model.dto.ChinfopsicoPK">
+            <key-property name="hiplconsulta" column="HIPLCONSULTA" type="java.lang.Long" length="12"/>
+            <key-property name="hipnconsecuti" column="HIPNCONSECUTI" type="java.lang.Long" length="4"/>
+        </composite-id>
+        <version name="version" column="VERSION"/>
+        <property name="hipcmotivinfor" type="java.lang.String" column="HIPCMOTIVINFOR" not-null="true" length="4000"/>
+        <property name="hipctecinsutl" type="java.lang.String" column="HIPCTECINSUTL" not-null="true" length="4000"/>
+        <property name="hipcdesccaso" type="java.lang.String" column="HIPCDESCCASO" not-null="true" length="4000"/>
+        <property name="hipcconcreco" type="java.lang.String" column="HIPCCONCRECO" not-null="true" length="4000"/>
+        <property name="hipcnombprof" type="java.lang.String" column="HIPCNOMBPROF" not-null="true" length="50"/>
+        <property name="hipccargprof" type="java.lang.String" column="HIPCCARGPROF" not-null="true" length="50"/>
+        <property name="hipcregiprof" type="java.lang.String" column="HIPCREGIPROF" not-null="true" length="50"/>
+        <property name="hipcoperador" type="java.lang.String" column="HIPCOPERADOR" not-null="true" length="14"/>
+        <property name="hipdfecregistr" type="java.util.Date" column="HIPDFECREGISTR" not-null="true" length="7"/>
+        <!-- Associations -->
+        <!-- derived association(s) for compound key -->
+        <!-- end of derived association(s) -->
+    </class>
+</hibernate-mapping>

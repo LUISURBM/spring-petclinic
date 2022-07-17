@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping>
+    <!-- 
+    Created by the Middlegen Hibernate plugin 2.2
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+    <class name="org.profamilia.hc.model.dto.Cfdetapago" table="CFDETAPAGO" lazy="false" schema="CLINICO">
+        <composite-id name="comp_id" class="org.profamilia.hc.model.dto.CfdetapagoPK">
+            <key-property name="cdpncodigo" column="CDPNCODIGO" type="java.lang.Long" length="22"/>
+            <key-property name="cdpncodadm" column="CDPNCODADM" type="java.lang.Long" length="22"/>
+        </composite-id>
+        <property name="cdpnforpag" type="java.lang.Long" column="CDPNFORPAG" not-null="true" length="22"/>
+        <property name="cdpnvalor" type="java.lang.Double" column="CDPNVALOR" not-null="true" length="22"/>
+        <property name="cdpctiptar" type="java.lang.String" column="CDPCTIPTAR" length="15"/>
+        <property name="cdpnnumdoc" type="java.lang.String" column="CDPNNUMDOC" length="20"/>
+        <property name="cdpnprotar" type="java.lang.String" column="CDPNPROTAR" length="50"/>
+        <property name="cdpdfechreg" type="java.util.Date" column="CDPDFECHREG" not-null="true" length="11"/>
+        <property name="cdpnfranq" type="java.lang.String" column="CDPNFRANQ" length="3"/>
+        <property name="cdpnnumant" type="java.lang.Long" column="CDPNNUMANT" length="22"/>
+        <!-- Associations -->
+        <!-- derived association(s) for compound key -->
+        <!-- end of derived association(s) -->
+    </class>
+</hibernate-mapping>

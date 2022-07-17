@@ -1,0 +1,54 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping>
+    <!-- 
+    Created by the Middlegen Hibernate plugin 2.2
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+    <class name="org.profamilia.hc.model.dto.Chanestesia" table="CHANESTESIA" lazy="false" schema="HISTORIA">
+        <id name="hanlnumero" type="java.lang.Long" column="HANLNUMERO">
+            <generator class="assigned"/>
+        </id>
+        <version name="version" column="VERSION"/>
+        <property name="hanctiposervi" type="java.lang.String" column="HANCTIPOSERVI" not-null="true" length="1"/>
+        <property name="hanlusuario" type="java.lang.Long" column="HANLUSUARIO" length="12"/>
+        <property name="hannclinica" type="java.lang.Integer" column="HANNCLINICA" length="4"/>
+        <property name="handfecregistr" type="java.util.Date" column="HANDFECREGISTR" length="7"/>
+        <property name="hancoperador" type="java.lang.String" column="HANCOPERADOR" length="14"/>
+        <property name="hancestadllega" type="java.lang.String" column="HANCESTADLLEGA" length="60"/>
+        <property name="hancestadsalir" type="java.lang.String" column="HANCESTADSALIR" length="60"/>
+        <property name="hancposicion" type="java.lang.Integer" column="HANCPOSICION" length="4"/>
+        <property name="hanccomplicaci" type="java.lang.String" column="HANCCOMPLICACI" length="1"/>
+        <property name="hancobservacio" type="java.lang.String" column="HANCOBSERVACIO" length="4000"/>
+        <property name="hancviaaerea" type="java.lang.String" column="HANCVIAAEREA" length="100"/>
+        <property name="hancmascafacia" type="java.lang.String" column="HANCMASCAFACIA" length="1"/>
+        <property name="hanccanulbucor" type="java.lang.String" column="HANCCANULBUCOR" length="1"/>
+        <property name="hanncanulbucor" type="java.lang.Integer" column="HANNCANULBUCOR" length="3"/>
+        <property name="hancmascalarin" type="java.lang.String" column="HANCMASCALARIN" length="1"/>
+        <property name="hanctipolarin" type="java.lang.String" column="HANCTIPOLARIN" length="1"/>
+        <property name="hannmascalarin" type="java.math.BigDecimal" column="HANNMASCALARIN" length="3"/>
+        <property name="hanctuboorotr" type="java.lang.String" column="HANCTUBOOROTR" length="1"/>
+        <property name="hanntuboorotr" type="java.math.BigDecimal" column="HANNTUBOOROTR" length="3"/>
+        <property name="hanctipoanest" type="java.lang.String" column="HANCTIPOANEST" length="1"/>
+                 <property name="hancobseringre" type="java.lang.String"
+                  column="HANCOBSERINGRE" length="4000"/>
+         <property name="hanngradoasa" type="java.lang.Integer" column="HANNGRADOASA" length="2"/>         
+         <property name="hancurgenasa" type="java.lang.String" column="HANCURGENASA" length="1"/>  
+         <property name="hanntipocircu" type="java.lang.Integer" column="HANNTIPOCIRCU" length="4"/> 
+         <property name="hanngasesagent" type="java.lang.Integer" column="HANNGASESAGENT" length="4"/> 
+         <property name="hanntipoventi" type="java.lang.Integer" column="HANNTIPOVENTI" length="4"/> 
+         <property name="hancotrocircu" type="java.lang.String" column="HANCOTROCIRCU" length="60"/>  
+         <property name="hancotroagent" type="java.lang.String" column="HANCOTROAGENT" length="60"/>  
+         <property name="hancdiagprinci" type="java.lang.String" column="HANCDIAGPRINCI" length="5"/>
+         <property name="hannpeso" type="java.math.BigDecimal" column="HANNPESO" length="3"/>
+         <property name="hannmedicatien" type="java.math.BigDecimal" column="HANNMEDICATIEN" length="12"/>
+         <property name="hannanestesiol" type="java.math.BigDecimal" column="HANNANESTESIOL" length="12"/>
+                  
+                  
+        <!-- Associations -->
+    </class>
+</hibernate-mapping>

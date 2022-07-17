@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping>
+    <!-- 
+    Created by the Middlegen Hibernate plugin 2.2
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+    <class name="org.profamilia.hc.model.dto.Chcertasiad" table="CHCERTASIAD" lazy="false" schema="HISTORIA">
+        <id name="hcalnumero" type="java.lang.Long" column="HCALNUMERO">
+         <generator class="sequence">
+            <param name="sequence">HISTORIA.CHCERTASIAD_SEQ</param>
+        </generator>
+            
+        </id>
+          <version name="version" column="VERSION"/> 
+        <property name="hcadfechareg" type="java.util.Date" column="HCADFECHAREG" not-null="true" length="7"/>
+        <property name="hcaccertifica" type="java.lang.String" column="HCACCERTIFICA" not-null="true" length="4000"/>
+        <property name="hcacoperador" type="java.lang.String" column="HCACOPERADOR" not-null="true" length="20"/>
+        <property name="hcaetipoideaco" type="java.lang.String" column="HCAETIPOIDEACO" length="2"/>
+        <property name="hcaanumideacom" type="java.lang.Long" column="HCAANUMIDEACOM" length="17"/>
+        <property name="hcacnombreacom" type="java.lang.String" column="HCACNOMBREACOM" length="60"/>
+       
+        <!-- Associations -->
+    </class>
+</hibernate-mapping>

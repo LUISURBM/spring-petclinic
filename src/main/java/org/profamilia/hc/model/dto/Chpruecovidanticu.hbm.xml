@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping>
+    <!-- 
+    Created by the Middlegen Hibernate plugin 2.2
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+    <class name="org.profamilia.hc.model.dto.Chpruecovidanticu" table="CHPRUECOVIDANTICU" schema="HISTORIA" lazy="false">
+        <id name="hpanconsulta" type="java.lang.Long" column="HPANCONSULTA">
+            <generator class="assigned"/>
+        </id>
+         <version name="version" column="VERSION"/>
+        <property name="hpannumepaci" type="java.lang.Long" column="HPANNUMEPACI" length="12"/>
+        <property name="hpausuareg" type="java.lang.String" column="HPAUSUAREG" length="14"/>
+        <property name="hpadfechreg" type="java.util.Date" column="HPADFECHREG" length="7"/>
+        <property name="hpaccercepid" type="java.lang.String" column="HPACCERCEPID" length="1"/>
+        <property name="hpactrabsalud" type="java.lang.String" column="HPACTRABSALUD" length="1"/>
+        <property name="hpaccontadias" type="java.lang.String" column="HPACCONTADIAS" length="1"/>
+        <property name="hpacsintopaci" type="java.lang.String" column="HPACSINTOPACI" length="1"/>
+        <property name="hpadfecsinto" type="java.util.Date" column="HPADFECSINTO" length="7"/>
+        <property name="hpannumesintevol" type="java.lang.Integer" column="HPANNUMESINTEVOL" length="2"/>
+        <property name="hpaclugatoma" type="java.lang.String" column="HPACLUGATOMA" length="2"/>
+        <property name="hpantempambi" type="java.math.BigDecimal" column="HPANTEMPAMBI" length="3"/>
+        <property name="hpacmarca" type="java.lang.String" column="HPACMARCA" length="80"/>
+        <property name="hpaclote" type="java.lang.String" column="HPACLOTE" length="50"/>
+        <property name="hpacreginvim" type="java.lang.String" column="HPACREGINVIM" length="30"/>
+        <property name="hpadfechfabr" type="java.util.Date" column="HPADFECHFABR" length="7"/>
+        <property name="hpadfechvenci" type="java.util.Date" column="HPADFECHVENCI" length="7"/>
+        <property name="hpacresultado" type="java.lang.String" column="HPACRESULTADO" length="1"/>
+        <property name="hpactipoantig" type="java.lang.String" column="HPACTIPOANTIG" length="3"/>
+        <property name="hpacobserv" type="java.lang.String" column="HPACOBSERV" length="150"/>
+        
+        <!-- Associations -->
+    </class>
+</hibernate-mapping>

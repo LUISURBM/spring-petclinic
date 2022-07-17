@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+<!-- 
+        Auto-generated mapping file from
+        the hibernate.org cfg2hbm engine
+-->
+    <class name="org.profamilia.hc.model.dto.Cpusuxsala" table="CPUSUXSALA" schema="CLINICO">
+        <composite-id name="id" class="org.profamilia.hc.model.dto.CpusuxsalaId">
+            <key-property name="cuscusuar" type="string">
+                <column name="CUSCUSUAR" length="14" />
+            </key-property>
+            <key-property name="cusnclinic" type="integer">
+                <column name="CUSNCLINIC" precision="4" scale="0" />
+            </key-property>
+            <key-property name="cusnsalesp" type="integer">
+                <column name="CUSNSALESP" precision="4" scale="0" />
+            </key-property>
+        </composite-id>
+        <version name="version" column="VERSION"/>
+        <property name="cusdfecreg" type="date">
+            <column name="CUSDFECREG" length="7" not-null="true" />
+        </property>
+        <property name="cuscusureg" type="string">
+            <column name="CUSCUSUREG" length="14" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

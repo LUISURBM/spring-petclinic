@@ -1,0 +1,62 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping>
+    <!-- 
+    Created by the Middlegen Hibernate plugin 2.2
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+    <class name="org.profamilia.hc.model.dto.Chanteobstpr" table="CHANTEOBSTPR" schema="HISTORIA" lazy="false">
+        <composite-id name="id" class="org.profamilia.hc.model.dto.ChanteobstprPK">
+            <key-property name="haolconsulta" column="HAOLCONSULTA" type="java.lang.Long" length="12"/>
+            <key-property name="haoctiposervi" column="HAOCTIPOSERVI" type="java.lang.String" length="1"/>
+        </composite-id>
+        <version name="version" column="VERSION"/>
+        <property name="haonnumgesta" type="java.lang.Integer" column="HAONNUMGESTA" length="2"/>
+        <property name="haocintergene" type="java.lang.String" column="HAOCINTERGENE" length="4000"/>
+        <property name="haonnumaborto" type="java.lang.Integer" column="HAONNUMABORTO" length="2"/>
+        <property name="haonectopico" type="java.lang.Integer" column="HAONECTOPICO" length="2"/>
+        <property name="haonmuerto" type="java.lang.Integer" column="HAONMUERTO" length="2"/>
+        <property name="haocplacprevi" type="java.lang.String" column="HAOCPLACPREVI" length="1"/>
+        <property name="haocabrupio" type="java.lang.String" column="HAOCABRUPIO" length="1"/>
+        <property name="haocrupprememb" type="java.lang.String" column="HAOCRUPPREMEMB" length="1"/>
+        <property name="haocpolhidramn" type="java.lang.String" column="HAOCPOLHIDRAMN" length="1"/>
+        <property name="haocoligohidra" type="java.lang.String" column="HAOCOLIGOHIDRA" length="1"/>
+        <property name="haocretcrcint" type="java.lang.String" column="HAOCRETCRCINT" length="1"/>
+        <property name="haonnumparto" type="java.lang.Integer" column="HAONNUMPARTO" length="2"/>
+        <property name="haodfup" type="java.util.Date" column="HAODFUP" length="7"/>
+        <property name="haocparunimul" type="java.lang.String" column="HAOCPARUNIMUL" length="1"/>
+        <property name="haoctipparto" type="java.lang.String" column="HAOCTIPPARTO" length="3"/>
+        <property name="haocviaparto" type="java.lang.String" column="HAOCVIAPARTO" length="1"/>
+        <property name="haocretplace" type="java.lang.String" column="HAOCRETPLACE" length="1"/>
+        <property name="haocinfepost" type="java.lang.String" column="HAOCINFEPOST" length="1"/>
+        <property name="haochemoobst" type="java.lang.String" column="HAOCHEMOOBST" length="1"/>
+        <property name="haoceclampsia" type="java.lang.String" column="HAOCECLAMPSIA" length="1"/>
+        <property name="haocdeseclamp" type="java.lang.String" column="HAOCDESECLAMP" length="4000"/>
+        <property name="haocpreclamps" type="java.lang.String" column="HAOCPRECLAMPS" length="1"/>
+        <property name="haocdesprecla" type="java.lang.String" column="HAOCDESPRECLA" length="4000"/>
+        <property name="haonnacivivo" type="java.lang.Integer" column="HAONNACIVIVO" length="2"/>
+        <property name="haonmortina" type="java.lang.Integer" column="HAONMORTINA" length="2"/>
+        <property name="haocmalformaci" type="java.lang.String" column="HAOCMALFORMACI" length="1"/>
+        <property name="haocmalforcual" type="java.lang.String" column="HAOCMALFORCUAL" length="4000"/>
+        <property name="haocmueperinat" type="java.lang.String" column="HAOCMUEPERINAT" length="1"/>
+        <property name="haocmuepercual" type="java.lang.String" column="HAOCMUEPERCUAL" length="4000"/>
+        <property name="haocleucorreas" type="java.lang.String" column="HAOCLEUCORREAS" length="1"/>
+        <property name="haoccolposcopi" type="java.lang.String" column="HAOCCOLPOSCOPI" length="1"/>
+        <property name="haocamenaparto" type="java.lang.String" column="HAOCAMENAPARTO" length="1"/>
+        <property name="haocamenaabort" type="java.lang.String" column="HAOCAMENAABORT" length="1"/>
+        <property name="haocgemelar" type="java.lang.String" column="HAOCGEMELAR" length="1"/>
+        <property name="haonpesonacer" type="java.lang.Integer" column="HAONPESONACER" length="4"/>
+        <property name="haodfecharegis" type="java.util.Date" column="HAODFECHAREGIS" length="7"/>
+        <property name="haocoperador" type="java.lang.String" column="HAOCOPERADOR" length="14"/>
+        <property name="haocperintcor" type="java.lang.String" column="HAOCPERINTCOR" length="1"/>
+        <property name="haocpeincocual" type="java.lang.String" column="HAOCPEINCOCUAL" length="4000"/>
+        <!-- Associations -->
+        <!-- derived association(s) for compound key -->
+        <!-- end of derived association(s) -->
+        <!-- bi-directional one-to-one association to Chconsulta -->
+    </class>
+</hibernate-mapping>

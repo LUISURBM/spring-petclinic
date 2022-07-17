@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping>
+    <!-- 
+    Created by the Middlegen Hibernate plugin 2.2
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+    <class name="org.profamilia.hc.model.dto.Chitempaque" table="CHITEMPAQUE" lazy="false" schema="HISTORIA">
+        <composite-id name="id" class="org.profamilia.hc.model.dto.ChitempaquePK">
+            <key-property name="hiplcodiginstr" column="HIPLCODIGINSTR" type="java.lang.Long" length="12"/>
+            <key-property name="hipncodigpaque" column="HIPNCODIGPAQUE" type="java.lang.Integer" length="4"/>
+        </composite-id>
+        <version name="version" column="VERSION"/> 
+        <property name="hipctipoester" type="java.lang.String" column="HIPCTIPOESTER" length="2"/>
+        <property name="hipdfechaester" type="java.util.Date" column="HIPDFECHAESTER" length="7"/>
+        <property name="hipdfechavenci" type="java.util.Date" column="HIPDFECHAVENCI" length="7"/>
+        <property name="hipnnumercarga" type="java.lang.Integer" column="HIPNNUMERCARGA" length="2"/>
+        <property name="hipnnumerauto" type="java.lang.Integer" column="HIPNNUMERAUTO" length="4"/>
+        <property name="hipcindicquimi" type="java.lang.String" column="HIPCINDICQUIMI" length="1"/>
+        <property name="hipcdescripcio" type="java.lang.String" column="HIPCDESCRIPCIO" length="50"/>
+        <property name="hipcestado" type="java.lang.String" column="HIPCESTADO" length="2"/>
+        <property name="hipdfecregistr" type="java.util.Date" column="HIPDFECREGISTR" length="7"/>
+        <property name="hipcoperador" type="java.lang.String" column="HIPCOPERADOR" length="14"/>
+        <!-- Associations -->
+        <!-- derived association(s) for compound key -->
+        <!-- end of derived association(s) -->
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping>
+    <!-- 
+    Created by the Middlegen Hibernate plugin 2.2
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+    <class name="org.profamilia.hc.model.dto.Cfencuecovid" table="CFENCUECOVID" lazy="false"  schema="CLINICO">
+    
+      <id name="cecnconsec" type="java.lang.Integer" column="CECNCONSEC">
+            <generator class="sequence">
+                <param name="sequence">CLINICO.CFENCUECOVID_SEQ</param>
+            </generator>
+        </id>
+    
+       
+         <version name="version" column="VERSION" type="java.lang.Integer"/>
+        <property name="ceccusuareg" type="java.lang.String" column="CECCUSUAREG" not-null="true" length="14"/>
+        <property name="ceccsintning" type="java.lang.String" column="CECCSINTNING" not-null="true" length="1"/>
+        <property name="ceccsintfieb" type="java.lang.String" column="CECCSINTFIEB" not-null="true" length="1"/>
+        <property name="ceccsinttos" type="java.lang.String" column="CECCSINTTOS" not-null="true" length="1"/>
+        <property name="ceccsintfati" type="java.lang.String" column="CECCSINTFATI" not-null="true" length="1"/>
+        <property name="ceccsintexpe" type="java.lang.String" column="CECCSINTEXPE" not-null="true" length="1"/>
+        <property name="ceccsintresp" type="java.lang.String" column="CECCSINTRESP" not-null="true" length="1"/>
+        <property name="ceccsintrapi" type="java.lang.String" column="CECCSINTRAPI" not-null="true" length="1"/>
+        <property name="ceccsintgarg" type="java.lang.String" column="CECCSINTGARG" not-null="true" length="1"/>
+        <property name="ceccsintolfa" type="java.lang.String" column="CECCSINTOLFA" not-null="true" length="1"/>
+        <property name="ceccsintdiar" type="java.lang.String" column="CECCSINTDIAR" not-null="true" length="1"/>
+        <property name="ceccsintotro" type="java.lang.String" column="CECCSINTOTRO" not-null="true" length="1"/>
+        <property name="ceccsintcual" type="java.lang.String" column="CECCSINTCUAL" length="4000"/>
+        <property name="cecccontestr" type="java.lang.String" column="CECCCONTESTR" not-null="true" length="1"/>
+        <property name="cecccontprob" type="java.lang.String" column="CECCCONTPROB" not-null="true" length="1"/>
+        <property name="ceccdiagcovi" type="java.lang.String" column="CECCDIAGCOVI" not-null="true" length="1"/>
+        <property name="ceccsigucuar" type="java.lang.String" column="CECCSIGUCUAR"  length="1"/>
+        <property name="ceccconducta" type="java.lang.String" column="CECCCONDUCTA" not-null="true" length="4"/>
+        <property name="ceccobservac" type="java.lang.String" column="CECCOBSERVAC" length="4000"/>
+        <property name="ceclusuario" type="java.lang.Long" column="CECLUSUARIO"  length="12"/>
+        <property name="cecdfechregi" type="java.util.Date" column="CECDFECHREGI" not-null="true" length="7"/>
+        <property name="ceccaplicaci" type="java.lang.String" column="CECCAPLICACI" not-null="true" length="5"/>
+        <property name="cecnrefeapli" type="java.lang.Long" column="CECNREFEAPLI"  length="12"/> 
+        <property name="cecctipide" type="java.lang.String" column="CECCTIPIDE" length="1"/>
+        <property name="cecnnumide" type="java.lang.Long" column="CECNNUMIDE"  length="12"/>
+        <property name="cecntemperat" type="java.math.BigDecimal" column="CECNTEMPERAT" length="4"/>
+
+        <!-- Associations -->
+    </class>
+</hibernate-mapping>

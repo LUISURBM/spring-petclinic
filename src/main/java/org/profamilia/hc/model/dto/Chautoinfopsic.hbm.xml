@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping>
+    <!-- 
+    Created by the Middlegen Hibernate plugin 2.2
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+    <class name="org.profamilia.hc.model.dto.Chautoinfopsic" table="CHAUTOINFOPSIC" schema="HISTORIA" lazy="false">
+        <id name="haiplnumero" type="java.lang.Long" column="HAIPLNUMERO">
+            <generator class="sequence">
+                <param name="sequence">HISTORIA.CHAUTOINFOPSIC_SEQ</param>
+            </generator>
+        </id>
+        <version name="version" column="VERSION"/>
+        <property name="haipnnumerconsu" type="java.lang.Long" column="HAIPNNUMERCONSU" not-null="true" length="12"/>
+        <property name="haipcmotivsolic" type="java.lang.String" column="HAIPCMOTIVSOLIC" not-null="true" length="4000"/>
+        <property name="haipcaceptsolic" type="java.lang.String" column="HAIPCACEPTSOLIC" length="1"/>
+        <property name="haipcmotivrecha" type="java.lang.String" column="HAIPCMOTIVRECHA" length="4000"/>
+        <property name="haipdfechainici" type="java.util.Date" column="HAIPDFECHAINICI" length="7"/>
+        <property name="haipdfechafinal" type="java.util.Date" column="HAIPDFECHAFINAL" length="7"/>
+        <property name="haipnclinica" type="java.lang.Integer" column="HAIPNCLINICA" length="4"/>
+        <property name="haipdfechasolic" type="java.util.Date" column="HAIPDFECHASOLIC" length="7"/>
+        <property name="haipcoperasolic" type="java.lang.String" column="HAIPCOPERASOLIC" length="14"/>
+        <property name="haipdfecharespu" type="java.util.Date" column="HAIPDFECHARESPU" length="7"/>
+        <property name="haipcoperarespu" type="java.lang.String" column="HAIPCOPERARESPU" length="14"/>
+        <property name="haipcservicio" type="java.lang.String" column="HAIPCSERVICIO" length="14"/>
+        <property name="haipcnombserv" type="java.lang.String" column="HAIPCNOMBSERV" length="200"/>
+        <property name="haipcnombpaci" type="java.lang.String" column="HAIPCNOMBPACI" length="200"/>
+        <property name="haipnnumeiden" type="java.lang.Long" column="HAIPNNUMEIDEN" length="17"/>
+        <property name="haipctipoiden" type="java.lang.String" column="HAIPCTIPOIDEN" length="2"/>
+        <property name="haipdfechaconsu" type="java.util.Date" column="HAIPDFECHACONSU" length="7"/>
+        <property name="haipcetapa" type="java.lang.String" column="HAIPCETAPA" length="1"/>
+        
+        
+        <!-- Associations -->
+    </class>
+</hibernate-mapping>

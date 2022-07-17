@@ -1,0 +1,54 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping>
+    <!-- 
+    Created by the Middlegen Hibernate plugin 2.2
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+    <class name="org.profamilia.hc.model.dto.Chantecfamil" table="CHANTECFAMIL"  schema="HISTORIA"  lazy="false">
+        <composite-id name="id" class="org.profamilia.hc.model.dto.ChantecfamilPK">
+            <key-property name="haflconsulta" column="HAFLCONSULTA" type="java.lang.Long" length="12"/>
+            <key-property name="hafctiposervi" column="HAFCTIPOSERVI" type="java.lang.String" length="1"/>
+        </composite-id>
+        <version name="version" column="VERSION"/>
+        <property name="hafchiperarter" type="java.lang.String" column="HAFCHIPERARTER" length="1"/>
+        <property name="hafcdeshtacrof" type="java.lang.String"  column="HAFCDESHTACROF" length="4000"/>
+        <property name="hafcpreeclfami" type="java.lang.String" column="HAFCPREECLFAMI" length="1"/>
+        <property name="hafcdespreeclf" type="java.lang.String"  column="HAFCDESPREECLF" length="4000"/>
+        <property name="hafceclampfami" type="java.lang.String" column="HAFCECLAMPFAMI" length="1"/>
+        <property name="hafcdeseclampf" type="java.lang.String" column="HAFCDESECLAMPF" length="4000"/>
+        <property name="hafccardiofami" type="java.lang.String" column="HAFCCARDIOFAMI" length="1"/>
+        <property name="hafcdescardiof" type="java.lang.String"  column="HAFCDESCARDIOF" length="4000"/>
+        <property name="hafcdiabetfami" type="java.lang.String" column="HAFCDIABETFAMI" length="1"/>
+        <property name="hafcdesdiabetf" type="java.lang.String"  column="HAFCDESDIABETF" length="4000"/>
+        <property name="hafcmetabfami" type="java.lang.String" column="HAFCMETABFAMI" length="1"/>
+        <property name="hafcdesmetabf" type="java.lang.String"  column="HAFCDESMETABF" length="4000"/>
+        <property name="hafcautoinmu" type="java.lang.String" column="HAFCAUTOINMU" length="1"/>
+        <property name="hafcdesauinf" type="java.lang.String"  column="HAFCDESAUINF" length="4000"/>
+        <property name="hafcmetabinfe" type="java.lang.String" column="HAFCMETABINFE" length="1"/>
+        <property name="hafcdesinfecf" type="java.lang.String"  column="HAFCDESINFECF" length="4000"/>
+        <property name="hafccongefami" type="java.lang.String" column="HAFCCONGEFAMI" length="1"/>
+        <property name="hafcdescongef" type="java.lang.String"  column="HAFCDESCONGEF" length="4000"/>
+        <property name="hafcepilfami" type="java.lang.String" column="HAFCEPILFAMI" length="1"/>
+        <property name="hafcdeseplif" type="java.lang.String"  column="HAFCDESEPLIF" length="4000"/>
+        <property name="hafcoperador" type="java.lang.String" column="HAFCOPERADOR" length="14"/>
+        <property name="hafdfecregistr" type="java.util.Date" column="HAFDFECREGISTR" length="7"/>
+        
+        
+        <property name="hafctrastmenta" type="java.lang.String" column="HAFCTRASTMENTA" length="1"/>
+        <property name="hafcdestramen" type="java.lang.String"  column="HAFCDESTRAMEN" length="4000"/>
+        <property name="hafcgestamulti" type="java.lang.String" column="HAFCGESTAMULTI" length="1"/>
+        <property name="hafctuberculosis" type="java.lang.String" column="HAFCTUBERCULOSIS" length="1"/>
+        <property name="hafcneoplasias" type="java.lang.String" column="HAFCNEOPLASIAS" length="1"/>
+        <property name="hafcotros" type="java.lang.String" column="HAFCOTROS" length="1"/>
+        <property name="hafcdescrotros" type="java.lang.String"  column="HAFCDESCROTROS" length="4000"/>
+     
+        <!-- Associations -->
+        <!-- derived association(s) for compound key -->
+        <!-- end of derived association(s) -->
+    </class>
+</hibernate-mapping>

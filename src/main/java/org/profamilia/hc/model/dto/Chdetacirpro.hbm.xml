@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping>
+    <!-- 
+    Created by the Middlegen Hibernate plugin 2.2
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+    <class name="org.profamilia.hc.model.dto.Chdetacirpro" table="CHDETACIRPRO" lazy="false" schema="HISTORIA">
+        <composite-id name="id" class="org.profamilia.hc.model.dto.ChdetacirproPK">
+            <key-property name="hdclconsuprinc" column="HDCLCONSUPRINC" type="java.lang.Long" length="12"/>
+            <key-property name="hdccservicio" column="HDCCSERVICIO" type="java.lang.String" length="12"/>
+        </composite-id>
+        <version name="version" column="VERSION"/>
+        <property name="hdcnmedicatien" type="big_decimal" column="HDCNMEDICATIEN" not-null="true" length="10"/>
+        <property name="hdclusuario" type="java.lang.Long" column="HDCLUSUARIO" not-null="true" length="12"/>
+        <property name="hdclconsuasoci" type="java.lang.Long" column="HDCLCONSUASOCI" length="12"/>
+        <property name="hdcdfecharegis" type="java.util.Date" column="HDCDFECHAREGIS" not-null="true" length="7"/>
+        <property name="hdccoperaregis" type="java.lang.String" column="HDCCOPERAREGIS" not-null="true" length="14"/>
+        <property name="hdcdfechamodif" type="java.util.Date" column="HDCDFECHAMODIF" length="7"/>
+        <property name="hdccoperamodif" type="java.lang.String" column="HDCCOPERAMODIF" length="14"/>
+        <property name="hdccestado" type="java.lang.String" column="HDCCESTADO" not-null="true" length="2"/>
+        <property name="hdcnclinica" type="java.lang.Integer" column="HDCNCLINICA" not-null="true" length="4"/>
+        <property name="hdccdescrquiru" type="java.lang.String" column="HDCCDESCRQUIRU"  length="1"/>
+         <property name="hdcnconsedescr" type="java.lang.Integer" column="HDCNCONSEDESCR" length="4"/>
+        <!-- Associations -->
+        <!-- derived association(s) for compound key -->
+        <!-- end of derived association(s) -->
+    </class>
+</hibernate-mapping>

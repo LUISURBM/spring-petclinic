@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping>
+    <!-- 
+    Created by the Middlegen Hibernate plugin 2.2
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+    <class name="org.profamilia.hc.model.dto.Chgeslabor" table="CHGESLABOR" schema="HISTORIA" lazy="false">
+        <id name="hglnconsec" type="java.lang.Long" column="HGLNCONSEC">
+            <generator class="sequence">
+                <param name="sequence">HISTORIA.CHGESLABOR_SEQ</param>
+            </generator>
+        </id>
+        
+        <version name="version" column="VERSION"/>
+        <property name="hglnclinica" type="java.lang.Long" column="HGLNCLINICA" not-null="true" length="22"/>
+        <property name="hglncodprof" type="java.lang.Long" column="HGLNCODPROF" not-null="true" length="22"/>
+        <property name="hgldfechreg" type="java.util.Date" column="HGLDFECHREG" not-null="true" length="7"/>
+        <property name="hglcusuareg" type="java.lang.String" column="HGLCUSUAREG" not-null="true" length="14"/>
+        <property name="hglcestado" type="java.lang.String" column="HGLCESTADO" not-null="true" length="2"/>
+        <!-- Associations -->
+    </class>
+</hibernate-mapping>

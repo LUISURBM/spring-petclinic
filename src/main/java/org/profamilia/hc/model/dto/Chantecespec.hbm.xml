@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping>
+    <!-- 
+    Created by the Middlegen Hibernate plugin 2.2
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+    <class name="org.profamilia.hc.model.dto.Chantecespec" table="CHANTECESPEC" lazy="false"  schema="HISTORIA">
+        <composite-id name="comp_id" class="org.profamilia.hc.model.dto.ChantecespecPK">
+            <key-property name="haelconsulta" column="HAELCONSULTA" type="java.lang.Long" length="12"/>
+            <key-property name="haectiposervi" column="HAECTIPOSERVI" type="java.lang.String" length="1"/>
+        </composite-id>
+        <version name="version" column="VERSION"/>
+        <property name="haedfechaplic" type="java.util.Date" column="HAEDFECHAPLIC" length="7"/>
+        <property name="haenpeso" type="java.lang.Long" column="HAENPESO" length="22"/>
+        <property name="haentalla" type="java.lang.String" column="HAENTALLA" length="20"/>
+        <property name="haecprestuber" type="java.lang.String" column="HAECPRESTUBER" length="1"/>
+        <property name="haeccuantuber" type="java.lang.String" column="HAECCUANTUBER" length="200"/>
+        <property name="haecrecibtrata" type="java.lang.String" column="HAECRECIBTRATA" length="1"/>
+        <property name="haectiemptrata" type="java.lang.String" column="HAECTIEMPTRATA" length="200"/>
+        <property name="haeccontactubercu" type="java.lang.String" column="HAECCONTACTUBERCU" length="1"/>
+        <property name="haecquiencontac" type="java.lang.String" column="HAECQUIENCONTAC" length="200"/>
+        <property name="haecviveconel" type="java.lang.String" column="HAECVIVECONEL" length="1"/>
+        <property name="haectiempocompart" type="java.lang.String" column="HAECTIEMPOCOMPART" length="200"/>
+        <property name="haedfecregistr" type="java.util.Date" column="HAEDFECREGISTR" length="7"/>
+        <property name="haecoperador" type="java.lang.String" column="HAECOPERADOR" length="14"/>
+        <!-- Associations -->
+        <!-- derived association(s) for compound key -->
+        <!-- end of derived association(s) -->
+    </class>
+</hibernate-mapping>

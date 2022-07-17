@@ -1,0 +1,56 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping>
+        <!-- 
+    Created by the Middlegen Hibernate plugin 2.2
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+        <class name="org.profamilia.hc.model.dto.Cfadmision" table="CFADMISION" lazy="false" schema="CLINICO">
+                <id name="cannumero" type="java.lang.Long" column="CANNUMERO">
+                        <generator class="assigned"/>
+                </id>
+                <version name="version" column="VERSION" type="java.lang.Long"/>
+                <property name="canclinic" column="CANCLINIC" type="java.lang.Long" length="4" not-null="true"/>
+                <property name="cadfecreg" column="CADFECREG" type="java.util.Date" length="11" not-null="true"/>
+                <property name="cacusuari" column="CACUSUARI" type="java.lang.String" length="14" not-null="true"/>
+                <property name="cancontra" column="CANCONTRA" type="java.lang.Long" length="10" not-null="true"/>
+                <property name="canprogra" column="CANPROGRA" type="java.lang.Double" length="22"/>
+                <property name="cacpacien" column="CACPACIEN" type="java.lang.String" length="80" not-null="true"/>
+                <property name="cansubtot" column="CANSUBTOT" type="java.lang.Double" length="17" not-null="true"/>
+                <property name="caniva" column="CANIVA" type="java.lang.Double" length="17"/>
+                <property name="cantotal" column="CANTOTAL" type="java.lang.Double" length="17" not-null="true"/>
+                <property name="candescto" column="CANDESCTO" type="java.lang.Double" length="17"/>
+                <property name="canestado" column="CANESTADO" type="java.lang.String" length="2" not-null="true"/>
+                <property name="cactipide" column="CACTIPIDE" type="java.lang.String" length="3" not-null="true"/>
+                <property name="cannumide" column="CANNUMIDE" type="java.lang.Long" length="17" not-null="true"/>
+                <property name="cadfecrem" column="CADFECREM" type="java.util.Date" length="7"/>
+                <property name="candonante" column="CANDONANTE" type="java.lang.Long" length="10" not-null="true"/>
+                <property name="cacnumrem" column="CACNUMREM" type="java.lang.String" length="35"/>
+                <property name="cannumpaci" column="CANNUMPACI" type="java.lang.Long" length="12" not-null="true"/>
+                <property name="cadfecanu" column="CADFECANU" type="java.util.Date" length="7"/>
+                <property name="cannumanu" column="CANNUMANU" type="java.lang.Long" length="22"/>
+                <property name="caccodeps" column="CACCODEPS" type="java.lang.String" length="10"/>
+                <property name="canrecaudo" column="CANRECAUDO" type="java.lang.Double" length="22"/>
+                <property name="cacplaca" column="CACPLACA" type="java.lang.String" length="15"/>
+                <property name="canbrigrada" column="CANBRIGRADA" type="java.lang.Long" length="22"/>
+                <property name="cacnumcomp" column="CACNUMCOMP" type="java.lang.String" length="10"/>
+                <property name="cancambio" column="CANCAMBIO" type="java.lang.Double" length="17"/>
+                <property name="caccetapa" column="CACCETAPA" type="java.lang.String" length="2"/>
+                <property name="cacnturno" column="CACNTURNO" type="java.lang.Long" length="22"/>
+                <property name="cacintext" column="CACINTEXT" type="java.lang.String" length="1"/>
+                <property name="canvalent" column="CANVALENT" type="java.lang.Double" length="17" not-null="true"/>
+                <property name="canvalrec" column="CANVALREC" type="java.lang.Double" length="17" not-null="true"/>
+                <property name="caccateusua" column="CACCATEUSUA" type="java.lang.String" length="22"/>
+                <property name="cacremitente" column="CACREMITENTE" type="java.lang.String" length="15"/>
+                <property name="cacexecopago" column="CACEXECOPAGO" type="java.lang.String" length="1"/>
+                <property name="cactipoadmi" column="CACTIPOADMI" type="java.lang.String" length="2"/>
+                <property name="cacvenxmos" column="CACVENXMOS" type="java.lang.String" length="1"/>
+                <!-- Associations -->
+                <!-- derived association(s) for compound key -->
+                <!-- end of derived association(s) -->
+        </class>
+</hibernate-mapping>

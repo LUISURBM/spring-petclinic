@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping>
+    <!-- 
+    Created by the Middlegen Hibernate plugin 2.2
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+    <class name="org.profamilia.hc.model.dto.Cpestadciv" table="CPESTADCIV" lazy="false" schema="CLINICO">
+        <id name="cecccodigo" type="java.lang.String" column="CECCCODIGO">
+            <generator class="assigned"/>
+        </id>
+        <version name="version" column="VERSION"/>
+        <property name="ceccdescri" type="java.lang.String" column="CECCDESCRI" not-null="true" length="20"/>
+        <property name="ceccestado" type="java.lang.String" column="CECCESTADO" not-null="true" length="2"/>
+        <property name="ceccusuari" type="java.lang.String" column="CECCUSUARI" not-null="true" length="14"/>
+        <property name="cecdfecreg" type="java.util.Date" column="CECDFECREG" not-null="true" length="7"/>
+        <!-- Associations -->
+    </class>
+</hibernate-mapping>

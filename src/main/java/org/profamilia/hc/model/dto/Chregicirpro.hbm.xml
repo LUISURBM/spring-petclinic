@@ -1,0 +1,65 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping>
+    <!-- 
+    Created by the Middlegen Hibernate plugin 2.2
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+    <class name="org.profamilia.hc.model.dto.Chregicirpro" table="CHREGICIRPRO"
+           schema="HISTORIA" lazy="false">
+        <id name="hrcnnumero" type="java.lang.Long" column="HRCNNUMERO">
+            <generator class="assigned"/>
+        </id>
+        <version name="version" column="VERSION"/>
+        <property name="hrcdfeccirpro" type="java.util.Date"
+                  column="HRCDFECCIRPRO" length="7"/>
+        <property name="hrctfecreg" type="java.util.Date"
+                  column="HRCTFECREG" length="7"/>
+        <property name="hrcntipusu" type="java.lang.Integer"
+                  column="HRCNTIPUSU" length="9"/>
+        <property name="hrcanumide" type="java.math.BigDecimal"
+                  column="HRCANUMIDE" precision="17" scale="2"/>
+        <property name="hrccusureg" type="java.lang.String"
+                  column="HRCCUSUREG" length="12"/>
+        <property name="hrcnconini" type="java.lang.Integer"
+                  column="HRCNCONINI" length="10"/>
+        <property name="hrcnconfac" type="java.lang.Integer"
+                  column="HRCNCONFAC" length="10"/>
+        <property name="hrcnnumfac" type="java.math.BigDecimal"
+                  column="HRCNNUMFAC" precision="17" scale="2"/>
+        <property name="hrccestado" type="java.lang.String"
+                  column="HRCCESTADO" length="2"/>
+        <property name="hrccetapa" type="java.lang.String"
+                  column="HRCCETAPA" length="2"/>
+        <property name="hrccusucnf" type="java.lang.String"
+                  column="HRCCUSUCNF" length="12"/>
+        <property name="hrctfeccnf" type="java.util.Date"
+                  column="HRCTFECCNF" length="7"/>
+        <property name="hrcctipide" type="java.lang.String"
+                  column="HRCCTIPIDE" length="2"/>
+        <property name="hrcnprogra" type="java.lang.Integer"
+                  column="HRCNPROGRA" length="9"/>
+        <property name="hrcndonant" type="java.math.BigDecimal"
+                  column="HRCNDONANT" precision="17" scale="2"/>
+        <!-- Associations -->
+        <many-to-one name="hrccservic" 
+                     class="org.profamilia.hc.model.dto.Cpservicio"
+                     not-null="true">
+            <column name="HRCCSERVIC"/>
+        </many-to-one>  
+        
+           <many-to-one name="hrclusuario" 
+                     class="org.profamilia.hc.model.dto.Chusuario"
+                     not-null="true">
+            <column name="HRCLUSUARIO"/>
+        </many-to-one>  
+        <many-to-one name="hrcnclinic"
+                     class="org.profamilia.hc.model.dto.Cpclinica" not-null="true">
+            <column name="HRCNCLINIC"/>
+        </many-to-one>
+    </class>
+</hibernate-mapping>

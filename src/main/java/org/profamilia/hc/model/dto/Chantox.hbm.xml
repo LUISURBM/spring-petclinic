@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping>
+    <!-- 
+    Created by the Middlegen Hibernate plugin 2.2
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+    <class name="org.profamilia.hc.model.dto.Chantox" table="CHANTOX"  schema="HISTORIA" lazy="false">
+        <id name="hantnconsulta" type="java.lang.Long" column="HANTNCONSULTA">
+            <meta attribute="field-description" inherit="false">Consulta asociada</meta>
+            <generator class="assigned"/>
+        </id>
+        <property name="hantcrefiere" type="java.lang.String" column="HANTCREFIERE" not-null="true" length="1"/>
+        <property name="hantcdesc" type="java.lang.String" column="HANTCDESC" length="4000"/>
+        <property name="hantdfecreg" type="java.util.Date" column="HANTDFECREG" not-null="true" length="7"/>
+        <property name="hantcusuareg" type="java.lang.String" column="HANTCUSUAREG" not-null="true" length="14"/>
+        <property name="version" type="java.math.BigDecimal" column="VERSION" length="22"/>
+        <!-- Associations -->
+    </class>
+</hibernate-mapping>

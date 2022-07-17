@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping>
+    <!-- 
+    Created by the Middlegen Hibernate plugin 2.2
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+    <class name="org.profamilia.hc.model.dto.Chotraorden" table="CHOTRAORDEN" schema="HISTORIA" lazy="false">
+        <composite-id name="id" class="org.profamilia.hc.model.dto.ChotraordenPK">
+            <key-property name="hoolnumero" column="HOOLNUMERO" type="java.lang.Long" length="12"/>
+            <key-property name="hoonconsecutiv" column="HOONCONSECUTIV" type="java.lang.Integer" length="4"/>
+        </composite-id>
+            <version name="version" column="VERSION"/>
+        <property name="hoocestado" type="java.lang.String" column="HOOCESTADO" length="2"/>
+        <property name="hoocetapa" type="java.lang.String" column="HOOCETAPA" length="2"/>
+        <property name="hoocoperaasig" type="java.lang.String" column="HOOCOPERAASIG" length="20"/>
+        <property name="hoocoperaadmi" type="java.lang.String" column="HOOCOPERAADMI" length="20"/>
+        <property name="hoodfechaasig" type="java.util.Date" column="HOODFECHAASIG" length="7"/>
+        <property name="hoodfechaadmi" type="java.util.Date" column="HOODFECHAADMI" length="7"/>
+        <property name="hoocordenenvi" type="java.lang.String" column="HOOCORDENENVI" length="1000"/>
+        <property name="hoocnombreord" type="java.lang.String" column="HOOCNOMBREORD" length="40"/>
+        <property name="hoocobserva" type="java.lang.String" column="HOOCOBSERVA" length="500"/>
+        <property name="hoocoperomodif" type="java.lang.String" column="HOOCOPEROMODIF" length="20"/>
+        <property name="hoodfechamodif" type="java.util.Date" column="HOODFECHAMODIF" length="7"/>
+        <property name="hoonevoluconse" type="java.lang.Integer" column="HOONEVOLUCONSE" length="22"/>
+        <property name="hoocsistoxige" type="java.lang.String" column="HOOCSISTOXIGE" length="2"/>
+        <property name="hooccantlitros" type="java.lang.String" column="HOOCCANTLITROS" length="10"/>
+        <property name="hooccantminutos" type="java.lang.Long" column="HOOCCANTMINUTOS" length="22"/>
+        <property name="hooccduracion" type="java.lang.String" column="HOOCCDURACION" length="500"/>
+        <property name="hooccadminisoxig" type="java.lang.String" column="HOOCCADMINISOXIG" length="1"/>
+        <property name="hoocdfechadminis" type="java.util.Date" column="HOOCDFECHADMINIS" length="7"/>
+        <property name="hooccadminoxigdesc" type="java.lang.String" column="HOOCCADMINOXIGDESC" length="200"/>
+        <property name="hooccestadoadminox" type="java.lang.String" column="HOOCCESTADOADMINOX" length="2"/>
+        <!-- Associations -->
+        <!-- derived association(s) for compound key -->
+        <!-- end of derived association(s) -->
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping>
+    <!-- 
+    Created by the Middlegen Hibernate plugin 2.2
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+    <class name="org.profamilia.hc.model.dto.Chevalugener" table="CHEVALUGENER" lazy="false" schema="HISTORIA">
+        <composite-id name="id" class="org.profamilia.hc.model.dto.ChevalugenerPK">
+            <key-property name="heglconsulta" column="HEGLCONSULTA" type="java.lang.Long" length="12"/>
+            <key-property name="hegctiposerv" column="HEGCTIPOSERV" type="java.lang.String" length="1"/>
+        </composite-id>
+        <version name="version" column="VERSION"/>
+        <property name="hegcapoyofamil" type="java.lang.String" column="HEGCAPOYOFAMIL" not-null="true" length="1"/>
+        <property name="hegccanalcomun" type="java.lang.String" column="HEGCCANALCOMUN"  length="1"/>
+        <property name="hegcproblestud" type="java.lang.String" column="HEGCPROBLESTUD"  length="1"/>
+        <property name="hegcrelacapoyo" type="java.lang.String" column="HEGCRELACAPOYO" length="1"/>
+        <property name="hegccualprobl" type="java.lang.String" column="HEGCCUALPROBL" length="1000"/>
+        <property name="hegccualrelac" type="java.lang.String" column="HEGCCUALRELAC" length="1000"/>
+        <property name="hegccualapoyo" type="java.lang.String" column="HEGCCUALAPOYO" length="1000"/>
+        <property name="hegccualcanal" type="java.lang.String" column="HEGCCUALCANAL" length="1000"/>
+        <property name="hegcrelacfamil" type="java.lang.String" column="HEGCRELACFAMIL" length="2000"/>
+        <property name="hegcareaafect" type="java.lang.String" column="HEGCAREAAFECT" length="80"/>
+        <property name="hegcareacogni" type="java.lang.String" column="HEGCAREACOGNI" length="80"/>
+        <property name="hegcoperador" type="java.lang.String" column="HEGCOPERADOR" length="14"/>
+        <property name="hegdfecreg" type="java.util.Date" column="HEGDFECREG" length="7"/>
+        <property name="hegcobsexamental" type="java.lang.String" column="HEGCOBSEXAMENTAL" length="1000"/>
+        <property name="hegccompfami" type="java.lang.String" column="HEGCCOMPFAMI" length="4000"/>
+        <property name="hegcdesasesion" type="java.lang.String" column="HEGCDESASESION" length="2000"/>
+        
+        <!-- Associations -->
+        <!-- derived association(s) for compound key -->
+        <!-- end of derived association(s) -->
+    </class>
+</hibernate-mapping>

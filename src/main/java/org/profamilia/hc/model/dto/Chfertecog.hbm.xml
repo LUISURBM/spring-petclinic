@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping>
+    <!-- 
+    Created by the Middlegen Hibernate plugin 2.2
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+    <class name="org.profamilia.hc.model.dto.Chfertecog" table="CHFERTECOG" lazy="false"  schema="HISTORIA" >
+        <id name="hfelconsulta" type="java.lang.Long" column="HFELCONSULTA">
+            <generator class="assigned"/>
+        </id>
+        <version name="version" column="VERSION"/>
+        <property name="hfectomaecog" type="java.lang.String" column="HFECTOMAECOG" not-null="true" length="1"/>
+        <property name="hfecutero" type="java.lang.String" column="HFECUTERO" length="12"/>
+        <property name="hfecanexos" type="java.lang.String" column="HFECANEXOS" length="400"/>
+        <property name="hfecendometrio" type="java.lang.String" column="HFECENDOMETRIO" length="400"/>
+        <property name="hfecovarioizq" type="java.lang.Integer" column="HFECOVARIOIZQ" length="2"/>
+        <property name="hfecovarioder" type="java.lang.Integer" column="HFECOVARIODER" length="2"/>
+        <property name="hfecobservac" type="java.lang.String" column="HFECOBSERVAC" length="4000"/>
+        <property name="hfexutero" type="java.lang.String" column="HFEXUTERO" length="4000"/>
+        <property name="hfecmultifol" type="java.lang.String" column="HFECMULTIFOL" length="1"/>
+     
+        
+        
+        <!-- Associations -->
+    </class>
+</hibernate-mapping>

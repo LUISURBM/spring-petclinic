@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping>
+    <!-- 
+    Created by the Middlegen Hibernate plugin 2.2
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+    <class name="org.profamilia.hc.model.dto.Chdetalnotop" table="CHDETALNOTOP" lazy="false" schema="HISTORIA">
+        <composite-id name="id" class="org.profamilia.hc.model.dto.ChdetalnotopPK">
+            <key-property name="hdnlnumero" column="HDNLNUMERO" type="java.lang.Long" length="12"/>
+            <key-property name="hdnnconsec" column="HDNNCONSEC" type="java.lang.Integer" length="4"/>
+        </composite-id>
+         <version name="version" column="VERSION"/> 
+        
+        <property name="hdnccirujano" type="java.lang.Integer" column="HDNCCIRUJANO" not-null="true" length="9"/>
+        <property name="hdncdiagnprinc" type="java.lang.String" column="HDNCDIAGNPRINC" not-null="true" length="4"/>
+        <property name="hdncdiagnrelac" type="java.lang.String" column="HDNCDIAGNRELAC" length="4"/>
+        <property name="hdncpiezapatol" type="java.lang.String" column="HDNCPIEZAPATOL" length="200"/>
+        <property name="hdnchallazgos" type="java.lang.String" column="HDNCHALLAZGOS" length="4000"/>
+        <property name="hdncdescripcio" type="java.lang.String" column="HDNCDESCRIPCIO" length="4000"/>
+        <property name="hdnctienecompl" type="java.lang.String" column="HDNCTIENECOMPL" length="1"/>
+        <property name="hdncdiagncompl" type="java.lang.String" column="HDNCDIAGNCOMPL" length="4"/>
+        <property name="hdnctienesangr" type="java.lang.String" column="HDNCTIENESANGR" length="1"/>
+        <property name="hdnnsangraprox" type="java.lang.Integer" column="HDNNSANGRAPROX" length="4"/>
+        <property name="hdncanotardiur" type="java.lang.String" column="HDNCANOTARDIUR" length="1"/>
+        <property name="hdnncantidadiu" type="java.lang.Integer" column="HDNNCANTIDADIU" length="4"/>
+        <property name="hdncaspectodiu" type="java.lang.String" column="HDNCASPECTODIU" length="2"/>
+        <property name="hdndfecregistr" type="java.util.Date" column="HDNDFECREGISTR" length="7"/>
+        <property name="hdncoperador" type="java.lang.String" column="HDNCOPERADOR" length="14"/>
+        <property name="hdncdescrcompl" type="java.lang.String" column="HDNCDESCRCOMPL" length="4000"/>
+        <property name="hdncgradohemar" type="java.lang.String" column="HDNCGRADOHEMAR" length="1"/>
+        <property name="hdncestado" type="java.lang.String" column="HDNCESTADO" not-null="true" length="2"/>
+        
+        <!-- Associations -->
+        <!-- derived association(s) for compound key -->
+        <!-- end of derived association(s) -->
+        
+         <many-to-one name="hdnlusuario" class="org.profamilia.hc.model.dto.Chusuario" not-null="true">
+            <column name="HDNLUSUARIO"/>
+        </many-to-one>
+        
+        
+    </class>
+</hibernate-mapping>

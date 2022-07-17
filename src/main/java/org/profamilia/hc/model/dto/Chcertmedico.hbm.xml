@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping>
+    <!-- 
+    Created by the Middlegen Hibernate plugin 2.2
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+    <class name="org.profamilia.hc.model.dto.Chcertmedico" table="CHCERTMEDICO"  schema="HISTORIA"
+           lazy="false">
+        <composite-id name="id"
+                      class="org.profamilia.hc.model.dto.ChcertmedicoPK">
+            <key-property name="hcmlconsulta" column="HCMLCONSULTA"
+                          type="java.lang.Long" length="12"/>
+            <key-property name="hcmctipocert" column="HCMCTIPOCERT"
+                          type="java.lang.String" length="1"/>
+            <key-property name="hcmctiposervi" column="HCMCTIPOSERVI"
+                          type="java.lang.String" length="1"/>
+             <key-property name="hcmnconsecutiv" column="HCMNCONSECUTIV"
+                          type="java.lang.Integer" length="4"/>
+        </composite-id>
+          <version name="version" column="VERSION"/> 
+        <property name="hcmdfechareg" type="java.util.Date"
+                  column="HCMDFECHAREG" not-null="true" length="7"/>
+        <property name="hcmccertifica" type="java.lang.String"
+                  column="HCMCCERTIFICA" length="4000"/>
+        <property name="hcmcoperador" type="java.lang.String"
+                  column="HCMCOPERADOR" not-null="true" length="20"/>
+        <property name="hcmetipoideaco" type="java.lang.String"
+                  column="HCMETIPOIDEACO" length="2"/>
+        <property name="hcmanumideacom" type="java.lang.Long"
+                  column="HCMANUMIDEACOM" length="17"/>
+        <property name="hcmcnombreacom" type="java.lang.String"
+                  column="HCMCNOMBREACOM" length="60"/>
+    </class>
+</hibernate-mapping>

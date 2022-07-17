@@ -1,0 +1,57 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping>
+    <!-- 
+    Created by the Middlegen Hibernate plugin 2.2
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+    <class name="org.profamilia.hc.model.dto.Chdatosvph" table="CHDATOSVPH" lazy="false" schema="HISTORIA">
+        <id name="hdvnconsec" type="java.lang.Integer" column="HDVNCONSEC">
+            <generator class="assigned"/>
+        </id>
+          <version name="version" column="VERSION"/>
+        <property name="hdvnnumero" type="java.lang.Integer" column="HDVNNUMERO" not-null="true" length="9"/>
+        <property name="hdvnclinic" type="java.lang.Integer" column="HDVNCLINIC" not-null="true" length="4"/>
+        <property name="hdvctipide" type="java.lang.String" column="HDVCTIPIDE" not-null="true" length="2"/>
+        <property name="hdvanumide" type="java.lang.Long" column="HDVANUMIDE" not-null="true" length="17"/>
+        <property name="hdvcprinom" type="java.lang.String" column="HDVCPRINOM" not-null="true" length="20"/>
+        <property name="hdvcsegnom" type="java.lang.String" column="HDVCSEGNOM" length="20"/>
+        <property name="hdvcpriape" type="java.lang.String" column="HDVCPRIAPE" not-null="true" length="20"/>
+        <property name="hdvcsegape" type="java.lang.String" column="HDVCSEGAPE" length="20"/>
+        <property name="hdvcdirecc" type="java.lang.String" column="HDVCDIRECC" length="30"/>
+        <property name="hdvctelefo" type="java.lang.String" column="HDVCTELEFO" length="15"/>
+        <property name="hdvndepart" type="java.lang.Integer" column="HDVNDEPART" not-null="true" length="4"/>
+        <property name="hdvnmunici" type="java.lang.Integer" column="HDVNMUNICI" not-null="true" length="4"/>
+        <property name="hdvcotrdir" type="java.lang.String" column="HDVCOTRDIR" length="30"/>
+        <property name="hdvcotrtel" type="java.lang.String" column="HDVCOTRTEL" length="15"/>
+        <property name="hdvnotrdep" type="java.lang.Integer" column="HDVNOTRDEP" length="4"/>
+        <property name="hdvnotrmun" type="java.lang.Integer" column="HDVNOTRMUN" length="4"/>
+        <property name="hdvnedad" type="java.lang.Integer" column="HDVNEDAD" not-null="true" length="4"/>
+        <property name="hdvctipafi" type="java.lang.String" column="HDVCTIPAFI" not-null="true" length="1"/>
+        <property name="hdvcasegur" type="java.lang.String" column="HDVCASEGUR" length="6"/>
+        <property name="hdvcusureg" type="java.lang.String" column="HDVCUSUREG" not-null="true" length="12"/>
+        <property name="hdvdfecreg" type="java.util.Date" column="HDVDFECREG" not-null="true" length="7"/>
+        <property name="hdvntipdoc" type="java.lang.Integer" column="HDVNTIPDOC" not-null="true" length="4"/>
+        <property name="hdvnnumdoc" type="java.math.BigDecimal" column="HDVNNUMDOC" not-null="true" length="10"/>
+        <property name="hdvthorreg" type="java.util.Date" column="HDVTHORREG" not-null="true" length="7"/>
+        <property name="hdvdfecdvt" type="java.util.Date" column="HDVDFECDVT" not-null="true" length="7"/>
+        <property name="hdvcentreg" type="java.lang.String" column="HDVCENTREG" not-null="true" length="1"/>
+        <property name="hdvdfecent" type="java.util.Date" column="HDVDFECENT" length="7"/>
+        <property name="hdvnestado" type="java.lang.Integer" column="HDVNESTADO" not-null="true" length="1"/>
+        <property name="hdvlconcli" type="java.lang.Long" column="HDVLCONCLI" not-null="true" length="12"/>
+        <property name="hdvcidengen" type="java.lang.String" column="HDVCIDENGEN" not-null="true" length="6"/>
+        <property name="hdvcvulnera" type="java.lang.String" column="HDVCVULNERA" not-null="true" length="60"/>
+       
+         <many-to-one name="hdvlusuario"  
+                     class="org.profamilia.hc.model.dto.Chusuario"
+                     not-null="true">
+            <column name="HDVLUSUARIO"/>
+        </many-to-one>  
+       
+        <!-- Associations -->
+    </class>
+</hibernate-mapping>

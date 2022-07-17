@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping>
+    <!-- 
+    Created by the Middlegen Hibernate plugin 2.2
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+    <class name="org.profamilia.hc.model.dto.Chcontabor" table="CHCONTABOR" schema="HISTORIA" lazy="false">
+        <id name="hcanconsec" type="java.lang.Long" column="HCANCONSEC">
+            <meta attribute="field-description" inherit="false">consecutivo</meta>
+              <generator class="sequence">
+                <param name="sequence">HISTORIA.SEQ_CHCONTABOR</param>
+            </generator>
+        </id>
+        <property name="hcalnumeusua" type="java.lang.Long" column="HCALNUMEUSUA" length="22"/>
+        <property name="hcactipocont" type="java.lang.String" column="HCACTIPOCONT" length="2"/>
+        <property name="hcacobserva" type="java.lang.String" column="HCACOBSERVA" length="500"/>
+        <property name="hcadfechobse" type="java.util.Date" column="HCADFECHOBSE" length="7"/>
+        <property name="hcacusuareg" type="java.lang.String" column="HCACUSUAREG" length="10"/>
+        <property name="hcancodclin" type="java.lang.Integer" column="HCANCODCLIN" length="4"/>
+        <property name="hcacmotcierre" type="java.lang.String" column="HCACMOTCIERRE" length="2"/>
+        <property name="hcacotromocierre" type="java.lang.String" column="HCACOTROMOCIERRE" length="500"/>
+        <property name="hcannumcons" type="java.lang.Long" column="HCANNUMCONS" length="12"/>
+        <!-- Associations -->
+    </class>
+</hibernate-mapping>

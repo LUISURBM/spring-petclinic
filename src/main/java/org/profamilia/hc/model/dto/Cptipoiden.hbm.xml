@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+<!-- 
+        Auto-generated mapping file from
+        the hibernate.org cfg2hbm engine
+-->
+    <class name="org.profamilia.hc.model.dto.Cptipoiden" table="CPTIPOIDEN" schema="CLINICO">
+        <id name="cticcodigo" type="string">
+            <column name="CTICCODIGO" length="3" />
+            <generator class="assigned" />
+        </id>
+        <version name="version" column="VERSION"/>
+        <property name="cticdescri" type="string">
+            <column name="CTICDESCRI" length="30" not-null="true" />
+        </property>
+        <property name="cticusuari" type="string">
+            <column name="CTICUSUARI" length="14" not-null="true" />
+        </property>
+        <property name="ctidfecreg" type="date">
+            <column name="CTIDFECREG" length="7" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

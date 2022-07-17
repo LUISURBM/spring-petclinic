@@ -1,0 +1,71 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping>
+    <!-- 
+    Created by the Middlegen Hibernate plugin 2.2
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+    <class name="org.profamilia.hc.model.dto.Chantecolpo" table="CHANTECOLPOS" schema="HISTORIA" lazy="false">
+        <composite-id name="id" class="org.profamilia.hc.model.dto.ChantecolpoPK">
+            <key-property name="haclconsulta" column="HACLCONSULTA" type="java.lang.Long" length="12"/>
+            <key-property name="hacctiposervi" column="HACCTIPOSERVI" type="java.lang.String" length="1"/>
+        </composite-id>
+        <version name="version" column="VERSION"/>
+        <property name="hacdfecregistr" type="java.util.Date" column="HACDFECREGISTR" length="7"/>
+        <property name="haccoperador" type="java.lang.String" column="HACCOPERADOR" length="14"/>
+        <property name="hacncompasexua" type="java.lang.Integer" column="HACNCOMPASEXUA" length="2"/>
+        <property name="hacefuma" type="java.lang.String" column="HACEFUMA" length="1"/>
+        <property name="hacediabetes" type="java.lang.String" column="HACEDIABETES" length="1"/>
+        <property name="hacevih" type="java.lang.String" column="HACEVIH" length="1"/>
+        <property name="haceets" type="java.lang.String" column="HACEETS" length="1"/>
+        
+         <property name="haccfuma" type="java.lang.String" column="HACCFUMA" length="1000"/>
+        <property name="haccdiabetes" type="java.lang.String" column="HACCDIABETES" length="1000"/>
+        <property name="haccvih" type="java.lang.String" column="HACCVIH" length="1000"/>
+        <property name="haccets" type="java.lang.String" column="HACCETS" length="1000"/>
+        
+        <property name="hacevacunvph" type="java.lang.String" column="HACEVACUNVPH" length="1"/>
+        <property name="hacnnumervph" type="java.lang.Integer" column="HACNNUMERVPH" length="1"/>
+        <property name="hacetipifvph" type="java.lang.String" column="HACETIPIFVPH" length="2"/>
+        <property name="haccresultipif" type="java.lang.String" column="HACCRESULTIPIF" length="4"/>
+        <property name="haccantecprevi" type="java.lang.String" column="HACCANTECPREVI" length="1"/>
+        <property name="haccresulproce" type="java.lang.String" column="HACCRESULPROCE" length="4000"/>
+        
+        <property name="hacnnumgesta" type="java.lang.Integer" column="HACNNUMGESTA" length="2"/>
+        <property name="hacnnumparto" type="java.lang.Integer" column="HACNNUMPARTO" length="2"/>
+        <property name="hacnnumaborto" type="java.lang.Integer" column="HACNNUMABORTO" length="2"/>
+        <property name="hacnnumcesare" type="java.lang.Integer" column="HACNNUMCESARE" length="2"/>
+        <property name="hacnnumvivo" type="java.lang.Integer" column="HACNNUMVIVO" length="2"/>
+        <property name="hacnectopico" type="java.lang.Integer" column="HACNECTOPICO" length="2"/>
+        <property name="hacnmortina" type="java.lang.Integer" column="HACNMORTINA" length="2"/>
+        <property name="hacnmolas" type="java.lang.Integer" column="HACNMOLAS" length="2"/>
+        <property name="hacnmenarquia" type="java.lang.Integer" column="HACNMENARQUIA" length="2"/>
+        <property name="hacdfup" type="java.util.Date" column="HACDFUP" length="7"/>
+        <property name="hacnfreciclo" type="java.lang.Integer" column="HACNFRECICLO" length="3"/>
+        <property name="hacetipciclo" type="java.lang.String" column="HACETIPCICLO" length="1"/>
+        <property name="hacnfrefincicl" type="java.lang.Integer" column="HACNFREFINCICL" length="3"/>
+        <property name="haccmetodoplan" type="java.lang.String" column="HACCMETODOPLAN" length="10"/>
+        <property name="haccotrometodo" type="java.lang.String" column="HACCOTROMETODO" length="50"/>
+        <property name="haccresulcitol" type="java.lang.String" column="HACCRESULCITOL" length="4"/>
+        <property name="haccotroresul" type="java.lang.String" column="HACCOTRORESUL" length="100"/>
+        <property name="haccultcitolo" type="java.lang.String" column="HACCULTCITOLO" length="2"/>    
+        <property name="hacdfur" type="java.util.Date" column="HACDFUR" length="7"/>
+        
+        
+        <property name="hacndurciclo" type="java.lang.Integer" column="HACNDURCICLO" length="2"/>
+        <property name="hacndurfincicl" type="java.lang.Integer" column="HACNDURFINCICL" length="2"/>
+        <property name="haccnoaplica" type="java.lang.String" column="HACCNOAPLICA" length="1"/>
+        <property name="hacdfeultiapl" type="java.util.Date" column="HACDFEULTIAPL" length="7"/>
+        <property name="haccpildoobser" type="java.lang.String" column="HACCPILDOOBSER" length="4000"/>
+        <property name="haccpildouso" type="java.lang.String" column="HACCPILDOUSO" length="1"/>
+        <property name="hacnedadrelac" type="java.lang.Integer" column="HACNEDADRELAC" length="2"/>
+        <property name="haccgenotipifi" type="java.lang.String" column="HACCGENOTIPIFI" length="250"/>
+        
+        
+        
+    </class>
+</hibernate-mapping>

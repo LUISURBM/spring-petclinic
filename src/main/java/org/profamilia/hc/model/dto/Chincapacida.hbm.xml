@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping>
+    <!-- 
+    Created by the Middlegen Hibernate plugin 2.2
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+    <class name="org.profamilia.hc.model.dto.Chincapacida" table="CHINCAPACIDA"  schema="HISTORIA"
+           lazy="false">
+        <composite-id name="id"
+                      class="org.profamilia.hc.model.dto.ChincapacidaPK">
+            <key-property name="hinlconsulta" column="HINLCONSULTA"
+                          type="java.lang.Long" length="12"/>
+            <key-property name="hinctiposervi" column="HINCTIPOSERVI"
+                          type="java.lang.String" length="1"/>
+             <key-property name="hinnconsecutiv" column="HINNCONSECUTIV"
+                          type="java.lang.Integer" length="4"/>
+        </composite-id>
+         <version name="version" column="VERSION"/> 
+        <property name="hintdescripcio" type="java.lang.String"
+                  column="HINTDESCRIPCIO" length="4000"/>
+        <property name="hindfecinicia" type="java.util.Date"
+                  column="HINDFECINICIA" length="7"/>
+        <property name="hidndias" type="java.lang.Integer" column="HIDNDIAS"
+                  length="4"/>
+        <property name="hiddfecregistr" type="java.util.Date"
+                  column="HIDDFECREGISTR" length="7"/>
+        <property name="hidcoperador" type="java.lang.String"
+                  column="HIDCOPERADOR" length="14"/>
+        <property name="hidnorigeincap" type="java.lang.Integer"
+                  column="HIDNORIGEINCAP" length="2"/>
+        <property name="hidntipoincapa" type="java.lang.Integer"
+                  column="HIDNTIPOINCAPA" length="2"/>
+    </class>
+</hibernate-mapping>

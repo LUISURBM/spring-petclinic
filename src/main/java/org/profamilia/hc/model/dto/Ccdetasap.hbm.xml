@@ -1,0 +1,57 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 16/04/2015 04:12:51 PM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="org.profamilia.hc.model.dto.Ccdetasap" table="CCDETASAP" schema="CLINICO">
+       
+        <composite-id name="id" class="org.profamilia.hc.model.dto.CcdetasapId">
+            <key-property name="cdfnnumero" type="java.math.BigDecimal">
+                <column name="CDFNNUMERO" precision="10" scale="0" />
+            </key-property>
+            <key-property name="cdfnconsec" type="integer">
+                <column name="CDFNCONSEC" precision="4" scale="0" />
+            </key-property>
+        </composite-id>
+         <version name="version" type="java.lang.Integer"/>
+         <property name="cdfncantid" type="java.lang.Integer">
+            <column name="CDFNCANTID" />
+         </property>
+        <property name="cdfcservic" type="java.lang.String">
+            <column name="CDFCSERVIC" />
+        </property>
+        <property name="cdfccodent" type="java.lang.String">
+            <column name="CDFCCODENT" />
+        </property>
+        <property name="cdfavalser" type="java.math.BigDecimal">
+            <column name="CDFAVALSER" />
+        </property>
+        <property name="cdfaivaser" type="java.math.BigDecimal">
+            <column name="CDFAIVASER" />
+        </property>
+        <property name="cdfadescto" type="java.math.BigDecimal">
+            <column name="CDFADESCTO" />
+        </property>
+        <property name="cdfavalent" type="java.math.BigDecimal">
+            <column name="CDFAVALENT" />
+        </property>
+        <property name="cdfavaltot" type="java.math.BigDecimal">
+            <column name="CDFAVALTOT" />
+        </property>
+        <property name="cdfcpaquet" type="java.lang.String">
+            <column name="CDFCPAQUET" />
+        </property>
+        <property name="cdfcswpaqu" type="java.lang.String">
+            <column name="CDFCSWPAQU" />
+        </property>
+        <property name="cdfavaldon" type="java.math.BigDecimal">
+            <column name="CDFAVALDON" />
+        </property>
+        <property name="cdfcintext" type="java.lang.String">
+            <column name="CDFCINTEXT" />
+        </property>
+       
+            
+       
+    </class>
+</hibernate-mapping>

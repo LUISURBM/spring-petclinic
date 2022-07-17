@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping>
+    <!-- 
+    Created by the Middlegen Hibernate plugin 2.2
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+    <class name="org.profamilia.hc.model.dto.Chfertdato" table="CHFERTDATO" lazy="false" schema="HISTORIA">
+        <id name="hfdlconsulta" type="java.lang.Long" column="HFDLCONSULTA">
+            <generator class="assigned"/>
+        </id>
+           <version name="version" column="VERSION"/>
+        <property name="hfdcdonant" type="java.lang.String" column="HFDCDONANT" length="1"/>
+        <property name="hfdncoddon" type="java.lang.Integer" column="HFDNCODDON" length="9"/>
+        <property name="hfdcpareja" type="java.lang.String" column="HFDCPAREJA" length="1"/>
+        <property name="hfdctipide" type="java.lang.String" column="HFDCTIPIDE" length="2"/>
+        <property name="hfdanumide" type="java.math.BigDecimal" column="HFDANUMIDE" length="17"/>
+        <property name="hfdcprinom" type="java.lang.String" column="HFDCPRINOM" length="20"/>
+        <property name="hfdcsegnom" type="java.lang.String" column="HFDCSEGNOM" length="20"/>
+        <property name="hfdcpriape" type="java.lang.String" column="HFDCPRIAPE" length="20"/>
+        <property name="hfdcsegape" type="java.lang.String" column="HFDCSEGAPE" length="20"/>
+        <property name="hfddfecnac" type="java.util.Date" column="HFDDFECNAC" length="7"/>
+        <property name="hfdcocupac" type="java.lang.String" column="HFDCOCUPAC" length="100"/>
+        <property name="hfdcnumpareja" type="java.lang.String" column="HFDCNUMPAREJA" length="1"/>
+        <property name="hfddfecreg" type="java.util.Date" column="HFDDFECREG" length="7"/>
+        <property name="hfdcnomreg" type="java.lang.String" column="HFDCNOMREG" length="20"/>
+        <property name="hfdncodocupac" type="java.lang.Integer" column="HFDNCODOCUPAC" length="4"/>
+        
+        <!-- Associations -->
+    </class>
+</hibernate-mapping>

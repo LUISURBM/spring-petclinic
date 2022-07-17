@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping>
+    <!-- 
+    Created by the Middlegen Hibernate plugin 2.2
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+    <class name="org.profamilia.hc.model.dto.Chnotamedica" table="CHNOTAMEDICA" schema="HISTORIA"
+           lazy="false">
+        <composite-id name="id"
+                      class="org.profamilia.hc.model.dto.ChnotamedicaPK">
+            <key-property name="hnmlconsulta" column="HNMLCONSULTA"
+                          type="java.lang.Long" length="12"/>
+            <key-property name="hnmnconsecuti" column="HNMNCONSECUTI"
+                          type="java.lang.Integer" length="4"/>
+            <key-property name="hnmctiposervi" column="HNMCTIPOSERVI"
+                          type="java.lang.String" length="1"/>
+        </composite-id>
+          <version name="version" column="VERSION"/> 
+        <property name="hnmcdescripc" type="java.lang.String" 
+        column="HNMCDESCRIPC"  length="4000"/>
+        <property name="hnmcoperador" type="java.lang.String"
+                  column="HNMCOPERADOR" length="14"/>
+        <property name="hnmdfecregistr" type="java.util.Date"
+                  column="HNMDFECREGISTR" length="7"/>
+        <property name="hnmnactividad" type="java.lang.Integer" 
+        column="HNMNACTIVIDAD" length="4"/>
+       
+    </class>
+</hibernate-mapping>

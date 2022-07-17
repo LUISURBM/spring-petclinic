@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping>
+    <!-- 
+    Created by the Middlegen Hibernate plugin 2.2
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+    <class name="org.profamilia.hc.model.dto.Chreginsumo" table="CHREGINSUMO" lazy="false" schema="HISTORIA">
+        <composite-id name="id" class="org.profamilia.hc.model.dto.ChreginsumoPK">
+            <key-property name="hrinconsulta" column="HRINCONSULTA" type="java.lang.Long" length="12"/>
+            <key-property name="hrinconsecuti" column="HRINCONSECUTI" type="java.lang.Long" length="22"/>
+        </composite-id>
+        <version name="version" column="VERSION"/>
+        <property name="hricservicio" type="java.lang.String" column="HRICSERVICIO" not-null="true" length="15"/>
+        <property name="hricobserv" type="java.lang.String" column="HRICOBSERV" length="255"/>
+        <property name="hridfecregistr" type="java.util.Date" column="HRIDFECREGISTR" length="7"/>
+        <property name="hricutilizo" type="java.lang.String" column="HRICUTILIZO" not-null="true" length="1"/>
+        <!-- Associations -->
+        <!-- derived association(s) for compound key -->
+        <!-- end of derived association(s) -->
+    </class>
+</hibernate-mapping>

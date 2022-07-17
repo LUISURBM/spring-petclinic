@@ -1,0 +1,66 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping>
+    <!-- 
+    Created by the Middlegen Hibernate plugin 2.2
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+    <class name="org.profamilia.hc.model.dto.Chposicanest" table="CHPOSICANEST" schema="HISTORIA"
+           lazy="false">
+        <composite-id name="id"
+                      class="org.profamilia.hc.model.dto.ChposicanestPK">
+            <key-property name="hpalnumero" column="HPALNUMERO"
+                          type="java.lang.Long" length="12"/>
+            <key-property name="hpactiposervi" column="HPACTIPOSERVI"
+                          type="java.lang.String" length="1"/>
+        </composite-id>
+        <version name ="version" column="VERSION"/>
+        <property name="hpacposicbasic" type="java.lang.String"
+                  column="HPACPOSICBASIC" length="3"/>
+        <property name="hpacmodifposic" type="java.lang.String"
+                  column="HPACMODIFPOSIC" length="3"/>
+        <property name="hpacotraposici" type="java.lang.String"
+                  column="HPACOTRAPOSICI" length="50"/>
+        <property name="hpadhoracampos" type="java.util.Date"
+                  column="HPADHORACAMPOS" length="7"/>
+        <property name="hpacnuevabasic" type="java.lang.String"
+                  column="HPACNUEVABASIC" length="3"/>
+        <property name="hpacnuevamodif" type="java.lang.String"
+                  column="HPACNUEVAMODIF" length="3"/>
+        <property name="hpacnuevaotra" type="java.lang.String"
+                  column="HPACNUEVAOTRA" length="50"/>
+        <property name="hpacproteocula" type="java.lang.String"
+                  column="HPACPROTEOCULA" length="50"/>
+        <property name="hpactorniquete" type="java.lang.String"
+                  column="HPACTORNIQUETE" length="1"/>
+        <property name="hpadhorainicio" type="java.util.Date"
+                  column="HPADHORAINICIO" length="7"/>
+        <property name="hpadhorafin" type="java.util.Date" column="HPADHORAFIN"
+                  length="7"/>
+        <property name="hpaclugartorni" type="java.lang.String"
+                  column="HPACLUGARTORNI" length="50"/>
+        <property name="hpanpresiinfla" type="java.lang.Integer"
+                  column="HPANPRESIINFLA" length="3"/>
+        <property name="hpacobservacio" type="java.lang.String"
+                  column="HPACOBSERVACIO" length="2000"/>
+        <property name="hpanclinica" type="java.lang.Integer"
+                  column="HPANCLINICA" length="4"/>
+        <property name="hpadfecregistr" type="java.util.Date"
+                  column="HPADFECREGISTR" length="7"/>
+        <property name="hpacoperador" type="java.lang.String"
+                  column="HPACOPERADOR" length="14"/> 
+        <property name="hpacprotpunpre" type="java.lang.String"
+                  column="HPACPROTPUNPRE" length="1"/>
+        <property name="hpacprotocupre" type="java.lang.String"
+                  column="HPACPROTOCUPRE" length="1"/>
+        <property name="hpaccompneuint" type="java.lang.String"
+                  column="HPACCOMPNEUINT" length="1"/>
+        <!-- Associations -->
+        <!-- derived association(s) for compound key -->
+        <!-- end of derived association(s) -->
+    </class>
+</hibernate-mapping>

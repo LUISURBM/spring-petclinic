@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping>
+    <!-- 
+    Created by the Middlegen Hibernate plugin 2.2
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+    <class name="org.profamilia.hc.model.dto.Chmedidapoyo" table="CHMEDIDAPOYO"  schema="HISTORIA"
+           lazy="false">
+        <composite-id name="id"
+                      class="org.profamilia.hc.model.dto.ChmedidapoyoPK">
+            <key-property name="hmalconsulta" column="HMALCONSULTA"
+                          type="java.lang.Long" length="12"/>
+            <key-property name="hmactiposervi" column="HMACTIPOSERVI"
+                          type="java.lang.String" length="1"/>
+            <key-property name="hmanconsecutiv" column="HMANCONSECUTIV"
+                          type="java.lang.Integer" length="4"/>
+        </composite-id>
+          <version name="version" column="VERSION"/> 
+        <property name="hmatdescripcio" type="java.lang.String"
+                  column="HMATDESCRIPCIO" length="4000"/>
+        <property name="hmadfecregistr" type="java.util.Date"
+                  column="HMADFECREGISTR" length="7"/>
+        <property name="hmacoperador" type="java.lang.String"
+                  column="HMACOPERADOR" length="14"/>
+
+        <!-- Associations -->
+        <!-- derived association(s) for compound key -->
+        <!-- end of derived association(s) -->
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+<!-- 
+        Auto-generated mapping file from
+        the hibernate.org cfg2hbm engine
+-->
+    <class name="org.profamilia.hc.model.dto.Cpdepadane" table="CPDEPADANE" schema="CLINICO">
+        <id name="cddncodigo" type="integer">
+            <column name="CDDNCODIGO" precision="4" scale="0" />
+            <generator class="assigned" />
+        </id>
+        <version name="version" column="VERSION"/>
+        <property name="cddcdescri" type="string">
+            <column name="CDDCDESCRI" length="30" not-null="true" />
+        </property>
+        <property name="cdddfecreg" type="date">
+            <column name="CDDDFECREG" length="7" not-null="true" />
+        </property>
+        <property name="cddcusuari" type="string">
+            <column name="CDDCUSUARI" length="14" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

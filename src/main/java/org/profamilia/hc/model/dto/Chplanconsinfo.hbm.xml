@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping>
+    <!-- 
+    Created by the Middlegen Hibernate plugin 2.2
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+    <class name="org.profamilia.hc.model.dto.Chplanconsinfo" table="CHPLANCONSINFO" lazy="false" schema="HISTORIA">
+        <id name="hpcinconsec" type="java.lang.Long" column="HPCINCONSEC">
+            <generator class="sequence">
+                <param name="sequence">HISTORIA.CHPLANCONSINFO_SEQ</param>
+            </generator>
+        </id>
+        <property name="hpciccodigo" type="java.lang.String" column="HPCICCODIGO" length="200"/>
+        <property name="hpcicnombre" type="java.lang.String" column="HPCICNOMBRE" length="200"/>
+        <property name="hpcicestado" type="java.lang.String" column="HPCICESTADO" length="2"/>
+        <property name="hpcidfechregi" type="java.util.Date" column="HPCIDFECHREGI" length="7"/>
+        <property name="hpcicusuaregi" type="java.lang.String" column="HPCICUSUAREGI" length="12"/>
+        <property name="version" type="java.lang.Integer" column="VERSION" length="22"/>
+        <!-- Associations -->
+    </class>
+</hibernate-mapping>

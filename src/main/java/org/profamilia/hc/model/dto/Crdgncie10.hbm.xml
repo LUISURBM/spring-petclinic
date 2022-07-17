@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+<!-- 
+        Auto-generated mapping file from
+        the hibernate.org cfg2hbm engine
+-->
+    <class name="org.profamilia.hc.model.dto.Crdgncie10" table="CRDGNCIE10" schema="CLINICO">
+        <id name="cdcccodigo" type="string">
+            <column name="CDCCCODIGO" length="4" />
+            <generator class="assigned" />
+        </id>
+        <version name="version" column="VERSION"/>
+        <property name="cdccsimbol" type="string">
+            <column name="CDCCSIMBOL" length="1" />
+        </property>
+        <property name="cdccdescri" type="string">
+            <column name="CDCCDESCRI" length="240" not-null="true" />
+        </property>
+        <property name="cdccsexo" type="string">
+            <column name="CDCCSEXO" length="1" not-null="true" />
+        </property>
+        <property name="cdccliminf" type="string">
+            <column name="CDCCLIMINF" length="3" not-null="true" />
+        </property>
+        <property name="cdcclimsup" type="string">
+            <column name="CDCCLIMSUP" length="3" not-null="true" />
+        </property>
+        <property name="cdccnoafec" type="string">
+            <column name="CDCCNOAFEC" length="5" />
+        </property>
+        <property name="cdccobserv" type="string">
+            <column name="CDCCOBSERV" length="40" />
+        </property>
+        <property name="cdcdfecreg" type="date">
+            <column name="CDCDFECREG" length="7" not-null="true" />
+        </property>
+        <property name="cdccusuari" type="string">
+            <column name="CDCCUSUARI" length="14" not-null="true" />
+        </property>
+        <property name="cdccnotobl" type="string">
+            <column name="CDCCNOTOBL" length="1" not-null="true" />
+        </property>
+                <property name="cdccestado" type="string">
+            <column name="CDCCESTADO" length="2" not-null="true" />
+        </property>
+        
+    </class>
+</hibernate-mapping>

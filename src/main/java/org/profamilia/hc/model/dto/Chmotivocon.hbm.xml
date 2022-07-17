@@ -1,0 +1,102 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping>
+    <!-- 
+    Created by the Middlegen Hibernate plugin 2.2
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+    <class name="org.profamilia.hc.model.dto.Chmotivocon" table="CHMOTIVOCONS" schema="HISTORIA" lazy="false">
+        <composite-id name="id" class="org.profamilia.hc.model.dto.ChmotivoconPK">
+            <key-property name="hmclconsulta" column="HMCLCONSULTA" type="java.lang.Long" length="12"/>
+            <key-property name="hmcctiposervi" column="HMCCTIPOSERVI" type="java.lang.String" length="1"/>
+        </composite-id>
+        <version name="version" column="VERSION"/>
+        <property name="hmcncausaexte" type="java.lang.Integer" column="HMCNCAUSAEXTE" length="4"/>
+        <property name="hmcnfinalidad" type="java.lang.Integer" column="HMCNFINALIDAD" length="4"/>
+        <property name="hmctenferactal" type="java.lang.String" column="HMCTENFERACTAL" length="4000"/>
+        <property name="hmctdescripcio" type="java.lang.String" column="HMCTDESCRIPCIO" length="4000"/>
+        <property name="hmcdfecregistr" type="java.util.Date" column="HMCDFECREGISTR" length="7"/>
+        <property name="hmccoperador" type="java.lang.String" column="HMCCOPERADOR" length="14"/>
+        <property name="hmceofreasesor" type="java.lang.String" column="HMCEOFREASESOR" length="1"/>
+        <property name="hmcereciasesor" type="java.lang.String" column="HMCERECIASESOR" length="1"/>
+        <property name="hmccrevisistem" type="java.lang.String" column="HMCCREVISISTEM" length="4000"/>
+        <property name="hmccgrupsangre" type="java.lang.String" column="HMCCGRUPSANGRE" length="2"/>
+        <property name="hmccfactosangre" type="java.lang.String" column="HMCCFACTOSANGRE" length="1"/>
+        <property name="hmccecografia" type="java.lang.String" column="HMCCECOGRAFIA" length="4000"/>
+        <property name="hmcctipoconta" type="java.lang.String" column="HMCCTIPOCONTA" length="1"/>
+        <property name="hmcccualconta" type="java.lang.String" column="HMCCCUALCONTA" length="4"/>
+        <property name="hmccefecsecun" type="java.lang.String" column="HMCCEFECSECUN" length="30"/>
+        <property name="hmcnescadolor" type="java.lang.Integer" column="HMCNESCADOLOR" length="4"/>
+        <property name="hmcnduradolor" type="java.lang.Integer" column="HMCNDURADOLOR" length="4"/>
+        <property name="hmccconsumedi" type="java.lang.String" column="HMCCCONSUMEDI" length="3"/>
+        <property name="hmccpresangro" type="java.lang.String" column="HMCCPRESANGRO" length="3"/>
+        <property name="hmcccantisang" type="java.lang.String" column="HMCCCANTISANG" length="15"/>
+        <property name="hmcndurasangr" type="java.lang.Integer" column="HMCNDURASANGR" length="4"/>
+        <property name="hmcninicisang" type="java.lang.Integer" column="HMCNINICISANG" length="4"/>
+        <property name="hmccpreseexpu" type="java.lang.String" column="HMCCPRESEEXPU" length="3"/>
+        <property name="hmccexpultran" type="java.lang.String" column="HMCCEXPULTRAN" length="15"/>
+        <property name="hmcnprimexpul" type="java.lang.Integer" column="HMCNPRIMEXPUL" length="4"/>
+        <property name="hmcnsangmayor" type="java.lang.Integer" column="HMCNSANGMAYOR" length="4"/>
+        <property name="hmccoblimedic" type="java.lang.String" column="HMCCOBLIMEDIC" length="3"/>
+        <property name="hmcctipocontr" type="java.lang.String" column="HMCCTIPOCONTR" length="50"/>
+        <property name="hmccrepoecogr" type="java.lang.String" column="HMCCREPOECOGR" length="3"/>
+        <property name="hmcngrosendom" type="java.math.BigDecimal" column="HMCNGROSENDOM" length="6"/>
+        <property name="hmccdopplerva" type="java.lang.String" column="HMCCDOPPLERVA" length="3"/>
+        <property name="hmccdoppcardn" type="java.lang.String" column="HMCCDOPPCARDN" length="3"/>
+        <property name="hmcccomplicac" type="java.lang.String" column="HMCCCOMPLICAC" length="3"/>
+        <property name="hmcccompmulti" type="java.lang.String" column="HMCCCOMPMULTI" length="50"/>
+        <property name="hmccespacanal" type="java.lang.String" column="HMCCESPACANAL" length="200"/>
+        <property name="hmccespacondu" type="java.lang.String" column="HMCCESPACONDU" length="200"/>
+        <property name="hmccanticonce" type="java.lang.String" column="HMCCANTICONCE" length="3"/>
+        <property name="hmccmetoantic" type="java.lang.String" column="HMCCMETOANTIC" length="15"/>
+        <property name="hmcctolemetod" type="java.lang.String" column="HMCCTOLEMETOD" length="3"/>
+        <property name="hmccinicimetod" type="java.lang.String" column="HMCCINICIMETOD" length="3"/>
+        <property name="hmccmetodinici" type="java.lang.String" column="HMCCMETODINICI" length="3"/>
+        <property name="hmccotrometo" type="java.lang.String" column="HMCCOTROMETO" length="50"/>
+        <property name="hmccmetodantn" type="java.lang.String" column="HMCCMETODANTN" length="15"/>
+        <property name="hmccotrometon" type="java.lang.String" column="HMCCOTROMETON" length="3"/>
+        <property name="hmccsangposte" type="java.lang.String" column="HMCCSANGPOSTE" length="7"/>
+        
+        <property name="hmccdudointen" type="java.lang.String" column="HMCCDUDOINTEN" length="2"/>
+        <property name="hmcctiemsangro" type="java.lang.String" column="HMCCTIEMSANGRO" length="2"/>
+        <property name="hmcctiemexpuls" type="java.lang.String" column="HMCCTIEMEXPULS" length="2"/>
+        <property name="hmcctiemduraci" type="java.lang.String" column="HMCCTIEMDURACI" length="2"/>
+        <property name="hmcctiemdusang" type="java.lang.String" column="HMCCTIEMDUSANG" length="2"/>
+        
+        <property name="hmccmanioprev" type="java.lang.String" column="HMCCMANIOPREV" length="2"/>
+        <property name="hmccmaniofarma" type="java.lang.String" column="HMCCMANIOFARMA" length="2"/>
+        <property name="hmccmanioinstru" type="java.lang.String" column="HMCCMANIOINSTRU" length="2"/>
+        <property name="hmccmaniootro" type="java.lang.String" column="HMCCMANIOOTRO" length="2"/>
+        <property name="hmccmaniootrodesc" type="java.lang.String" column="HMCCMANIOOTRODESC" length="100"/>
+        <property name="hmccmanioobser" type="java.lang.String" column="HMCCMANIOOBSER" length="4000"/>
+        
+        <property name="hmccinteractua" type="java.lang.String" column="HMCCINTERACTUA" length="2"/>
+        <property name="hmccinteroprof" type="java.lang.String" column="HMCCINTEROPROF" length="2"/>
+        <property name="hmccinterasegu" type="java.lang.String" column="HMCCINTERASEGU" length="2"/>
+        <property name="hmccinterobser" type="java.lang.String" column="HMCCINTEROBSER" length="4000"/>
+        <property name="hmcctipoconps" type="java.lang.String" column="HMCCTIPOCONPS" length="2"/>
+        <property name="hmcctipoproce" type="java.lang.String" column="HMCCTIPOPROCE" length="2"/>
+        <property name="hmccteleorien" type="java.lang.String" column="HMCCTELEORIEN" length="1"/>
+        <property name="hmccecoobservac" type="java.lang.String" column="HMCCECOOBSERVAC" length="4000"/>
+        <property name="hmccantiobservac" type="java.lang.String" column="HMCCANTIOBSERVAC" length="4000"/>
+        <property name="hmccanticual" type="java.lang.String" column="HMCCANTICUAL" length="50"/>
+        <property name="hmccobsconemb" type="java.lang.String" column="HMCCOBSCONEMB" length="4000"/>
+        <property name="hmcctrapatol" type="java.lang.String" column="HMCCTRAPATOL" length="1"/>
+        <property name="hmcctippatol" type="java.lang.String" column="HMCCTIPPATOL" length="2"/>
+        <property name="hmcccualpat" type="java.lang.String" column="HMCCCUALPAT" length="50"/>
+        <property name="hmccrespatol" type="java.lang.String" column="HMCCRESPATOL" length="1"/>
+        <property name="hmccresbiop" type="java.lang.String" column="HMCCRESBIOP" length="2"/>
+        <property name="hmccdesres" type="java.lang.String" column="HMCCDESRES" length="100"/>
+        <property name="hmnclashisto" type="java.lang.Integer" column="HMNCLASHISTO" length="2"/>
+        <property name="hmngradtumor" type="java.lang.Integer" column="HMNGRADTUMOR" length="2"/>
+        <property name="hmnencuestaphq9" type="java.lang.Integer" column="HMNENCUESTAPHQ9" length="2"/>
+        
+        
+        
+        
+    </class>
+</hibernate-mapping>

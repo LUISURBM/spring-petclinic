@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping>
+    <!-- 
+    Created by the Middlegen Hibernate plugin 2.2
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+    <class name="org.profamilia.hc.model.dto.Chnoticia" schema="HISTORIA" table="CHNOTICIA" lazy="false">
+        <id name="hnoncodnot" type="java.lang.Integer" column="HNONCODNOT">
+            <meta attribute="field-description" inherit="false">Secuencia noticia</meta>
+            <generator class="assigned"/>
+        </id>
+        <property name="hnocnomnot" type="java.lang.String" column="HNOCNOMNOT" not-null="true" length="50"/>
+        <property name="hnoclinnot" type="java.lang.String" column="HNOCLINNOT"  length="100"/>
+        <property name="hnocusuareg" type="java.lang.String" column="HNOCUSUAREG" not-null="true" length="20"/>
+        <property name="hnodfecreg" type="java.util.Date" column="HNODFECREG" not-null="true" length="7"/>
+        <property name="hnocestado" type="java.lang.String" column="HNOCESTADO" not-null="true" length="2"/>
+        <property name="hnocdesnot" type="java.lang.String" column="HNOCDESNOT" not-null="true" length="500"/>
+        <!-- Associations -->
+    </class>
+</hibernate-mapping>

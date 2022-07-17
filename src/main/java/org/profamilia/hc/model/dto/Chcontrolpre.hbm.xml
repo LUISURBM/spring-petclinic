@@ -1,0 +1,57 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping>
+    <!-- 
+    Created by the Middlegen Hibernate plugin 2.2
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+    <class name="org.profamilia.hc.model.dto.Chcontrolpre" table="CHCONTROLPRE" schema="HISTORIA" lazy="false">
+        <composite-id name="id" class="org.profamilia.hc.model.dto.ChcontrolprePK">
+            <key-property name="hcplconsulta" column="HCPLCONSULTA" type="java.lang.Long" length="12"/>
+            <key-property name="hcpctiposervi" column="HCPCTIPOSERVI" type="java.lang.String" length="1"/>
+        </composite-id>
+        <version name="version" column="VERSION"/>
+        <property name="hcpnaltuterina" type="java.lang.Integer" column="HCPNALTUTERINA" length="2"/>
+        <property name="hcpnfcf" type="java.lang.Integer" column="HCPNFCF" length="3"/>
+        <property name="hcpcmovimfetal" type="java.lang.String" column="HCPCMOVIMFETAL" length="1"/>
+        <property name="hcpcpresefetal" type="java.lang.String" column="HCPCPRESEFETAL" length="10"/>
+        <property name="hcpevalcueuter" type="java.lang.String" column="HCPEVALCUEUTER" length="1"/>
+        <property name="hcpeedemas" type="java.lang.String" column="HCPEEDEMAS" length="1"/>
+        <property name="hcpdfecharegis" type="java.util.Date" column="HCPDFECHAREGIS" length="7"/>
+        <property name="hcpcoperador" type="java.lang.String" column="HCPCOPERADOR" length="14"/>
+        <property name="hcpeexaclinico" type="java.lang.String" column="HCPEEXACLINICO" length="1"/>
+        <property name="hcpeexamemamas" type="java.lang.String" column="HCPEEXAMEMAMAS" length="1"/>
+        <property name="hcpeexaodontol" type="java.lang.String" column="HCPEEXAODONTOL" length="1"/>
+        <property name="hcpeexamepelvi" type="java.lang.String" column="HCPEEXAMEPELVI" length="1"/>
+        <property name="hcpeexacitolog" type="java.lang.String" column="HCPEEXACITOLOG" length="1"/>
+        <property name="hcpeexamcervix" type="java.lang.String" column="HCPEEXAMCERVIX" length="1"/>
+        <property name="hcplconsulprin" type="java.lang.Long" column="HCPLCONSULPRIN" length="12"/>
+        <property name="hcpcpresart1" type="java.lang.String" column="HCPCPRESART1" length="3"/>
+        <property name="hcpcpresart2" type="java.lang.String" column="HCPCPRESART2" length="3"/>
+        <property name="hcpnfreccard" type="java.lang.Integer" column="HCPNFRECCARD" length="4"/>
+        <property name="hcpnfrecresp" type="java.lang.Integer" column="HCPNFRECRESP" length="4"/>
+        <property name="hcpapeso" type="java.math.BigDecimal" column="HCPAPESO" length="5"/>
+        <property name="hcpatalla" type="java.math.BigDecimal" column="HCPATALLA" length="5"/>
+        <property name="hcpaimc" type="java.math.BigDecimal" column="HCPAIMC" length="5"/>
+        <property name="hcpatemperatu" type="java.math.BigDecimal" column="HCPATEMPERATU" length="5"/>
+        <property name="hcpetipotemper" type="java.lang.String" column="HCPETIPOTEMPER" length="1"/>
+        <property name="hcpthallaorl" type="java.lang.String" column="HCPTHALLAORL" length="4000"/>
+        <property name="hcpthallcarpul" type="java.lang.String" column="HCPTHALLCARPUL" length="4000"/>
+        <property name="hcpthallaextre" type="java.lang.String" column="HCPTHALLAEXTRE" length="4000"/>
+        <property name="hcpthallsisner" type="java.lang.String" column="HCPTHALLSISNER" length="4000"/>
+        <property name="hcpctienhalorl" type="java.lang.String" column="HCPCTIENHALORL" length="1"/>
+        <property name="hcpctienhalext" type="java.lang.String" column="HCPCTIENHALEXT" length="1"/>
+        <property name="hcpctienhalcar" type="java.lang.String" column="HCPCTIENHALCAR" length="1"/>
+        <property name="hcpctienhalsis" type="java.lang.String" column="HCPCTIENHALSIS" length="1"/>
+        
+        <property name="hcpcestanutri" type="java.lang.String" column="HCPCESTANUTRI" length="2"/>
+        <property name="hcpcgenituri" type="java.lang.String" column="HCPCGENITURI" length="1"/>
+        <property name="hcpcdescgeni" type="java.lang.String" column="HCPCDESCGENI" length="4000"/>
+        <property name="hcpcgastroin" type="java.lang.String" column="HCPCGASTROIN" length="1"/>
+        <property name="hcpcdescgast" type="java.lang.String" column="HCPCDESCGAST" length="4000"/>
+    </class>
+</hibernate-mapping>

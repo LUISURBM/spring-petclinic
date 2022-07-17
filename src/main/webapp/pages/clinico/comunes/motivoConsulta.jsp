@@ -1,0 +1,841 @@
+<%@ page contentType="text/html;charset=iso-8859-1"%>
+<%@ taglib uri="http://java.sun.com/jsf/html" prefix="h"%>
+<%@ taglib uri="http://java.sun.com/jsf/core" prefix="f"%>
+<%@ taglib uri="http://richfaces.org/a4j" prefix="a4j"%>
+<%@ taglib uri="http://myfaces.apache.org/tomahawk" prefix="t"%>
+<%@ taglib uri="http://myfaces.apache.org/sandbox" prefix="s"%>
+<h:panelGrid columns="1" border="0" cellpadding="0" cellspacing="0" width="100%" id="panelGridMotivoConsultaTab" styleClass="tabContainer">
+  <jsp:include page="/pages/clinico/comunes/encabezadoDatosUsuario.jsp" flush="true"/>
+  <t:panelTabbedPane border="0" cellpadding="0" cellspacing="0" serverSideTabSwitch="false" activePanelTabVar="true" width="100%" id="panelTabbedPaneMotivoConsulta" styleClass="tabbedPane"
+                     activeTabStyleClass="activeTab" inactiveTabStyleClass="inactiveTab" disabledTabStyleClass="disabledTab" activeSubStyleClass="activeSub" inactiveSubStyleClass="inactiveSub"
+                     tabContentStyleClass="tabContent">
+    <t:panelTab id="panelTabMotivoConsulta" label="Motivo Consulta">
+      <h:panelGrid columns="1" border="0" cellpadding="0" cellspacing="0" width="100%" id="tableContentTabsMotivoConsulta" styleClass="tabContainer">
+        <s:fieldset legend="Teleorientación " id="fieldTeleorientacion" styleClass="fieldset" rendered="#{motivoBean.renderTeleorientacion}">
+           <h:panelGroup id="panelMnuTeleoriuentacion">
+              <a4j:region renderRegionOnly="false">
+                <h:selectOneRadio id="mnuTeleorientacion" immediate="true"
+                                  value="#{motivoBean.motivo.hmccteleorien}"
+                                  valueChangeListener="#{motivoBean.setHmccteleorien}">
+                  <f:selectItems value="#{motivoBean.lstOpciones}"/>
+                </h:selectOneRadio>
+              </a4j:region>
+              <a4j:outputPanel ajaxRendered="true">
+                <t:message for="mnuAspectos" styleClass="errorMessage"/>
+              </a4j:outputPanel>
+            </h:panelGroup>
+        </s:fieldset>
+         <s:fieldset legend="Remisión " id="fieldContactoProfamilia" styleClass="fieldset" rendered="#{motivoBean.renderConocioProfamilia}">
+          <h:panelGrid columns="4" border="0" cellpadding="0" cellspacing="0" width="100%" id="panelDatosContactoProfamilia" rowClasses="labelText,labelTextInfo">
+            <h:outputText value="Ingresa a Profamilia por:" styleClass="labelTextOblig"/>
+            <h:outputText value=" "/>
+            <h:panelGroup id="panelOutputContacto">
+              <h:outputText value="Cual? " styleClass="labelTextOblig"/>
+            </h:panelGroup>
+            <h:outputText value=" "/>
+            <h:panelGroup id="panelRemision">
+              <a4j:region renderRegionOnly="false">
+                <h:selectOneRadio id="mnuTipoContacto" immediate="true" required="true" value="#{motivoBean.motivo.hmcctipoconta}" onkeydown="return blockEnter(event);"
+                                  valueChangeListener="#{motivoBean.setHmcctipoconta}">
+                  <f:selectItems value="#{motivoBean.lstTipoContacto}"/>
+                  <a4j:support id="supportTipoContacto" event="onclick" action="#{motivoBean.changeContacto}" reRender="panelOutputContacto,panelInputContacto">
+                    <a4j:ajaxListener type="org.ajax4jsf.ajax.ForceRender"/>
+                  </a4j:support>
+                </h:selectOneRadio>
+              </a4j:region>
+            </h:panelGroup>
+            <a4j:outputPanel ajaxRendered="true">
+              <t:message for="mnuTipoContacto" styleClass="errorMessage"/>
+            </a4j:outputPanel>
+            <h:panelGroup id="panelInputContacto">
+              <h:selectOneMenu id="mnuCualContacto" required="true" onkeydown="return blockEnter(event);" value="#{motivoBean.motivo.hmcccualconta}">
+                <f:selectItems value="#{motivoBean.lstContacto}"/>
+              </h:selectOneMenu>
+            </h:panelGroup>
+            <a4j:outputPanel ajaxRendered="true">
+              <t:message for="mnuCualContacto" styleClass="errorMessage"/>
+            </a4j:outputPanel>
+          </h:panelGrid>
+        </s:fieldset>
+        <s:fieldset legend="Motivo de la Consulta " id="fieldMotivo1" styleClass="fieldset">
+          <h:panelGrid columns="4" border="0" cellpadding="0" cellspacing="0" width="100%" id="panelMotivoConsulta" rowClasses="labelText,labelTextInfo">
+            <h:outputText value="Causa Externa" styleClass="labelTextOblig"/>
+            <h:outputText value=" "/>
+            <h:panelGroup>
+              <h:outputText value="Motivo de Consulta" styleClass="labelTextOblig" rendered="#{!motivoBean.esValoracionPreanestesica}"/>
+            </h:panelGroup>
+            <h:outputText value=" "/>
+            <h:selectOneMenu id="menuMotivoConsulta" required="true" onkeydown="return blockEnter(event);" value="#{motivoBean.causaSelect}">
+              <f:selectItems value="#{motivoBean.lstCausa}"/>
+            </h:selectOneMenu>
+            <a4j:outputPanel ajaxRendered="true">
+              <t:message for="menuMotivoConsulta" styleClass="errorMessage"/>
+            </a4j:outputPanel>
+            <h:panelGroup>
+              <h:panelGroup>
+                <h:inputTextarea id="textMotivoConsulta" required="#{!motivoBean.motivoOpcional}" value="#{motivoBean.motivo.hmctdescripcio}" style="width:500px"
+                                 rendered="#{!motivoBean.esValoracionPreanestesica}"/>
+              </h:panelGroup>
+            </h:panelGroup>
+            <a4j:outputPanel ajaxRendered="true">
+              <t:message for="textMotivoConsulta" styleClass="errorMessage"/>
+            </a4j:outputPanel>
+            </h:panelGrid>
+            
+ <h:panelGrid columns="4" border="0" cellpadding="0" cellspacing="0" width="100%" id="panelMotivoConsulta2" rowClasses="labelText,labelTextInfo">
+            <h:outputText value="Finalidad" styleClass="labelTextOblig"/>
+            <h:outputText value=" "/>
+            <h:panelGroup>
+              <h:outputText value="Enfermedad Actual" styleClass="labelTextOblig" rendered="#{!motivoBean.enfermedadOpcional && !motivoBean.esValoracionPreanestesica}"/>
+              <h:outputText value="Enfermedad Actual" rendered="#{motivoBean.enfermedadOpcional && !motivoBean.esValoracionPreanestesica}"/>
+            </h:panelGroup>
+            <h:outputText value=" "/>
+            <h:selectOneMenu id="menuFinalidad" onkeydown="return blockEnter(event);" required="true" 
+            value="#{motivoBean.finalidadSelect}" disabled="true">
+              <f:selectItem itemLabel="No aplica" itemValue="10"/>
+            </h:selectOneMenu>
+            <a4j:outputPanel ajaxRendered="true">
+              <t:message for="menuFinalidad" styleClass="errorMessage"/>
+            </a4j:outputPanel>
+            <h:panelGroup>
+              <h:panelGroup>
+                <h:inputTextarea id="textEnfermedaActual" required="#{!motivoBean.enfermedadOpcional}" value="#{motivoBean.motivo.hmctenferactal}" style="width:500px"
+                                 rendered="#{!motivoBean.esValoracionPreanestesica}"/>
+              </h:panelGroup>
+            </h:panelGroup>
+            <a4j:outputPanel ajaxRendered="true">
+              <t:message for="textEnfermedaActual" styleClass="errorMessage"/>
+            </a4j:outputPanel>
+          </h:panelGrid>
+          <h:panelGrid columns="2" border="0" cellpadding="0" cellspacing="0"   width="40%" id="panelMotivoConsulta3" rowClasses="labelText,labelTextInfo">
+          
+           <h:outputText value="Resultado encuesta salud PHQ9" styleClass="labelTextOblig" rendered="#{motivoBean.renderPHQ9}"/>
+            <h:panelGroup id = "panelInputPHQ9">
+                <h:inputText id="itInputPHQ9" onkeydown="return blockEnter(event);"
+                             value="#{motivoBean.motivo.hmnencuestaphq9}" style="width:50px" maxlength="2" required="true" rendered="#{motivoBean.renderPHQ9}"/>
+                 <a4j:outputPanel ajaxRendered="true">
+                  <t:message for="itInputPHQ9" styleClass="errorMessage"/>
+                </a4j:outputPanel>
+            </h:panelGroup>
+            
+        </h:panelGrid>
+            
+        </s:fieldset>
+        <!-- ***** -->
+        <s:fieldset legend="Asesoria" id="fieldAreaasesoria" styleClass="fieldset" rendered="#{motivoBean.renderPreguntas}">
+         
+            <h:panelGrid columns="6" border="0" cellpadding="0" cellspacing="0" width="100%" id="panelAreaSeInforma" rowClasses="labelText,labelTextInfo">
+              <h:outputText value="Derechos" styleClass="labelTextOblig"/>
+              <h:outputText/>
+              <h:outputText value="Respeto de su decisión" styleClass="labelTextOblig"/>
+              <h:outputText/>
+              <h:outputText value="Autonomía de su decisión" styleClass="labelTextOblig"/>
+              <h:outputText/>
+              <h:selectOneRadio id="mnuDerechos" required="true" value="#{motivoBean.asesoria.haicderecho}">
+                <f:selectItems value="#{motivoBean.lstOpciones}"/>
+              </h:selectOneRadio>
+              <a4j:outputPanel ajaxRendered="true">
+                <t:message for="mnuDerechos" styleClass="errorMessage"/>
+              </a4j:outputPanel>
+              <h:selectOneRadio id="mnuRespetoDecision" required="true"  value="#{motivoBean.asesoria.haicrespdeci}">
+                <f:selectItems value="#{motivoBean.lstOpciones}"/>
+              </h:selectOneRadio>
+              <a4j:outputPanel ajaxRendered="true">
+                <t:message for="mnuRespetoDecision" styleClass="errorMessage"/>
+              </a4j:outputPanel>
+              <h:selectOneRadio id="mnuAutonomiaDecision" required="true"  value="#{motivoBean.asesoria.haicautodeci}">
+                <f:selectItems value="#{motivoBean.lstOpciones}"/>
+              </h:selectOneRadio>
+              <a4j:outputPanel ajaxRendered="true">
+                <t:message for="mnuAutonomiaDecision" styleClass="errorMessage"/>
+              </a4j:outputPanel>
+            </h:panelGrid>
+          </s:fieldset>
+     
+        <s:fieldset legend="Observación:" id="fieldAreaObservacion" styleClass="fieldset" rendered="#{motivoBean.renderPreguntas}">
+            <h:inputTextarea id="itObservacion" onkeydown="return blockEnter(event);" value="#{motivoBean.asesoria.haicobservacion}" style="width:500px;height:60px"/>
+          </s:fieldset>
+        <h:panelGrid>
+          <h:panelGroup>
+            <a4j:outputPanel id="ajaxRegionMensajesasesoriailve" ajaxRendered="true">
+              <t:htmlTag value="br"/>
+              <t:messages id="msgInfasesoriailve" showSummary="true" errorClass="error" globalOnly="true" layout="table" infoClass="informacion"/>
+            </a4j:outputPanel>
+          </h:panelGroup>
+        </h:panelGrid>
+        <!-- ***** -->
+        <s:fieldset legend="Interrupción del Embarazo " id="fieldIterrupcion" styleClass="fieldset" rendered="#{motivoBean.renderPreguntas}">
+          <!-- 1 bloque preguntas -->
+          <a4j:region renderRegionOnly="false">
+            <h:panelGrid columns="6" border="0" cellpadding="0" cellspacing="0" width="100%" id="panelManiobras" rowClasses="labelText,labelTextInfo">
+              <!-- 1 bloque titulos -->
+              <h:panelGroup>
+                <h:outputText value="Se ha realizado maniobras previas para intentar interrumpir el actual embarazo:" styleClass="labelTextOblig"/>
+              </h:panelGroup>
+              <h:outputText value=" "/>
+              <h:panelGroup>
+                <h:outputText value="Seleccione las opciones" styleClass="labelTextOblig" rendered="#{motivoBean.renderManiobras}"/>
+              </h:panelGroup>
+              <h:outputText value=" "/>
+              <h:panelGroup id="panelTextOtraManiobra">
+                <h:outputText value="Cual?" styleClass="labelTextOblig" rendered="#{motivoBean.mostrarotramaniobra}"/>
+              </h:panelGroup>
+              <h:outputText value=" "/>
+              <!-- 1 bloque acciones -->
+              <h:panelGroup>
+                <h:selectOneRadio value="#{motivoBean.motivo.hmccmanioprev}" immediate="true" valueChangeListener="#{motivoBean.setHmccmanioprev}">
+                  <f:selectItems value="#{motivoBean.lstMani}"/>
+                  <a4j:support id="supportmnuManiobras" event="onclick" action="#{motivoBean.changeManiobras}" reRender="panelManiobras">
+                    <a4j:ajaxListener type="org.ajax4jsf.ajax.ForceRender"/>
+                  </a4j:support>
+                </h:selectOneRadio>
+              </h:panelGroup>
+              <h:outputText value=" "/>
+              <h:panelGroup>
+                <h:selectManyCheckbox immediate="true" id="mnuManiobras" value="#{motivoBean.lstManiobras}" rendered="#{motivoBean.renderManiobras}" valueChangeListener="#{motivoBean.setLstManiobras}"
+                                      layout="pageDirection">
+                  <f:selectItem itemValue="IF" itemLabel="Intervención farmacológica"/>
+                  <f:selectItem itemValue="II" itemLabel="Intervención instrumentada"/>
+                  <f:selectItem itemValue="OT" itemLabel="Otra"/>
+                  <a4j:support id="supportVerificacion" event="onchange" ignoreDupResponses="true" immediate="true" action="#{motivoBean.changeManiobrasOtras}"
+                               reRender="panelTextOtraManiobra,panelInputOtraManiobra">
+                    <a4j:ajaxListener type="org.ajax4jsf.ajax.ForceRender"/>
+                  </a4j:support>
+                </h:selectManyCheckbox>
+                <a4j:outputPanel ajaxRendered="true">
+                  <t:message for="mnuVerificacion" styleClass="errorMessage"/>
+                </a4j:outputPanel>
+              </h:panelGroup>
+              <h:outputText value=" "/>
+              <h:panelGroup id="panelInputOtraManiobra">
+                <h:inputTextarea id="itOtraManiobra" style="width:300px" rendered="#{motivoBean.mostrarotramaniobra}" value="#{motivoBean.motivo.hmccmaniootrodesc}"/>
+                <a4j:outputPanel ajaxRendered="true" rendered="#{motivoBean.mostrarotramaniobra}">
+                  <t:message for="itOtraVerificacion" styleClass="errorMessage"/>
+                </a4j:outputPanel>
+              </h:panelGroup>
+              <h:outputText value=" "/>
+              <!-- 2 bloque titulos -->
+              <h:panelGroup>
+                <h:outputText value="Observaciones" styleClass="labelTextOblig" rendered="#{motivoBean.renderManiobras}"></h:outputText>
+              </h:panelGroup>
+              <h:outputText value=" "/>
+              <h:outputText value=" "/>
+              <h:outputText value=" "/>
+              <h:outputText value=" "/>
+              <h:outputText value=" "/>
+              <!-- 2 bloque acciones -->
+              <h:inputTextarea id="itObsManiobra" style="width:600px" rendered="#{motivoBean.renderManiobras}" value="#{motivoBean.motivo.hmccmanioobser}"/>
+              <h:outputText value=" "/>
+              <h:outputText value=" "/>
+              <h:outputText value=" "/>
+              <h:outputText value=" "/>
+              <h:outputText value=" "/>
+            </h:panelGrid>
+          </a4j:region>
+          <!-- 2 bloque preguntas -->
+          <a4j:region renderRegionOnly="false">
+            <h:panelGrid columns="6" border="0" cellpadding="0" cellspacing="0" width="100%" id="panelInterrupcion" rowClasses="labelText,labelTextInfo">
+              <!-- 1 bloque titulos -->
+              <h:panelGroup>
+                <h:outputText value="Ha realizado solicitud de interrupción del embarazo actual previamente:" styleClass="labelTextOblig"/>
+              </h:panelGroup>
+              <h:outputText value=" "/>
+              <h:panelGroup>
+                <h:outputText value="Seleccione las opciones" styleClass="labelTextOblig" rendered="#{motivoBean.renderInterrupcion}"/>
+              </h:panelGroup>
+              <h:outputText value=" "/>
+              <h:panelGroup>
+                <h:outputText value=""/>
+              </h:panelGroup>
+              <h:outputText value=" "/>
+              <!-- 1 bloque acciones -->
+              <h:panelGroup>
+                <h:selectOneRadio value="#{motivoBean.motivo.hmccinteractua}" immediate="true" valueChangeListener="#{motivoBean.setHmccinteractua}">
+                  <f:selectItems value="#{motivoBean.lstInte}"/>
+                  <a4j:support id="supportmnuInterrupcion" event="onclick" action="#{motivoBean.changeInterrupcion}" reRender="panelInterrupcion">
+                    <a4j:ajaxListener type="org.ajax4jsf.ajax.ForceRender"/>
+                  </a4j:support>
+                </h:selectOneRadio>
+              </h:panelGroup>
+              <h:outputText value=" "/>
+              <h:panelGroup>
+                <h:selectManyCheckbox immediate="true" id="mnuInterrupcion" value="#{motivoBean.lstInterrupcion}" rendered="#{motivoBean.renderInterrupcion}"
+                                      valueChangeListener="#{motivoBean.setLstInterrupcion}" layout="pageDirection">
+                  <f:selectItem itemValue="OP" itemLabel="Consulta a otro profesional"/>
+                  <f:selectItem itemValue="AT" itemLabel="Solicitud de atención a asegurador"/>
+                </h:selectManyCheckbox>
+                <a4j:outputPanel ajaxRendered="true">
+                  <t:message for="mnuVerificacion" styleClass="errorMessage"/>
+                </a4j:outputPanel>
+              </h:panelGroup>
+              <h:outputText value=" "/>
+              <h:panelGroup>
+                <h:outputText value=" "/>
+              </h:panelGroup>
+              <h:outputText value=" "/>
+              <!-- 2 bloque titulos -->
+              <h:panelGroup>
+                <h:outputText value="Observaciones" styleClass="labelTextOblig" rendered="#{motivoBean.renderInterrupcion}"></h:outputText>
+              </h:panelGroup>
+              <h:outputText value=" "/>
+              <h:outputText value=" "/>
+              <h:outputText value=" "/>
+              <h:outputText value=" "/>
+              <h:outputText value=" "/>
+              <!-- 2 bloque acciones -->
+              <h:inputTextarea id="itObsInterrupcion" style="width:600px" rendered="#{motivoBean.renderInterrupcion}" value="#{motivoBean.motivo.hmccinterobser}"/>
+              <h:outputText value=" "/>
+              <h:outputText value=" "/>
+              <h:outputText value=" "/>
+              <h:outputText value=" "/>
+              <h:outputText value=" "/>
+            </h:panelGrid>
+          </a4j:region>
+        </s:fieldset>
+        <!-- ***** -->
+        <s:fieldset legend="Resultado de Patologia " id="fieldPatolo" styleClass="fieldset" rendered="#{motivoBean.rendeGineco}">
+          <h:panelGrid columns="4" border="0" cellpadding="0" cellspacing="0" width="100%" id="panelPatol" rowClasses="labelText,labelTextInfo">
+            <h:panelGrid columns="6" border="0" rendered="#{not empty motivoBean.lstPatologias}" cellpadding="0" cellspacing="0" width="100%" id="panelMotivoConsultaPatologia" rowClasses="labelText,labelTextInfo">
+                <h:outputText value="¿La Paciente trae resultado de patología?" styleClass="labelTextOblig" />
+                <h:outputText value=""/>
+                <h:panelGroup>
+                     <h:outputText value="Tipo de Patología" rendered="#{motivoBean.renderTipoPatologia}" styleClass="labelTextOblig"  />
+                </h:panelGroup>
+                 <h:outputText value=""/>
+                 <h:panelGroup>
+                    <h:outputText value="¿Cuál?" rendered="#{motivoBean.renderPatologiaCual}" styleClass="labelTextOblig"  />
+                 </h:panelGroup>
+                        <h:outputText value=""/>                     
+                    <h:selectOneRadio rendered="#{not empty motivoBean.lstPatologias}" id="mnuTraePat" immediate="true"
+                                  onkeydown="return blockEnter(event);" required="true"
+                                  valueChangeListener="#{motivoBean.setHmcctrapatol}"
+                                   value="#{motivoBean.motivo.hmcctrapatol}">
+                  <f:selectItems value="#{motivoBean.lstOpciones}"/>
+                  <a4j:support id="suppoFechaAborto" event="onchange" immediate="true"
+                               action="#{motivoBean.changeTraePatologia}"
+                               reRender="panelMotivoConsultaPatologia">
+                    <a4j:ajaxListener type="org.ajax4jsf.ajax.ForceRender"/>
+                  </a4j:support>
+                </h:selectOneRadio>
+                  <a4j:outputPanel ajaxRendered="true">
+                    <t:message for="mnuTraePat" styleClass="errorMessage"/>
+                </a4j:outputPanel>
+                <h:panelGroup>
+                <h:selectOneMenu rendered="#{motivoBean.renderTipoPatologia}" id="mnuTipPat" immediate="true"
+                                  onkeydown="return blockEnter(event);" required="true"
+                                  valueChangeListener="#{motivoBean.setHmcctippatolt}"
+                                   value="#{motivoBean.motivo.hmcctippatol}">
+                  <f:selectItems value="#{motivoBean.lstPatologias}"/>
+                  <a4j:support id="suppoTipPatol" event="onchange" immediate="true"
+                               action="#{motivoBean.changePatologia}"
+                               reRender="panelMotivoConsultaPatologia">
+                    <a4j:ajaxListener type="org.ajax4jsf.ajax.ForceRender"/>
+                  </a4j:support>
+                </h:selectOneMenu>
+                </h:panelGroup>
+                  <a4j:outputPanel ajaxRendered="true">
+                    <t:message for="mnuTipPat" styleClass="errorMessage"/>
+                </a4j:outputPanel>
+                <h:panelGroup>
+                 <h:inputTextarea id="textCualPatologia"  rendered="#{motivoBean.renderPatologiaCual}"  
+                     value="#{motivoBean.motivo.hmcccualpat}" required="true" style="width:200px">
+                <f:validateLength maximum="50"/>
+                </h:inputTextarea>
+                </h:panelGroup>
+                  <a4j:outputPanel ajaxRendered="true">
+                    <t:message for="textCualPatologia" styleClass="errorMessage"/>
+                </a4j:outputPanel>
+                <h:panelGroup>
+                    <h:outputText value="Resultado de biopsia" styleClass="labelTextOblig" rendered="#{not empty motivoBean.lstBiopsia}" />
+                    <h:outputText value="Descripción del Resultado?" styleClass="labelTextOblig" rendered="#{motivoBean.renderDescripcionResultados}"  /> 
+                </h:panelGroup>
+                <h:outputText value=""/>
+                 <h:outputText value=""/>
+                  <h:outputText value=""/>
+                   <h:outputText value=""/>
+                    <h:outputText value=""/>
+                    <h:panelGroup>
+                         <h:selectOneMenu rendered="#{not empty motivoBean.lstBiopsia}" id="mnuResBio" immediate="true"
+                                  onkeydown="return blockEnter(event);" required="true"
+                                   value="#{motivoBean.motivo.hmccresbiop}">
+                  <f:selectItems value="#{motivoBean.lstBiopsia}"/>
+                </h:selectOneMenu>
+                  <h:inputTextarea id="textResultados" required="true"  rendered="#{motivoBean.renderDescripcionResultados}"   
+                     value="#{motivoBean.motivo.hmccdesres}" style="width:200px">
+                <f:validateLength maximum="100"/>
+                </h:inputTextarea>
+                </h:panelGroup>
+                  <a4j:outputPanel ajaxRendered="true">
+                    <t:message for="mnuResBio" styleClass="errorMessage"/>
+                </a4j:outputPanel>
+                 <a4j:outputPanel ajaxRendered="true">
+                    <t:message for="textResultados" styleClass="errorMessage"/>
+                </a4j:outputPanel>
+                     <h:outputText value=""/>
+                   <h:outputText value=""/>
+                    <h:outputText value=""/>
+                    <h:panelGroup>
+                    <h:outputText value="Resultado" styleClass="labelTextOblig" rendered="#{motivoBean.renderTipoPatologia}" />
+                    </h:panelGroup>
+                       <h:outputText value=""/>
+                   <h:outputText value=""/>
+                    <h:outputText value=""/> 
+                   <h:outputText value=""/>
+                    <h:outputText value=""/>
+                    <h:panelGroup>
+            
+                      <h:selectOneRadio rendered="#{motivoBean.renderTipoPatologia}"  id="mnuPosPat" immediate="true"
+                                  onkeydown="return blockEnter(event);" required="true" valueChangeListener="#{motivoBean.setHmccrespatol}"
+                                   value="#{motivoBean.motivo.hmccrespatol}">
+                  <f:selectItems value="#{motivoBean.lstResPatols}"/>
+                   <a4j:support id="supportmnuRepuestaPatol" event="onchange" immediate="true" action="#{motivoBean.changeResultados}" reRender="panelMotivoConsultaPatologia,PanelMaligno">
+                    <a4j:ajaxListener type="org.ajax4jsf.ajax.ForceRender"/>
+                  </a4j:support>
+                </h:selectOneRadio>
+                </h:panelGroup>
+                  <a4j:outputPanel ajaxRendered="true">
+                    <t:message for="mnuPosPat" styleClass="errorMessage"/>
+                </a4j:outputPanel>
+                   <h:outputText value=""/>
+                    <h:outputText value=""/> 
+                   <h:outputText value=""/>
+                    <h:outputText value=""/>
+                    
+            <h:panelGroup id="PanelMaligno">
+                 <h:panelGrid columns="4" border="0" cellpadding="0" cellspacing="0" width="100%" id="panelPatolResul" rowClasses="labelText,labelTextInfo">
+                 <h:panelGroup>
+                 <h:panelGrid columns="1">
+                <h:outputText value="Clasificacion Histológica" styleClass="labelTextOblig" rendered="#{motivoBean.renderResultado}"/>
+                 <h:selectOneMenu id="mnuResPa" immediate="true" rendered="#{motivoBean.renderResultado}"
+                                  onkeydown="return blockEnter(event);" required="true"
+                                   value="#{motivoBean.motivo.hmnclashisto}">
+                  <f:selectItems value="#{motivoBean.lstClasificacionHistol}"/>
+                </h:selectOneMenu>
+                </h:panelGrid>
+                </h:panelGroup>
+                <h:panelGroup>
+                 <h:panelGrid columns="1">
+                <h:outputText value="Grado diferenciador del tumor" styleClass="labelTextOblig" rendered="#{motivoBean.renderResultado}"/>
+                 <h:selectOneMenu id="mnuResHisto" immediate="true" rendered="#{motivoBean.renderResultado}"
+                                  onkeydown="return blockEnter(event);" required="true"
+                                   value="#{motivoBean.motivo.hmngradtumor}">
+                  <f:selectItems value="#{motivoBean.lstGradoTumor}"/>
+                </h:selectOneMenu>
+                </h:panelGrid>
+                </h:panelGroup>
+                </h:panelGrid>
+                </h:panelGroup>
+                
+            </h:panelGrid>
+            
+            </h:panelGrid>
+            </s:fieldset>
+        <s:fieldset legend="Revisión por Sistemas " id="fieldRevisionPorSistemas" styleClass="fieldset" rendered="#{!motivoBean.esValoracionPreanestesica && !motivoBean.ocultarRevision}">
+          <a4j:region renderRegionOnly="false">
+            <h:panelGrid columns="7">
+              <h:outputText value="[ " style="font-size:8.0pt; font-weight:bold;"/>
+              <a4j:commandLink style="font-size:8.0pt; font-weight:bold;" value=" Todos SI" immediate="true" action="#{motivoBean.changeTodosSi}" reRender="panelRevisionPorSistemas"/>
+              <h:outputText value=" | " style="font-size:8.0pt; font-weight:bold;"/>
+              <a4j:commandLink style="font-size:8.0pt; font-weight:bold;" value="Todos NO " immediate="true" action="#{motivoBean.changeTodosNo}" reRender="panelRevisionPorSistemas"/>
+              <h:outputText value=" | " style="font-size:8.0pt; font-weight:bold;"/>
+              <a4j:commandLink style="font-size:8.0pt; font-weight:bold;" value="Ninguno " immediate="true" action="#{motivoBean.changeNinguno}" reRender="panelRevisionPorSistemas"/>
+              <h:outputText value=" ]" style="font-size:8.0pt; font-weight:bold;"/>
+            </h:panelGrid>
+          </a4j:region>
+          <t:htmlTag value="br"/>
+          <h:panelGrid columns="6" border="0" cellpadding="0" cellspacing="0" width="100%" id="panelRevisionPorSistemas" rowClasses="standardTable_ExamenFisico2,standardTable_ExamenFisico">
+            <h:outputText value="Cabeza" styleClass="labelTextOblig"/>
+            <a4j:region renderRegionOnly="false">
+              <h:selectOneRadio id="mnuCabeza" required="true" immediate="true" binding="#{motivoBean.mnuCabeza}" valueChangeListener="#{motivoBean.setHrserefiecabez}"
+                                value="#{motivoBean.revision.hrserefiecabez}">
+                <f:selectItems value="#{motivoBean.lstRefiere}"/>
+                <a4j:support id="supportmnuCabeza" action="#{motivoBean.changeCabeza}" reRender="panelTextCabeza,panelInputCabeza" event="onclick">
+                  <a4j:ajaxListener type="org.ajax4jsf.ajax.ForceRender"/>
+                </a4j:support>
+              </h:selectOneRadio>
+            </a4j:region>
+            <a4j:outputPanel ajaxRendered="true">
+              <t:message for="mnuCabeza" styleClass="errorMessage"/>
+            </a4j:outputPanel>
+            <h:panelGroup id="panelTextCabeza">
+              <h:outputText value="Descripción" styleClass="labelTextOblig" rendered="#{motivoBean.renderCabeza}"/>
+            </h:panelGroup>
+            <h:panelGroup id="panelInputCabeza">
+              <h:inputTextarea id="textCabeza" required="true" rendered="#{motivoBean.renderCabeza}" value="#{motivoBean.revision.hrscrefiecabez}" style="width:350px"/>
+            </h:panelGroup>
+            <a4j:outputPanel ajaxRendered="true">
+              <t:message for="textCabeza" styleClass="errorMessage"/>
+            </a4j:outputPanel>
+            <h:outputText value="Ojos" styleClass="labelTextOblig"/>
+            <a4j:region renderRegionOnly="false">
+              <h:selectOneRadio id="mnuOjos" immediate="true" required="true" binding="#{motivoBean.mnuOjos}" value="#{motivoBean.revision.hrserefieojos}"
+                                valueChangeListener="#{motivoBean.setHrserefieojos}">
+                <f:selectItems value="#{motivoBean.lstRefiere}"/>
+                <a4j:support id="supportmnuOjos" action="#{motivoBean.changeOjos}" reRender="panelTextOjos,panelInputOjos" event="onclick">
+                  <a4j:ajaxListener type="org.ajax4jsf.ajax.ForceRender"/>
+                </a4j:support>
+              </h:selectOneRadio>
+            </a4j:region>
+            <a4j:outputPanel ajaxRendered="true">
+              <t:message for="mnuOjos" styleClass="errorMessage"/>
+            </a4j:outputPanel>
+            <h:panelGroup id="panelTextOjos">
+              <h:outputText value="Descripción" styleClass="labelTextOblig" rendered="#{motivoBean.renderOjos}"/>
+            </h:panelGroup>
+            <h:panelGroup id="panelInputOjos">
+              <h:inputTextarea id="textOjos" required="true" rendered="#{motivoBean.renderOjos}" value="#{motivoBean.revision.hrscrefieojos}" style="width:350px"/>
+            </h:panelGroup>
+            <a4j:outputPanel ajaxRendered="true">
+              <t:message for="textOjos" styleClass="errorMessage"/>
+            </a4j:outputPanel>
+            <h:outputText value="Oídos" styleClass="labelTextOblig"/>
+            <a4j:region renderRegionOnly="false">
+              <h:selectOneRadio id="mnuOidos" required="true" immediate="true" binding="#{motivoBean.mnuOidos}" value="#{motivoBean.revision.hrserefieoidos}"
+                                valueChangeListener="#{motivoBean.setHrserefieoidos}">
+                <f:selectItems value="#{motivoBean.lstRefiere}"/>
+                <a4j:support id="supportmnuOidos" action="#{motivoBean.changeOidos}" reRender="panelTextOidos,panelInputOidos" event="onclick">
+                  <a4j:ajaxListener type="org.ajax4jsf.ajax.ForceRender"/>
+                </a4j:support>
+              </h:selectOneRadio>
+            </a4j:region>
+            <a4j:outputPanel ajaxRendered="true">
+              <t:message for="mnuOidos" styleClass="errorMessage"/>
+            </a4j:outputPanel>
+            <h:panelGroup id="panelTextOidos">
+              <h:outputText value="Descripción" styleClass="labelTextOblig" rendered="#{motivoBean.renderOidos}"/>
+            </h:panelGroup>
+            <h:panelGroup id="panelInputOidos">
+              <h:inputTextarea id="textOidos" required="true" rendered="#{motivoBean.renderOidos}" value="#{motivoBean.revision.hrscrefieoidos}" style="width:350px"/>
+            </h:panelGroup>
+            <a4j:outputPanel ajaxRendered="true">
+              <t:message for="textOidos" styleClass="errorMessage"/>
+            </a4j:outputPanel>
+            <h:outputText value="Nariz" styleClass="labelTextOblig"/>
+            <a4j:region renderRegionOnly="false">
+              <h:selectOneRadio id="mnuNariz" required="true" binding="#{motivoBean.mnuNariz}" immediate="true" value="#{motivoBean.revision.hrserefienariz}"
+                                valueChangeListener="#{motivoBean.setHrserefienariz}">
+                <f:selectItems value="#{motivoBean.lstRefiere}"/>
+                <a4j:support id="supportmnuNariz" action="#{motivoBean.changeNariz}" reRender="panelTextNariz,panelInputNariz" event="onclick">
+                  <a4j:ajaxListener type="org.ajax4jsf.ajax.ForceRender"/>
+                </a4j:support>
+              </h:selectOneRadio>
+            </a4j:region>
+            <a4j:outputPanel ajaxRendered="true">
+              <t:message for="mnuNariz" styleClass="errorMessage"/>
+            </a4j:outputPanel>
+            <h:panelGroup id="panelTextNariz">
+              <h:outputText value="Descripción" styleClass="labelTextOblig" rendered="#{motivoBean.renderNariz}"/>
+            </h:panelGroup>
+            <h:panelGroup id="panelInputNariz">
+              <h:inputTextarea id="textNariz" required="true" rendered="#{motivoBean.renderNariz}" value="#{motivoBean.revision.hrscrefienariz}" style="width:350px"/>
+            </h:panelGroup>
+            <a4j:outputPanel ajaxRendered="true">
+              <t:message for="textNariz" styleClass="errorMessage"/>
+            </a4j:outputPanel>
+            <h:outputText value="Boca" styleClass="labelTextOblig"/>
+            <a4j:region renderRegionOnly="false">
+              <h:selectOneRadio id="mnuBoca" required="true" binding="#{motivoBean.mnuBoca}" immediate="true" value="#{motivoBean.revision.hrserefieboca}"
+                                valueChangeListener="#{motivoBean.setHrserefieboca}">
+                <f:selectItems value="#{motivoBean.lstRefiere}"/>
+                <a4j:support id="supportmnuBoca" action="#{motivoBean.changeBoca}" reRender="panelTextBoca,panelInputBoca" event="onclick">
+                  <a4j:ajaxListener type="org.ajax4jsf.ajax.ForceRender"/>
+                </a4j:support>
+              </h:selectOneRadio>
+            </a4j:region>
+            <a4j:outputPanel ajaxRendered="true">
+              <t:message for="mnuBoca" styleClass="errorMessage"/>
+            </a4j:outputPanel>
+            <h:panelGroup id="panelTextBoca">
+              <h:outputText value="Descripción" styleClass="labelTextOblig" rendered="#{motivoBean.renderBoca}"/>
+            </h:panelGroup>
+            <h:panelGroup id="panelInputBoca">
+              <h:inputTextarea id="textBoca" required="true" rendered="#{motivoBean.renderBoca}" value="#{motivoBean.revision.hrscrefieboca}" style="width:350px"/>
+            </h:panelGroup>
+            <a4j:outputPanel ajaxRendered="true">
+              <t:message for="textBoca" styleClass="errorMessage"/>
+            </a4j:outputPanel>
+            <h:outputText value="Garganta" styleClass="labelTextOblig"/>
+            <a4j:region renderRegionOnly="false">
+              <h:selectOneRadio id="mnuGarganta" required="true" binding="#{motivoBean.mnuGarganta}" immediate="true" value="#{motivoBean.revision.hrserefiegarga}"
+                                valueChangeListener="#{motivoBean.setHrserefiegarga}">
+                <f:selectItems value="#{motivoBean.lstRefiere}"/>
+                <a4j:support id="supportmnuGarganta" action="#{motivoBean.changeGarganta}" reRender="panelTextGarganta,panelInputGarganta" event="onclick">
+                  <a4j:ajaxListener type="org.ajax4jsf.ajax.ForceRender"/>
+                </a4j:support>
+              </h:selectOneRadio>
+            </a4j:region>
+            <a4j:outputPanel ajaxRendered="true">
+              <t:message for="mnuGarganta" styleClass="errorMessage"/>
+            </a4j:outputPanel>
+            <h:panelGroup id="panelTextGarganta">
+              <h:outputText value="Descripción" styleClass="labelTextOblig" rendered="#{motivoBean.renderGarganta}"/>
+            </h:panelGroup>
+            <h:panelGroup id="panelInputGarganta">
+              <h:inputTextarea id="textGarganta" required="true" rendered="#{motivoBean.renderGarganta}" value="#{motivoBean.revision.hrscrefiegarga}" style="width:350px"/>
+            </h:panelGroup>
+            <a4j:outputPanel ajaxRendered="true">
+              <t:message for="textGarganta" styleClass="errorMessage"/>
+            </a4j:outputPanel>
+            <h:outputText value="Cuello" styleClass="labelTextOblig"/>
+            <a4j:region renderRegionOnly="false">
+              <h:selectOneRadio id="mnuCuello" required="true" binding="#{motivoBean.mnuCuello}" immediate="true" value="#{motivoBean.revision.hrserefiecuell}"
+                                valueChangeListener="#{motivoBean.setHrserefiecuell}">
+                <f:selectItems value="#{motivoBean.lstRefiere}"/>
+                <a4j:support id="supportmnuCuello" action="#{motivoBean.changeCuello}" reRender="panelTextCuello,panelInputCuello" event="onclick">
+                  <a4j:ajaxListener type="org.ajax4jsf.ajax.ForceRender"/>
+                </a4j:support>
+              </h:selectOneRadio>
+            </a4j:region>
+            <a4j:outputPanel ajaxRendered="true">
+              <t:message for="mnuCuello" styleClass="errorMessage"/>
+            </a4j:outputPanel>
+            <h:panelGroup id="panelTextCuello">
+              <h:outputText value="Descripción" styleClass="labelTextOblig" rendered="#{motivoBean.renderCuello}"/>
+            </h:panelGroup>
+            <h:panelGroup id="panelInputCuello">
+              <h:inputTextarea id="textCuello" required="true" rendered="#{motivoBean.renderCuello}" value="#{motivoBean.revision.hrscrefiecuell}" style="width:350px"/>
+            </h:panelGroup>
+            <a4j:outputPanel ajaxRendered="true">
+              <t:message for="textCuello" styleClass="errorMessage"/>
+            </a4j:outputPanel>
+            <h:outputText value="Cardiorrespiratorio" styleClass="labelTextOblig"/>
+            <a4j:region renderRegionOnly="false">
+              <h:selectOneRadio id="mnuCardiorrespiratorio" required="true" binding="#{motivoBean.mnuCardiorrespiratorio}" immediate="true" value="#{motivoBean.revision.hrserefiecardi}"
+                                valueChangeListener="#{motivoBean.setHrserefiecardi}">
+                <f:selectItems value="#{motivoBean.lstRefiere}"/>
+                <a4j:support id="supportmnuCardiorrespiratorio" action="#{motivoBean.changeCardiorrespiratorio}" reRender="panelTextCardiorrespiratorio,panelInputCardiorrespiratorio" event="onclick">
+                  <a4j:ajaxListener type="org.ajax4jsf.ajax.ForceRender"/>
+                </a4j:support>
+              </h:selectOneRadio>
+            </a4j:region>
+            <a4j:outputPanel ajaxRendered="true">
+              <t:message for="mnuCardiorrespiratorio" styleClass="errorMessage"/>
+            </a4j:outputPanel>
+            <h:panelGroup id="panelTextCardiorrespiratorio">
+              <h:outputText value="Descripción" styleClass="labelTextOblig" rendered="#{motivoBean.renderCardiorespiratorio}"/>
+            </h:panelGroup>
+            <h:panelGroup id="panelInputCardiorrespiratorio">
+              <h:inputTextarea id="textCardiorrespiratorio" required="true" rendered="#{motivoBean.renderCardiorespiratorio}" value="#{motivoBean.revision.hrscrefiecardi}" style="width:350px"/>
+            </h:panelGroup>
+            <a4j:outputPanel ajaxRendered="true">
+              <t:message for="textCardiorrespiratorio" styleClass="errorMessage"/>
+            </a4j:outputPanel>
+            <h:outputText value="Mamas" styleClass="labelTextOblig"/>
+            <a4j:region renderRegionOnly="false">
+              <h:selectOneRadio id="mnuMamas" required="true" binding="#{motivoBean.mnuMamas}" immediate="true" value="#{motivoBean.revision.hrserefiemamas}"
+                                valueChangeListener="#{motivoBean.setHrserefiemamas}">
+                <f:selectItems value="#{motivoBean.lstRefiere}"/>
+                <a4j:support id="supportmnuMamas" action="#{motivoBean.changeMama}" reRender="panelTextMama,panelInputMama" event="onclick">
+                  <a4j:ajaxListener type="org.ajax4jsf.ajax.ForceRender"/>
+                </a4j:support>
+              </h:selectOneRadio>
+            </a4j:region>
+            <a4j:outputPanel ajaxRendered="true">
+              <t:message for="mnuMamas" styleClass="errorMessage"/>
+            </a4j:outputPanel>
+            <h:panelGroup id="panelTextMama">
+              <h:outputText value="Descripción" styleClass="labelTextOblig" rendered="#{motivoBean.renderMama}"/>
+            </h:panelGroup>
+            <h:panelGroup id="panelInputMama">
+              <h:inputTextarea id="textMamas" required="true" rendered="#{motivoBean.renderMama}" value="#{motivoBean.revision.hrscrefiemamas}" style="width:350px"/>
+            </h:panelGroup>
+            <a4j:outputPanel ajaxRendered="true">
+              <t:message for="textMamas" styleClass="errorMessage"/>
+            </a4j:outputPanel>
+            <h:outputText value="Gastrointestinal" styleClass="labelTextOblig"/>
+            <a4j:region renderRegionOnly="false">
+              <h:selectOneRadio id="mnuGastrointestinal" required="true" binding="#{motivoBean.mnuGastrointestinal}" immediate="true" value="#{motivoBean.revision.hrserefiegastr}"
+                                valueChangeListener="#{motivoBean.setHrserefiegastr}">
+                <f:selectItems value="#{motivoBean.lstRefiere}"/>
+                <a4j:support id="supportmnuGastrointestinal" action="#{motivoBean.changeGastrointestinal}" reRender="panelTextGastrointestinal,panelInputGastrointestinal" event="onclick">
+                  <a4j:ajaxListener type="org.ajax4jsf.ajax.ForceRender"/>
+                </a4j:support>
+              </h:selectOneRadio>
+            </a4j:region>
+            <a4j:outputPanel ajaxRendered="true">
+              <t:message for="mnuGastrointestinal" styleClass="errorMessage"/>
+            </a4j:outputPanel>
+            <h:panelGroup id="panelTextGastrointestinal">
+              <h:outputText value="Descripción" styleClass="labelTextOblig" rendered="#{motivoBean.renderGastrointestinal}"/>
+            </h:panelGroup>
+            <h:panelGroup id="panelInputGastrointestinal">
+              <h:inputTextarea id="textGastrointestinal" required="true" rendered="#{motivoBean.renderGastrointestinal}" value="#{motivoBean.revision.hrscrefiegastr}" style="width:350px"/>
+            </h:panelGroup>
+            <a4j:outputPanel ajaxRendered="true">
+              <t:message for="textGastrointestinal" styleClass="errorMessage"/>
+            </a4j:outputPanel>
+            <h:outputText value="Genitourinario" styleClass="labelTextOblig"/>
+            <a4j:region renderRegionOnly="false">
+              <h:selectOneRadio id="mnuGenitourinario" required="true" binding="#{motivoBean.mnuGenitourinario}" immediate="true" value="#{motivoBean.revision.hrserefiegenit}"
+                                valueChangeListener="#{motivoBean.setHrserefiegenit}">
+                <f:selectItems value="#{motivoBean.lstRefiere}"/>
+                <a4j:support id="supportmnuGenitourinario" action="#{motivoBean.changeGenitourinario}" reRender="panelTextGenitourinario,panelInputGenitourinario" event="onclick">
+                  <a4j:ajaxListener type="org.ajax4jsf.ajax.ForceRender"/>
+                </a4j:support>
+              </h:selectOneRadio>
+            </a4j:region>
+            <a4j:outputPanel ajaxRendered="true">
+              <t:message for="mnuGenitourinario" styleClass="errorMessage"/>
+            </a4j:outputPanel>
+            <h:panelGroup id="panelTextGenitourinario">
+              <h:outputText value="Descripción" styleClass="labelTextOblig" rendered="#{motivoBean.renderGenitourinario}"/>
+            </h:panelGroup>
+            <h:panelGroup id="panelInputGenitourinario">
+              <h:inputTextarea id="textGenitourinario" required="true" rendered="#{motivoBean.renderGenitourinario}" value="#{motivoBean.revision.hrscrefiegenit}" style="width:350px"/>
+            </h:panelGroup>
+            <a4j:outputPanel ajaxRendered="true">
+              <t:message for="textGenitourinario" styleClass="errorMessage"/>
+            </a4j:outputPanel>
+            <h:outputText value="Locomotor" styleClass="labelTextOblig"/>
+            <a4j:region renderRegionOnly="false">
+              <h:selectOneRadio id="mnuLocomotor" required="true" binding="#{motivoBean.mnuLocomotor}" immediate="true" value="#{motivoBean.revision.hrserefielocom}"
+                                valueChangeListener="#{motivoBean.setHrserefielocom}">
+                <f:selectItems value="#{motivoBean.lstRefiere}"/>
+                <a4j:support id="supportmnuLocomotor" action="#{motivoBean.changeLocomotor}" reRender="panelTextLocomotor,panelInputLocomotor" event="onclick">
+                  <a4j:ajaxListener type="org.ajax4jsf.ajax.ForceRender"/>
+                </a4j:support>
+              </h:selectOneRadio>
+            </a4j:region>
+            <a4j:outputPanel ajaxRendered="true">
+              <t:message for="mnuLocomotor" styleClass="errorMessage"/>
+            </a4j:outputPanel>
+            <h:panelGroup id="panelTextLocomotor">
+              <h:outputText value="Descripción" styleClass="labelTextOblig" rendered="#{motivoBean.renderLocomotor}"/>
+            </h:panelGroup>
+            <h:panelGroup id="panelInputLocomotor">
+              <h:inputTextarea id="textLocomotor" required="true" rendered="#{motivoBean.renderLocomotor}" value="#{motivoBean.revision.hrscrefielocom}" style="width:350px"/>
+            </h:panelGroup>
+            <a4j:outputPanel ajaxRendered="true">
+              <t:message for="textLocomotor" styleClass="errorMessage"/>
+            </a4j:outputPanel>
+            <h:outputText value="Neuropsiquiátrico" styleClass="labelTextOblig"/>
+            <a4j:region renderRegionOnly="false">
+              <h:selectOneRadio id="mnuNeuropsiqui" required="true" binding="#{motivoBean.mnuNeuropsiqui}" immediate="true" value="#{motivoBean.revision.hrserefieneups}"
+                                valueChangeListener="#{motivoBean.setHrserefieneups}">
+                <f:selectItems value="#{motivoBean.lstRefiere}"/>
+                <a4j:support id="supportmnuNeuropsiqui" action="#{motivoBean.changeNeuropsiqui}" reRender="panelTextNeuropsiqui,panelInputNeuropsiqui" event="onclick">
+                  <a4j:ajaxListener type="org.ajax4jsf.ajax.ForceRender"/>
+                </a4j:support>
+              </h:selectOneRadio>
+            </a4j:region>
+            <a4j:outputPanel ajaxRendered="true">
+              <t:message for="mnuNeuropsiqui" styleClass="errorMessage"/>
+            </a4j:outputPanel>
+            <h:panelGroup id="panelTextNeuropsiqui">
+              <h:outputText value="Descripción" styleClass="labelTextOblig" rendered="#{motivoBean.renderNeuropsiqui}"/>
+            </h:panelGroup>
+            <h:panelGroup id="panelInputNeuropsiqui">
+              <h:inputTextarea id="textNeuropsiqui" required="true" rendered="#{motivoBean.renderNeuropsiqui}" value="#{motivoBean.revision.hrscrefieneups}" style="width:350px"/>
+            </h:panelGroup>
+            <a4j:outputPanel ajaxRendered="true">
+              <t:message for="textNeuropsiqui" styleClass="errorMessage"/>
+            </a4j:outputPanel>
+            <h:outputText value="Neuromuscular" styleClass="labelTextOblig"/>
+            <a4j:region renderRegionOnly="false">
+              <h:selectOneRadio id="mnuNeuromuscular" required="true" binding="#{motivoBean.mnuNeuromuscular}" immediate="true" value="#{motivoBean.revision.hrserefieneumu}"
+                                valueChangeListener="#{motivoBean.setHrserefieneumu}">
+                <f:selectItems value="#{motivoBean.lstRefiere}"/>
+                <a4j:support id="supportmnuNeuromuscular" action="#{motivoBean.changeNeuromuscular}" reRender="panelTextNeuromuscular,panelInputNeuromuscular" event="onclick">
+                  <a4j:ajaxListener type="org.ajax4jsf.ajax.ForceRender"/>
+                </a4j:support>
+              </h:selectOneRadio>
+            </a4j:region>
+            <a4j:outputPanel ajaxRendered="true">
+              <t:message for="mnuNeuromuscular" styleClass="errorMessage"/>
+            </a4j:outputPanel>
+            <h:panelGroup id="panelTextNeuromuscular">
+              <h:outputText value="Descripción" styleClass="labelTextOblig" rendered="#{motivoBean.renderNeuromuscular}"/>
+            </h:panelGroup>
+            <h:panelGroup id="panelInputNeuromuscular">
+              <h:inputTextarea id="textNeuromuscular" required="true" rendered="#{motivoBean.renderNeuromuscular}" value="#{motivoBean.revision.hrscrefieneumu}" style="width:350px"/>
+            </h:panelGroup>
+            <a4j:outputPanel ajaxRendered="true">
+              <t:message for="textNeuromuscular" styleClass="errorMessage"/>
+            </a4j:outputPanel>
+            <h:outputText value="Piel y anexos" styleClass="labelTextOblig"/>
+            <a4j:region renderRegionOnly="false">
+              <h:selectOneRadio id="mnuPiel" required="true" binding="#{motivoBean.mnuPiel}" immediate="true" value="#{motivoBean.revision.hrserefiepiel}"
+                                valueChangeListener="#{motivoBean.setHrserefiepiel}">
+                <f:selectItems value="#{motivoBean.lstRefiere}"/>
+                <a4j:support id="supportmnuPiel" action="#{motivoBean.changePiel}" reRender="panelTextPiel,panelInputPiel" event="onclick">
+                  <a4j:ajaxListener type="org.ajax4jsf.ajax.ForceRender"/>
+                </a4j:support>
+              </h:selectOneRadio>
+            </a4j:region>
+            <a4j:outputPanel ajaxRendered="true">
+              <t:message for="mnuPiel" styleClass="errorMessage"/>
+            </a4j:outputPanel>
+            <h:panelGroup id="panelTextPiel">
+              <h:outputText value="Descripción" styleClass="labelTextOblig" rendered="#{motivoBean.renderPiel}"/>
+            </h:panelGroup>
+            <h:panelGroup id="panelInputPiel">
+              <h:inputTextarea id="textPiel" required="true" rendered="#{motivoBean.renderPiel}" value="#{motivoBean.revision.hrscrefiepiel}" style="width:350px"/>
+            </h:panelGroup>
+            <a4j:outputPanel ajaxRendered="true">
+              <t:message for="textPiel" styleClass="errorMessage"/>
+            </a4j:outputPanel>
+            <h:outputText value="Usuario es sintomático respiratorio (Tuberculosis)" styleClass="labelTextOblig"/>
+            <a4j:region renderRegionOnly="false">
+              <h:selectOneRadio id="mnuTuberculosis" required="true" immediate="true" binding="#{motivoBean.mnuTuberculosis}" value="#{motivoBean.revision.hrserefietuber}"
+                                valueChangeListener="#{motivoBean.setHrserefietuber}">
+                <f:selectItems value="#{motivoBean.lstRefiere}"/>
+                <a4j:support id="supportmnuTuberculosis" action="#{motivoBean.changeTuberculosis}" reRender="panelTextTuberculosis,panelInputTuberculosis" event="onclick">
+                  <a4j:ajaxListener type="org.ajax4jsf.ajax.ForceRender"/>
+                </a4j:support>
+              </h:selectOneRadio>
+            </a4j:region>
+            <a4j:outputPanel ajaxRendered="true">
+              <t:message for="mnuTuberculosis" styleClass="errorMessage"/>
+            </a4j:outputPanel>
+            <h:panelGroup id="panelTextTuberculosis">
+              <h:outputText value="Tiempo" styleClass="labelTextOblig" rendered="#{motivoBean.renderTuberculosis}"/>
+            </h:panelGroup>
+            <h:panelGroup id="panelInputTuberculosis">
+              <h:inputTextarea id="textTuberculosis" required="true" rendered="#{motivoBean.renderTuberculosis}" value="#{motivoBean.revision.hrscrefietuber}" style="width:350px"/>
+            </h:panelGroup>
+            <a4j:outputPanel ajaxRendered="true">
+              <t:message for="textTuberculosis" styleClass="errorMessage"/>
+            </a4j:outputPanel>
+            <h:outputText value="Usuario es sintomático de piel (Lepra) " styleClass="labelTextOblig"/>
+            <a4j:region renderRegionOnly="false">
+              <h:selectOneRadio id="mnuLepra" required="true" immediate="true" binding="#{motivoBean.mnuLepra}" value="#{motivoBean.revision.hrserefielepra}"
+                                valueChangeListener="#{motivoBean.setHrserefielepra}">
+                <f:selectItems value="#{motivoBean.lstRefiere}"/>
+                <a4j:support id="supportmnuLepra" action="#{motivoBean.changeLepra}" reRender="panelTextLepra,panelInputLepra" event="onclick">
+                  <a4j:ajaxListener type="org.ajax4jsf.ajax.ForceRender"/>
+                </a4j:support>
+              </h:selectOneRadio>
+            </a4j:region>
+            <a4j:outputPanel ajaxRendered="true">
+              <t:message for="mnuLepra" styleClass="errorMessage"/>
+            </a4j:outputPanel>
+            <h:panelGroup id="panelTextLepra">
+              <h:outputText value="Tiempo" styleClass="labelTextOblig" rendered="#{motivoBean.renderLepra}"/>
+            </h:panelGroup>
+            <h:panelGroup id="panelInputLepra">
+              <h:inputTextarea id="textLepra" required="true" rendered="#{motivoBean.renderLepra}" value="#{motivoBean.revision.hrscrefielepra}" style="width:350px"/>
+            </h:panelGroup>
+            <a4j:outputPanel ajaxRendered="true">
+              <t:message for="textLepra" styleClass="errorMessage"/>
+            </a4j:outputPanel>
+          </h:panelGrid>
+        </s:fieldset>
+        <h:panelGroup>
+          <a4j:outputPanel id="ajaxRegionMessagesatributo1" ajaxRendered="true">
+            <t:htmlTag value="br"/>
+            <t:messages id="msgInformationAndErrors" showSummary="false" errorClass="error" globalOnly="true" layout="table" infoClass="informacion" showDetail="true" tooltip="true"
+                        styleClass="alert alert-success" warnClass="advertencia"/>
+            <t:htmlTag value="br"/>
+          </a4j:outputPanel>
+        </h:panelGroup>
+        <h:panelGrid columns="1" border="0" cellpadding="0" cellspacing="0" width="100%" id="panelBotonModificar" columnClasses="panelGridBotones">
+          <h:panelGroup>
+            <h:commandButton value="Guardar" styleClass="btn btn btn-success" action="#{motivoBean.guardarMotivoConsulta}">
+              <a4j:support event="onclick" status="statusButton"/>
+            </h:commandButton>
+          </h:panelGroup>
+        </h:panelGrid>
+      </h:panelGrid>
+    </t:panelTab>
+  </t:panelTabbedPane>
+</h:panelGrid>

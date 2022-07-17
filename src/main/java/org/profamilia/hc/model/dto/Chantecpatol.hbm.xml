@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping>
+    <!-- 
+    Created by the Middlegen Hibernate plugin 2.2
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+    <class name="org.profamilia.hc.model.dto.Chantecpatol" table="CHANTECPATOL" lazy="false" schema="HISTORIA">
+        <composite-id name="comp_id" class="org.profamilia.hc.model.dto.ChantecpatolPK">
+            <key-property name="haplconsulta" column="HAPLCONSULTA" type="java.lang.Long" length="22"/>
+            <key-property name="hapctiposervi" column="HAPCTIPOSERVI" type="java.lang.String" length="1"/>
+        </composite-id>
+        <version name="version" column="VERSION"/>
+        <property name="hapcvih" type="java.lang.String" column="HAPCVIH" length="1"/>
+        <property name="hapcdiabmelli" type="java.lang.String" column="HAPCDIABMELLI" length="1"/>
+        <property name="hapcartrireuma" type="java.lang.String" column="HAPCARTRIREUMA" length="1"/>
+        <property name="hapcesclmult" type="java.lang.String" column="HAPCESCLMULT" length="1"/>
+        <property name="hapccancer" type="java.lang.String" column="HAPCCANCER" length="1"/>
+        <property name="hapcescllatamio" type="java.lang.String" column="HAPCESCLLATAMIO" length="1"/>
+        <property name="hapcnefropa" type="java.lang.String" column="HAPCNEFROPA" length="1"/>
+        <property name="hapcmigrana" type="java.lang.String" column="HAPCMIGRANA" length="1"/>
+        <property name="hapcfibromi" type="java.lang.String" column="HAPCFIBROMI" length="1"/>
+        <property name="hapcotra" type="java.lang.String" column="HAPCOTRA" length="1"/>
+        <property name="hapccual" type="java.lang.String" column="HAPCCUAL" length="200"/>
+        <property name="hapdfecregistr" type="java.util.Date" column="HAPDFECREGISTR" length="7"/>
+        <property name="hapcoperador" type="java.lang.String" column="HAPCOPERADOR" length="14"/>
+        
+        <!-- Associations -->
+        <!-- derived association(s) for compound key -->
+        <!-- end of derived association(s) -->
+    </class>
+</hibernate-mapping>
