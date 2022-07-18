@@ -18,8 +18,10 @@ package org.profamilia.hc;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
-import org.springframework.context.annotation.Configuration;
+import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
+import org.springframework.orm.hibernate5.LocalSessionFactoryBean;
 
 /**
  * PetClinic Spring Boot Application.
@@ -28,11 +30,19 @@ import org.springframework.context.annotation.Configuration;
  *
  */
 @SpringBootApplication
+@EnableJpaRepositories
 @ComponentScan(basePackages = {"org.profamilia.hc"})
 public class PetClinicApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(PetClinicApplication.class, args);
 	}
+	
+	@Bean(name="entityManagerFactory")
+	public LocalSessionFactoryBean sessionFactory() {
+	    LocalSessionFactoryBean sessionFactory = new LocalSessionFactoryBean();
+
+	    return sessionFactory;
+	} 
 
 }
