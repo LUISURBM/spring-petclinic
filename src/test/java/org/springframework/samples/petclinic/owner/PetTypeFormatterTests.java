@@ -31,6 +31,9 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
+import org.profamilia.hc.petclinic.owner.OwnerRepository;
+import org.profamilia.hc.petclinic.owner.PetType;
+import org.profamilia.hc.petclinic.owner.PetTypeFormatter;
 
 /**
  * Test class for {@link PetTypeFormatter}

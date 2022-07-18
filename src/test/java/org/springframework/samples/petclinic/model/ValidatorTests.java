@@ -17,6 +17,7 @@
 package org.springframework.samples.petclinic.model;
 
 import org.junit.jupiter.api.Test;
+import org.profamilia.hc.petclinic.model.Person;
 import org.springframework.context.i18n.LocaleContextHolder;
 import org.springframework.validation.beanvalidation.LocalValidatorFactoryBean;
 

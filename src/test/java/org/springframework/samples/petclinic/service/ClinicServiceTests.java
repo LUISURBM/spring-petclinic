@@ -22,6 +22,13 @@ import java.time.LocalDate;
 import java.util.Collection;
 
 import org.junit.jupiter.api.Test;
+import org.profamilia.hc.petclinic.owner.Owner;
+import org.profamilia.hc.petclinic.owner.OwnerRepository;
+import org.profamilia.hc.petclinic.owner.Pet;
+import org.profamilia.hc.petclinic.owner.PetType;
+import org.profamilia.hc.petclinic.owner.Visit;
+import org.profamilia.hc.petclinic.vet.Vet;
+import org.profamilia.hc.petclinic.vet.VetRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase;
 import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase.Replace;
@@ -29,13 +36,6 @@ import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
-import org.springframework.samples.petclinic.owner.Owner;
-import org.springframework.samples.petclinic.owner.OwnerRepository;
-import org.springframework.samples.petclinic.owner.Pet;
-import org.springframework.samples.petclinic.owner.PetType;
-import org.springframework.samples.petclinic.owner.Visit;
-import org.springframework.samples.petclinic.vet.Vet;
-import org.springframework.samples.petclinic.vet.VetRepository;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 

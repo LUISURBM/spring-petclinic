@@ -1,9 +1,5 @@
 package org.profamilia.hc.view.backing.cirugia.registro;
 
-import com.lowagie.text.DocumentException;
-import com.lowagie.text.pdf.PdfCopyFields;
-import com.lowagie.text.pdf.PdfReader;
-
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;

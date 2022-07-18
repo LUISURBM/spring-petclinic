@@ -13,18 +13,26 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.springframework.samples.petclinic.owner;
 
-import javax.persistence.Entity;
-import javax.persistence.Table;
+package org.profamilia.hc;
 
-import org.springframework.samples.petclinic.model.NamedEntity;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.Configuration;
 
 /**
- * @author Juergen Hoeller Can be Cat, Dog, Hamster...
+ * PetClinic Spring Boot Application.
+ *
+ * @author Dave Syer
+ *
  */
-@Entity
-@Table(name = "types")
-public class PetType extends NamedEntity {
+@SpringBootApplication
+@ComponentScan(basePackages = {"org.profamilia.hc"})
+public class PetClinicApplication {
+
+	public static void main(String[] args) {
+		SpringApplication.run(PetClinicApplication.class, args);
+	}
 
 }

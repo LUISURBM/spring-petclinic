@@ -13,23 +13,25 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+package org.profamilia.hc.petclinic.system;
 
-package org.springframework.samples.petclinic;
-
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
 
 /**
- * PetClinic Spring Boot Application.
+ * Controller used to showcase what happens when an exception is thrown
  *
- * @author Dave Syer
- *
+ * @author Michael Isvy
+ * <p/>
+ * Also see how a view that resolves to "error" has been added ("error.html").
  */
-@SpringBootApplication
-public class PetClinicApplication {
+@Controller
+public class CrashController {
 
-	public static void main(String[] args) {
-		SpringApplication.run(PetClinicApplication.class, args);
+	@GetMapping("/oups")
+	public String triggerException() {
+		throw new RuntimeException(
+				"Expected: controller used to showcase what " + "happens when an exception is thrown");
 	}
 
 }

@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.springframework.samples.petclinic.owner;
+package org.profamilia.hc.petclinic.owner;
 
 import java.time.LocalDate;
 import java.util.Collection;
@@ -30,8 +30,8 @@ import javax.persistence.OneToMany;
 import javax.persistence.OrderBy;
 import javax.persistence.Table;
 
+import org.profamilia.hc.petclinic.model.NamedEntity;
 import org.springframework.format.annotation.DateTimeFormat;
-import org.springframework.samples.petclinic.model.NamedEntity;
 
 /**
  * Simple business object representing a pet.

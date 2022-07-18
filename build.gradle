@@ -6,7 +6,7 @@ plugins {
 
 apply plugin: 'java'
 
-group = 'org.springframework.samples'
+group = 'org.profamilia.hc'
 version = '2.6.0'
 sourceCompatibility = '11'
 

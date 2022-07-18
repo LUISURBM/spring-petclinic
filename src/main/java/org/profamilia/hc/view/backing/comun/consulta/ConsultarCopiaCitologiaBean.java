@@ -1,13 +1,5 @@
 package org.profamilia.hc.view.backing.comun.consulta;
 
-
-import com.lowagie.text.Document;
-
-import com.lowagie.text.DocumentException;
-import com.lowagie.text.Image;
-import com.lowagie.text.pdf.Barcode39;
-import com.lowagie.text.pdf.PdfWriter;
-
 import java.awt.Color;
 
 import java.io.FileNotFoundException;

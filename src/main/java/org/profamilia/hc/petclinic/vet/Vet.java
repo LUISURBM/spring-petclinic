@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.springframework.samples.petclinic.vet;
+package org.profamilia.hc.petclinic.vet;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -29,9 +29,9 @@ import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 import javax.xml.bind.annotation.XmlElement;
 
+import org.profamilia.hc.petclinic.model.Person;
 import org.springframework.beans.support.MutableSortDefinition;
 import org.springframework.beans.support.PropertyComparator;
-import org.springframework.samples.petclinic.model.Person;
 
 /**
  * Simple JavaBean domain object representing a veterinarian.

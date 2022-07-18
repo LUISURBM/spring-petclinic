@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.springframework.samples.petclinic.owner;
+package org.profamilia.hc.petclinic.owner;
 
 import java.util.Map;
 
@@ -36,7 +36,7 @@ import org.springframework.web.bind.annotation.PostMapping;
  * @author Dave Syer
  */
 @Controller
-class VisitController {
+public class VisitController {
 
 	private final OwnerRepository owners;
 

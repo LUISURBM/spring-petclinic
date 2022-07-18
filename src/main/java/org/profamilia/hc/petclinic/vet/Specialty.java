@@ -13,30 +13,20 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.springframework.samples.petclinic.vet;
+package org.profamilia.hc.petclinic.vet;
 
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlRootElement;
-import java.util.ArrayList;
-import java.util.List;
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
+import org.profamilia.hc.petclinic.model.NamedEntity;
 
 /**
- * Simple domain object representing a list of veterinarians. Mostly here to be used for
- * the 'vets' {@link org.springframework.web.servlet.view.xml.MarshallingView}.
+ * Models a {@link Vet Vet's} specialty (for example, dentistry).
  *
- * @author Arjen Poutsma
+ * @author Juergen Hoeller
  */
-@XmlRootElement
-public class Vets {
-
-	private List<Vet> vets;
-
-	@XmlElement
-	public List<Vet> getVetList() {
-		if (vets == null) {
-			vets = new ArrayList<>();
-		}
-		return vets;
-	}
+@Entity
+@Table(name = "specialties")
+public class Specialty extends NamedEntity {
 
 }

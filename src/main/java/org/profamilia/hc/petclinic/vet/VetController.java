@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.springframework.samples.petclinic.vet;
+package org.profamilia.hc.petclinic.vet;
 
 import java.util.List;
 
@@ -33,7 +33,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
  * @author Arjen Poutsma
  */
 @Controller
-class VetController {
+public class VetController {
 
 	private final VetRepository vets;
 

@@ -3,7 +3,7 @@
 	xmlns="http://maven.apache.org/POM/4.0.0"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>org.profamilia.hc</groupId>
+	<groupId>org.springframework.samples</groupId>
 	<artifactId>spring-petclinic</artifactId>
 	<version>2.7.0-SNAPSHOT</version>
 
@@ -286,17 +286,17 @@
 			<artifactId>spring</artifactId>
 			<version>2.5</version>
 		</dependency>
-		<!-- <dependency> -->
-		<!-- <groupId>struts</groupId> -->
-		<!-- <artifactId>struts</artifactId> -->
-		<!-- <version>1.1</version> -->
-		<!-- <exclusions> -->
-		<!-- <exclusion> -->
-		<!-- <artifactId>jdbc-stdext</artifactId> -->
-		<!-- <groupId>javax.sql</groupId> -->
-		<!-- </exclusion> -->
-		<!-- </exclusions> -->
-		<!-- </dependency> -->
+		<dependency>
+			<groupId>struts</groupId>
+			<artifactId>struts</artifactId>
+			<version>1.1</version>
+			<exclusions>
+				<exclusion>
+					<artifactId>jdbc-stdext</artifactId>
+					<groupId>javax.sql</groupId>
+				</exclusion>
+			</exclusions>
+		</dependency>
 		<dependency>
 			<groupId>commons-beanutils</groupId>
 			<artifactId>commons-beanutils</artifactId>
@@ -346,29 +346,6 @@
 			<groupId>javax.transaction</groupId>
 			<artifactId>jta</artifactId>
 			<version>1.1</version>
-		</dependency>
-
-		<!-- https://mvnrepository.com/artifact/com.lowagie/itext -->
-		<dependency>
-			<groupId>com.lowagie</groupId>
-			<artifactId>itext</artifactId>
-			<version>4.2.2</version>
-		</dependency>
-		
-		<dependency>
-			<groupId>org.apache.struts</groupId>
-			<artifactId>struts2-core</artifactId>
-			<version>6.0.0</version>
-		</dependency>
-		<dependency>
-			<groupId>org.apache.struts</groupId>
-			<artifactId>struts2-junit-plugin</artifactId>
-			<version>6.0.0</version>
-		</dependency>
-		<dependency>
-			<groupId>org.apache.struts</groupId>
-			<artifactId>struts2-convention-plugin</artifactId>
-			<version>6.0.0</version>
 		</dependency>
 
 		<!-- FIN HC JDK 1.5 -->

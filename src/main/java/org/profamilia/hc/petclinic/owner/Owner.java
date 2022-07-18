@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.springframework.samples.petclinic.owner;
+package org.profamilia.hc.petclinic.owner;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -29,8 +29,8 @@ import javax.persistence.Table;
 import javax.validation.constraints.Digits;
 import javax.validation.constraints.NotEmpty;
 
+import org.profamilia.hc.petclinic.model.Person;
 import org.springframework.core.style.ToStringCreator;
-import org.springframework.samples.petclinic.model.Person;
 import org.springframework.util.Assert;
 
 /**

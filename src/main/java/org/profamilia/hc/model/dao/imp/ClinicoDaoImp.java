@@ -21,6 +21,7 @@ import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
+import org.hibernate.impl.SessionImpl;
 import org.hibernate.Query;
 import org.jboss.logging.Logger;
 import org.profamilia.hc.model.dao.ClinicoDao;
@@ -39,7 +40,6 @@ import org.profamilia.hc.view.backing.webService.saludTotal.dto.response.Resulta
 import org.profamilia.hc.view.constantes.IConstantes;
 import org.springframework.orm.hibernate3.HibernateCallback;
 import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
-
 
 public class ClinicoDaoImp extends HibernateDaoSupport implements ClinicoDao {
 
@@ -124,7 +124,7 @@ public class ClinicoDaoImp extends HibernateDaoSupport implements ClinicoDao {
 		if (s == null) {
 			this.openSession(getUser());
 		}
-		return session.connection();
+		return (((SessionImpl) session).connection());
 	}
 
 	private void validateUserThin(final String userName, final String password) {
@@ -160,19 +160,21 @@ public class ClinicoDaoImp extends HibernateDaoSupport implements ClinicoDao {
 //		}
 
 		// if (oracleConn.isProxySession()) {
-		// 	try {
-		// 		oracleConn.close(OracleConnection.PROXY_SESSION);
-		// 	} catch (SQLException e) {
-		// 		throw new DAOException("ERROR: " + e.getMessage() + "CAUSA: " + e.getMessage());
-		// 	}
+		// try {
+		// oracleConn.close(OracleConnection.PROXY_SESSION);
+		// } catch (SQLException e) {
+		// throw new DAOException("ERROR: " + e.getMessage() + "CAUSA: " +
+		// e.getMessage());
+		// }
 		// }
 
 		// try {
-		// 	Properties properties = new Properties();
-		// 	properties.put(OracleConnection.PROXY_USER_NAME, userName);
-		// 	oracleConn.openProxySession(OracleConnection.PROXYTYPE_USER_NAME, properties);
+		// Properties properties = new Properties();
+		// properties.put(OracleConnection.PROXY_USER_NAME, userName);
+		// oracleConn.openProxySession(OracleConnection.PROXYTYPE_USER_NAME,
+		// properties);
 		// } catch (SQLException e) {
-		// 	throw new DAOException("ERROR al validar el usuario " + e.getMessage());
+		// throw new DAOException("ERROR al validar el usuario " + e.getMessage());
 		// }
 	}
 
@@ -208,9 +210,10 @@ public class ClinicoDaoImp extends HibernateDaoSupport implements ClinicoDao {
 		if ((s != null) && s.isOpen()) {
 			s.flush();
 			try {
-				Connection connection = s.connection();
-				// if (connection instanceof OracleConnection && ((OracleConnection) connection).isProxySession()) {
-				// 	((OracleConnection) connection).close(OracleConnection.PROXY_SESSION);
+				Connection connection = ((SessionImpl)s).connection();
+				// if (connection instanceof OracleConnection && ((OracleConnection)
+				// connection).isProxySession()) {
+				// ((OracleConnection) connection).close(OracleConnection.PROXY_SESSION);
 				// }
 				connection.close();
 			} catch (HibernateException e) {
@@ -2067,8 +2070,8 @@ public class ClinicoDaoImp extends HibernateDaoSupport implements ClinicoDao {
 	public List getDepartamentos() throws ModelException {
 		List resultList = null;
 		try {
-			resultList = this.getSession()
-					.createQuery("SELECT c " + "FROM Cpdepadane AS c " + "ORDER BY c.cddcdescri ").list();
+			resultList = this.getSession().createQuery("SELECT c " + "FROM Cpdepadane AS c " + "ORDER BY c.cddcdescri ")
+					.list();
 		} catch (HibernateException e) {
 			throw new ModelException("Error consultando departamentos:" + e.getMessage(), e);
 		} catch (Exception e) {
@@ -2158,8 +2161,8 @@ public class ClinicoDaoImp extends HibernateDaoSupport implements ClinicoDao {
 	public List getTipoIdentificacion() throws ModelException {
 		List resultList = null;
 		try {
-			resultList = this.getSession()
-					.createQuery("SELECT c " + "FROM Cptipoiden AS c " + "ORDER BY c.cticdescri ").list();
+			resultList = this.getSession().createQuery("SELECT c " + "FROM Cptipoiden AS c " + "ORDER BY c.cticdescri ")
+					.list();
 		} catch (HibernateException e) {
 			throw new ModelException("Error consultando tipo identificaci�n:" + e.getMessage(), e);
 		} catch (Exception e) {
@@ -3758,8 +3761,7 @@ public class ClinicoDaoImp extends HibernateDaoSupport implements ClinicoDao {
 		List resultList = null;
 		try {
 
-			resultList = this.getSession().createQuery("select s from Cpservicio as s where csvcestado = 'VG'")
-					.list();
+			resultList = this.getSession().createQuery("select s from Cpservicio as s where csvcestado = 'VG'").list();
 		} catch (HibernateException e) {
 			throw new ModelException("Error consultando servicio:" + e.getMessage(), e);
 		} catch (Exception e) {
@@ -12780,7 +12782,6 @@ public class ClinicoDaoImp extends HibernateDaoSupport implements ClinicoDao {
 		}
 	}
 
-
 	/**
 	 * @param consclin
 	 * @return
@@ -15215,7 +15216,8 @@ public class ClinicoDaoImp extends HibernateDaoSupport implements ClinicoDao {
 					sb1.append(" AND  cpse.csvccodigo = ? ");
 
 					parametros2.add(consclin.getCcocservic().getCsvccodigo());
-					resultList2 = (List<String>) this.getHibernateTemplate().find(sb1.toString(), parametros2.toArray());
+					resultList2 = (List<String>) this.getHibernateTemplate().find(sb1.toString(),
+							parametros2.toArray());
 
 					if (!resultList2.isEmpty()) {
 						wsumcuo = resultList2.get(0);
@@ -17648,7 +17650,7 @@ public class ClinicoDaoImp extends HibernateDaoSupport implements ClinicoDao {
 		}
 
 	}
-	
+
 	/**
 	 * @param wcodclin
 	 * @return
@@ -20914,7 +20916,6 @@ public class ClinicoDaoImp extends HibernateDaoSupport implements ClinicoDao {
 
 	}
 
-
 	/**
 	 * @param userName
 	 * @param numeroUsuario
@@ -21439,8 +21440,7 @@ public class ClinicoDaoImp extends HibernateDaoSupport implements ClinicoDao {
 				sb.append(
 						" AND (chco.hcodfecregistr BETWEEN TO_DATE(:fechaI,'dd/MM/yyyy hh24:mi') AND TO_DATE(:fechaF,'dd/MM/yyyy hh24:mi'))");
 				sb.append(" order by chco.hcodfecregistr ");
-				Query query = getHibernateTemplate().getSessionFactory().getCurrentSession()
-						.createQuery(sb.toString());
+				Query query = getHibernateTemplate().getSessionFactory().getCurrentSession().createQuery(sb.toString());
 				query.setParameter("codclin", codclin);
 				query.setParameter("fechaI", fechaI);
 				query.setParameter("fechaF", fechaF);
@@ -21513,8 +21513,7 @@ public class ClinicoDaoImp extends HibernateDaoSupport implements ClinicoDao {
 				sb.append(
 						" where (chae.haedfechases BETWEEN TO_DATE(:fechaI,'dd/MM/yyyy hh24:mi') AND TO_DATE(:fechaF,'dd/MM/yyyy hh24:mi'))  ");
 
-				Query query = getHibernateTemplate().getSessionFactory().getCurrentSession()
-						.createQuery(sb.toString());
+				Query query = getHibernateTemplate().getSessionFactory().getCurrentSession().createQuery(sb.toString());
 				// query.setParameter("codclin", codclin);
 				query.setParameter("fechaI", fechaI);
 				query.setParameter("fechaF", fechaF);
@@ -21645,8 +21644,7 @@ public class ClinicoDaoImp extends HibernateDaoSupport implements ClinicoDao {
 				sb.append("   INFORMACION_CONSULTA) ");
 				sb.append("   ON NUMERO_USUARIO_ILVE =  NUMERO_USUARIO ");
 
-				Query query = getHibernateTemplate().getSessionFactory().getCurrentSession()
-						.createQuery(sb.toString());
+				Query query = getHibernateTemplate().getSessionFactory().getCurrentSession().createQuery(sb.toString());
 
 				if (codclin.intValue() != 0) {
 					query.setParameter("codclin", codclin);
@@ -21882,8 +21880,7 @@ public class ClinicoDaoImp extends HibernateDaoSupport implements ClinicoDao {
 				 * );
 				 */
 
-				Query query = getHibernateTemplate().getSessionFactory().getCurrentSession()
-						.createQuery(sb.toString());
+				Query query = getHibernateTemplate().getSessionFactory().getCurrentSession().createQuery(sb.toString());
 
 				query.setParameter("fechaI", fechaI);
 				query.setParameter("fechaF", fechaF);
@@ -21944,8 +21941,7 @@ public class ClinicoDaoImp extends HibernateDaoSupport implements ClinicoDao {
 								+ "AND CPCO.CCNNCLINIC = CNCC.CCONCLINIC AND chcp.HCPNCLINICA = cpcl.CCLNCODIGO AND chdc.HDCCSERVICIO = cpse.CSVCCODIGO "
 								+ "AND (chcp.HCPCMOTIVANULA is null or chcp.HCPCMOTIVANULA <> 4)");
 
-				Query query = getHibernateTemplate().getSessionFactory().getCurrentSession()
-						.createQuery(sb.toString());
+				Query query = getHibernateTemplate().getSessionFactory().getCurrentSession().createQuery(sb.toString());
 
 				query.setParameter("fechaI", fechaI);
 				query.setParameter("fechaF", fechaF);
@@ -22014,8 +22010,7 @@ public class ClinicoDaoImp extends HibernateDaoSupport implements ClinicoDao {
 				}
 
 				sb.append(" order by cncl.ccodfeccon desc ");
-				Query query = getHibernateTemplate().getSessionFactory().getCurrentSession()
-						.createQuery(sb.toString());
+				Query query = getHibernateTemplate().getSessionFactory().getCurrentSession().createQuery(sb.toString());
 				query.setParameter("codclin", codclin);
 				query.setParameter("fechaI", fechaI);
 				query.setParameter("fechaF", fechaF);
@@ -27505,7 +27500,8 @@ public class ClinicoDaoImp extends HibernateDaoSupport implements ClinicoDao {
 				StringBuffer sb = new StringBuffer();
 				sb.append(" select chca from " + Chcontroladi.class.getName()
 						+ " chca where chca.comp_id.hcalnumero = ? ");
-				resultList = (List<Chcontroladi>) this.getHibernateTemplate().find(sb.toString(), consclin.getCconnumero());
+				resultList = (List<Chcontroladi>) this.getHibernateTemplate().find(sb.toString(),
+						consclin.getCconnumero());
 			}
 			return resultList;
 
@@ -27593,10 +27589,8 @@ public class ClinicoDaoImp extends HibernateDaoSupport implements ClinicoDao {
 									+ IConstantes.CCONCOSF + " FOR UPDATE nowait")
 							.uniqueResult();
 
-					session.createQuery(
-							"update clinico.Cpconsec set connnumero = connnumero + 1  where conncodigo = "
-									+ IConstantes.CCONCOSF + " ")
-							.executeUpdate();
+					session.createQuery("update clinico.Cpconsec set connnumero = connnumero + 1  where conncodigo = "
+							+ IConstantes.CCONCOSF + " ").executeUpdate();
 
 					if (secuenciaConsultaClinica != null) {
 						consulta.setCconnumero(secuenciaConsultaClinica.intValue());
@@ -27995,7 +27989,8 @@ public class ClinicoDaoImp extends HibernateDaoSupport implements ClinicoDao {
 				StringBuffer sb = new StringBuffer();
 				sb.append(" select chvc from " + Chvphcitolect.class.getName() + " chvc  where chvc.hvcnconsec = ?  ");
 				parametros.add(consecutivo);
-				resultList = (List<Chvphcitolect>) this.getHibernateTemplate().find(sb.toString(), parametros.toArray());
+				resultList = (List<Chvphcitolect>) this.getHibernateTemplate().find(sb.toString(),
+						parametros.toArray());
 
 				if (!resultList.isEmpty()) {
 					return resultList.get(0);
@@ -31799,8 +31794,7 @@ public class ClinicoDaoImp extends HibernateDaoSupport implements ClinicoDao {
 					sb.append(" and co.hconclinica = :clinica ");
 				}
 
-				Query query = getHibernateTemplate().getSessionFactory().getCurrentSession()
-						.createQuery(sb.toString());
+				Query query = getHibernateTemplate().getSessionFactory().getCurrentSession().createQuery(sb.toString());
 				if (codclin != null && codclin != 0) {
 					query.setParameter("clinica", codclin);
 				}
@@ -35513,7 +35507,8 @@ public class ClinicoDaoImp extends HibernateDaoSupport implements ClinicoDao {
 				sb.append(" select es from " + Chfragesperma.class.getName() + " es  where es.cfelconsulta = ? ");
 				parametros.add(numeroConsulta);
 
-				resultList = (List<Chfragesperma>) this.getHibernateTemplate().find(sb.toString(), parametros.toArray());
+				resultList = (List<Chfragesperma>) this.getHibernateTemplate().find(sb.toString(),
+						parametros.toArray());
 
 				if (!resultList.isEmpty()) {
 					return resultList.get(0);
@@ -35848,7 +35843,8 @@ public class ClinicoDaoImp extends HibernateDaoSupport implements ClinicoDao {
 						+ " chpci  where chpci.hpciccodigo = ? ");
 				parametros.add(codigo);
 
-				resultList = (List<Chplanconsinfo>) this.getHibernateTemplate().find(sb.toString(), parametros.toArray());
+				resultList = (List<Chplanconsinfo>) this.getHibernateTemplate().find(sb.toString(),
+						parametros.toArray());
 
 				if (!resultList.isEmpty()) {
 					return resultList.get(0);
@@ -36074,219 +36070,186 @@ public class ClinicoDaoImp extends HibernateDaoSupport implements ClinicoDao {
 
 	}
 
-	
 	public void saveAntecedentes(List list, Long long1) throws ModelException {
 		// TODO Auto-generated method stub
-		
+
 	}
 
-	
 	public void saveParaclinicos(List list, Long long1) throws ModelException {
 		// TODO Auto-generated method stub
-		
+
 	}
 
-	
 	public void saveAntecedenteTemporal(List list) throws ModelException {
 		// TODO Auto-generated method stub
-		
+
 	}
 
-	
 	public void saveListExamenParaclinicos(List list, Cnconsclin cnconsclin) throws ModelException {
 		// TODO Auto-generated method stub
-		
+
 	}
 
-	
 	public void saveListFormulaMedica(List list, Long long1) throws ModelException {
 		// TODO Auto-generated method stub
-		
+
 	}
 
-	
 	public void saveAutorizacion(Chautoriserv chautoriserv, List list) throws ModelException {
 		// TODO Auto-generated method stub
-		
+
 	}
 
-	
 	public void saveListRemisionInterconsulta(List list, Long long1) throws ModelException {
 		// TODO Auto-generated method stub
-		
+
 	}
 
-	
 	public void saveListRemisionInterconsultaCirugia(List list, Chevolucion chevolucion) throws ModelException {
 		// TODO Auto-generated method stub
-		
+
 	}
 
-	
 	public void saveListRemisionInterconsultaCirugia(List list, Long long1, String s, Integer integer)
 			throws ModelException {
 		// TODO Auto-generated method stub
-		
+
 	}
 
-	
 	public void saveListExamenesElectrofisiologicos(List list, Long long1, String s) throws ModelException {
 		// TODO Auto-generated method stub
-		
+
 	}
 
-	
 	public void saveListExamenesElectrofisiologicosCirugia(List list, Long long1, String s, Integer integer, String s1)
 			throws ModelException {
 		// TODO Auto-generated method stub
-		
+
 	}
 
-	
 	public void saveListExamenesLaboratorio(List list, Long long1, String s) throws ModelException {
 		// TODO Auto-generated method stub
-		
+
 	}
 
-	
 	public void saveListExamenesLaboratorioCirugia(List list, Long long1, String s, Integer integer, String s1)
 			throws ModelException {
 		// TODO Auto-generated method stub
-		
+
 	}
 
-	
 	public void saveLstIngresoLiquidos(List list, Long long1) throws ModelException {
 		// TODO Auto-generated method stub
-		
+
 	}
 
-	
 	public void saveLstIngresoLiquidosCanalizacion(List list, Long long1, Chcanalivena chcanalivena)
 			throws ModelException {
 		// TODO Auto-generated method stub
-		
+
 	}
 
-	
 	public void saveLstRegistroLiquidos(List list, Long long1, List list1) throws ModelException {
 		// TODO Auto-generated method stub
-		
+
 	}
 
-	
 	public void saveLstRegistroOrden(List list, Long long1, Integer integer) throws ModelException {
 		// TODO Auto-generated method stub
-		
+
 	}
 
-	
 	public void saveLstRegistroLiquidosViaOral(List list, Long long1) throws ModelException {
 		// TODO Auto-generated method stub
-		
+
 	}
 
-	
 	public void saveLstRegistroLiquidosCanalizacion(List list, Long long1, Chcanalivena chcanalivena)
 			throws ModelException {
 		// TODO Auto-generated method stub
-		
+
 	}
 
-	
 	public void saveCuestionarioPreanestesia(List list, Long long1) throws ModelException {
 		// TODO Auto-generated method stub
-		
+
 	}
 
-	
 	public void saveMedicamentosAnestesia(List list, Long long1, String s) throws ModelException {
 		// TODO Auto-generated method stub
-		
+
 	}
 
-	
 	public void saveDetalleListaCitologias(List list) throws ModelException {
 		// TODO Auto-generated method stub
-		
+
 	}
 
-	
 	public void savePlantillaUsuario(List list, String s) throws ModelException {
 		// TODO Auto-generated method stub
-		
+
 	}
 
-	
 	public void asignarPrioridad(Integer integer, Integer integer1, List list) throws ModelException {
 		// TODO Auto-generated method stub
-		
+
 	}
 
-	
 	public void saveProfesionalPrioridad(List list, Integer integer) throws ModelException {
 		// TODO Auto-generated method stub
-		
+
 	}
 
-	
 	public void saveDetalleListaPatologias(List list) throws ModelException {
 		// TODO Auto-generated method stub
-		
+
 	}
 
-	
 	public void liberarConsultaClinica(List list, String s) throws ModelException {
 		// TODO Auto-generated method stub
-		
+
 	}
 
-	
 	public void savelstCitologia(List list) throws ModelException {
 		// TODO Auto-generated method stub
-		
+
 	}
 
-	
 	public void saveUsuarioSap(Chusuario chusuario, String s, List list, Integer integer, String s1)
 			throws ModelException {
 		// TODO Auto-generated method stub
-		
+
 	}
 
-	
 	public void saveLstRegistroLiquidosAnestesia(List list, Long long1) throws ModelException {
 		// TODO Auto-generated method stub
-		
+
 	}
 
-	
 	public List getLstLiquidosAdministradoParcialAnestesia(List list) throws ModelException {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
-	
 	public void saveLstRegistroLiquidosControlAnestesia(List list, Long long1) throws ModelException {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	public void saveLstRegistroLiquidosAnestesiaEtapaIniciadoLiquido(List list, Long long1) throws ModelException {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	public void saveListExamenesImagenes(List list, Long long1, String s) throws ModelException {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	public void saveListExamenesImagenesCirugia(List list, Long long1, String s, Integer integer, String s1)
 			throws ModelException {
 		// TODO Auto-generated method stub
-		
-	}
 
+	}
 
 }
